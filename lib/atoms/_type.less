@@ -1,0 +1,334 @@
+//
+//  STACK OVERFLOW CAREERS
+//  Product UI Style Guide
+//  Designed & managed by the Stack Exchange Design Team
+//
+//  Created May 2, 2014
+//  Updated September 10, 2014
+//
+//  http://careers.stackoveflow.com
+//
+//  TYPE
+//  
+//  TABLE OF CONTENTS
+//  • VARIABLES
+//  • MIXINS
+//
+//  ============================================================================
+//  $ TYPE VARIABLES
+//  ============================================================================
+//  Typography is an important design element for Stack Overflow Careers. Strong
+//  typography applied consistently can not only build brand recognition and trust,
+//  but it can also help establish reliable communication patterns for our end users.
+//  To accomplish this goal, we have selected the font Merriweather Sans ST. This
+//  font was designed specifically for on-screen use, allowing for greater control
+//  of line-heights and letter-spacing natively within our CSS without resorting
+//  to Javascript.
+//  
+//  With the addition of web fonts within this relaunch of Stack Overflow Careers,
+//  font-weight plays a more important role than it once did. Previously a "bold"
+//  weight was programmatically determined using an algorithm to fatten a font.
+//  Web fonts however are hinted specifically for declared weight values. Stack
+//  Overflow Careers uses a font-weight numerical value for the best font
+//  representation.
+//
+//  To better manage use of font-weights within Stack Overflow Careers, raw
+//  font-weights should not be entered within CSS. Instead use an appropriate
+//  variable below to declare the desired weight.
+//
+//  Merriweather Sans ST has greater letter-spacing capabilities natively within
+//  our CSS that previously were only available with Javascript. A set of
+//  letter-spacing variables have been created to manage this.
+//
+//  To help with managing line-heights, a set of line-height variables have also
+//  been created to manage this.
+//
+//  ----------------------------------------------------------------------------
+//  $$ Sizes
+@fontSize-base:             14;
+@fontSize-xxsmall:          @fontSize-base * 0.714285714;
+@fontSize-xsmall:           @fontSize-base * 0.857142857;
+@fontSize-small:            @fontSize-base * 0.928571429;
+@fontSize-medium:           @fontSize-base * 1.285714286;
+@fontSize-large:            @fontSize-base * 1.714285714;
+@fontSize-xlarge:           @fontSize-base * 2.571428571;
+@fontSize-xxlarge:          @fontSize-base * 3.428571429;
+@fontSize-xxxlarge:         @fontSize-base * 5.142857143;
+
+//  $$ Styles, Weights, and Transforms
+@fontStyle-normal:          normal;
+@fontStyle-italic:          italic;
+@fontTransform-lowercase:   lowercase;
+@fontTransform-uppercase:   uppercase;
+@fontWeight-light:          200;
+@fontWeight-normal:         400;
+@fontWeight-bold:           700;
+
+//  $$ Line-Heights
+@lineHeight-tightest:       @fontSize-base / @fontSize-base;
+@lineHeight-tighter:        (@fontSize-base + 2) / @fontSize-base;
+@lineHeight-tight:          (@fontSize-base + 4) / @fontSize-base;
+@lineHeight-base:           (@fontSize-base + 6) / @fontSize-base;
+@lineHeight-loose:          (@fontSize-base + 8) / @fontSize-base;
+@lineHeight-looser:         (@fontSize-base + 10) / @fontSize-base;
+@lineHeight-loosest:        (@fontSize-base / @fontSize-base) * 2;
+
+//  $$ Letter-spacing
+@letterSpacing-zero:        0;
+@letterSpacing-base:        -0.5px;
+@letterSpacing-tight:       @letterSpacing-base * 2;
+@letterSpacing-tighter:     @letterSpacing-base * 5;
+@letterSpacing-tightest:    @letterSpacing-base * 10;
+
+//  $$ Font Family
+@fontFamily-sans:           "merriweather", "HelveticaNeue-Regular", "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+@fontFamily-serif:          Georgia, Times New Roman, Times, serif;
+@fontFamily-code:           Menlo, Monaco, Consolas, 'Courier New', monospace;;
+
+
+//  ============================================================================
+//  $ TYPE MIXINS
+//  ============================================================================
+//  
+//  Unlike colors which are set and rarely changed, type values are altered
+//  regularly based on the need of the component and context. To maintain the
+//  unique variable name syntax, yet make it easy to remmeber variablized sizes,
+//  styles, line-heights, font-families, and letter-spacing; we have created a
+//  number of shorthand calls that can be used within their appropriate mixin.
+//  These type mixin guards deliver the correct value based on the shorthand
+//  value passed to it. For example, if you want declare a large, extra-light
+//  font value for a title, you could use:
+//
+//  Example:  .title-page {
+//              .fontSize(l);
+//              .fontWeight(2);
+//            }
+//
+//  In this example, we are passing the shorthand values of "l" and "2" within
+//  their respective mixins, which output:
+//
+//  Output:   .title-page {
+//              font-size: 24px;
+//              font-size: 1.714285714rem;
+//              font-weight: 200;
+//            }
+//
+//  ----------------------------------------------------------------------------
+.fontFamily (@f) {
+  & when (@f = sans) { font-family: @fontFamily-sans; }
+  & when (@f = serif) { font-family: @fontFamily-serif; }
+  & when (@f = code) { font-family: @fontFamily-code; }
+}
+.fontSize(@s) {
+  & when (@s = base)  { .fontRem(ceil(@fontSize-base)); }
+  & when (@s = xxs)   { .fontRem(ceil(@fontSize-xxsmall)); }
+  & when (@s = xs)    { .fontRem(ceil(@fontSize-xsmall)); }
+  & when (@s = s)     { .fontRem(ceil(@fontSize-small)); } 
+  & when (@s = m)     { .fontRem(ceil(@fontSize-medium)); }
+  & when (@s = l)     { .fontRem(ceil(@fontSize-large)); }
+  & when (@s = xl)    { .fontRem(ceil(@fontSize-xlarge)); }
+  & when (@s = xxl)   { .fontRem(ceil(@fontSize-xxlarge)); }
+  & when (@s = xxxl)  { .fontRem(ceil(@fontSize-xxxlarge)); }
+}
+.fontRem(@fs) {
+  @remValue: @fs / @fontSize-base;
+  font-size: ~"@{fs}px";
+  font-size: ~"@{remValue}rem";
+}
+.fontStyle (@s) {
+  & when (@s = n) { font-style: @fontStyle-normal; }
+  & when (@s = i) { font-style: @fontStyle-italic; }
+}
+.fontTransform (@t) {
+  & when (@t = lc) { font-style: @fontTransform-lowercase; }
+  & when (@t = uc) { font-style: @fontTransform-uppercase; }
+}
+//  Font Weight Mixin Guard to quickly assign font-weight variables
+.fontWeight (@w) {
+  & when (@w = 2) { font-weight: @fontWeight-light; }
+  & when (@w = 4) { font-weight: @fontWeight-normal; }
+  & when (@w = 7) { font-weight: @fontWeight-bold; }
+}
+//  Line Height Mixin Guard to quickly assign line-height variables
+//  Do not declare values with your line-heights (i.e. px, em). This allows
+//  for the value to be relative to the declared font-size and have
+//  greater flexibility.
+.lineHeight (@lh) {
+  & when (@lh = base)     { line-height: @lineHeight-base; }
+  & when (@lh = tight)    { line-height: @lineHeight-tight; }
+  & when (@lh = tighter)  { line-height: @lineHeight-tighter; }
+  & when (@lh = tightest) { line-height: @lineHeight-tightest; }
+  & when (@lh = loose)    { line-height: @lineHeight-loose; }
+  & when (@lh = looser)   { line-height: @lineHeight-looser; }
+  & when (@lh = loosest)  { line-height: @lineHeight-loosest; }
+}
+.letterSpacing (@ls) {
+  & when (@ls = 0)        { letter-spacing: @letterSpacing-zero; }
+  & when (@ls = base)     { letter-spacing: @letterSpacing-base; }
+  & when (@ls = tight)    { letter-spacing: @letterSpacing-tight; }
+  & when (@ls = tighter)  { letter-spacing: @letterSpacing-tighter; }
+  & when (@ls = tightest) { letter-spacing: @letterSpacing-tightest; }
+}
+
+.fontBuild(@family: sans, @size: base, @weight: 4, @style: n, @transform: lc, @line: base) {
+  .fontFamily(@family);
+  .fontSize(@size);
+  .fontStyle(@style);
+  .fontTransform(@transform);
+  .fontWeight(@weight);
+  .lineHeight(@line);
+}
+
+
+//  ============================================================================
+//  $ TYPE STYLES: BASELINE
+//  ============================================================================
+html, body {
+  // -webkit-font-smoothing: antialiased; // May remove this
+
+  color: @color-copy--body;
+  .fontFamily(sans);
+  font-size: ~"@{fontSize-base}px";
+  .fontWeight(4);
+  .letterSpacing(base);
+  .lineHeight(base);
+  .text-left();
+}
+
+//  -- Paragraph Styles
+p {
+  margin-bottom: @margin-base / 2;
+  margin-top: 0;
+  .lineHeight(loose);
+}
+
+//  When you want a larger, initial paragraph.
+.text-lead {
+  color: @color-copy--light;
+  .fontSize(xl);
+  .fontWeight(2);
+  .letterSpacing(tight);
+  .lineHeight(base);
+}
+
+.text-large { .fontSize(m); }
+.text-xlarge {
+  .fontSize(l);
+  .fontWeight(2);
+}
+.text-light { .fontWeight(2); }
+
+small             { font-size: floor((100% * @fontSize-small) / @fontSize-base); }
+strong,b          { .fontWeight(7); }
+em, i             { .fontStyle(i); }
+cite              { .fontStyle(n); }
+
+//  -- Text Alignment
+.text-left        { text-align: left; }
+.text-right       { text-align: right; }
+.text-center      { text-align: center; }
+.text-nowrap      { text-align: nowrap; }
+
+//  -- Text Transformation
+.text-lowercase   { .fontTransform(lc); }
+.text-uppercase   { .fontTransform(uc); }
+
+//  -- Quotes
+blockquote {
+  margin: 0 0 0.5em;
+  padding: 0.5em 1em;
+
+  .fontFamily(serif);
+  .fontSize(m);
+  letter-spacing: 0;
+  .lineHeight(loose);
+  color: @color-quote--bq;
+}
+// For when you want to add a background to a blockquote, and ONLY A BLOCKQUOTE.
+.quote-bgBackground {
+  background-color: darken(@color-white,5%);
+  border-left: @color-orange;
+}
+.quote-pullquote {
+  margin: 0.5em 0; 
+  padding: 0.75em 0;
+
+  .fontFamily(sans);
+  .fontStyle(i);
+  .fontWeight(2);
+  .letterSpacing(base);
+  .lineHeight(loosest);
+  .text-center();
+  color: @color-quote--bqPull;
+}
+
+//  -- Links
+a, a:link {
+  color: @color-copy--link;
+  text-decoration: none;
+  transition: all 0.1s ease-in;
+
+  &:hover, &:focus {
+    color: @color-copy--linkHover;
+    text-decoration: underline;
+  }
+  &:focus { outline: none; }
+}
+
+
+//  -- Other Misc Text Styles
+//  Help Copy: For when you want to provide to helpful instructions or direction.
+//  This is mainly found within forms.
+.text-helpCopy {
+  color: @color-copy--help;
+  .fontSize(s);
+  .lineHeight(loose);
+}
+
+
+//  ============================================================================
+//  $ TYPE STYLES: HEADINGS
+//  ============================================================================
+//  -- HEADINGS
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+
+  color: @color-title--section;
+  .fontWeight(7);
+  .letterSpacing(tight);
+  .lineHeight(tighter);
+  // text-rendering: optimizeLegibility; // Fix the character spacing for headings
+
+  small, .small {
+    margin-top: -0.25em;
+
+    color: @color-copy--body;
+    font-size: 75%;
+    font-weight: normal;
+  }
+}
+
+h1, .h1 { 
+  .fontSize(xxl);
+  .letterSpacing(tighter);
+  .lineHeight(looser);
+  .fontWeight(2);
+}
+h2, .h2 { .fontSize(xl); }
+h3, .h3 {
+  .fontSize(l);
+  .letterSpacing(base);
+}
+h4, .h4 { .fontSize(m); }
+h5, .h5 { .fontSize(base); }
+h6, .h6 { .fontSize(xs); }
+
+//  -- HEADINGS STYLES 
+.text-titleHuge {
+  .fontSize(xxxl);
+  .fontWeight(2);
+  .letterSpacing(tightest);
+}
+.text-titlePage     { .h1; }
+.text-titleSection  { .h3; }

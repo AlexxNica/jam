@@ -1,0 +1,86 @@
+//
+//  STACK OVERFLOW CAREERS
+//  Product UI Guide
+//  Designed & managed by the Stack Exchange Creative Team
+//
+//  Created July 28, 2014
+//  Created September 28, 2014
+//
+//  http://careers.stackoverflow.com
+//  http://creative.stackexchange.com
+//
+//
+//  NAV
+//
+//  TABLE OF CONTENTS
+//  • BASE
+//  • NAV BAR
+//  • NAV STACKED
+//
+// ===========================================================================
+//  $ Baseline Styles
+//  Reset margins and paddings for the list
+.nav {
+  ul&, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+}
+
+.nav._column {
+  //  Make our list items to behave more like a box
+  li {
+    position: relative;
+    display: block;
+  }
+
+  //  Make our links display like a box to have a larger hit area.
+  //  Also establish some unique link styles for navs.
+  a {
+    display: block;
+    padding: 10px 20px;
+
+    color: @color-grayMid;
+    .fontSize(sm);
+
+    background-color: fade(@color-blue,0%);
+
+    transition: all 0.05s ease-in;
+
+    &:hover {
+      color: @color-copy--linkHover;
+      text-decoration: none;
+
+      background-color: fade(@color-blue,2%);
+
+      transition: all 0.05s ease-out;
+    }
+  }
+
+  &.-navSmall a {
+    padding: 6px 14px;
+    padding-left: 36px;
+    .fontSize(xs);
+  }
+
+  //  Hide secondary nav until needed
+  .nav { display: none; }
+
+  // Show the secondary nav when needed
+  .is-active .nav { display: block; }
+}
+
+// .nav-navcolumn {
+//   border: 1px solid @border-gray;
+//   border-radius: @corner-radius;
+
+//   .list-item {
+//     a {
+//       display: block;
+//       padding: 0.5em 1em;
+//       border-bottom: 1px solid @border-gray-light;
+//     }
+//     &:last-of-type a { border-bottom: none; }
+//   }
+// }

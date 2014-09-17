@@ -1,0 +1,33 @@
+//
+//  Careers 2.0 by Stack Exchange
+//
+//  MIXINS
+//
+//	Mixins should be used as s
+//
+//  TABLE OF CONTENTS
+//  • TYPE
+//  • CSS3 PROPERTIES
+//
+// ===========================================================================
+//  $ TYPE MIXINES
+// ---------------------------------------------------------------------------
+//  Resize the font-size of an object using a mixin to generate the REM and
+//  px fallback value for IE9 & older browsers.
+.fSize(@size: @font-size) {
+  @remValue: @size / @font-size;
+  font-size: ~"@{size}px";
+  font-size: ~"@{remValue}rem";
+}
+
+
+// ---------------------------------------------------------------------------
+//  $ CSS3 PROPERTIES
+// ===========================================================================
+//  $$ BOX SIZING
+// ---------------------------------------------------------------------------
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+     -moz-box-sizing: @boxmodel;
+          box-sizing: @boxmodel;
+}

@@ -1,0 +1,73 @@
+//
+//  STACK OVERFLOW CAREERS
+//  Product UI Guide
+//  Designed & managed by the Stack Exchange Creative Team
+//
+//  Created May 8, 2014
+//
+//  http://careers.stackoveflow.com
+//  http://creative.stackexchange.com
+//
+//
+//  LISTS
+//
+//  TABLE OF CONTENTS
+//  • DEFINITION LISTS
+//
+// ===========================================================================
+//  $ DEFINITION LISTS 
+// ---------------------------------------------------------------------------
+
+//  -- Definition List Variations
+dl.dlRows {
+  margin-bottom: 1em;
+  margin-top: 2em;
+
+  dt { position: absolute; }
+  dd {
+    display: block;
+
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: @padding-base + 10;
+    padding-top: @padding-base + 4;
+
+    border-top-color: @color-border--grayLight;
+    border-top-style: solid;
+    border-top-width: 1px;
+
+    &:last-of-type {
+      // border-bottom-color: transparent;
+      // padding-bottom: 0;
+    }
+  }
+}
+
+
+//  ---------------------------------------------------------------------------
+//  $ UL LISTS
+//  ---------------------------------------------------------------------------
+//  -- Reset it all
+ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+ul, ol { margin-left: @margin-base; }
+li { padding-bottom: @padding-half; }
+
+//  $$ Inline List
+// ---------------------------------------------------------------------------
+.list-inline, .list-stacked {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  .list-item {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.list-inline  .list-item { display: inline-block; }
+.list-stacked .list-item { display: block; }

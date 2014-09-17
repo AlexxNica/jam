@@ -1,0 +1,122 @@
+//  
+//  Careers 2.0 by Stack Exchange
+//
+//  FORMS
+//
+//  TABLE OF CONTENTS
+//  • INLINE FORMS
+//
+// ===========================================================================
+//  $ BASE
+//  Base button styling. Combine 
+//  
+//  Live Example:   /accounts/[userID]/reporting/
+//  Styleguide:     N/A
+// ---------------------------------------------------------------------------
+select, textarea, input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"] ,.input[inline-edit][contenteditable], .input[inline-edit][contenteditable]:hover, .input[inline-edit][contenteditable]:focus, .uneditable-input {
+  .box-sizing(border-box);
+  display: block;
+  margin: 0;
+  padding: 0.25em;
+  vertical-align: middle;
+
+  border: 1px solid @white;
+  border-radius: @corner-radius-input;
+  box-shadow: none;
+  line-height: 1;
+}
+
+select    { padding: 0; }
+textarea  { height: auto; }
+
+textarea, input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"] ,.input[inline-edit][contenteditable], .input[inline-edit][contenteditable]:hover, .input[inline-edit][contenteditable]:focus, .uneditable-input {
+  background-color: @input-background;
+  border-color: @input-border;
+  transition: all 0.1s ease;
+
+  &:hover { 
+    background-color: @input-background-hover;
+    border-color: @input-border-hover;
+  }
+  &:focus {
+    background-color: @input-background-active;
+    border-color: @input-border-active;
+    outline: 0;
+    outline: thin dotted \9; // IE6-9
+  }
+}
+
+input[type="radio"], input[type="checkbox"] {
+  margin: 0.25em 0 0;
+  margin-top: 1px \9; // IE8-9
+  line-height: normal;
+}
+
+
+// ---------------------------------------------------------------------------
+//  $ CHECKBOXES & RADIO SELECTS
+// ---------------------------------------------------------------------------
+.checkbox, .radio {
+  min-height: 1em;
+  padding-left: 1.25em;
+
+  &.control-inline {
+    display: inline-block;
+    margin-bottom: 0;
+    padding-top: 0.25em;
+    vertical-align: middle;
+  }
+
+  &.control-inline + .control-inline { margin-left: 0.5em; }
+  label { display: inline; }
+}
+
+.radio input[type="radio"], .checkbox input[type="checkbox"] {
+  float: left;
+  margin: 0.25em 0 0 -1.25em;
+}
+
+.controls > .radio:first-child, .controls > .checkbox:first-child { padding-top: 0.25em; }
+
+//  Sometimes we use ul/ol lists for option select lists. When we do, we
+//  need to hide the list-style-type.
+.select-list {
+  padding: 0;
+
+  li {
+    list-style: none;
+    margin-bottom: 0.5em;
+  }
+}
+
+
+// ---------------------------------------------------------------------------
+//  $ INPUT GROUPS
+//  Allow us to group portions of a form together to help create visually
+//  distinct sections.
+// ---------------------------------------------------------------------------
+//  $$ PREPEND & APPEND GROUPS
+//  Attach symbols and text within an input field
+.input-prepend, .input-append {
+  display: inline-block;
+  margin-bottom: 0.5em;
+  vertical-align: middle;
+  white-space: nowrap; // Prevent span & input tags from separating
+  .fSize(0); // 0px -- whitespace collapse hack
+
+  // Reset the whitespace collapse hack
+  input, select, .uneditable-input, .dropdown-menu, .popover { .fSize(@font-size); }
+  [class*="span"] { display: inline-block; }
+}
+
+
+// ---------------------------------------------------------------------------
+// $ HORIZONTAL & INLINE FORMS
+// ---------------------------------------------------------------------------
+.form-horizontal, .form-inline {
+  input, textarea, select, .help-inline, .uneditable-input, .input-prepend, .input-append {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+}

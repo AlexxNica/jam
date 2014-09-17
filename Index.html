@@ -1,0 +1,477 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Careers Product Pattern Guide | Creative @@ Stack Exchange</title>
+        
+        <link rel="stylesheet/less" type="text/css" href="lib/base.less">
+        <link rel="stylesheet/less" type="text/css" href="lib/font-loader.less">
+        
+        <script src="../Content/patternguide/js/bootstrap.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
+        <script>
+            less.watch();
+
+            ('[data-spy="scroll"]').each(function () {
+                var $spy = $(this).scrollspy('refresh')
+            })
+        </script>
+
+        <!--
+            ***Conditional comments for IE.***
+
+            First one includes html5 shiv code directly from Google Code for all versions of IE. The second one includes IE8.js for better backwards compatibility for IE7 and below as well as an ie.css file which will sove IE7 and below CSS bugs. Third one is just a CSS file to fix IE6 bugs.
+            -->
+        <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+        <!--[if lte IE 7]><script src="js/IE8.js" type="text/javascript"></script><![endif]-->
+        <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="all" href="css/ie6.css"/><![endif]-->
+    </head>
+    <body data-spy="scroll" data-target="#nav-sidebar">
+        <header class="header-site">
+            <div class="container">
+                <div class="logo-soc logo-svg"><img src="/Content/patternguide/img/logo-so-careers.svg" alt="Stack Overflow Careers"/></div>
+            </div>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="content col-9">
+                    <section id="section-welcome" class="row">
+                        <h1 class="title-page">Careers Product Pattern Guide</h1>
+                        <p><em>TBD</em> &mdash; Introduction about the Pattern Guide goes here. The guide's introduction should cover:</p>
+                        <ul>
+                            <li>Reasons</li>
+                            <li>Intended Audiences</li>
+                            <li>Scope</li>
+                            <li>Goals</li>
+                            <li>When Items Can Change</li>
+                        </ul>
+                    </section>
+                    <section id="section-typography">
+                        <header>
+                            <h2 class="title-section">Typography</h2>
+                        </header>
+                        <article>
+                            <p class="text-lead">Typography is an important design element for Stack Overflow Careers. Strong typography applied consistently can not only build brand recognition and trust, but it can also help establish reliable communication patterns for our end users. To accomplish this goal, we have selected the font Merriweather Sans ST. This font was designed specifically for on-screen use, allowing for greater control of line-heights and letter-spacing natively within our CSS without resorting to Javascript.</p>
+                        </article>
+                        <article>
+                            <h3>Font Weight</h3>
+                            <p>With the addition of webfonts, font-weight plays a greater role than it once did. Previously a "bold" weight was programmatically determined using an algorithm to fatten a font. Webfonts however are hinted specifically for declared weight values. Stack Overflow Careers uses a font-weight numerical value for the best font representation. These have been abstracted into five different variables:</p>
+                            <div class="highlight-example">
+<pre><code class="less-block"><span class="_co">//  Font Weight Variables</span>
+<span class="_va">@@fontWeight-hairline</span><span class="_cl">:</span>       <span class="_nu">100</span>;
+<span class="_va">@@fontWeight-extraLight</span><span class="_cl">:</span>     <span class="_nu">200</span>;
+<span class="_va">@@fontWeight-light</span><span class="_cl">:</span>          <span class="_nu">300</span>;
+<span class="_va">@@fontWeight-book</span><span class="_cl">:</span>           <span class="_nu">400</span>;
+<span class="_va">@@fontWeight-extraBold</span><span class="_cl">:</span>      <span class="_nu">700</span>;
+</code></pre>
+                            </div>
+                            <p>To better manage use of font-weights within Stack Overflow Careers, raw font-weights should not be entered within CSS. Instead use the following mixin to declare the desired weight:</p>
+                            <div class="highlight-example">
+<pre><code class="less-block"><span class="_co">//  Font Weight Mixin Guard to quickly assign font-weight variables</span>
+<span class="_cl">.fontWeight</span> (@@<span class="_va">w</span>) {
+  & when (@@<span class="_va">w</span> = <span class="_nu">1</span>) { <span class="_pr">font-weight</span><span class="_cl">:</span> <span class="_va">@@fontWeight-hairline</span>; }
+  & when (@@<span class="_va">w</span> = <span class="_nu">2</span>) { <span class="_pr">font-weight</span><span class="_cl">:</span> <span class="_va">@@fontWeight-extraLight</span>; }
+  & when (@@<span class="_va">w</span> = <span class="_nu">3</span>) { <span class="_pr">font-weight</span><span class="_cl">:</span> <span class="_va">@@fontWeight-light</span>; }
+  & when (@@<span class="_va">w</span> = <span class="_nu">4</span>) { <span class="_pr">font-weight</span><span class="_cl">:</span> <span class="_va">@@fontWeight-book</span>; }
+  & when (@@<span class="_va">w</span> = <span class="_nu">7</span>) { <span class="_pr">font-weight</span><span class="_cl">:</span> <span class="_va">@@fontWeight-extraBold</span>; }
+}
+</code></pre>
+</div>
+                            <p>To declare a font-weight, pass your desired weight to the mixin:</p>
+                            <div class="highlight-example">
+<pre><code class="less-block"><span class="_pa">h1</span> { <span class="_cl">.fontWeight</span>(<span class="_nu">1</span>); }</code></pre>
+                            </div>
+                            <p>This will output:</p>
+                            <div class="highlight-example">
+<pre><code class="less-block"><span class="_pa">h1</span> { <span class="_pr">font-weight</span><span class="_cl">:</span> <span class="_nu">100</span>; }</code></pre>
+                            </div>
+                        </article>
+                        <article>
+                            <h3>Line Heights</h3>
+                            <p>Do not declare values with line-heights (i.e. px, em). Keeping them unitless allows the value to be relative to the declared font-size, which provides greater flexibility. Instead of trying to rememeber a rather long number like <em>1.428571429</em> or variations thereof to create tighter or looser line heights, a number of variables have been created.</p>
+                            <div class="highlight-example">
+<pre><code class="less-block"><span class="_co">//  Line Height Variables</span>
+<span class="_va">@@lineHeight-tightest</span><span class="_cl">:</span>       (<span class="_va">@@fontSize-base</span> + <span class="_nu">2</span>) / <span class="_va">@@fontSize-base</span>;
+<span class="_va">@@lineHeight-tighter</span><span class="_cl">:</span>        (<span class="_va">@@fontSize-base</span> + <span class="_nu">4</span>) / <span class="_va">@@fontSize-base</span>;
+<span class="_va">@@lineHeight-tight</span><span class="_cl">:</span>          (<span class="_va">@@fontSize-base</span> + <span class="_nu">6</span>) / <span class="_va">@@fontSize-base</span>;
+<span class="_va">@@lineHeight-base</span><span class="_cl">:</span>           <span class="_va">@@fontSize-base</span> / <span class="_va">@@fontSize-base</span>;
+<span class="_va">@@lineHeight-loose</span><span class="_cl">:</span>          (<span class="_va">@@fontSize-base</span> + <span class="_nu">8</span>) / <span class="_va">@@fontSize-base</span>;
+<span class="_va">@@lineHeight-looser</span><span class="_cl">:</span>         (<span class="_va">@@fontSize-base</span> + <span class="_nu">10</span>) / <span class="_va">@@fontSize-base</span>;
+<span class="_va">@@lineHeight-loosest</span><span class="_cl">:</span>        (<span class="_va">@@fontSize-base</span> / <span class="_va">@@fontSize-base</span>) * <span class="_nu">2</span>;
+</code></pre>
+                            </div>
+                            <p>To make reduce the burden in declaring line-heights, a mixin guard has been created. Now all one has to do is pass along how loose or tight they desire the lines to be and the appropriate line-height variable is inserted. The mixin guard looks like this:</p>
+                            <div class="highlight-example">
+<pre><code class="less-block"><span class="_co">//  Line Height Mixin Guard to quickly assign line-height variables</span>
+<span class="_cl">.lineHeight</span> (@@<span class="_va">lh</span>) {
+  & when (@@<span class="_va">lh</span> = <span class="_va">base</span>)     { <span class="_pr">line-height</span><span class="_cl">:</span> <span class="_va">@@lineHeight-base</span>; }
+  & when (@@<span class="_va">lh</span> = <span class="_va">tight</span>)    { <span class="_pr">line-height</span><span class="_cl">:</span> <span class="_va">@@lineHeight-tight</span>; }
+  & when (@@<span class="_va">lh</span> = <span class="_va">tighter</span>)  { <span class="_pr">line-height</span><span class="_cl">:</span> <span class="_va">@@lineHeight-tighter</span>; }
+  & when (@@<span class="_va">lh</span> = <span class="_va">tightest</span>) { <span class="_pr">line-height</span><span class="_cl">:</span> <span class="_va">@@lineHeight-tightest</span>; }
+  & when (@@<span class="_va">lh</span> = <span class="_va">loose</span>)    { <span class="_pr">line-height</span><span class="_cl">:</span> <span class="_va">@@lineHeight-loose</span>; }
+  & when (@@<span class="_va">lh</span> = <span class="_va">looser</span>)   { <span class="_pr">line-height</span><span class="_cl">:</span> <span class="_va">@@lineHeight-looser</span>; }
+  & when (@@<span class="_va">lh</span> = <span class="_va">loosest</span>)  { <span class="_pr">line-height</span><span class="_cl">:</span> <span class="_va">@@lineHeight-loosest</span>; }
+}
+</code></pre>
+                            </div>
+                            <p>To declare a line-height, pass your desired height into the mixins:</p>
+                            <div class="highlight-example">
+<pre><code class="less-block"><span class="_pa">h1</span> { <span class="_cl">.lineHeight</span>(<span class="_va">loose</span>); }</code></pre>
+                            </div>
+                            <p>This will output:</p>
+                            <div class="highlight-example">
+<pre><code class="less-block"><span class="_pa">h1</span> { <span class="_pr">line-height</span><span class="_cl">:</span> <span class="_nu">1.571428571</span>; }</code></pre>
+                            </div>
+                        </article>
+                        <article>
+                            <h3>Letter Spacing</h3>
+                            <p>This typeface was specifically created for on-screen use. Because of this it has greater letter-spacing capabilities natively within our CSS that previously were only available with Javascript. A set of letter-spacing variables have been created to manage this.</p>
+                            <ul class="cards cardsText list-inline">
+                                <li class="list-item _hair">
+                                    <span class="_example">Aa</span>
+                                    <span class="_label">Hairline</span>
+                                </li>
+                                <li class="list-item _extraLight">
+                                    <span class="_example">AaBbCc</span>
+                                    <span class="_label">Extra Light</span>
+                                </li>
+                                <li class="list-item _light">
+                                    <span class="_example">AaBbCc</span>
+                                    <span class="_label">Light</span>
+                                </li>
+                                <li class="list-item _book">
+                                    <span class="_example">AaBbCc</span>
+                                    <span class="_label">Book</span>
+                                </li>
+                                <li class="list-item _extraBold">
+                                    <span class="_example">AaBbCc</span>
+                                    <span class="_label">Extra Bold</span>
+                                </li>
+                            </ul>
+                            <div class="help-example">
+                                <dl class="code-block row-lines">
+                                    <dt><span class="_property _is-variable">@@fontFamily-sans:</span></dt>
+                                    <dd><span class="_value">"merriweather", "HelveticaNeue-Regular", "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;</span></dd>
+                                    <dt><span class="_property _is-variable">@@fontFamily-serif:</span></dt>
+                                    <dd><span class="_value">Georgia, Times New Roman, Times, serif;</span></dd>
+                                    <dt><span class="_property _is-variable">@@fontFamily-code:</span></dt>
+                                    <dd><span class="_value">Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New;</span></dd>
+                                </dl>
+                            </div>
+                        </article>
+                        <article>
+                            <h1>Headline 1</h1>
+                            <p class="help-subtitle">48px / 54px</p>
+                            <h2>Headline 2</h2>
+                            <p class="help-subtitle">40px / 46px</p>
+                            <h3>Headline 3</h3>
+                            <p class="help-subtitle">32px / 46px</p>
+                            <h4>Headline 4</h4>
+                            <p class="help-subtitle">24px / 34px</p>
+                            <h5>Headline 5</h5>
+                            <p class="help-subtitle">21px / 30px</p>
+                            <h6>Headline 6</h6>
+                            <p class="help-subtitle">18px / 26px</p>
+                        </article>
+                        <article>
+                            <p><a href="http://the12principles.tumblr.com/" target="_blank" class="link-outbound">The 12 basic principles of animation</a> were developed by the ‘old men’ of Walt Disney Studios, amongst them Frank Thomas and Ollie Johnston, during the 1930s. Of course they weren’t old men at the time, but young men who were at the forefront of exciting discoveries that were contributing to the development of a new art form. <a href="#top">These principles</a> came as a result of reflection about their practice and through Disney’s desire to use animation to express character and personality.</p>
+                        </article>
+                        <article>
+                            <p class="text-large text-light-gray">The quick brown fox jumps over the lazy dog.</p>
+                            <p class="help-subtitle">
+                                28px &nbsp;&nbsp;
+                                <span class="code-attribute code-class-name">text-large</span>, <span class="code-attribute code-class-name">text-light-gray</span>
+                            </p>
+                            <p class="text-medium">The quick brown fox jumps over the lazy dog.</p>
+                            <p class="help-subtitle">
+                                21px &nbsp;&nbsp; <span class="code-attribute code-class-name">text-medium</span>
+                            </p>
+                            <p>The quick brown fox jumps over the lazy dog.</p>
+                            <p class="help-subtitle">16px</p>
+                            <p class="text-small">The quick brown fox jumps over the lazy dog.</p>
+                            <p class="help-subtitle">
+                                13px &nbsp;&nbsp; <span class="code-attribute code-class-name">text-small</span>
+                            </p>
+                            <blockquote class="quote-large">It’s approaching your work differently that’ll make you a better designer. Books and talks can be the spark for that.</blockquote>
+                            <p class="help-subtitle"><span class="code-attribute code-class-name">quote-large</span></p>
+                            <blockquote class="quote-small">It’s approaching your work differently that’ll make you a better designer. Books and talks can be the spark for that.</blockquote>
+                            <p class="help-subtitle"><span class="code-attribute code-class-name">quote-small</span></p>
+                        </article>
+                    </section>
+                    <section id="section-buttons">
+                        <header>
+                            <h2 class="title-section">Buttons</h2>
+                        </header>
+                        <article>
+                            <h3>Style Options</h3>
+                            <div class="help-example">
+                                <dl class="code-block row-lines">
+                                    <dt>
+                                        <h6 class="help-subtitle">Primary Button</h6>
+                                        <span class="code-attribute">btnPrimary</span>
+                                    </dt>
+                                    <dd>
+                                        <button class="btn btnPrimary">Search</button>
+                                        <button class="btn btnPrimary" disabled>Search</button>
+                                    </dd>
+                                    <dt>
+                                        <h6 class="help-subtitle">Secondary Action Button</h6>
+                                        <span class="code-attribute">btnSecondary</span>
+                                    </dt>
+                                    <dd>
+                                        <button class="btn btnSecondary">Log In</button>
+                                        <button class="btn btnSecondary" disabled>Log In</button>
+                                    </dd>
+                                    <!--<dt>
+                                            <h6 class="help-subtitle">Primary CTA Button</h6>
+                                            <span class="code-attribute">btn-cta</span>
+                                        </dt>
+                                        <dd><button class="btn btn-cta" disabled>Create A Company Page!</button></dd>-->
+                                    <dt>
+                                        <h6 class="help-subtitle">Confirmation Button</h6>
+                                        <span class="code-attribute">btnConfirm</span>
+                                    </dt>
+                                    <dd>
+                                        <button class="btn btnConfirm">Confirm My Order</button>
+                                        <button class="btn btnConfirm" disabled>Confirm My Order</button>
+                                    </dd>
+                                    <dt>
+                                        <h6 class="help-subtitle">Warning Button</h6>
+                                        <span class="code-attribute">btnWarning</span>
+                                    </dt>
+                                    <dd>
+                                        <button class="btn btnWarning">Delete This Listing</button>
+                                        <button class="btn btnWarning" disabled>Delete This Listing</button>
+                                    </dd>
+                                    <dt>
+                                        <h6 class="help-subtitle">Outlined Button</h6>
+                                        <span class="code-attribute">btnOutlined</span>
+                                    </dt>
+                                    <dd><button class="btn btnOutlined">Take a look at our pricing!</button></dd>
+                                    <dt>
+                                        <h6 class="help-subtitle">Clear Button</h6>
+                                        <span class="code-attribute">btnLink</span>
+                                    </dt>
+                                    <dd><button class="btn btnClear">Read More About Job Listings</button></dd>
+                                </dl>
+                            </div>
+                        </article>
+                        <article>
+                            <h3>Size &amp; Layout Options</h3>
+                            <div class="help-example">
+                                <dl class="code-block row-lines">
+                                    <dt>
+                                        <h6 class="help-subtitle">Extra Large Button</h6>
+                                        <span class="code-attribute">btnSize--xlarge</span>
+                                    </dt>
+                                    <dd>
+                                        <button class="btn btnPrimary btnSize--xlarge">Extra Large Primary Button</button>
+                                        <button class="btn btnSecondary btnSize--xlarge">Extra Large Secondary Button</button>
+                                    </dd>
+                                    <dt>
+                                        <h6 class="help-subtitle">Large Button</h6>
+                                        <span class="code-attribute">btnSize--large</span>
+                                    </dt>
+                                    <dd>
+                                        <button class="btn btnPrimary btnSize--large">Large Primary Button</button>
+                                        <button class="btn btnSecondary btnSize--large">Large Secondary Button</button>
+                                    </dd>
+                                    <dt>
+                                        <h6 class="help-subtitle">Default Button</h6>
+                                        <span class="code-attribute">btn</span>
+                                    </dt>
+                                    <dd>
+                                        <button class="btn btnPrimary">Default Primary Button</button>
+                                        <button class="btn btnSecondary">Default Secondary Button</button>
+                                    </dd>
+                                    <dt>
+                                        <h6 class="help-subtitle">Small Button</h6>
+                                        <span class="code-attribute">btnSize--small</span>
+                                    </dt>
+                                    <dd>
+                                        <button class="btn btnPrimary btnSize--small">Primary Small Button</button>
+                                        <button class="btn btnSecondary btnSize--small">Secondary Small Button</button>
+                                    </dd>
+                                    <dt>
+                                        <h6 class="help-subtitle">Button Block</h6>
+                                        <span class="code-attribute">btnLayout--block</span>
+                                    </dt>
+                                    <dd>
+                                        <button class="btn btnPrimary btnLayout--block">Full Width Primary Button</button>
+                                        <button class="btn btnSecondary btnLayout--block">Full Width Secondary Button</button>
+                                    </dd>
+                                    <!--<dt>
+                                            <h6 class="help-subtitle">Icon Buttons</h6>
+                                        </dt>
+                                        <dd>
+                                            <button class="btn btn-icon btn-success">✔ Publish Now</button>
+                                            <button class="btn btn-icon">✔ Save As Draft</button>
+                                        </dd>-->
+                                </dl>
+                            </div>
+                        </article>
+                    </section>
+                    <section id="section-ads">
+                        <h2 class="title-section">Featured Company Ads</h2>
+                        <article class="pull-left">
+                            <div class="featured-cp-ad featured-cp-ad-tags">
+                                <header class="ad-header">
+                                    <div class="cp-photo" style="background-image: url('http://i.stack.imgur.com/ifURQ.jpg')"></div>
+                                    <div class="cp-logo">
+                                        <a href="#"><img src="http://i.stack.imgur.com/J5SYD.png" alt="West Monroe Partners" /></a>
+                                    </div>
+                                    <div class="cp-info">
+                                        <h1><a href="#">West Monroe Partners</a></h1>
+                                        <p class="text-muted text-small">Chicago, Los&nbsp;Angeles, Minneapolis, New&nbsp;York&nbsp;City, Seattle</p>
+                                    </div>
+                                </header>
+                                <article class="ad-content cp-tags">
+                                    <h2>Skills we're looking for:</h2>
+                                    <ul class="list-tags">
+                                        <li class="list-item"><a href="#" class="tag-item">c#</a></li>
+                                        <li class="list-item"><a href="#" class="tag-item">javascript</a></li>
+                                        <li class="list-item"><a href="#" class="tag-item">node.js</a></li>
+                                        <li class="list-item"><a href="#" class="tag-item">backbone.js</a></li>
+                                        <li class="list-item"><a href="#" class="tag-item">coffeescript</a></li>
+                                        <li class="list-item"><a href="#" class="tag-item">linux</a></li>
+                                        <li class="list-item"><a href="#" class="tag-item">sysadmin</a></li>
+                                    </ul>
+                                </article>
+                                <footer class="ad-footer">
+                                    <a href="#">2 jobs available. <span class="text-white">Apply now!</span></a>
+                                </footer>
+                            </div>
+                        </article>
+                        <article class="pull-left">
+                            <div class="featured-cp-ad featured-cp-ad-benefits">
+                                <header class="ad-header">
+                                    <div class="cp-photo" style="background-image: url('http://i.stack.imgur.com/J1uRe.jpg')"></div>
+                                    <div class="cp-logo">
+                                        <a href="#"><img src="http://i.stack.imgur.com/fSmx1.png" alt="Fog Creek Software" /></a>
+                                    </div>
+                                    <div class="cp-info">
+                                        <h1><a href="#">Fog Creek Software</a></h1>
+                                        <p class="text-muted text-small">New&nbsp;York&nbsp;City, Anywhere</p>
+                                    </div>
+                                </header>
+                                <article class="ad-content cp-benefits">
+                                    <h2>Benefits</h2>
+                                    <ul class="list-benefits">
+                                        <li class="list-item">20+ Vacation Days</li>
+                                        <li class="list-item">100% Covered Health Insurance</li>
+                                        <li class="list-item">Conference Budgets</li>
+                                        <li class="list-item">& <a href="#">much, more more!</a></li>
+                                    </ul>
+                                </article>
+                                <footer class="ad-footer">
+                                    <a href="#">2 jobs available. <span class="text-white">Apply now!</span></a>
+                                </footer>
+                            </div>
+                        </article>
+                        <article class="pull-left">
+                            <div class="featured-cp-ad featured-cp-ad-jobs">
+                                <header class="ad-header">
+                                    <div class="cp-photo" style="background-image: url('http://i.stack.imgur.com/s8HLP.jpg')"></div>
+                                    <div class="cp-logo">
+                                        <a href="#"><img src="http://i.stack.imgur.com/zof5i.png" alt="Zynga" /></a>
+                                    </div>
+                                    <div class="cp-info">
+                                        <h1><a href="#">Zynga</a></h1>
+                                        <p class="text-muted text-small">San&nbsp;Francisco</p>
+                                    </div>
+                                </header>
+                                <article class="ad-content cp-jobs cp-jobs-featured">
+                                    <ul class="list-jobs">
+                                        <li class="list-item">
+                                            <h3><a href="#">Software Engineer</a></h3>
+                                            <p class="text-muted text-small">San Francisco, CA</p>
+                                            <ul class="list-tags">
+                                                <li class="list-item"><a href="#" class="tag-item">c</a></li>
+                                                <li class="list-item"><a href="#" class="tag-item">c++</a></li>
+                                                <li class="list-item"><a href="#" class="tag-item">java</a></li>
+                                                <li class="list-item"><a href="#" class="tag-item">python</a></li>
+                                                <li class="list-item"><a href="#" class="tag-item">ajax</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </article>
+                                <footer class="ad-footer">
+                                    <a href="#"><span class="text-white">Apply now!</span></a>
+                                </footer>
+                            </div>
+                        </article>
+                        <article class="pull-left">
+                            <div class="featured-cp-ad featured-cp-ad-jobs">
+                                <header class="ad-header">
+                                    <div class="cp-photo" style="background-image: url('http://i.stack.imgur.com/Upiiq.jpg')"></div>
+                                    <div class="cp-logo">
+                                        <a href="#"><img src="http://i.stack.imgur.com/DCP6v.png" alt="Amazon (US)" /></a>
+                                    </div>
+                                    <div class="cp-info">
+                                        <h1><a href="#">Amazon (US)</a></h1>
+                                        <p class="text-muted text-small">Cambridge, New&nbsp;York&nbsp;City, Orange&nbsp;County, San&nbsp;Francisco&nbsp;Bay&nbsp;Area, Seattle</p>
+                                    </div>
+                                </header>
+                                <article class="ad-content cp-jobs">
+                                    <ul class="list-jobs">
+                                        <li class="list-item">
+                                            <h3><a href="#">Software Development Engineer</a></h3>
+                                            <p class="text-muted text-small">Detroit, MI</p>
+                                            <ul class="list-tags">
+                                                <li class="list-item"><a href="#" class="tag-item">c</a></li>
+                                                <li class="list-item"><a href="#" class="tag-item">c++</a></li>
+                                                <li class="list-item"><a href="#" class="tag-item">java</a></li>
+                                                <li class="list-item"><a href="#" class="tag-item">python</a></li>
+                                                <li class="list-item"><a href="#" class="tag-item">ajax</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="list-item">
+                                            <h3><a href="#">Software Development Engineer, AmazonFresh</a></h3>
+                                            <p class="text-muted text-small">Irvine, CA</p>
+                                            <ul class="list-tags">
+                                                <li class="list-item"><a href="#" class="tag-item">c</a></li>
+                                                <li class="list-item"><a href="#" class="tag-item">c++</a></li>
+                                                <li class="list-item"><a href="#" class="tag-item">java</a></li>
+                                                <li class="list-item"><a href="#" class="tag-item">python</a></li>
+                                                <li class="list-item"><a href="#" class="tag-item">ajax</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="list-item">
+                                            <h3><a href="#">Senior Software Development Engineer, AmazonFresh</a></h3>
+                                            <p class="text-muted text-small">Irvine, CA</p>
+                                            <ul class="list-tags">
+                                                <li class="list-item"><a href="#" class="tag-item">c</a></li>
+                                                <li class="list-item"><a href="#" class="tag-item">c++</a></li>
+                                                <li class="list-item"><a href="#" class="tag-item">java</a></li>
+                                                <li class="list-item"><a href="#" class="tag-item">python</a></li>
+                                                <li class="list-item"><a href="#" class="tag-item">ajax</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </article>
+                                <footer class="ad-footer">
+                                    <a href="#">142 jobs available. <span class="text-white">Apply now!</span></a>
+                                </footer>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+                <div class="container-nav col-3">
+                    <nav id="nav-sidebar" class="nav nav-navcolumn">
+                        <ul class="list-stacked">
+                            <li class="list-item"><a href="#section-welcome">Overview</a></li>
+                            <li class="list-item"><a href="#section-typography">Typography</a></li>
+                            <li class="list-item"><a href="#section-buttons">Buttons</a></li>
+                            <li class="list-item"><a href="#section-ads">Featured Company Ads</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

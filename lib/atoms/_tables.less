@@ -1,0 +1,200 @@
+//  
+//  Careers 2.0 by Stack Exchange
+//
+//  TABLES
+//
+//  TABLE OF CONTENTS
+//  • BASE
+//  • HEADERS / TITLES
+//  • DATA TABLES
+//  • LEGENDS
+//
+// ===========================================================================
+//  $ DATA TABLES
+//  
+//  Live Example:   /accounts/
+//  Styleguide:     N/A
+// ---------------------------------------------------------------------------
+table {
+  background-color: @white;
+  max-width: 100%;
+  
+}
+th {
+  text-align: left;
+}
+
+
+// ---------------------------------------------------------------------------
+//  $ DATA TABLES
+//  
+//  Live Example:   /accounts/[userID]/reporting/
+//  Styleguide:     N/A
+// ---------------------------------------------------------------------------
+.data-table {
+  border: 0 solid transparent;
+  margin-bottom: 2em;
+
+  // General table styling
+  td, th {
+    border-bottom: 1px solid @white;
+    padding: 0.8em 1em 0.8em 0;
+  }
+  th { white-space: normal; }
+  td { border-top: 1px solid @border-gray;  }
+
+  thead th {
+    background-color: @body-background;
+    color: @gray-medium;
+    font-weight: bold;
+    .fSize(10);  // 10px
+    padding-bottom: 1.3em;
+    padding-top: 1.4em;
+    text-transform: uppercase;
+  }
+
+  tbody tr {
+    &:hover {
+      background-color: #F3FBFF;
+      transition: background-color 0.1s ease;
+    }
+    &:first-child td {
+      border-top-color: #B0B0AC;
+    }
+  }
+
+  // Totals row styling
+  .data-table-totals {
+    // Disable row highlighting for the totals row
+    &:hover {
+      background-color: transparent;
+      .transition(none);
+    }
+    
+    td {
+      border-bottom-color: transparent;
+      .fSize(18);  // 18px
+    }
+  }
+
+  // General content type styling
+  .dt-words {
+    min-width: 10em;
+    padding-left: 1em;
+    padding-right: 0;
+
+    // Small padding adjustment on Candidate Search to get
+    // the label to visually vertically align.
+    &.owner {
+      padding-bottom: 1.8em;
+    }
+  }
+  .dt-numbers {
+    text-align: right;
+  }
+  .dt-other {
+    min-width: 20px;
+    padding-right: 0;
+    width: 20px;
+  }
+
+  .dt-title {
+    min-width: 20em;
+    .text-overflow();
+    > a {
+      float: left;
+    }
+    .badge-block {
+      left: 0.75em;
+    }
+  }
+
+}
+
+// Specific table styles
+.data-table-referrers {
+  thead th {
+    background-color: @white;
+  }
+
+  // Hide extra data rows until desired.
+  tr.data-more {
+    display: none;
+  }
+
+}
+
+// Column Widths
+// We sometimes want the ability to limit the width of a table column
+.l-dt-col-sm {
+   width: 15%; 
+}
+.l-dt-col-med {
+   width: 25%; 
+}
+
+td.empty, .no-referrer {
+  font-style: italic;
+  opacity: 0.75;
+}
+
+
+
+
+// ---------------------------------------------------------------------------
+//  $$ LEGENDS
+//  
+//  Live Example:   /accounts/[userID]/reporting/
+//  Styleguide:     N/A
+// ---------------------------------------------------------------------------
+// Layout: Legend for Chart/Graph
+.l-chart-legend {
+  display: block;
+  position: relative;
+  text-align: center;
+  margin-bottom: 1.25em;
+}
+
+// Used currently for "Show Company Averages" checkbox
+.legend-tools {
+  color: @linkColor;
+  .fSize(11);  // 11px
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+// Universal legend-item settings
+.chart-legend, .data-legend {
+  .legend-item {
+    .fSize(11);  // 11px
+    line-height: @lineHeight;
+    padding: 0 0.75em;
+    position: relative;
+  }
+}
+
+// Adjust the legend-item for use charts
+.chart-legend .legend-item {
+  font-weight: bold;
+
+  // Add a "•" character before the label, but add it in
+  // as a pseudo element so screen readers don't pick it up.
+  &:before {
+    content: "\2022"; // •
+    display: inline-block;
+    font-size: 200%;
+    left: -1px;
+    line-height: 0.5;
+    position: relative;
+    top: 4px;
+  }
+}
+
+// Adjust the legend-item for data tables
+.data-legend .legend-item {
+  float: left;
+  margin-left: 1.25em;
+  padding-left: 1.6em;
+  padding-right: 0;
+}

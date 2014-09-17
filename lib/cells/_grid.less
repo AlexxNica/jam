@@ -1,0 +1,126 @@
+﻿//  STACK OVERFLOW CAREERS
+//  Product UI Style Guide
+//  Designed & managed by the Stack Exchange Design & Careers Team
+//
+//  Created September 12, 2014
+//  Updated September 15, 2014
+//
+//  http://careers.stackoveflow.com
+//
+//  GRID
+//  Based on Bootstrap v3.2.0 (http://getbootstrap.com)
+//  Copyright 2011-2014 Twitter, Inc.
+//  Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+//  
+//  TABLE OF CONTENTS
+//  • VARIABLES
+//  • FOUNDATION
+//  • COLUMN SIZES
+//
+//  ===========================================================================
+//  $ VARIABLES
+//  ---------------------------------------------------------------------------
+@grid-column--total:        12;
+@grid-column--totalWidth:   100%;
+@grid-column--singleWidth:  @grid-column--totalWidth / @grid-column--total;
+@grid-column--padding:      1em;
+@grid-column--margin:       1em;
+
+
+//  ===========================================================================
+//  $ FOUNDATION
+//  ---------------------------------------------------------------------------
+*,
+*:before,
+*:after { .box-sizing(border-box); }
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  //@media (min-width: @mediaQuery-small)   { max-width: 750px; }
+  @media (min-width: @mediaQuery-medium)  { max-width: 970px; }
+  @media (min-width: @mediaQuery-large)   { max-width: 1170px; }
+}
+
+.container, .row {
+  &:before, &:after {
+    display: table;
+    content: " ";
+  }
+
+  &:after { clear: both; }
+}
+
+[class*="col-"] {
+  position: relative;
+  min-height: 1px;
+  width: 100%;
+
+  @media (min-width: @mediaQuery-medium) { float: left; }
+  
+}
+
+.col-12 { clear: left; }
+
+
+//  ===========================================================================
+//  $ COLUMN SIZES
+//  ---------------------------------------------------------------------------
+@media (min-width: @mediaQuery-medium) { 
+  //  -- Column Sizes
+  .col-1   { width: @grid-column--singleWidth * 1; }
+  .col-2   { width: @grid-column--singleWidth * 2; }
+  .col-3   { width: @grid-column--singleWidth * 3; }
+  .col-4   { width: @grid-column--singleWidth * 4; }
+  .col-5   { width: @grid-column--singleWidth * 5; }
+  .col-6   { width: @grid-column--singleWidth * 6; }
+  .col-7   { width: @grid-column--singleWidth * 7; }
+  .col-8   { width: @grid-column--singleWidth * 8; }
+  .col-9   { width: @grid-column--singleWidth * 9; }
+  .col-10  { width: @grid-column--singleWidth * 10; }
+  .col-11  { width: @grid-column--singleWidth * 11; }
+  .col-12  { width: @grid-column--singleWidth * 12; }
+
+  //  -- Push Sizes
+  //  For when you want to push a column across the page
+  .col-push-1   { left: @grid-column--singleWidth * 1; }
+  .col-push-2   { left: @grid-column--singleWidth * 2; }
+  .col-push-3   { left: @grid-column--singleWidth * 3; }
+  .col-push-4   { left: @grid-column--singleWidth * 4; }
+  .col-push-5   { left: @grid-column--singleWidth * 5; }
+  .col-push-6   { left: @grid-column--singleWidth * 6; }
+  .col-push-7   { left: @grid-column--singleWidth * 7; }
+  .col-push-8   { left: @grid-column--singleWidth * 8; }
+  .col-push-9   { left: @grid-column--singleWidth * 9; }
+  .col-push-10  { left: @grid-column--singleWidth * 10; }
+  .col-push-11  { left: @grid-column--singleWidth * 11; }
+
+  //  -- Pull Sizes
+  //  For when you want to pull a column across the page
+  .col-pull-1   { right: @grid-column--singleWidth * 1; }
+  .col-pull-2   { right: @grid-column--singleWidth * 2; }
+  .col-pull-3   { right: @grid-column--singleWidth * 3; }
+  .col-pull-4   { right: @grid-column--singleWidth * 4; }
+  .col-pull-5   { right: @grid-column--singleWidth * 5; }
+  .col-pull-6   { right: @grid-column--singleWidth * 6; }
+  .col-pull-7   { right: @grid-column--singleWidth * 7; }
+  .col-pull-8   { right: @grid-column--singleWidth * 8; }
+  .col-pull-9   { right: @grid-column--singleWidth * 9; }
+  .col-pull-10  { right: @grid-column--singleWidth * 10; }
+  .col-pull-11  { right: @grid-column--singleWidth * 11; }
+
+  //  -- Offset Sizes
+  //  For when you want to pull a column across the page
+  .col-offset-1   { margin-left: @grid-column--singleWidth * 1; }
+  .col-offset-2   { margin-left: @grid-column--singleWidth * 2; }
+  .col-offset-3   { margin-left: @grid-column--singleWidth * 3; }
+  .col-offset-4   { margin-left: @grid-column--singleWidth * 4; }
+  .col-offset-5   { margin-left: @grid-column--singleWidth * 5; }
+  .col-offset-6   { margin-left: @grid-column--singleWidth * 6; }
+  .col-offset-7   { margin-left: @grid-column--singleWidth * 7; }
+  .col-offset-8   { margin-left: @grid-column--singleWidth * 8; }
+  .col-offset-9   { margin-left: @grid-column--singleWidth * 9; }
+  .col-offset-10  { margin-left: @grid-column--singleWidth * 10; }
+  .col-offset-11  { margin-left: @grid-column--singleWidth * 11; }
+}

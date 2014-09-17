@@ -1,0 +1,417 @@
+//
+//  STACK OVERFLOW CAREERS
+//  Product UI Style Guide
+//  Designed & managed by the Stack Exchange Design Team
+//
+//  Created May 2, 2014
+//  Updated September 11, 2014
+//
+//  http://careers.stackoveflow.com
+//
+//  VARIABLES: COLORS
+//  
+//  TABLE OF CONTENTS
+//  • COLOR VARIABLES
+//  • COMPONENT COLOR VARIABLES
+//    • Text
+//    • Forms
+//    • Buttons
+//    • Navigation
+//
+//  ============================================================================
+//  $ COLOR VARIABLES
+//  ============================================================================
+//  Color management is a big undertaking in a product like Stack Overflow
+//  Careers. Various situations call for varying colors. In the past we would
+//  declare all of those values within components, littering our LESS files with
+//  either declared colors or color variable names (i.e., #FFF, rgb(255,255,255),
+//  @gray-light-01, @gray-dark, etc). This approach made managing colors a losing
+//  battle.
+//
+//  Taking a step back, our goal is to declare all colors and color variable
+//  names within one document (THIS DOCUMENT) moving forward, AND ONLY THIS
+//  DOCUMENT. The initial variables listed below are the base color values from
+//  which we derive all of our colors. With this redesign, we have decided to set
+//  all color values within HSL instead of HEX or RGB. The primary reasons for
+//  this are:
+//
+//  1.  The designers mainly control colors and HSL is a much easier color space
+//      to visualize a color within. If you aren't familiar with HSL, it stands
+//      for Hue, Saturation, and Lightness. Hue is set in a circular angle, going
+//      from red (0º) all the way back around to red again (360º). The major stops
+//      along the way are:
+//      0     Red
+//      60    Yellow
+//      120   Green
+//      180   Aqua
+//      240   Blue
+//      300   Purple
+//      360   Red
+//
+//      To generate colors like orange, brown, white, grays, and black, you use the
+//      saturation and lightness to move a color forward and backward. For a more
+//      in-depth understanding of HSL, visit the W3C's Wiki:
+//      http://www.w3.org/wiki/CSS/Properties/color/HSL
+//
+//  2.  LESS' color functions allow for easier manipulation of colors than RGB.
+//      Granted, you could generate the initial the color as a HEX or RGB value and
+//      manipulate it using HSL color functions. This is a bit confusing though to
+//      declare values one way and manipulate them another. Both HSL and RGB are
+//      supported in all browsers except IE6 amd IE8.
+//
+//  To create variables, the following syntax is used:
+//  Syntax:     @[property]-[colorName]: [value];
+//  Examples:   @color-orange: hsl(21,88%,100%);
+//
+//  Wrong Color Variable Examples:
+//  @orangeLight;
+//  @orange-03;
+//
+//
+//  Converting HSB to HSL:
+//  HSB is not the same as HSL. In order to convert HSB colors found within
+//  Photoshop or Sketch, use the following formulas to determine 
+//
+//  hh: h: hue
+//  ss: s: saturation
+//  ll: l: brightness
+//
+//  ll: (0.5*(l * (2 - s))) * 100; 
+//  ss: ((l * s) / (1 - ((2 * ll) - 1))) * 100;
+//
+// .hsvConvert(@h, @s, @l) {
+//   @hh: @h;
+//   @ll: percentage(0.5 * (@l * (2 - @s)));
+//   @ss: percentage((@l * @s) / (1 - ((2 * @ll) - 1)));
+// }
+//
+//  ----------------------------------------------------------------------------
+@color-orange:    hsl(21,100%,56%);
+@color-brown:     hsl(35,70%,36%);
+@color-yellow:    hsl(50,100%,70.5%);
+@color-green:     hsl(160,63%,61%);
+@color-blue:      hsl(205,100%,50%);
+@color-red:       hsl(0,75%,50%);
+
+@color-white:     hsl(0,0%,100%);
+@color-grayLight: spin(desaturate(lighten(@color-grayMid,50%),3%),-6);
+@color-grayMid:   hsl(206,10%,42%);
+@color-grayDark:  spin(darken(@color-grayMid,14%),2);
+@color-black:     spin(saturate(darken(@color-grayMid,26%),11%),2);
+
+
+//  ============================================================================
+//  COMPONENT VARIABLES
+//  
+//  In order for us to see where colors are being applied throughout the product
+//  within one file, you will need to declare a color component variable. The
+//  benefit of this approach is that the impact of changing a color value can be
+//  seen within one file versus searching the entire project.
+//
+//  Variable names should have a strong association between the property,
+//  component, and its use. An example of this syntax would be:
+//
+//  Syntax:     @[property]-[componentName]--[use]: [@variable];
+//  Example:    @color-btnPrimary--bckGradientStart: @color-blue;
+//
+//  Wrong Variable Name Examples:
+//  @orange-nav-menu-item-selected-border;
+//  @orangeLight;
+//  @orange-03;
+//
+//  ============================================================================
+//  $ COMPONENT VARIABLES: TEXT
+//  ============================================================================
+@color-copy--body:        @color-grayDark;
+@color-copy--light:       darken(@color-grayMid,9%);
+@color-copy--help:        desaturate(lighten(@color-grayMid,12%),8%);
+@color-copy--link:        @color-blue;
+@color-copy--linkHover:   spin(@color-copy--link, 2);
+@color-title--page:       saturate(darken(@color-grayDark,12%),16%);
+@color-title--section:    saturate(darken(@color-grayMid,19%),3%);
+@color-quote--bq:         @color-grayMid;
+@color-quote--bqPull:     saturate(darken(@color-grayMid,19%),3%);
+
+
+//  ============================================================================
+//  $ COMPONENT VARIABLES: Backgrounds
+//  ============================================================================
+@color-bck--grayLighter:  spin(desaturate(lighten(@color-grayMid,53%),6%),-26);
+@color-bck--grayLight:    @color-grayLight;
+
+
+//  ============================================================================
+//  $ COMPONENT VARIABLES: Borders
+//  ============================================================================
+@color-border--grayLight: spin(desaturate(lighten(@color-grayMid,46%),5%),14);
+@color-border--gray:      spin(desaturate(lighten(@color-grayMid,41%),8%),4);
+
+
+//  ============================================================================
+//  $ COMPONENT VARIABLES: FORM
+//  ============================================================================
+//  -- Copy
+@color-formCopy--label:                     @color-grayDark;
+@color-formCopy--input:                     @color-grayDark;
+@color-formCopy--inputDisabled:             darken(@color-white,33%);
+@color-formCopy--placeholder:               fade(@color-grayDark,25%);
+//  -- Input: Default
+@color-formInput--bck:                      @color-white;
+@color-formInput--bckFocused:               @color-white;
+@color-formInput--bckDisabled:              darken(@color-white,7%);
+@color-formInput--border:                   spin(desaturate(lighten(@color-grayMid,24%),17%),4);
+@color-formInput--borderFocused:            desaturate(lighten(@color-blue,24%),17%);
+@color-formInput--borderDisabled:           fade(saturate(darken(@color-white,30%),1%),50%);
+@color-formInput--shadowDrop:               fade(@color-white,0%);
+@color-formInput--shadowDropFocused:        fade(@color-blue,75%);
+@color-formInput--shadowDropDisabled:       fade(@color-white,0%);
+@color-formInput--shadowInner:              fade(spin(desaturate(lighten(@color-grayMid,10%),12%),4),80%);
+@color-formInput--shadowInnerFocused:       darken(@color-white,5%);
+@color-formInput--shadowInnerDisabled:      fade(spin(desaturate(lighten(@color-grayMid,10%),12%),4),60%);
+//  -- Input: Confirmation
+@color-formInputConfirm--border:            spin(saturate(lighten(@color-green,12%),32%),-8);
+@color-formInputConfirm--shadowDropFocused: fade(saturate(lighten(@color-green,1%),9%),75%);
+@color-formInputConfirm--shadowInner:       fade(saturate(lighten(@color-green,1%),9%),75%);
+//  -- Input: Warning
+@color-formInputWarning--border:            spin(saturate(@color-yellow,41%),-5);
+@color-formInputWarning--shadowDropFocused: fade(spin(saturate(@color-yellow,37%),-5),75%);
+@color-formInputWarning--shadowInner:       fade(spin(saturate(@color-yellow,37%),-5),75%);
+//  -- Input: Error
+@color-formInputWarning--border:            @color-red;
+@color-formInputWarning--shadowDropFocused: fade(@color-red,85%);
+@color-formInputWarning--shadowInner:       fade(@color-red,85%);
+
+
+//  ============================================================================
+//  $ COMPONENT VARIABLES: BUTTONS
+//  ============================================================================
+//  $$ Primary Button
+//  -- Default State
+@color-btnPrimary--bck:                       @color-blue;
+@color-btnPrimary--bckGradientStart:          @color-blue;
+@color-btnPrimary--bckGradientStop01:         darken(@color-blue,11%);
+@color-btnPrimary--bckGradientEnd:            darken(@color-blue,18%);
+@color-btnPrimary--border:                    desaturate(darken(@color-blue,17%),1%);
+@color-btnPrimary--shadowDrop:                fade(@color-white,0%);
+@color-btnPrimary--shadowInner:               fade(@color-white,50%);
+@color-btnPrimary--text:                      lighten(@color-blue,42%);
+@color-btnPrimary--textShadowDrop:            desaturate(darken(@color-blue,22%),1%);
+//  -- Hover State
+@color-btnPrimaryHover--bck:                  spin(darken(@color-blue,9%),6);
+@color-btnPrimaryHover--bckGradientStart:     @color-blue;
+@color-btnPrimaryHover--bckGradientStop01:    spin(desaturate(darken(@color-blue,13%),1%),6);
+@color-btnPrimaryHover--bckGradientEnd:       spin(darken(@color-blue,15%),5);
+@color-btnPrimaryHover--border:               darken(@color-blue,28%);
+@color-btnPrimaryHover--shadowDrop:           desaturate(lighten(@color-blue,29%),7%);
+@color-btnPrimaryHover--shadowInner:          fade(@color-white,50%);
+@color-btnPrimaryHover--text:                 @color-white;
+@color-btnPrimaryHover--textShadowDrop:       spin(darken(@color-blue,31%),-1);
+//  -- Active State
+@color-btnPrimaryActive--bck:                 spin(darken(@color-blue,6%),6);
+@color-btnPrimaryActive--bckGradientStart:    darken(@color-blue,18%);
+@color-btnPrimaryActive--bckGradientEnd:      darken(@color-blue,45%);
+@color-btnPrimaryActive--border:              darken(@color-blue,26%);
+@color-btnPrimaryActive--shadowDrop:          fade(desaturate(lighten(@color-blue,29%),7%),50%);
+@color-btnPrimaryActive--shadowInner:         fade(spin(@color-blue,-12),50%);
+@color-btnPrimaryActive--text:                lighten(@color-blue,42%);
+@color-btnPrimaryActive--textShadowDrop:      darken(@color-blue,31%);
+//  -- Disabled State
+@color-btnPrimaryDisabled--bck:               fade(@color-blue,25%);
+@color-btnPrimaryDisabled--border:            desaturate(lighten(@color-blue,23%),45%);
+@color-btnPrimaryDisabled--shadowDrop:        fade(@color-white,0%);
+@color-btnPrimaryDisabled--shadowInner:       fade(@color-white,25%);
+@color-btnPrimaryDisabled--text:              spin(lighten(@color-blue,46%),8);
+@color-btnPrimaryDisabled--textShadowDrop:    desaturate(lighten(@color-blue,30%),70%);
+
+//  ----------------------------------------------------------------------------
+//  $$ Outlined Button
+//  -- Default State
+@color-btnOutlined--bck:                      @color-white;
+@color-btnOutlined--border:                   @color-blue;
+@color-btnOutlined--shadowDrop:               fade(@color-white,0%);
+@color-btnOutlined--shadowInner:              fade(@color-white,0%);
+@color-btnOutlined--text:                     @color-blue;
+@color-btnOutlined--textShadowDrop:           fade(@color-white,0%);
+
+//  -- Hover State
+@color-btnOutlinedHover--bck:                 @color-white;
+@color-btnOutlinedHover--border:              spin(darken(@color-blue,9%),6);
+@color-btnOutlinedHover--shadowDrop:          fade(desaturate(lighten(@color-blue,29%),7%),25%);
+@color-btnOutlinedHover--shadowInner:         fade(@color-white,0%);
+@color-btnOutlinedHover--text:                spin(darken(@color-blue,9%),6);
+@color-btnOutlinedHover--textShadowDrop:      fade(@color-white,0%);
+
+//  -- Active State
+@color-btnOutlinedActive--bck:                fade(lighten(@color-blue,46%),50%);
+@color-btnOutlinedActive--border:             spin(darken(@color-blue,6%),6);
+@color-btnOutlinedActive--shadowDrop:         fade(desaturate(lighten(@color-blue,29%),7%),50%);
+@color-btnOutlinedActive--shadowInner:        fade(@color-white,0%);
+@color-btnOutlinedActive--text:               spin(darken(@color-blue,6%),6);
+@color-btnOutlinedActive--textShadowDrop:     fade(@color-white,0%);
+
+//  ----------------------------------------------------------------------------
+//  $$ Clear Button
+//  -- Default State
+@color-btnClear--bck:                         fade(@color-white,0%);
+@color-btnClear--border:                      fade(@color-white,0%);
+@color-btnClear--shadowDrop:                  fade(@color-white,0%);
+@color-btnClear--shadowInner:                 fade(@color-white,0%);
+@color-btnClear--text:                        @color-blue;
+@color-btnClear--textShadowDrop:              fade(@color-white,0%);
+
+//  -- Hover State
+@color-btnClearHover--bck:                    fade(@color-white,0%);
+@color-btnClearHover--border:                 fade(@color-white,0%);
+@color-btnClearHover--shadowDrop:             fade(@color-white,0%);
+@color-btnClearHover--shadowInner:            fade(@color-white,0%);
+@color-btnClearHover--text:                   spin(darken(@color-blue,9%),6);
+@color-btnClearHover--textShadowDrop:         fade(@color-white,0%);
+
+//  -- Active State
+@color-btnClearActive--bck:                   fade(@color-white,0%);
+@color-btnClearActive--border:                fade(@color-white,0%);
+@color-btnClearActive--shadowDrop:            fade(@color-white,0%);
+@color-btnClearActive--shadowInner:           fade(@color-white,0%);
+@color-btnClearActive--text:                  spin(darken(@color-blue,6%),6);
+@color-btnClearActive--textShadowDrop:        fade(@color-white,0%);
+
+//  ----------------------------------------------------------------------------
+//  $$ Secondary Button
+//  -- Default State
+@color-btnSecondary--bck:                     lighten(@color-blue,46%);
+@color-btnSecondary--bckGradientStart:        @color-white;
+@color-btnSecondary--bckGradientEnd:          desaturate(@color-blue,93%);
+@color-btnSecondary--border:                  desaturate(lighten(@color-blue,27%),7%);
+@color-btnSecondary--shadowDrop:              fade(@color-white,0%);
+@color-btnSecondary--shadowInner:             @color-white;
+@color-btnSecondary--shadowInnerBtm:          fade(@color-white,25%);
+@color-btnSecondary--text:                    @color-blue;
+@color-btnSecondary--textShadowDrop:          @color-white;
+//  -- Hover State
+@color-btnSecondaryHover--bck:                desaturate(lighten(@color-blue,42%),5%);
+@color-btnSecondaryHover--bckGradientStart:   spin(desaturate(darken(@color-blue,1%),97%),1);
+@color-btnSecondaryHover--bckGradientEnd:     desaturate(darken(@color-blue,3%),18%);
+@color-btnSecondaryHover--border:             desaturate(lighten(@color-blue,27%),7%);
+@color-btnSecondaryHover--shadowDrop:         desaturate(lighten(@color-blue,27%),7%);
+@color-btnSecondaryHover--shadowInner:        fade(@color-white,50%);
+@color-btnSecondaryHover--shadowInnerBtm:     fade(@color-white,25%);
+@color-btnSecondaryHover--text:               spin(darken(@color-blue,9%),7);
+@color-btnSecondaryHover--textShadowDrop:     @color-white;
+//  -- Active State
+@color-btnSecondaryActive--bck:               spin(lighten(@color-blue,38%),-1);
+@color-btnSecondaryActive--bckGradientStart:  @color-white;
+@color-btnSecondaryActive--bckGradientStop01: desaturate(darken(@color-blue,1%),85%);
+@color-btnSecondaryActive--bckGradientEnd:    desaturate(darken(@color-blue,8%),88%);
+@color-btnSecondaryActive--border:            lighten(@color-blue,18%);
+@color-btnSecondaryActive--shadowDrop:        fade(desaturate(lighten(@color-blue,27%),7%),50%);
+@color-btnSecondaryActive--shadowInner:       fade(@color-white,50%);
+@color-btnSecondaryActive--shadowInnerBtm:    fade(@color-white,0%);
+@color-btnSecondaryActive--text:              spin(darken(@color-blue,6%),7);
+@color-btnSecondaryActive--textShadowDrop:    @color-white;
+//  -- Disabled State
+@color-btnSecondaryDisabled--bck:             spin(desaturate(lighten(@color-blue,43%),57%),-1);
+@color-btnSecondaryDisabled--bckGradientStart:fade(@color-white,50%);
+@color-btnSecondaryDisabled--bckGradientEnd:  desaturate(@color-blue,93%);
+@color-btnSecondaryDisabled--border:          spin(desaturate(lighten(@color-blue,32%),88%),2);
+@color-btnSecondaryDisabled--shadowDrop:      fade(@color-white,0%);
+@color-btnSecondaryDisabled--shadowInner:     fade(@color-white,25%);
+@color-btnSecondaryDisabled--shadowInnerBtm:  fade(@color-white,0%);
+@color-btnSecondaryDisabled--text:            desaturate(lighten(@color-blue,17%),73%);
+@color-btnSecondaryDisabled--textShadowDrop:  fade(@color-white,50%);
+
+//  ----------------------------------------------------------------------------
+//  $$ Confirmation Button
+//  To make it easier to do this calculation, we need to create a new color
+//  variable that standardizes the color angle. This makes the math a little
+//  easier to complete.
+@color-greenBtn: spin(@color-green,-21);
+
+//  -- Default State
+@color-btnConfirm--bck:                       saturate(lighten(@color-greenBtn,5%),13%);
+@color-btnConfirm--bckGradientStart:          desaturate(@color-greenBtn,18%);
+@color-btnConfirm--bckGradientEnd:            darken(@color-greenBtn,20%);
+@color-btnConfirm--border:                    spin(saturate(darken(@color-greenBtn,23%),14%),-6);
+@color-btnConfirm--shadowDrop:                fade(@color-white,0%);
+@color-btnConfirm--shadowInner:               saturate(lighten(@color-greenBtn,21%),37%);
+@color-btnConfirm--text:                      spin(saturate(darken(@color-greenBtn,37%),29%),13);
+@color-btnConfirm--textShadowDrop:            spin(saturate(lighten(@color-greenBtn,27%),37%),2);
+//  -- Hover State
+@color-btnConfirmHover--bck:                  saturate(darken(@color-greenBtn,5%),7%);
+@color-btnConfirmHover--bckGradientStart:     desaturate(@color-greenBtn,39%);
+@color-btnConfirmHover--bckGradientEnd:       desaturate(darken(@color-greenBtn,27%),10%);
+@color-btnConfirmHover--border:               spin(saturate(darken(@color-greenBtn,27%),18%),6);
+@color-btnConfirmHover--shadowDrop:           saturate(lighten(@color-greenBtn,10%),37%);
+@color-btnConfirmHover--shadowInner:          saturate(lighten(@color-greenBtn,12%),36%);
+@color-btnConfirmHover--text:                 spin(saturate(darken(@color-greenBtn,46%),34%),14);
+@color-btnConfirmHover--textShadowDrop:       saturate(lighten(@color-greenBtn,14%),31%);
+//  -- Active State
+@color-btnConfirmActive--bck:                 saturate(darken(@color-greenBtn,17%),11%);
+@color-btnConfirmActive--bckGradientStart:    darken(@color-greenBtn,14%);
+@color-btnConfirmActive--bckGradientEnd:      darken(@color-greenBtn,41%);
+@color-btnConfirmActive--border:              spin(saturate(darken(@color-greenBtn,33%),23%),-6);
+@color-btnConfirmActive--shadowDrop:          fade(saturate(lighten(@color-greenBtn,10%),37%),50%);
+@color-btnConfirmActive--shadowInner:         saturate(darken(@color-greenBtn,15%),37%);
+@color-btnConfirmActive--text:                spin(saturate(darken(@color-greenBtn,52%),37%),12);
+@color-btnConfirmActive--textShadowDrop:      spin(saturate(darken(@color-greenBtn,2%),23%),13);
+//  -- Disabled State
+@color-btnConfirmDisabled--bck:               spin(desaturate(lighten(@color-greenBtn,24%),2%),13);
+@color-btnConfirmDisabled--bckGradientStart:  spin(desaturate(@color-greenBtn,91%),-2);
+@color-btnConfirmDisabled--bckGradientEnd:    desaturate(darken(@color-greenBtn,22%),81%);
+@color-btnConfirmDisabled--border:            spin(desaturate(lighten(@color-greenBtn,17%),33%),-7);
+@color-btnConfirmDisabled--shadowDrop:        fade(@color-white,0%);
+@color-btnConfirmDisabled--shadowInner:       fade(@color-white,0%);
+@color-btnConfirmDisabled--text:              spin(desaturate(darken(@color-greenBtn,2%),42%),14);
+@color-btnConfirmDisabled--textShadowDrop:    spin(saturate(lighten(@color-greenBtn,28%),37%),3);
+
+//  ----------------------------------------------------------------------------
+//  $$ Warning Button
+//  -- Default State
+@color-btnWarning--bck:                       @color-red;
+@color-btnWarning--bckGradientStart:          desaturate(darken(@color-red,2%),32%);
+@color-btnWarning--bckGradientEnd:            desaturate(darken(@color-red,20%),17%);
+@color-btnWarning--border:                    saturate(darken(@color-red,20%),24%);
+@color-btnWarning--shadowDrop:                fade(@color-white,0%);
+@color-btnWarning--shadowInner:               saturate(lighten(@color-red,25%),22%);
+@color-btnWarning--text:                      saturate(lighten(@color-red,48%),25%);
+@color-btnWarning--textShadowDrop:            desaturate(darken(@color-red,24%),1%);
+//  -- Hover State
+@color-btnWarningHover--bck:                  saturate(darken(@color-red,6%),8%);
+@color-btnWarningHover--bckGradientStart:     desaturate(@color-red,48%);
+@color-btnWarningHover--bckGradientEnd:       desaturate(darken(@color-red,25%),2%);
+@color-btnWarningHover--border:               saturate(darken(@color-red,28%),7%);
+@color-btnWarningHover--shadowDrop:           saturate(lighten(@color-red,34%),25%);
+@color-btnWarningHover--shadowInner:          saturate(lighten(@color-red,23%),25%);
+@color-btnWarningHover--text:                 @color-white;
+@color-btnWarningHover--textShadowDrop:       saturate(darken(@color-red,29%),25%);
+//  -- Active State
+@color-btnWarningActive--bck:                 saturate(darken(@color-red,13%),20%);
+@color-btnWarningActive--bckGradientStart:    desaturate(darken(@color-red,4%),7%);
+@color-btnWarningActive--bckGradientEnd:      desaturate(darken(@color-red,43%),15%);
+@color-btnWarningActive--border:              saturate(darken(@color-red,31%),17%);
+@color-btnWarningActive--shadowDrop:          saturate(lighten(@color-red,34%),25%);
+@color-btnWarningActive--shadowInner:         saturate(lighten(@color-red,27%),25%);
+@color-btnWarningActive--text:                @color-white;
+@color-btnWarningActive--textShadowDrop:      saturate(darken(@color-red,25%),20%);
+//  -- Disabled State
+@color-btnWarningDisabled--bck:               saturate(lighten(@color-red,32%),5%);
+@color-btnWarningDisabled--bckGradientStart:  desaturate(darken(@color-red,3%),89%);
+@color-btnWarningDisabled--bckGradientEnd:    desaturate(darken(@color-red,15%),68%);
+@color-btnWarningDisabled--border:            desaturate(lighten(@color-red,22%),19%);
+@color-btnWarningDisabled--shadowDrop:        fade(@color-white,0%);
+@color-btnWarningDisabled--shadowInner:       saturate(lighten(@color-red,40%),25%);
+@color-btnWarningDisabled--text:              @color-white;
+@color-btnWarningDisabled--textShadowDrop:    desaturate(lighten(@color-red,21%),27%);
+
+
+//  ============================================================================
+//  $ COMPONENT VARIABLES: NAVIGATION
+//  ============================================================================
+@color-navEmployer--bck:                      spin(saturate(darken(@color-grayMid,27%),17%),2);
+@color-navEmployer--linkPrimary:              desaturate(darken(@color-grayMid,5%),7%);
+@color-navEmployer--linkPrimaryActive:        darken(@color-white,9%);
+@color-navEmployer--linkPrimaryBck:           @color-navEmployer--bck;
+@color-navEmployer--linkPrimaryBckActive:     spin(saturate(darken(@color-grayMid,15%),1%),2);
+@color-navEmployer--linkSecondary:            spin(desaturate(lighten(@color-grayMid,14%),14%),4);
+
+@color-navEmployerUser--bck:                  spin(saturate(darken(@color-grayMid,39%),31%),2);
+@color-navEmployerUser--link:                 spin(desaturate(darken(@color-grayMid,37%),13%),-6);

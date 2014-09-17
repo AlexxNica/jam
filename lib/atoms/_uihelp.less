@@ -1,0 +1,154 @@
+//
+//  STACK OVERFLOW CAREERS
+//  Product UI Pattern Guide
+//  Designed & managed by the Stack Exchange Creative Team
+//
+//  Created May 2, 2014
+//
+//  http://careers.stackoveflow.com
+//  http://creative.stackexchange.com
+//
+//
+//  UI GUIDE STYLES
+//  Styles used specifically for the Product UI Pattern Guide
+// ---------------------------------------------------------------------------
+//  $ TITLE STYLES
+//
+.help-title { color: @color-orange; }
+
+.help-subtitle {
+  margin-bottom: 0;
+
+  .fontSize(s);
+  .fontWeight(3);
+  color: @color-copy--help;
+}
+
+
+// ---------------------------------------------------------------------------
+//  $ LAYOUTS
+// ---------------------------------------------------------------------------
+.highlight-example {
+  // margin: 1em 0 1.5em;
+  padding: 1em 1.5em;
+
+  color: @color-copy--body;
+  .fontFamily(code);
+  .fontSize(base);
+  .lineHeight(loose);
+
+  background-color: @color-bck--grayLighter;
+  border: 1px solid @color-border--grayLight;
+  border-radius: @cornerRadius-small;
+
+  pre {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+
+    word-break: normal;
+    word-wrap: nowrap;
+    white-space: nowrap;
+
+    border: 0;
+    background-color: transparent;
+  }
+
+  pre code:first-child {
+    display: inline-block;
+    padding-right: 3em;
+  }
+}
+
+pre code {
+  padding: 0;
+
+  color: inherit;
+  font-size: inherit;
+  white-space: pre-wrap;
+
+  background-color: transparent;
+  border-radius: 0;
+}
+
+
+//  $ Type Example
+//  Used to showcase items like type and colors
+.typeExample {
+  ._example {
+    .fontSize(xl);
+    .lineHeight(looser);
+    color: @color-title--section;
+  }
+
+  ._label {
+    display: inline-block;
+    padding: 8px 0;
+
+    color: @color-copy--help;
+    .fontSize(xxs);
+    .fontWeight(4);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+}
+
+
+
+// ---------------------------------------------------------------------------
+//  $ TEXT STYLING
+// ---------------------------------------------------------------------------
+.cardsText {
+  ._hair ._example {
+    .fontSize(xxxl);
+    .fontWeight(1);
+    .lineHeight(tightest);
+  }
+  ._extraLight ._example { .fontWeight(2); }
+  ._light      ._example { .fontWeight(3); }
+  ._book       ._example { .fontWeight(4); }
+  ._extraBold  ._example { .fontWeight(7); }
+}
+
+
+//  ----------------------------------------------------------------------------
+//  $ CODE STYLING
+//  ----------------------------------------------------------------------------
+//  --  COLOR VARIABLES
+@html-tag:      #2f6f9f;
+@html-attr:     #4f9fcf;
+@html-value:    #d44950;
+@html-copy:     #0AB;
+@html-comment:  #999;
+
+@less-class:    #0AB;
+@less-comment:  #999;
+@less-colon:    #99f;
+@less-media:    #069;
+@less-parameter:#2f6f9f;
+@less-variable: #2f6f9f;
+@less-property: #4f9fcf;
+@less-function: #c0f;
+@less-number:   #f60;
+@less-type:     #078;
+
+.html-block {
+  ._ta  { color: @html-tag; }
+  ._at  { color: @html-attr; }
+  ._va  { color: @html-value; }
+  ._cp  { color: @html-copy; }
+  ._co  { color: @html-comment; }
+}
+
+.less-block {
+  ._cl  { color: @less-class; }
+  ._co  { color: @less-comment; }
+  ._cl  { color: @less-colon; }
+  ._me  { color: @less-media; }
+  ._pa  { color: @less-parameter; }
+  ._va  { color: @less-variable; }
+  ._pr  { color: @less-property; }
+  ._fu  { color: @less-function; }
+  ._nu  { color: @less-number; }
+  ._ty  { color: @less-type; }
+}

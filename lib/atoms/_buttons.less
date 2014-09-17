@@ -1,0 +1,312 @@
+//
+//  STACK OVERFLOW CAREERS
+//  Product UI Guide
+//  Designed & managed by the Stack Exchange Design Team
+//
+//  Created May 2, 2014
+//  Updated September 12, 2014
+//
+//  http://careers.stackoverflow.com
+//
+//  BUTTONS
+//
+//  TABLE OF CONTENTS
+//  • BTN BASE
+//  • BTN LAYOUTS
+//  • BTN STYLES
+//
+// ===========================================================================
+//  $ BTN BASE
+//  Base button styling. Combine this with a button style class below to get
+//  the desired button style
+// ---------------------------------------------------------------------------
+.btn {
+  .box-sizing(border-box);
+  display: inline-block;
+  position: relative;
+  padding: 0.5em 1em;
+
+  border-radius: @corner-radius-small;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.4);
+
+  .fontWeight(4);
+  .lineHeight(base);
+  .text-center();
+  text-decoration: none;
+
+  cursor: pointer;
+  outline: none;
+  transition: all 0.1s ease;
+  vertical-align: middle;
+
+  // :hover / :focus state
+  &:hover {
+    text-decoration: none;
+    transition: all 0.1s ease;
+  }
+  &:focus { outline: none; }
+
+  // :active state
+  &:active, &.active {
+    top: 1px; // adjusts the button down a px to make it look like it's being pressed. Nifty!
+  }
+}
+
+
+// ---------------------------------------------------------------------------
+//  $ BTN STYLES / TYPES
+//  Add the desired style class name to .btn. For example, to use the primary
+//  button style, use:
+//
+//  <button class="btn btnPrimary">[Label]</button>
+//
+//  You can also disable a button by either applying the disabled attribute or
+//  with a state class of ".is-disabled":
+//
+//  Attribute:    <button class="btn btnPrimary" disabled>[Label]</button>
+//  State Class:  <button class="btn btnPrimary is-disabled">[Label]</button>
+//  
+// ---------------------------------------------------------------------------
+//  -- Primary Button
+//  This is the default style. Most of the buttons found Stack Overflow Careers
+//  will look like this.
+.btnPrimary {
+  color: @color-btnPrimary--text;
+  text-shadow: 0 1px 0 @color-btnPrimary--textShadowDrop;
+
+  background-color: @color-btnPrimary--bck;
+  border-color: @color-btnPrimary--border;
+  box-shadow: inset 0 1px 0 @color-btnPrimary--shadowInner, 0 0 0 @color-btnPrimary--shadowDrop;
+  &:hover {
+    color: @color-btnPrimaryHover--text;
+    text-shadow: 0 1px 0 @color-btnPrimaryHover--textShadowDrop;
+
+    background-color: @color-btnPrimaryHover--bck;
+    border-color: @color-btnPrimaryHover--border;
+    box-shadow: inset 0 1px 0 @color-btnPrimaryHover--shadowInner, 0 0 10px @color-btnPrimaryHover--shadowDrop;
+  }
+  &:active {
+    color: @color-btnPrimaryActive--text;
+    text-shadow: 0 1px 0 @color-btnPrimaryActive--textShadowDrop;
+
+    background-color: @color-btnPrimaryActive--bck;
+    border-color: @color-btnPrimaryActive--border;
+    box-shadow: inset 0 1px 0 @color-btnPrimaryActive--shadowInner, 0 0 10px @color-btnPrimaryActive--shadowDrop;
+  }
+  &[disabled],&.is-disabled{
+    color: @color-btnPrimaryDisabled--text;
+    text-shadow: 0 1px 0 @color-btnPrimaryDisabled--textShadowDrop;
+
+    background-color: @color-btnPrimaryDisabled--bck;
+    border-color: @color-btnPrimaryDisabled--border;
+    box-shadow: inset 0 0 0 @color-btnPrimaryDisabled--shadowInner, 0 0 0 @color-btnPrimaryDisabled--shadowDrop;
+  }
+}
+//  -- Secondary Button
+//  Sometimes buttons are paired together and we want to diminish the importance
+//  of one in order to elevate the focus on the other. In that instance, use
+//  this class.
+.btnSecondary {
+  color: @color-btnSecondary--text;
+  text-shadow: 0 1px 0 @color-btnSecondary--textShadowDrop;
+
+  background-color: @color-btnSecondary--bck;
+  border-color: @color-btnSecondary--border;
+  box-shadow: inset 0 1px 0 @color-btnSecondary--shadowInner, 0 0 0 @color-btnSecondary--shadowDrop;
+  &:hover {
+    color: @color-btnSecondaryHover--text;
+    text-shadow: 0 1px 0 @color-btnSecondaryHover--textShadowDrop;
+
+    background-color: @color-btnSecondaryHover--bck;
+    border-color: @color-btnSecondaryHover--border;
+    box-shadow: inset 0 1px 0 @color-btnSecondaryHover--shadowInner, 0 0 10px @color-btnSecondaryHover--shadowDrop;
+  }
+  &:active {
+    color: @color-btnSecondaryActive--text;
+    text-shadow: 0 1px 0 @color-btnSecondaryActive--textShadowDrop;
+
+    background-color: @color-btnSecondaryActive--bck;
+    border-color: @color-btnSecondaryActive--border;
+    box-shadow: inset 0 1px 0 @color-btnSecondaryActive--shadowInner, 0 0 10px @color-btnSecondaryActive--shadowDrop;
+  }
+  &[disabled],&.is-disabled{
+    color: @color-btnSecondaryDisabled--text;
+    text-shadow: 0 1px 0 @color-btnSecondaryDisabled--textShadowDrop;
+
+    background-color: @color-btnSecondaryDisabled--bck;
+    border-color: @color-btnSecondaryDisabled--border;
+    box-shadow: inset 0 0 0 @color-btnSecondaryDisabled--shadowInner, 0 0 0 @color-btnSecondaryDisabled--shadowDrop;
+  }
+}
+//  -- Confirmation Button
+.btnConfirm {
+  color: @color-btnConfirm--text;
+  text-shadow: 0 1px 0 @color-btnConfirm--textShadowDrop;
+
+  background-color: @color-btnConfirm--bck;
+  border-color: @color-btnConfirm--border;
+  box-shadow: inset 0 1px 0 @color-btnConfirm--shadowInner, 0 0 0 @color-btnConfirm--shadowDrop;
+  &:hover {
+    color: @color-btnConfirmHover--text;
+    text-shadow: 0 1px 0 @color-btnConfirmHover--textShadowDrop;
+
+    background-color: @color-btnConfirmHover--bck;
+    border-color: @color-btnConfirmHover--border;
+    box-shadow: inset 0 1px 0 @color-btnConfirmHover--shadowInner, 0 0 10px @color-btnConfirmHover--shadowDrop;
+  }
+  &:active {
+    color: @color-btnConfirmActive--text;
+    text-shadow: 0 1px 0 @color-btnConfirmActive--textShadowDrop;
+
+    background-color: @color-btnConfirmActive--bck;
+    border-color: @color-btnConfirmActive--border;
+    box-shadow: inset 0 1px 0 @color-btnConfirmActive--shadowInner, 0 0 10px @color-btnConfirmActive--shadowDrop;
+  }
+  &[disabled],&.is-disabled{
+    color: @color-btnConfirmDisabled--text;
+    text-shadow: 0 1px 0 @color-btnConfirmDisabled--textShadowDrop;
+
+    background-color: @color-btnConfirmDisabled--bck;
+    border-color: @color-btnConfirmDisabled--border;
+    box-shadow: inset 0 0 0 @color-btnConfirmDisabled--shadowInner, 0 0 0 @color-btnConfirmDisabled--shadowDrop;
+  }
+}
+//  -- Confirmation Button
+.btnWarning {
+  color: @color-btnWarning--text;
+  text-shadow: 0 1px 0 @color-btnWarning--textShadowDrop;
+
+  background-color: @color-btnWarning--bck;
+  border-color: @color-btnWarning--border;
+  box-shadow: inset 0 1px 0 @color-btnWarning--shadowInner, 0 0 0 @color-btnWarning--shadowDrop;
+  &:hover {
+    color: @color-btnWarningHover--text;
+    text-shadow: 0 1px 0 @color-btnWarningHover--textShadowDrop;
+
+    background-color: @color-btnWarningHover--bck;
+    border-color: @color-btnWarningHover--border;
+    box-shadow: inset 0 1px 0 @color-btnWarningHover--shadowInner, 0 0 10px @color-btnWarningHover--shadowDrop;
+  }
+  &:active {
+    color: @color-btnWarningActive--text;
+    text-shadow: 0 1px 0 @color-btnWarningActive--textShadowDrop;
+
+    background-color: @color-btnWarningActive--bck;
+    border-color: @color-btnWarningActive--border;
+    box-shadow: inset 0 1px 0 @color-btnWarningActive--shadowInner, 0 0 10px @color-btnWarningActive--shadowDrop;
+  }
+  &[disabled],&.is-disabled{
+    color: @color-btnWarningDisabled--text;
+    text-shadow: 0 1px 0 @color-btnWarningDisabled--textShadowDrop;
+
+    background-color: @color-btnWarningDisabled--bck;
+    border-color: @color-btnWarningDisabled--border;
+    box-shadow: inset 0 0 0 @color-btnWarningDisabled--shadowInner, 0 0 0 @color-btnWarningDisabled--shadowDrop;
+  }
+}
+//  -- Outlined Button
+.btnOutlined {
+  color: @color-btnOutlined--text;
+  text-shadow: 0 1px 0 @color-btnOutlined--textShadowDrop;
+
+  background-color: @color-btnOutlined--bck;
+  border-color: @color-btnOutlined--border;
+  box-shadow: inset 0 1px 0 @color-btnOutlined--shadowInner, 0 0 0 @color-btnOutlined--shadowDrop;
+  &:hover {
+    color: @color-btnOutlinedHover--text;
+    text-shadow: 0 1px 0 @color-btnOutlinedHover--textShadowDrop;
+
+    background-color: @color-btnOutlinedHover--bck;
+    border-color: @color-btnOutlinedHover--border;
+    box-shadow: inset 0 1px 0 @color-btnOutlinedHover--shadowInner, 0 0 10px @color-btnOutlinedHover--shadowDrop;
+  }
+  &:active {
+    color: @color-btnOutlinedActive--text;
+    text-shadow: 0 1px 0 @color-btnOutlinedActive--textShadowDrop;
+
+    background-color: @color-btnOutlinedActive--bck;
+    border-color: @color-btnOutlinedActive--border;
+    box-shadow: inset 0 1px 0 @color-btnOutlinedActive--shadowInner, 0 0 10px @color-btnOutlinedActive--shadowDrop;
+  }
+}
+//  -- Clear Button
+.btnClear {
+  color: @color-btnClear--text;
+  text-shadow: 0 1px 0 @color-btnClear--textShadowDrop;
+
+  background-color: @color-btnClear--bck;
+  border-color: @color-btnClear--border;
+  box-shadow: inset 0 1px 0 @color-btnClear--shadowInner, 0 0 0 @color-btnClear--shadowDrop;
+  &:hover {
+    color: @color-btnClearHover--text;
+    text-shadow: 0 1px 0 @color-btnClearHover--textShadowDrop;
+
+    background-color: @color-btnClearHover--bck;
+    border-color: @color-btnClearHover--border;
+    box-shadow: inset 0 1px 0 @color-btnClearHover--shadowInner, 0 0 10px @color-btnClearHover--shadowDrop;
+  }
+  &:active {
+    color: @color-btnClearActive--text;
+    text-shadow: 0 1px 0 @color-btnClearActive--textShadowDrop;
+
+    background-color: @color-btnClearActive--bck;
+    border-color: @color-btnClearActive--border;
+    box-shadow: inset 0 1px 0 @color-btnClearActive--shadowInner, 0 0 10px @color-btnClearActive--shadowDrop;
+  }
+}
+//  -- Disabled Button
+.btn[disabled], .btn.is-disabled { cursor: not-allowed !important; }
+
+
+//  $$ CTA Primary
+//  Call-to-action button
+.btn-cta {
+  background-color: @btn-orange-background;
+  border-color: @btn-orange-border;
+  &:hover {
+    background-color: @btn-orange-background-hover;
+    border-color: @btn-orange-border-hover;
+  }
+}
+
+//  $$ CTA Secondary
+//  An actionable buttons that we don't want to draw a lot of attention to
+.btn-cta-secondary {
+  background-color: @btn-orange-inverted-background;
+  border-color: @btn-orange-inverted-border;
+  color: @btn-orange-inverted-text;
+  &:hover, &:focus {
+    background-color: @btn-orange-inverted-background-hover;
+    border-color: @btn-orange-inverted-border-hover;
+    color: @btn-orange-inverted-text-hover;
+  }
+}
+
+
+// ---------------------------------------------------------------------------
+//  $ BTN LAYOUTS
+//  To keep our classes to a minimum and as dry as possible, we purposefully
+//  keep styling regulated to button style classes. If you need to change
+//  the size or behavior of the default button, then add one of the classes
+//  below.
+//  
+// ---------------------------------------------------------------------------
+//  -- LAYOUTS
+//  Button Block: For when you want the button to go full-width
+.btnLayout--block {
+  display: block;
+  margin-bottom: 0.5em;
+  width: 100%;
+}
+.btnLayout--left  { float: left; }
+.btnLayout--right { float: right; }
+
+//  -- Sizes
+.btnSize--small { .fontSize(s); }
+.btnSize--large {
+  padding: 0.5em 2em;
+  .fontSize(l);
+}
+.btnSize--xlarge { .fontSize(xl); }

@@ -1,0 +1,85 @@
+//
+//  Careers 2.0 by Stack Exchange
+//
+//  MODULES: CALLOUTS
+//  Callouts are inline modals for lack of a better term. They don't overlay
+//  content like a modal. They're not really an alert either. Callouts
+//  are used to set off important information a user needs to be aware of
+//  and/or act upon.
+//
+//  TABLE OF CONTENTS
+//  • BASE STYLES
+//  • MESSAGING CALLOUT
+//
+// ===========================================================================
+//  $ BASELINE
+// ---------------------------------------------------------------------------
+.callout {
+  background-color: @bckgnd-grayLight;
+  border-width: 0;
+  border-top: 1px solid @brdr-grayLight;
+  .box-sizing(border-box);
+  margin-bottom: 2.5em;
+  padding: 1.75em 2em 2em;
+  
+  h5 {
+    line-height: @lineHeight - 0.1;
+    margin-bottom: 1em;
+    padding-right: 1em;
+
+    small {
+      display: block;
+    }
+  }
+
+  div {
+    margin-bottom: 0.5em; 
+  }
+
+  .btn {
+    .fSize(14); // 14px
+  }
+}
+
+
+// MESSAGING CALLOUT
+.callout-form {
+  .fSize(14);  // 14px;
+  ul, ol, ul ol, ul ul, ol ul, ol ol  {
+    margin-bottom: 1em;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  li {
+    list-style: none;
+    padding-bottom: 0.25em;
+    padding-left: 1.5em;
+  }
+}
+
+
+// ---------------------------------------------------------------------------
+//  $ CALLOUT STYLES
+// ---------------------------------------------------------------------------
+.callout-notice {
+  border-top: none;
+  background-color: @bckgnd-yellow;
+  color: @grayDark;
+
+  dl.highlight {
+    background-color: #F8F7DE;
+    padding: 1em;
+    position: relative;
+
+    dt {
+      font-weight: bold;
+      position: absolute;
+      right: 1.5em;
+      text-align: right;
+    }
+    dd {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
