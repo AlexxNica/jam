@@ -43,7 +43,7 @@
     list-style-type: none;
   }
 
-  li, a { position: relative; }
+  .-item, a { position: relative; }
 
   a, a:link {
     color: @nav-linkColor;
@@ -62,7 +62,7 @@
     }
   }
 
-  &.-nested a { .fontSize(xs); }
+  &._nested a { .fontSize(xs); }
 
   //  Hide nested nav until needed
   .nav { display: none; }
@@ -78,18 +78,18 @@
 
   // -- Sidebar / Column Layout Style
   &._column {
-    li, a { display: block; }
+    .-item, a { display: block; }
 
     a { padding: 5px 20px; }
 
-    &.-nested a {
+    &._nested a {
       padding-right: 14px;
       padding-left: 36px;
     }
   }
   //  -- Single Row / Top Nav Layout Style
   &._row {
-    li, a { display: inline-block; }
+    .-item, a { display: inline-block; }
 
     a {
       padding: 10px 20px;
