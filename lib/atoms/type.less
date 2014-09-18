@@ -56,7 +56,7 @@
 //  -- Font Family
 @fontFamily-sans:           "merriweather", "HelveticaNeue-Regular", "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 @fontFamily-serif:          Georgia, Times New Roman, Times, serif;
-@fontFamily-code:           Menlo, Monaco, Consolas, 'Courier New', monospace;
+@fontFamily-code:           Menlo, Monaco, Consolas, "Courier New", monospace;
 
 //  -- Colors
 @callout-infoBck:           spin(lighten(@color-yellow,25%),-6);
@@ -92,12 +92,12 @@
 //            }
 //
 //  ----------------------------------------------------------------------------
-.fontFamily (@f) {
-  & when (@f = sans) { font-family: @fontFamily-sans; }
-  & when (@f = serif) { font-family: @fontFamily-serif; }
-  & when (@f = code) { font-family: @fontFamily-code; }
+.fontFamily (@ff) {
+  & when (@ff = sans) { font-family: @fontFamily-sans; }
+  & when (@ff = serif){ font-family: @fontFamily-serif; }
+  & when (@ff = code) { font-family: @fontFamily-code; }
 }
-.fontSize(@s) {
+.fontSize (@s) {
   & when (@s = base)  { .fontRem(@fontSize-base); }
   & when (@s = xxs)   { .fontRem(@fontSize-xxsmall); }
   & when (@s = xs)    { .fontRem(@fontSize-xsmall); }
@@ -161,18 +161,6 @@
 //  ============================================================================
 //  $ TYPE STYLES: BASELINE
 //  ============================================================================
-html, body {
-  // -webkit-font-smoothing: antialiased; // May remove this
-
-  color: @color-copy--body;
-  .fontFamily(sans);
-  font-size: ~"@{fontSize-base}px";
-  .fontWeight(4);
-  .letterSpacing(base);
-  .lineHeight(base);
-  .text-left();
-}
-
 //  -- Paragraph Styles
 p {
   margin-bottom: @margin-base / 2;

@@ -1,49 +1,60 @@
 ﻿//
 //  STACK OVERFLOW CAREERS
 //  Product UI Guide
-//  Designed & managed by the Stack Exchange Creative Team
 //
-//  Created May 2, 2014
+//  Created September 17, 2014
+//  Last Updated September 28, 2014
 //
 //  http://careers.stackoverflow.com/
 //  http://careers.stackoverflow.com/UIKit
 //
 //
-// ---------------------------------------------------------------------------
-//  $ IMPORT FILES
-//  Import files specific to this site
-// ---------------------------------------------------------------------------
-@import "../lib/base.less";
+//  TABLE OF CONTENTS
+//
+//  $ 1  Imports
+//  $ 2  Variables
+//  $ 3  Layout
+//  $ 4  Type
+//  $ 5  Logo
+//
+//  ============================================================================
+//  $1 IMPORT FILES
+//  ----------------------------------------------------------------------------
+@import "../lib/base";   //  Base UI Kit Styles
+@import "code";               // Code Syntax highlighting
+@import "nav";                // UI Library Navigation Styles
 
-// ---------------------------------------------------------------------------
-//  $ BASIC STYLES
-// ---------------------------------------------------------------------------
+
+//  ============================================================================
+//  $2 VARIABLES
+//  ----------------------------------------------------------------------------
+@body-background:             @color-white;
+
+
+//  ============================================================================
+//  $3 LAYOUTS
+//  ----------------------------------------------------------------------------
+//  -- Universal
 html, body {
   .box-sizing(border-box);
   position: relative;
   min-height: 100%;
-  width: 100;
+  width: 100%;
+
+  color: @color-copy--body;
+  .fontFamily(sans);
+  font-size: ~"@{fontSize-base}px";
+  .fontWeight(4);
+  .letterSpacing(base);
+  .lineHeight(base);
+  .text-left();
 }
 body {
   padding: 3em;
-  background: @background-body;
-  border: 1em solid @tan-light;
+  background: @body-background;
 }
 
-
-//  ---------------------------------------------------------------------------
-//  $ TYPE
-//  ---------------------------------------------------------------------------
-//  -- Make <p>'s slightly larger for esaier reading.
-p, ul, li {
-  .fontRem(15);
-  .lineHeight(looser);
-}
-
-
-// ---------------------------------------------------------------------------
-//  $ LAYOUTS
-// ---------------------------------------------------------------------------
+//  -- Wrapper
 .header-site, .container-page {
   .box-sizing(border-box);
   margin: 0 auto;
@@ -53,10 +64,6 @@ p, ul, li {
 
 .page-header { padding-bottom: 5em; }
 
-.nav-affixed {
-  position: fixed;
-  top: 2.5em;
-}
 
 section, article { padding-bottom: @padding-double * 2; }
 
@@ -82,41 +89,41 @@ article {
   }
 }
 
-//  -- Navigation
-.nav-UIdocs { padding-left: 2em; }
 
-#hero {
-    padding: 150px auto;
-    text-align: center;
+
+//  ============================================================================
+//  $4 TYPE
+//  ----------------------------------------------------------------------------
+//  -- Make <p>'s slightly larger for esaier reading.
+p, ul, li {
+  .fontRem(15);
+  .lineHeight(looser);
 }
 
-nav#topnav {
-    div.col-2 {
-        text-align: center;
-        padding: 20px;
-    }
-}
+//  $ Type Example
+//  Used to showcase items like type and colors
+.typeExample {
+  ._example {
+    .fontSize(xl);
+    .lineHeight(looser);
+    color: @color-title--section;
+  }
 
-#section-ads {
-  overflow: hidden;
-  
-  > article {
-    margin-left: 60px;
-    width: 300px;
+  ._label {
+    display: inline-block;
+    padding: 8px 0;
 
-    &:first-of-type { margin-left: 0; }
+    color: @color-copy--help;
+    .fontSize(xxs);
+    .fontWeight(4);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
   }
 }
 
 
 
-
-//  $ Utility Classes
-//  Until I create a utilities.less file
-.pull-left { float: left; }
-
-
-// ---------------------------------------------------------------------------
-//  $ LOGOS
-// ---------------------------------------------------------------------------
+//  ============================================================================
+//  $5 LOGO
+//  ----------------------------------------------------------------------------
 .logo-soc { width: 20em; }
