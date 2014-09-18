@@ -13,74 +13,104 @@
 //  NAV
 //
 //  TABLE OF CONTENTS
-//  • BASE
-//  • NAV BAR
-//  • NAV STACKED
+//  • VARIABLES
+//  • BASELINE
+//  • GENERAL LAYOUT PATTERNS
+//  • SPECIFIC LAYOUT PATTERNS
 //
-// ===========================================================================
-//  $ Baseline Styles
+//  ============================================================================
+//  $ VARIABLES
+//  ============================================================================
+@nav-linkColor:                 spin(desaturate(lighten(@color-grayMid,9%),7%),8);
+@nav-linkColor--hover:          @color-orange;
+@nav-linkColor--topNav:         spin(darken(@color-orange,6%),13);
+@nav-linkColor--topNavHover:    @color-orange;
+@nav-linkBck:                   fade(@color-white,0%);
+@nav-linkBck--hover:            desaturate(lighten(@color-grayMid,53%),6%);
+@nav-linkBck--topNav:           @nav-linkBck;
+@nav-linkBck--topNavHover:      spin(lighten(@color-orange,41%),7);
+
+//  ----------------------------------------------------------------------------
+//  $ BASELINE
 //  Reset margins and paddings for the list
+//  ----------------------------------------------------------------------------
 .nav {
   ul&, li {
     margin: 0;
     padding: 0;
     list-style-type: none;
   }
-}
 
-.nav._column {
-  //  Make our list items to behave more like a box
-  li {
-    position: relative;
-    display: block;
-  }
+  li, a { position: relative; }
 
-  //  Make our links display like a box to have a larger hit area.
-  //  Also establish some unique link styles for navs.
-  a {
-    display: block;
-    padding: 10px 20px;
+  a, a:link {
+    color: @nav-linkColor;
+    .fontSize(s);
+    text-decoration: none;
 
-    color: @color-grayMid;
-    .fontSize(sm);
-
-    background-color: fade(@color-blue,0%);
-
+    background-color: @nav-linkBck;
     transition: all 0.05s ease-in;
 
     &:hover {
-      color: @color-copy--linkHover;
+      color: @nav-linkColor--hover;
       text-decoration: none;
 
-      background-color: fade(@color-blue,2%);
-
+      background-color: @nav-linkBck--hover;
       transition: all 0.05s ease-out;
     }
   }
 
-  &.-navSmall a {
-    padding: 6px 14px;
-    padding-left: 36px;
-    .fontSize(xs);
-  }
+  &.-nested a { .fontSize(xs); }
 
-  //  Hide secondary nav until needed
+  //  Hide nested nav until needed
   .nav { display: none; }
 
   // Show the secondary nav when needed
-  .is-active .nav { display: block; }
+  .is-open .nav { display: block; }
 }
 
-// .nav-navcolumn {
-//   border: 1px solid @border-gray;
-//   border-radius: @corner-radius;
+//  ----------------------------------------------------------------------------
+//  $ GENERAL LAYOUT PATTERNS
+//  ----------------------------------------------------------------------------
+.nav {
 
-//   .list-item {
-//     a {
-//       display: block;
-//       padding: 0.5em 1em;
-//       border-bottom: 1px solid @border-gray-light;
-//     }
-//     &:last-of-type a { border-bottom: none; }
-//   }
-// }
+  // -- Sidebar / Column Layout Style
+  &._column {
+    li, a { display: block; }
+
+    a { padding: 5px 20px; }
+
+    &.-nested a {
+      padding-right: 14px;
+      padding-left: 36px;
+    }
+  }
+  //  -- Single Row / Top Nav Layout Style
+  &._row {
+    li, a { display: inline-block; }
+
+    a {
+      padding: 10px 20px;
+    }
+  }
+}
+
+//  ----------------------------------------------------------------------------
+//  $ SPECIFIC LAYOUT PATTERNS
+//  ----------------------------------------------------------------------------
+.nav-topNav { 
+  margin-left: 2em;
+  margin-top: 11px;
+
+  .nav._row a {
+    color: @nav-linkColor--topNav;
+    .fontSize(base);
+    .fontWeight(7);
+    background-color: @nav-linkBck--topNav;
+
+    &:hover, &:active {
+      color: @nav-linkColor--topNavHover;
+      background-color: @nav-linkBck--topNavHover;
+    }
+  }
+}

@@ -11,25 +11,40 @@
 //
 //  UI GUIDE STYLES
 //  Styles used specifically for the Product UI Pattern Guide
+//  ============================================================================
+//  $ VARIABLES
+//  ============================================================================
+//  --  HTML / JS
+@html-tag:      #2f6f9f;
+@html-attr:     #4f9fcf;
+@html-value:    #d44950;
+@html-copy:     #0AB;
+@html-comment:  #999;
+@html-js1:      #C30;
+
+//  --  SNIPPET
+@snip-bck:      #f9f2f4;
+@snip-text:     #c7254e;
+
+//  --  LESS
+@less-class:    #0AB;
+@less-comment:  #999;
+@less-colon:    #99f;
+@less-media:    #069;
+@less-parameter:#2f6f9f;
+@less-variable: #2f6f9f;
+@less-property: #4f9fcf;
+@less-function: #c0f;
+@less-number:   #f60;
+@less-type:     #078;
+
+
+
 // ---------------------------------------------------------------------------
-//  $ TITLE STYLES
-//
-.help-title { color: @color-orange; }
-
-.help-subtitle {
-  margin-bottom: 0;
-
-  .fontSize(s);
-  .fontWeight(3);
-  color: @color-copy--help;
-}
-
-
+//  $ SYNTAX HIGHLIGHTING
 // ---------------------------------------------------------------------------
-//  $ LAYOUTS
-// ---------------------------------------------------------------------------
-.highlight-example {
-  // margin: 1em 0 1.5em;
+.code._example {
+  margin-bottom: 1.5em;
   padding: 1em 1.5em;
 
   color: @color-copy--body;
@@ -53,11 +68,18 @@
     border: 0;
     background-color: transparent;
   }
+}
 
-  pre code:first-child {
-    display: inline-block;
-    padding-right: 3em;
-  }
+code {
+  padding-bottom: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+
+  .fontFamily(code);
+  font-size: 90%;
+  color: @snip-text;
+  background-color: @snip-bck;
 }
 
 pre code {
@@ -70,6 +92,7 @@ pre code {
   background-color: transparent;
   border-radius: 0;
 }
+
 
 
 //  $ Type Example
@@ -112,32 +135,15 @@ pre code {
 
 
 //  ----------------------------------------------------------------------------
-//  $ CODE STYLING
+//  $ CODE COLOR STYLING
 //  ----------------------------------------------------------------------------
-//  --  COLOR VARIABLES
-@html-tag:      #2f6f9f;
-@html-attr:     #4f9fcf;
-@html-value:    #d44950;
-@html-copy:     #0AB;
-@html-comment:  #999;
-
-@less-class:    #0AB;
-@less-comment:  #999;
-@less-colon:    #99f;
-@less-media:    #069;
-@less-parameter:#2f6f9f;
-@less-variable: #2f6f9f;
-@less-property: #4f9fcf;
-@less-function: #c0f;
-@less-number:   #f60;
-@less-type:     #078;
-
 .html-block {
   ._ta  { color: @html-tag; }
   ._at  { color: @html-attr; }
   ._va  { color: @html-value; }
   ._cp  { color: @html-copy; }
   ._co  { color: @html-comment; }
+  ._j1  { color: @html-js1;}
 }
 
 .less-block {

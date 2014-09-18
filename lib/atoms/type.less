@@ -120,10 +120,10 @@
   & when (@f = code) { font-family: @fontFamily-code; }
 }
 .fontSize(@s) {
-  & when (@s = base)  { .fontRem(ceil(@fontSize-base)); }
-  & when (@s = xxs)   { .fontRem(ceil(@fontSize-xxsmall)); }
-  & when (@s = xs)    { .fontRem(ceil(@fontSize-xsmall)); }
-  & when (@s = s)     { .fontRem(ceil(@fontSize-small)); } 
+  & when (@s = base)  { .fontRem(@fontSize-base); }
+  & when (@s = xxs)   { .fontRem(@fontSize-xxsmall); }
+  & when (@s = xs)    { .fontRem(@fontSize-xsmall); }
+  & when (@s = s)     { .fontRem(@fontSize-small); } 
   & when (@s = m)     { .fontRem(ceil(@fontSize-medium)); }
   & when (@s = l)     { .fontRem(ceil(@fontSize-large)); }
   & when (@s = xl)    { .fontRem(ceil(@fontSize-xlarge)); }
