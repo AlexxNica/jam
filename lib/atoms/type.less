@@ -170,7 +170,7 @@ p {
 
 //  When you want a larger, initial paragraph.
 .text-lead {
-  color: @color-copy--light;
+  color: @color-copyLight;
   .fontSize(xl);
   .fontWeight(2);
   .letterSpacing(tight);
@@ -208,7 +208,7 @@ blockquote {
   .fontSize(m);
   letter-spacing: 0;
   .lineHeight(loose);
-  color: @color-quote--bq;
+  color: @color-quote;
 }
 // For when you want to add a background to a blockquote, and ONLY A BLOCKQUOTE.
 .quote-bgBackground {
@@ -225,17 +225,17 @@ blockquote {
   .letterSpacing(base);
   .lineHeight(loosest);
   .text-center();
-  color: @color-quote--bqPull;
+  color: @color-quotePull;
 }
 
 //  -- Links
 a, a:link {
-  color: @color-copy--link;
+  color: @color-link;
   text-decoration: none;
   transition: all 0.1s ease-in;
 
   &:hover, &:focus {
-    color: @color-copy--linkHover;
+    color: @color-linkHover;
     text-decoration: underline;
   }
   &:focus { outline: none; }
@@ -246,7 +246,7 @@ a, a:link {
 //  Help Copy: For when you want to provide to helpful instructions or direction.
 //  This is mainly found within forms.
 .text-helpCopy {
-  color: @color-copy--help;
+  color: @color-copyHelp;
   .fontSize(s);
   .lineHeight(loose);
 }
@@ -260,7 +260,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-top: 0;
   margin-bottom: 0.5em;
 
-  color: @color-title--section;
+  color: @color-titleSection;
   .fontWeight(7);
   .letterSpacing(tight);
   .lineHeight(tighter);
@@ -269,7 +269,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   small, .small {
     margin-top: -0.25em;
 
-    color: @color-copy--body;
+    color: @color-copy;
     font-size: 75%;
     font-weight: normal;
   }

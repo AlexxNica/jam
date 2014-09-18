@@ -1,25 +1,230 @@
-//
-//  STACK OVERFLOW CAREERS
-//  Product UI Guide
-//  Designed & managed by the Stack Exchange Design Team
-//
-//  Created May 2, 2014
-//  Updated September 12, 2014
-//
-//  http://careers.stackoverflow.com
-//
-//  BUTTONS
-//
-//  TABLE OF CONTENTS
-//  • BTN BASE
-//  • BTN LAYOUTS
-//  • BTN STYLES
-//
+//  $$ Primary (default) Button
+//  - Default State
+@btn-backgroundColor:                               @color-blue;
+@btn-backgroundGradientStartColor:                  @color-blue;
+@btn-backgroundGradientStop01Color:                 darken(@color-blue,11%);
+@btn-backgroundGradientEndColor:                    darken(@color-blue,18%);
+@btn-borderColor:                                   desaturate(darken(@color-blue,17%),1%);
+@btn-shadowDropColor:                               fade(@color-white,0%);
+@btn-shadowInnerColor:                              fade(@color-white,50%);
+@btn-textColor:                                     lighten(@color-blue,42%);
+@btn-textShadowDropColor:                           desaturate(darken(@color-blue,22%),1%);
+//  - Hover State
+@btn_hover-backgroundColor:                         spin(darken(@color-blue,9%),6);
+@btn_hover-backgroundGradientStartColor:            @color-blue;
+@btn_hover-backgroundGradientStop01Color:           spin(desaturate(darken(@color-blue,13%),1%),6);
+@btn_hover-backgroundGradientEndColor:              spin(darken(@color-blue,15%),5);
+@btn_hover-borderColor:                             darken(@color-blue,28%);
+@btn_hover-shadowDropColor:                         desaturate(lighten(@color-blue,29%),7%);
+@btn_hover-shadowInnerColor:                        fade(@color-white,50%);
+@btn_hover-textColor:                               @color-white;
+@btn_hover-textShadowDropColor:                     spin(darken(@color-blue,31%),-1);
+//  - Active State
+@btn_active-backgroundColor:                        spin(darken(@color-blue,6%),6);
+@btn_active-backgroundGradientStartColor:           darken(@color-blue,18%);
+@btn_active-backgroundGradientEndColor:             darken(@color-blue,45%);
+@btn_active-borderColor:                            darken(@color-blue,26%);
+@btn_active-shadowDropColor:                        fade(desaturate(lighten(@color-blue,29%),7%),50%);
+@btn_active-shadowInnerColor:                       fade(spin(@color-blue,-12),50%);
+@btn_active-textColor:                              lighten(@color-blue,42%);
+@btn_active-textShadowDropColor:                    darken(@color-blue,31%);
+//  - Disabled State
+@btn_disabled-backgroundColor:                      fade(@color-blue,25%);
+@btn_disabled-borderColor:                          desaturate(lighten(@color-blue,23%),45%);
+@btn_disabled-shadowDropColor:                      fade(@color-white,0%);
+@btn_disabled-shadowInnerColor:                     fade(@color-white,25%);
+@btn_disabled-textColor:                            spin(lighten(@color-blue,46%),8);
+@btn_disabled-textShadowDropColor:                  desaturate(lighten(@color-blue,30%),70%);
+
+//  --------------------------------------
+//  $$ Outlined Button
+//  - Default State
+@btn_outlined-backgroundColor:                      @color-white;
+@btn_outlined-borderColor:                          @color-blue;
+@btn_outlined-shadowDropColor:                      fade(@color-white,0%);
+@btn_outlined-shadowInnerColor:                     fade(@color-white,0%);
+@btn_outlined-textColor:                            @color-blue;
+@btn_outlined-textShadowDropColor:                  fade(@color-white,0%);
+
+//  - Hover State
+@btn_outlined_hover-backgroundColor:                @color-white;
+@btn_outlined_hover-borderColor:                    spin(darken(@color-blue,9%),6);
+@btn_outlined_hover-shadowDropColor:                fade(desaturate(lighten(@color-blue,29%),7%),25%);
+@btn_outlined_hover-shadowInnerColor:               fade(@color-white,0%);
+@btn_outlined_hover-textColor:                      spin(darken(@color-blue,9%),6);
+@btn_outlined_hover-textShadowDropColor:            fade(@color-white,0%);
+
+//  - Active State
+@btn_outlined_active-backgroundColor:               fade(lighten(@color-blue,46%),50%);
+@btn_outlined_active-borderColor:                   spin(darken(@color-blue,6%),6);
+@btn_outlined_active-shadowDropColor:               fade(desaturate(lighten(@color-blue,29%),7%),50%);
+@btn_outlined_active-shadowInnerColor:              fade(@color-white,0%);
+@btn_outlined_active-textColor:                     spin(darken(@color-blue,6%),6);
+@btn_outlined_active-textShadowDropColor:           fade(@color-white,0%);
+
+//  --------------------------------------
+//  $$ Clear Button
+//  - Default State
+@btn_clear-backgroundColor:                         fade(@color-white,0%);
+@btn_clear-borderColor:                             fade(@color-white,0%);
+@btn_clear-shadowDropColor:                         fade(@color-white,0%);
+@btn_clear-shadowInnerColor:                        fade(@color-white,0%);
+@btn_clear-textColor:                               @color-blue;
+@btn_clear-textShadowDropColor:                     fade(@color-white,0%);
+
+//  - Hover State
+@btn_clear_hover-backgroundColor:                   fade(@color-white,0%);
+@btn_clear_hover-borderColor:                       fade(@color-white,0%);
+@btn_clear_hover-shadowDropColor:                   fade(@color-white,0%);
+@btn_clear_hover-shadowInnerColor:                  fade(@color-white,0%);
+@btn_clear_hover-textColor:                         spin(darken(@color-blue,9%),6);
+@btn_clear_hover-textShadowDropColor:               fade(@color-white,0%);
+
+//  - Active State
+@btn_clear_active-backgroundColor:                  fade(@color-white,0%);
+@btn_clear_active-borderColor:                      fade(@color-white,0%);
+@btn_clear_active-shadowDropColor:                  fade(@color-white,0%);
+@btn_clear_active-shadowInnerColor:                 fade(@color-white,0%);
+@btn_clear_active-textColor:                        spin(darken(@color-blue,6%),6);
+@btn_clear_active-textShadowDropColor:              fade(@color-white,0%);
+
+//  --------------------------------------
+//  $$ Secondary Button
+//  - Default State
+@btn_secondary-backgroundColor:                     lighten(@color-blue,46%);
+@btn_secondary-backgroundGradientStartColor:        @color-white;
+@btn_secondary-backgroundGradientEndColor:          desaturate(@color-blue,93%);
+@btn_secondary-borderColor:                         desaturate(lighten(@color-blue,27%),7%);
+@btn_secondary-shadowDropColor:                     fade(@color-white,0%);
+@btn_secondary-shadowInnerColor:                    @color-white;
+@btn_secondary-shadowInnerBtmColor:                 fade(@color-white,25%);
+@btn_secondary-textColor:                           @color-blue;
+@btn_secondary-textShadowDropColor:                 @color-white;
+//  - Hover State
+@btn_secondary_hover-backgroundColor:               desaturate(lighten(@color-blue,42%),5%);
+@btn_secondary_hover-backgroundGradientStartColor:  spin(desaturate(darken(@color-blue,1%),97%),1);
+@btn_secondary_hover-backgroundGradientEndColor:    desaturate(darken(@color-blue,3%),18%);
+@btn_secondary_hover-borderColor:                   desaturate(lighten(@color-blue,27%),7%);
+@btn_secondary_hover-shadowDropColor:               desaturate(lighten(@color-blue,27%),7%);
+@btn_secondary_hover-shadowInnerColor:              fade(@color-white,50%);
+@btn_secondary_hover-shadowInnerBtmColor:           fade(@color-white,25%);
+@btn_secondary_hover-textColor:                     spin(darken(@color-blue,9%),7);
+@btn_secondary_hover-textShadowDropColor:           @color-white;
+//  - Active State
+@btn_secondary_active-backgroundColor:               spin(lighten(@color-blue,38%),-1);
+@btn_secondary_active-backgroundGradientStartColor:  @color-white;
+@btn_secondary_active-backgroundGradientStop01Color: desaturate(darken(@color-blue,1%),85%);
+@btn_secondary_active-backgroundGradientEndColor:    desaturate(darken(@color-blue,8%),88%);
+@btn_secondary_active-borderColor:                   lighten(@color-blue,18%);
+@btn_secondary_active-shadowDropColor:               fade(desaturate(lighten(@color-blue,27%),7%),50%);
+@btn_secondary_active-shadowInnerColor:              fade(@color-white,50%);
+@btn_secondary_active-shadowInnerBtmColor:           fade(@color-white,0%);
+@btn_secondary_active-textColor:                     spin(darken(@color-blue,6%),7);
+@btn_secondary_active-textShadowDropColor:           @color-white;
+//  - Disabled State
+@btn_secondary_disabled-backgroundColor:             spin(desaturate(lighten(@color-blue,43%),57%),-1);
+@btn_secondary_disabled-backgroundGradientStartColor:fade(@color-white,50%);
+@btn_secondary_disabled-backgroundGradientEndColor:  desaturate(@color-blue,93%);
+@btn_secondary_disabled-borderColor:                 spin(desaturate(lighten(@color-blue,32%),88%),2);
+@btn_secondary_disabled-shadowDropColor:             fade(@color-white,0%);
+@btn_secondary_disabled-shadowInnerColor:            fade(@color-white,25%);
+@btn_secondary_disabled-shadowInnerBtmColor:         fade(@color-white,0%);
+@btn_secondary_disabled-textColor:                   desaturate(lighten(@color-blue,17%),73%);
+@btn_secondary_disabled-textShadowDropColor:         fade(@color-white,50%);
+
+//  --------------------------------------
+//  $$ Confirmation Button
+//  To make it easier to do this calculation, we need to create a new color
+//  variable that standardizes the color angle. This makes the math a little
+//  easier to complete.
+@btn-color-green: spin(@color-green,-21);
+
+//  - Default State
+@btn_confirm-backgroundColor:                        saturate(lighten(@btn-color-green,5%),13%);
+@btn_confirm-backgroundGradientStartColor:           desaturate(@btn-color-green,18%);
+@btn_confirm-backgroundGradientEndColor:             darken(@btn-color-green,20%);
+@btn_confirm-borderColor:                            spin(saturate(darken(@btn-color-green,23%),14%),-6);
+@btn_confirm-shadowDropColor:                        fade(@color-white,0%);
+@btn_confirm-shadowInnerColor:                       saturate(lighten(@btn-color-green,21%),37%);
+@btn_confirm-textColor:                              spin(saturate(darken(@btn-color-green,37%),29%),13);
+@btn_confirm-textShadowDropColor:                    spin(saturate(lighten(@btn-color-green,27%),37%),2);
+//  - Hover State
+@btn_confirm_hover-backgroundColor:                  saturate(darken(@btn-color-green,5%),7%);
+@btn_confirm_hover-backgroundGradientStartColor:     desaturate(@btn-color-green,39%);
+@btn_confirm_hover-backgroundGradientEndColor:       desaturate(darken(@btn-color-green,27%),10%);
+@btn_confirm_hover-borderColor:                      spin(saturate(darken(@btn-color-green,27%),18%),6);
+@btn_confirm_hover-shadowDropColor:                  saturate(lighten(@btn-color-green,10%),37%);
+@btn_confirm_hover-shadowInnerColor:                 saturate(lighten(@btn-color-green,12%),36%);
+@btn_confirm_hover-textColor:                        spin(saturate(darken(@btn-color-green,46%),34%),14);
+@btn_confirm_hover-textShadowDropColor:              saturate(lighten(@btn-color-green,14%),31%);
+//  - Active State
+@btn_confirm_active-backgroundColor:                 saturate(darken(@btn-color-green,17%),11%);
+@btn_confirm_active-backgroundGradientStartColor:    darken(@btn-color-green,14%);
+@btn_confirm_active-backgroundGradientEndColor:      darken(@btn-color-green,41%);
+@btn_confirm_active-borderColor:                     spin(saturate(darken(@btn-color-green,33%),23%),-6);
+@btn_confirm_active-shadowDropColor:                 fade(saturate(lighten(@btn-color-green,10%),37%),50%);
+@btn_confirm_active-shadowInnerColor:                saturate(darken(@btn-color-green,15%),37%);
+@btn_confirm_active-textColor:                       spin(saturate(darken(@btn-color-green,52%),37%),12);
+@btn_confirm_active-textShadowDropColor:             spin(saturate(darken(@btn-color-green,2%),23%),13);
+//  - Disabled State
+@btn_confirm_disabled-backgroundColor:               spin(desaturate(lighten(@btn-color-green,24%),2%),13);
+@btn_confirm_disabled-backgroundGradientStartColor:  spin(desaturate(@btn-color-green,91%),-2);
+@btn_confirm_disabled-backgroundGradientEndColor:    desaturate(darken(@btn-color-green,22%),81%);
+@btn_confirm_disabled-borderColor:                   spin(desaturate(lighten(@btn-color-green,17%),33%),-7);
+@btn_confirm_disabled-shadowDropColor:               fade(@color-white,0%);
+@btn_confirm_disabled-shadowInnerColor:              fade(@color-white,0%);
+@btn_confirm_disabled-textColor:                     spin(desaturate(darken(@btn-color-green,2%),42%),14);
+@btn_confirm_disabled-textShadowDropColor:           spin(saturate(lighten(@btn-color-green,28%),37%),3);
+
+//  --------------------------------------
+//  $$ Warning Button
+//  - Default State
+@btn_warning-backgroundColor:                       @color-red;
+@btn_warning-backgroundGradientStartColor:          desaturate(darken(@color-red,2%),32%);
+@btn_warning-backgroundGradientEndColor:            desaturate(darken(@color-red,20%),17%);
+@btn_warning-borderColor:                           saturate(darken(@color-red,20%),24%);
+@btn_warning-shadowDropColor:                       fade(@color-white,0%);
+@btn_warning-shadowInnerColor:                      saturate(lighten(@color-red,25%),22%);
+@btn_warning-textColor:                             saturate(lighten(@color-red,48%),25%);
+@btn_warning-textShadowDropColor:                   desaturate(darken(@color-red,24%),1%);
+//  - Hover State
+@btn_warning_hover-backgroundColor:                 saturate(darken(@color-red,6%),8%);
+@btn_warning_hover-backgroundGradientStartColor:    desaturate(@color-red,48%);
+@btn_warning_hover-backgroundGradientEndColor:      desaturate(darken(@color-red,25%),2%);
+@btn_warning_hover-borderColor:                     saturate(darken(@color-red,28%),7%);
+@btn_warning_hover-shadowDropColor:                 saturate(lighten(@color-red,34%),25%);
+@btn_warning_hover-shadowInnerColor:                saturate(lighten(@color-red,23%),25%);
+@btn_warning_hover-textColor:                       @color-white;
+@btn_warning_hover-textShadowDropColor:             saturate(darken(@color-red,29%),25%);
+//  - Active State
+@btn_warning_active-backgroundColor:                saturate(darken(@color-red,13%),20%);
+@btn_warning_active-backgroundGradientStartColor:   desaturate(darken(@color-red,4%),7%);
+@btn_warning_active-backgroundGradientEndColor:     desaturate(darken(@color-red,43%),15%);
+@btn_warning_active-borderColor:                    saturate(darken(@color-red,31%),17%);
+@btn_warning_active-shadowDropColor:                saturate(lighten(@color-red,34%),25%);
+@btn_warning_active-shadowInnerColor:               saturate(lighten(@color-red,27%),25%);
+@btn_warning_active-textColor:                      @color-white;
+@btn_warning_active-textShadowDropColor:            saturate(darken(@color-red,25%),20%);
+//  - Disabled State
+@btn_warning_disabled-backgroundColor:              saturate(lighten(@color-red,32%),5%);
+@btn_warning_disabled-backgroundGradientStartColor: desaturate(darken(@color-red,3%),89%);
+@btn_warning_disabled-backgroundGradientEndColor:   desaturate(darken(@color-red,15%),68%);
+@btn_warning_disabled-borderColor:                  desaturate(lighten(@color-red,22%),19%);
+@btn_warning_disabled-shadowDropColor:              fade(@color-white,0%);
+@btn_warning_disabled-shadowInnerColor:             saturate(lighten(@color-red,40%),25%);
+@btn_warning_disabled-textColor:                    @color-white;
+@btn_warning_disabled-textShadowDropColor:          desaturate(lighten(@color-red,21%),27%);
+
+
+
 // ===========================================================================
 //  $ BTN BASE
 //  Base button styling. Combine this with a button style class below to get
 //  the desired button style
-// ---------------------------------------------------------------------------
+//
+//  This is the default style. Most of the buttons found Stack Overflow Careers
+//  will look like this.
+button,
 .btn {
   .box-sizing(border-box);
   display: inline-block;
@@ -41,224 +246,220 @@
   transition: all 0.1s ease;
   vertical-align: middle;
 
+  color: @btn-textColor;
+  text-shadow: 0 1px 0 @btn-textShadowDropColor;
+
+  background-color: @btn-backgroundColor;
+  border-color: @btn-borderColor;
+  box-shadow: inset 0 1px 0 @btn-shadowInnerColor, 0 0 0 @btn-shadowDropColor;
+
   // :hover / :focus state
   &:hover {
     text-decoration: none;
     transition: all 0.1s ease;
+
+    color: @btn_hover-textColor;
+    text-shadow: 0 1px 0 @btn_hover-textShadowDropColor;
+
+    background-color: @btn_hover-backgroundColor;
+    border-color: @btn_hover-borderColor;
+    box-shadow: inset 0 1px 0 @btn_hover-shadowInnerColor, 0 0 10px @btn_hover-shadowDropColor;
   }
   &:focus { outline: none; }
 
   // :active state
   &:active, &.active {
     top: 1px; // adjusts the button down a px to make it look like it's being pressed. Nifty!
+
+    color: @btn_active-textColor;
+    text-shadow: 0 1px 0 @btn_active-textShadowDropColor;
+
+    background-color: @btn_active-backgroundColor;
+    border-color: @btn_active-borderColor;
+    box-shadow: inset 0 1px 0 @btn_active-shadowInnerColor, 0 0 10px @btn_active-shadowDropColor;
   }
-}
+
+  &[disabled],&._disabled{
+    color: @btn_disabled-textColor;
+    text-shadow: 0 1px 0 @btn_disabled-textShadowDropColor;
+
+    background-color: @btn_disabled-backgroundColor;
+    border-color: @btn_disabled-borderColor;
+    box-shadow: inset 0 0 0 @btn_disabled-shadowInnerColor, 0 0 0 @btn_disabled-shadowDropColor;
+  }
 
 
-// ---------------------------------------------------------------------------
+// --------------------------------------
 //  $ BTN STYLES / TYPES
 //  Add the desired style class name to .btn. For example, to use the primary
 //  button style, use:
 //
-//  <button class="btn btnPrimary">[Label]</button>
+//  <button class="btn btn">[Label]</button>
 //
 //  You can also disable a button by either applying the disabled attribute or
-//  with a state class of ".is-disabled":
+//  with a state class of "._disabled":
 //
-//  Attribute:    <button class="btn btnPrimary" disabled>[Label]</button>
-//  State Class:  <button class="btn btnPrimary is-disabled">[Label]</button>
-//  
-// ---------------------------------------------------------------------------
-//  -- Primary Button
-//  This is the default style. Most of the buttons found Stack Overflow Careers
-//  will look like this.
-.btnPrimary {
-  color: @color-btnPrimary--text;
-  text-shadow: 0 1px 0 @color-btnPrimary--textShadowDrop;
+//  AttributeColor:    <button class="btn btn" disabled>[Label]</button>
+//  State ClassColor:  <button class="btn btn _disabled">[Label]</button>
+//
 
-  background-color: @color-btnPrimary--bck;
-  border-color: @color-btnPrimary--border;
-  box-shadow: inset 0 1px 0 @color-btnPrimary--shadowInner, 0 0 0 @color-btnPrimary--shadowDrop;
-  &:hover {
-    color: @color-btnPrimaryHover--text;
-    text-shadow: 0 1px 0 @color-btnPrimaryHover--textShadowDrop;
-
-    background-color: @color-btnPrimaryHover--bck;
-    border-color: @color-btnPrimaryHover--border;
-    box-shadow: inset 0 1px 0 @color-btnPrimaryHover--shadowInner, 0 0 10px @color-btnPrimaryHover--shadowDrop;
+  //  - Secondary Button
+  //  Sometimes buttons are paired together and we want to diminish the importance
+  //  of one in order to elevate the focus on the other. In that instance, use
+  //  this class.
+  &._secondary {
+    color: @btn_secondary-textColor;
+    text-shadow: 0 1px 0 @btn_secondary-textShadowDropColor;
+  
+    background-color: @btn_secondary-backgroundColor;
+    border-color: @btn_secondary-borderColor;
+    box-shadow: inset 0 1px 0 @btn_secondary-shadowInnerColor, 0 0 0 @btn_secondary-shadowDropColor;
+    &:hover {
+      color: @btn_secondary_hover-textColor;
+      text-shadow: 0 1px 0 @btn_secondary_hover-textShadowDropColor;
+  
+      background-color: @btn_secondary_hover-backgroundColor;
+      border-color: @btn_secondary_hover-borderColor;
+      box-shadow: inset 0 1px 0 @btn_secondary_hover-shadowInnerColor, 0 0 10px @btn_secondary_hover-shadowDropColor;
+    }
+    &:active {
+      color: @btn_secondary_active-textColor;
+      text-shadow: 0 1px 0 @btn_secondary_active-textShadowDropColor;
+  
+      background-color: @btn_secondary_active-backgroundColor;
+      border-color: @btn_secondary_active-borderColor;
+      box-shadow: inset 0 1px 0 @btn_secondary_active-shadowInnerColor, 0 0 10px @btn_secondary_active-shadowDropColor;
+    }
+    &[disabled],&._disabled{
+      color: @btn_secondary_disabled-textColor;
+      text-shadow: 0 1px 0 @btn_secondary_disabled-textShadowDropColor;
+  
+      background-color: @btn_secondary_disabled-backgroundColor;
+      border-color: @btn_secondary_disabled-borderColor;
+      box-shadow: inset 0 0 0 @btn_secondary_disabled-shadowInnerColor, 0 0 0 @btn_secondary_disabled-shadowDropColor;
+    }
   }
-  &:active {
-    color: @color-btnPrimaryActive--text;
-    text-shadow: 0 1px 0 @color-btnPrimaryActive--textShadowDrop;
-
-    background-color: @color-btnPrimaryActive--bck;
-    border-color: @color-btnPrimaryActive--border;
-    box-shadow: inset 0 1px 0 @color-btnPrimaryActive--shadowInner, 0 0 10px @color-btnPrimaryActive--shadowDrop;
+  //  - Confirmation Button
+  &._confirm {
+    color: @btn_confirm-textColor;
+    text-shadow: 0 1px 0 @btn_confirm-textShadowDropColor;
+  
+    background-color: @btn_confirm-backgroundColor;
+    border-color: @btn_confirm-borderColor;
+    box-shadow: inset 0 1px 0 @btn_confirm-shadowInnerColor, 0 0 0 @btn_confirm-shadowDropColor;
+    &:hover {
+      color: @btn_confirm_hover-textColor;
+      text-shadow: 0 1px 0 @btn_confirm_hover-textShadowDropColor;
+  
+      background-color: @btn_confirm_hover-backgroundColor;
+      border-color: @btn_confirm_hover-borderColor;
+      box-shadow: inset 0 1px 0 @btn_confirm_hover-shadowInnerColor, 0 0 10px @btn_confirm_hover-shadowDropColor;
+    }
+    &:active {
+      color: @btn_confirm_active-textColor;
+      text-shadow: 0 1px 0 @btn_confirm_active-textShadowDropColor;
+  
+      background-color: @btn_confirm_active-backgroundColor;
+      border-color: @btn_confirm_active-borderColor;
+      box-shadow: inset 0 1px 0 @btn_confirm_active-shadowInnerColor, 0 0 10px @btn_confirm_active-shadowDropColor;
+    }
+    &[disabled],&._disabled{
+      color: @btn_confirm_disabled-textColor;
+      text-shadow: 0 1px 0 @btn_confirm_disabled-textShadowDropColor;
+  
+      background-color: @btn_confirm_disabled-backgroundColor;
+      border-color: @btn_confirm_disabled-borderColor;
+      box-shadow: inset 0 0 0 @btn_confirm_disabled-shadowInnerColor, 0 0 0 @btn_confirm_disabled-shadowDropColor;
+    }
   }
-  &[disabled],&.is-disabled{
-    color: @color-btnPrimaryDisabled--text;
-    text-shadow: 0 1px 0 @color-btnPrimaryDisabled--textShadowDrop;
-
-    background-color: @color-btnPrimaryDisabled--bck;
-    border-color: @color-btnPrimaryDisabled--border;
-    box-shadow: inset 0 0 0 @color-btnPrimaryDisabled--shadowInner, 0 0 0 @color-btnPrimaryDisabled--shadowDrop;
+  //  - Confirmation Button
+  &._warning {
+    color: @btn_warning-textColor;
+    text-shadow: 0 1px 0 @btn_warning-textShadowDropColor;
+  
+    background-color: @btn_warning-backgroundColor;
+    border-color: @btn_warning-borderColor;
+    box-shadow: inset 0 1px 0 @btn_warning-shadowInnerColor, 0 0 0 @btn_warning-shadowDropColor;
+    &:hover {
+      color: @btn_warning_hover-textColor;
+      text-shadow: 0 1px 0 @btn_warning_hover-textShadowDropColor;
+  
+      background-color: @btn_warning_hover-backgroundColor;
+      border-color: @btn_warning_hover-borderColor;
+      box-shadow: inset 0 1px 0 @btn_warning_hover-shadowInnerColor, 0 0 10px @btn_warning_hover-shadowDropColor;
+    }
+    &:active {
+      color: @btn_warning_active-textColor;
+      text-shadow: 0 1px 0 @btn_warning_active-textShadowDropColor;
+  
+      background-color: @btn_warning_active-backgroundColor;
+      border-color: @btn_warning_active-borderColor;
+      box-shadow: inset 0 1px 0 @btn_warning_active-shadowInnerColor, 0 0 10px @btn_warning_active-shadowDropColor;
+    }
+    &[disabled],&._disabled{
+      color: @btn_warning_disabled-textColor;
+      text-shadow: 0 1px 0 @btn_warning_disabled-textShadowDropColor;
+  
+      background-color: @btn_warning_disabled-backgroundColor;
+      border-color: @btn_warning_disabled-borderColor;
+      box-shadow: inset 0 0 0 @btn_warning_disabled-shadowInnerColor, 0 0 0 @btn_warning_disabled-shadowDropColor;
+    }
   }
+  //  - Outlined Button
+  &._outlined {
+    color: @btn_outlined-textColor;
+    text-shadow: 0 1px 0 @btn_outlined-textShadowDropColor;
+  
+    background-color: @btn_outlined-backgroundColor;
+    border-color: @btn_outlined-borderColor;
+    box-shadow: inset 0 1px 0 @btn_outlined-shadowInnerColor, 0 0 0 @btn_outlined-shadowDropColor;
+    &:hover {
+      color: @btn_outlined_hover-textColor;
+      text-shadow: 0 1px 0 @btn_outlined_hover-textShadowDropColor;
+  
+      background-color: @btn_outlined_hover-backgroundColor;
+      border-color: @btn_outlined_hover-borderColor;
+      box-shadow: inset 0 1px 0 @btn_outlined_hover-shadowInnerColor, 0 0 10px @btn_outlined_hover-shadowDropColor;
+    }
+    &:active {
+      color: @btn_outlined_active-textColor;
+      text-shadow: 0 1px 0 @btn_outlined_active-textShadowDropColor;
+  
+      background-color: @btn_outlined_active-backgroundColor;
+      border-color: @btn_outlined_active-borderColor;
+      box-shadow: inset 0 1px 0 @btn_outlined_active-shadowInnerColor, 0 0 10px @btn_outlined_active-shadowDropColor;
+    }
+  }
+  //  - Clear Button
+  &._clear {
+    color: @btn_clear-textColor;
+    text-shadow: 0 1px 0 @btn_clear-textShadowDropColor;
+  
+    background-color: @btn_clear-backgroundColor;
+    border-color: @btn_clear-borderColor;
+    box-shadow: inset 0 1px 0 @btn_clear-shadowInnerColor, 0 0 0 @btn_clear-shadowDropColor;
+    &:hover {
+      color: @btn_clear_hover-textColor;
+      text-shadow: 0 1px 0 @btn_clear_hover-textShadowDropColor;
+  
+      background-color: @btn_clear_hover-backgroundColor;
+      border-color: @btn_clear_hover-borderColor;
+      box-shadow: inset 0 1px 0 @btn_clear_hover-shadowInnerColor, 0 0 10px @btn_clear_hover-shadowDropColor;
+    }
+    &:active {
+      color: @btn_clear_active-textColor;
+      text-shadow: 0 1px 0 @btn_clear_active-textShadowDropColor;
+  
+      background-color: @btn_clear_active-backgroundColor;
+      border-color: @btn_clear_active-borderColor;
+      box-shadow: inset 0 1px 0 @btn_clear_active-shadowInnerColor, 0 0 10px @btn_clear_active-shadowDropColor;
+    }
+  }
+  //  - Disabled Button
+  &[disabled], &._disabled { cursor: not-allowed !important; }
 }
-//  -- Secondary Button
-//  Sometimes buttons are paired together and we want to diminish the importance
-//  of one in order to elevate the focus on the other. In that instance, use
-//  this class.
-.btnSecondary {
-  color: @color-btnSecondary--text;
-  text-shadow: 0 1px 0 @color-btnSecondary--textShadowDrop;
 
-  background-color: @color-btnSecondary--bck;
-  border-color: @color-btnSecondary--border;
-  box-shadow: inset 0 1px 0 @color-btnSecondary--shadowInner, 0 0 0 @color-btnSecondary--shadowDrop;
-  &:hover {
-    color: @color-btnSecondaryHover--text;
-    text-shadow: 0 1px 0 @color-btnSecondaryHover--textShadowDrop;
-
-    background-color: @color-btnSecondaryHover--bck;
-    border-color: @color-btnSecondaryHover--border;
-    box-shadow: inset 0 1px 0 @color-btnSecondaryHover--shadowInner, 0 0 10px @color-btnSecondaryHover--shadowDrop;
-  }
-  &:active {
-    color: @color-btnSecondaryActive--text;
-    text-shadow: 0 1px 0 @color-btnSecondaryActive--textShadowDrop;
-
-    background-color: @color-btnSecondaryActive--bck;
-    border-color: @color-btnSecondaryActive--border;
-    box-shadow: inset 0 1px 0 @color-btnSecondaryActive--shadowInner, 0 0 10px @color-btnSecondaryActive--shadowDrop;
-  }
-  &[disabled],&.is-disabled{
-    color: @color-btnSecondaryDisabled--text;
-    text-shadow: 0 1px 0 @color-btnSecondaryDisabled--textShadowDrop;
-
-    background-color: @color-btnSecondaryDisabled--bck;
-    border-color: @color-btnSecondaryDisabled--border;
-    box-shadow: inset 0 0 0 @color-btnSecondaryDisabled--shadowInner, 0 0 0 @color-btnSecondaryDisabled--shadowDrop;
-  }
-}
-//  -- Confirmation Button
-.btnConfirm {
-  color: @color-btnConfirm--text;
-  text-shadow: 0 1px 0 @color-btnConfirm--textShadowDrop;
-
-  background-color: @color-btnConfirm--bck;
-  border-color: @color-btnConfirm--border;
-  box-shadow: inset 0 1px 0 @color-btnConfirm--shadowInner, 0 0 0 @color-btnConfirm--shadowDrop;
-  &:hover {
-    color: @color-btnConfirmHover--text;
-    text-shadow: 0 1px 0 @color-btnConfirmHover--textShadowDrop;
-
-    background-color: @color-btnConfirmHover--bck;
-    border-color: @color-btnConfirmHover--border;
-    box-shadow: inset 0 1px 0 @color-btnConfirmHover--shadowInner, 0 0 10px @color-btnConfirmHover--shadowDrop;
-  }
-  &:active {
-    color: @color-btnConfirmActive--text;
-    text-shadow: 0 1px 0 @color-btnConfirmActive--textShadowDrop;
-
-    background-color: @color-btnConfirmActive--bck;
-    border-color: @color-btnConfirmActive--border;
-    box-shadow: inset 0 1px 0 @color-btnConfirmActive--shadowInner, 0 0 10px @color-btnConfirmActive--shadowDrop;
-  }
-  &[disabled],&.is-disabled{
-    color: @color-btnConfirmDisabled--text;
-    text-shadow: 0 1px 0 @color-btnConfirmDisabled--textShadowDrop;
-
-    background-color: @color-btnConfirmDisabled--bck;
-    border-color: @color-btnConfirmDisabled--border;
-    box-shadow: inset 0 0 0 @color-btnConfirmDisabled--shadowInner, 0 0 0 @color-btnConfirmDisabled--shadowDrop;
-  }
-}
-//  -- Confirmation Button
-.btnWarning {
-  color: @color-btnWarning--text;
-  text-shadow: 0 1px 0 @color-btnWarning--textShadowDrop;
-
-  background-color: @color-btnWarning--bck;
-  border-color: @color-btnWarning--border;
-  box-shadow: inset 0 1px 0 @color-btnWarning--shadowInner, 0 0 0 @color-btnWarning--shadowDrop;
-  &:hover {
-    color: @color-btnWarningHover--text;
-    text-shadow: 0 1px 0 @color-btnWarningHover--textShadowDrop;
-
-    background-color: @color-btnWarningHover--bck;
-    border-color: @color-btnWarningHover--border;
-    box-shadow: inset 0 1px 0 @color-btnWarningHover--shadowInner, 0 0 10px @color-btnWarningHover--shadowDrop;
-  }
-  &:active {
-    color: @color-btnWarningActive--text;
-    text-shadow: 0 1px 0 @color-btnWarningActive--textShadowDrop;
-
-    background-color: @color-btnWarningActive--bck;
-    border-color: @color-btnWarningActive--border;
-    box-shadow: inset 0 1px 0 @color-btnWarningActive--shadowInner, 0 0 10px @color-btnWarningActive--shadowDrop;
-  }
-  &[disabled],&.is-disabled{
-    color: @color-btnWarningDisabled--text;
-    text-shadow: 0 1px 0 @color-btnWarningDisabled--textShadowDrop;
-
-    background-color: @color-btnWarningDisabled--bck;
-    border-color: @color-btnWarningDisabled--border;
-    box-shadow: inset 0 0 0 @color-btnWarningDisabled--shadowInner, 0 0 0 @color-btnWarningDisabled--shadowDrop;
-  }
-}
-//  -- Outlined Button
-.btnOutlined {
-  color: @color-btnOutlined--text;
-  text-shadow: 0 1px 0 @color-btnOutlined--textShadowDrop;
-
-  background-color: @color-btnOutlined--bck;
-  border-color: @color-btnOutlined--border;
-  box-shadow: inset 0 1px 0 @color-btnOutlined--shadowInner, 0 0 0 @color-btnOutlined--shadowDrop;
-  &:hover {
-    color: @color-btnOutlinedHover--text;
-    text-shadow: 0 1px 0 @color-btnOutlinedHover--textShadowDrop;
-
-    background-color: @color-btnOutlinedHover--bck;
-    border-color: @color-btnOutlinedHover--border;
-    box-shadow: inset 0 1px 0 @color-btnOutlinedHover--shadowInner, 0 0 10px @color-btnOutlinedHover--shadowDrop;
-  }
-  &:active {
-    color: @color-btnOutlinedActive--text;
-    text-shadow: 0 1px 0 @color-btnOutlinedActive--textShadowDrop;
-
-    background-color: @color-btnOutlinedActive--bck;
-    border-color: @color-btnOutlinedActive--border;
-    box-shadow: inset 0 1px 0 @color-btnOutlinedActive--shadowInner, 0 0 10px @color-btnOutlinedActive--shadowDrop;
-  }
-}
-//  -- Clear Button
-.btnClear {
-  color: @color-btnClear--text;
-  text-shadow: 0 1px 0 @color-btnClear--textShadowDrop;
-
-  background-color: @color-btnClear--bck;
-  border-color: @color-btnClear--border;
-  box-shadow: inset 0 1px 0 @color-btnClear--shadowInner, 0 0 0 @color-btnClear--shadowDrop;
-  &:hover {
-    color: @color-btnClearHover--text;
-    text-shadow: 0 1px 0 @color-btnClearHover--textShadowDrop;
-
-    background-color: @color-btnClearHover--bck;
-    border-color: @color-btnClearHover--border;
-    box-shadow: inset 0 1px 0 @color-btnClearHover--shadowInner, 0 0 10px @color-btnClearHover--shadowDrop;
-  }
-  &:active {
-    color: @color-btnClearActive--text;
-    text-shadow: 0 1px 0 @color-btnClearActive--textShadowDrop;
-
-    background-color: @color-btnClearActive--bck;
-    border-color: @color-btnClearActive--border;
-    box-shadow: inset 0 1px 0 @color-btnClearActive--shadowInner, 0 0 10px @color-btnClearActive--shadowDrop;
-  }
-}
-//  -- Disabled Button
-.btn[disabled], .btn.is-disabled { cursor: not-allowed !important; }
-
+// TODO REVIEW Are these old buttons?
 
 //  $$ CTA Primary
 //  Call-to-action button
@@ -285,28 +486,28 @@
 }
 
 
-// ---------------------------------------------------------------------------
+// --------------------------------------
 //  $ BTN LAYOUTS
 //  To keep our classes to a minimum and as dry as possible, we purposefully
 //  keep styling regulated to button style classes. If you need to change
 //  the size or behavior of the default button, then add one of the classes
 //  below.
-//  
-// ---------------------------------------------------------------------------
-//  -- LAYOUTS
+//
+// --------------------------------------
+//  - LAYOUTS
 //  Button Block: For when you want the button to go full-width
-.btnLayout--block {
+.btnLayout-block {
   display: block;
   margin-bottom: 0.5em;
   width: 100%;
 }
-.btnLayout--left  { float: left; }
-.btnLayout--right { float: right; }
+.btnLayout-left  { float: left; }
+.btnLayout-right { float: right; }
 
-//  -- Sizes
-.btnSize--small { .fontSize(s); }
-.btnSize--large {
+//  - Sizes
+.btnSize-small { .fontSize(s); }
+.btnSize-large {
   padding: 0.5em 2em;
   .fontSize(l);
 }
-.btnSize--xlarge { .fontSize(xl); }
+.btnSize-xlarge { .fontSize(xl); }
