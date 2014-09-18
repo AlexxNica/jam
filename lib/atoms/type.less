@@ -189,16 +189,6 @@ strong,b          { .fontWeight(7); }
 em, i             { .fontStyle(i); }
 cite              { .fontStyle(n); }
 
-//  -- Text Alignment
-.text-left        { text-align: left; }
-.text-right       { text-align: right; }
-.text-center      { text-align: center; }
-.text-nowrap      { text-align: nowrap; }
-
-//  -- Text Transformation
-.text-lowercase   { .fontTransform(lc); }
-.text-uppercase   { .fontTransform(uc); }
-
 //  -- Quotes
 blockquote {
   margin: 0 0 0.5em;
@@ -224,7 +214,7 @@ blockquote {
   .fontWeight(2);
   .letterSpacing(base);
   .lineHeight(loosest);
-  .text-center();
+  text-align: center;
   color: @color-quotePull;
 }
 
