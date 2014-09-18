@@ -21,16 +21,17 @@
 //  ============================================================================
 //  $ VARIABLES
 //  ============================================================================
-@nav-linkColor:                       spin(desaturate(lighten(@color-grayMid,9%),7%),8);
-@nav-linkColor--hover:                @color-orange;
-@nav-linkColor--topNav:               spin(darken(@color-orange,6%),13);
-@nav-linkColor--topNavHover:          @color-orange;
-@nav-linkColor--topNavDisabled:       spin(desaturate(lighten(@color-orange,29%),82%),13);
-@nav-linkColor--topNavDisabledHover:  darken(@nav-linkColor--topNavDisabled,5%);
-@nav-linkBck:                         fade(@color-white,0%);
-@nav-linkBck--hover:                  desaturate(lighten(@color-grayMid,53%),6%);
-@nav-linkBck--topNav:                 @nav-linkBck;
-@nav-linkBck--topNavHover:            spin(lighten(@color-orange,41%),7);
+@nav-link-color:                     spin(desaturate(lighten(@color-grayMid,9%),7%),8);
+@nav-link-bck:                       fade(@color-white,0%);
+@nav-link_hover-color:               @color-orange;
+@nav-link_hover-bck:                 desaturate(lighten(@color-grayMid,53%),6%);
+
+@nav_global-link-color:                 spin(darken(@color-orange,6%),13);
+@nav_global-link-bck:                   @nav-link-bck;
+@nav_global-link_hover-color:           @color-orange;
+@nav_global-link_hover-bck:             spin(lighten(@color-orange,41%),7);
+@nav_global-link_disabled-color:        spin(desaturate(lighten(@color-orange,29%),82%),13);
+@nav_global-link_disabled_hover-color:  darken(@nav_global-link_disabled-color,5%);
 
 //  ----------------------------------------------------------------------------
 //  $ BASELINE
@@ -46,18 +47,18 @@
   .-item, a { position: relative; }
 
   a, a:link {
-    color: @nav-linkColor;
+    color: @nav-link-color;
     .fontSize(s);
     text-decoration: none;
 
-    background-color: @nav-linkBck;
+    background-color: @nav-link-bck;
     transition: all 0.05s ease-in;
 
     &:hover {
-      color: @nav-linkColor--hover;
+      color: @nav-link_hover-color;
       text-decoration: none;
 
-      background-color: @nav-linkBck--hover;
+      background-color: @nav-link_hover-bck;
       transition: all 0.05s ease-out;
     }
   }
@@ -100,29 +101,31 @@
 //  ----------------------------------------------------------------------------
 //  $ SPECIFIC LAYOUT PATTERNS
 //  ----------------------------------------------------------------------------
-.nav._globalNav { 
+.nav._global { 
+  .nav._row;
+
   margin-left: 2em;
   margin-top: 11px;
 
   a {
-    color: @nav-linkColor--topNav;
+    color: @nav_global-link-color;
     .fontSize(base);
     .fontWeight(7);
-    background-color: @nav-linkBck--topNav;
+    background-color: @nav_global-link-bck;
 
     &:hover, &:active {
-      color: @nav-linkColor--topNavHover;
-      background-color: @nav-linkBck--topNavHover;
+      color: @nav_global-link_hover-color;
+      background-color: @nav_global-link-bck;
     }
 
     &.is-disabled {
-      color: @nav-linkColor--topNavDisabled;
+      color: @nav_global-link_disabled-color;
       background-color: transparent;
 
       cursor: not-allowed;
 
       &:hover, &:active {
-        color: @nav-linkColor--topNavDisabledHover;
+        color: @nav_global-link_disabled_hover-color;
       }
     }
   }
