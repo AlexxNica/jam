@@ -15,36 +15,9 @@
 //  • MIXINS
 //
 //  ============================================================================
-//  $ TYPE VARIABLES
+//  $ VARIABLES
 //  ============================================================================
-//  Typography is an important design element for Stack Overflow Careers. Strong
-//  typography applied consistently can not only build brand recognition and trust,
-//  but it can also help establish reliable communication patterns for our end users.
-//  To accomplish this goal, we have selected the font Merriweather Sans ST. This
-//  font was designed specifically for on-screen use, allowing for greater control
-//  of line-heights and letter-spacing natively within our CSS without resorting
-//  to Javascript.
-//  
-//  With the addition of web fonts within this relaunch of Stack Overflow Careers,
-//  font-weight plays a more important role than it once did. Previously a "bold"
-//  weight was programmatically determined using an algorithm to fatten a font.
-//  Web fonts however are hinted specifically for declared weight values. Stack
-//  Overflow Careers uses a font-weight numerical value for the best font
-//  representation.
-//
-//  To better manage use of font-weights within Stack Overflow Careers, raw
-//  font-weights should not be entered within CSS. Instead use an appropriate
-//  variable below to declare the desired weight.
-//
-//  Merriweather Sans ST has greater letter-spacing capabilities natively within
-//  our CSS that previously were only available with Javascript. A set of
-//  letter-spacing variables have been created to manage this.
-//
-//  To help with managing line-heights, a set of line-height variables have also
-//  been created to manage this.
-//
-//  ----------------------------------------------------------------------------
-//  $$ Sizes
+//  -- Sizes
 @fontSize-base:             14;
 @fontSize-xxsmall:          @fontSize-base * 0.714285714;
 @fontSize-xsmall:           @fontSize-base * 0.857142857;
@@ -55,7 +28,7 @@
 @fontSize-xxlarge:          @fontSize-base * 3.428571429;
 @fontSize-xxxlarge:         @fontSize-base * 5.142857143;
 
-//  $$ Styles, Weights, and Transforms
+//  -- Styles, Weights, and Transforms
 @fontStyle-normal:          normal;
 @fontStyle-italic:          italic;
 @fontTransform-lowercase:   lowercase;
@@ -64,7 +37,7 @@
 @fontWeight-normal:         400;
 @fontWeight-bold:           700;
 
-//  $$ Line-Heights
+//  -- Line-Heights
 @lineHeight-tightest:       @fontSize-base / @fontSize-base;
 @lineHeight-tighter:        (@fontSize-base + 2) / @fontSize-base;
 @lineHeight-tight:          (@fontSize-base + 4) / @fontSize-base;
@@ -73,17 +46,22 @@
 @lineHeight-looser:         (@fontSize-base + 10) / @fontSize-base;
 @lineHeight-loosest:        (@fontSize-base / @fontSize-base) * 2;
 
-//  $$ Letter-spacing
+//  -- Letter-spacing
 @letterSpacing-zero:        0;
 @letterSpacing-base:        -0.5px;
 @letterSpacing-tight:       @letterSpacing-base * 2;
 @letterSpacing-tighter:     @letterSpacing-base * 5;
 @letterSpacing-tightest:    @letterSpacing-base * 10;
 
-//  $$ Font Family
+//  -- Font Family
 @fontFamily-sans:           "merriweather", "HelveticaNeue-Regular", "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 @fontFamily-serif:          Georgia, Times New Roman, Times, serif;
-@fontFamily-code:           Menlo, Monaco, Consolas, 'Courier New', monospace;;
+@fontFamily-code:           Menlo, Monaco, Consolas, "Courier New", monospace;
+
+//  -- Colors
+@callout-infoBck:           spin(lighten(@color-yellow,25%),-6);
+@callout-infoBorder:        spin(desaturate(lighten(@color-yellow,14%),53%),-5);
+@callout-infoText:          spin(desaturate(lighten(@color-grayMid,6%),6%),-2);
 
 
 //  ============================================================================
@@ -114,12 +92,12 @@
 //            }
 //
 //  ----------------------------------------------------------------------------
-.fontFamily (@f) {
-  & when (@f = sans) { font-family: @fontFamily-sans; }
-  & when (@f = serif) { font-family: @fontFamily-serif; }
-  & when (@f = code) { font-family: @fontFamily-code; }
+.fontFamily (@ff) {
+  & when (@ff = sans) { font-family: @fontFamily-sans; }
+  & when (@ff = serif){ font-family: @fontFamily-serif; }
+  & when (@ff = code) { font-family: @fontFamily-code; }
 }
-.fontSize(@s) {
+.fontSize (@s) {
   & when (@s = base)  { .fontRem(@fontSize-base); }
   & when (@s = xxs)   { .fontRem(@fontSize-xxsmall); }
   & when (@s = xs)    { .fontRem(@fontSize-xsmall); }
@@ -183,18 +161,6 @@
 //  ============================================================================
 //  $ TYPE STYLES: BASELINE
 //  ============================================================================
-html, body {
-  // -webkit-font-smoothing: antialiased; // May remove this
-
-  color: @color-copy--body;
-  .fontFamily(sans);
-  font-size: ~"@{fontSize-base}px";
-  .fontWeight(4);
-  .letterSpacing(base);
-  .lineHeight(base);
-  .text-left();
-}
-
 //  -- Paragraph Styles
 p {
   margin-bottom: @margin-base / 2;
@@ -332,3 +298,24 @@ h6, .h6 { .fontSize(xs); }
 }
 .text-titlePage     { .h1; }
 .text-titleSection  { .h3; }
+
+
+
+//  ============================================================================
+//  $ TYPE STYLES: NOTIFICATIONS
+//  ============================================================================
+.callout {
+  padding: 2em;
+  padding-right: 4em;
+
+  color: @callout-infoText;
+
+  border-style: solid;
+  border-width: 1px;
+
+  &._info {
+    background-color: @callout-infoBck; 
+    border-color: @callout-infoBorder;
+  }
+}
+
