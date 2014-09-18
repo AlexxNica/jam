@@ -21,14 +21,16 @@
 //  ============================================================================
 //  $ VARIABLES
 //  ============================================================================
-@nav-linkColor:                 spin(desaturate(lighten(@color-grayMid,9%),7%),8);
-@nav-linkColor--hover:          @color-orange;
-@nav-linkColor--topNav:         spin(darken(@color-orange,6%),13);
-@nav-linkColor--topNavHover:    @color-orange;
-@nav-linkBck:                   fade(@color-white,0%);
-@nav-linkBck--hover:            desaturate(lighten(@color-grayMid,53%),6%);
-@nav-linkBck--topNav:           @nav-linkBck;
-@nav-linkBck--topNavHover:      spin(lighten(@color-orange,41%),7);
+@nav-linkColor:                       spin(desaturate(lighten(@color-grayMid,9%),7%),8);
+@nav-linkColor--hover:                @color-orange;
+@nav-linkColor--topNav:               spin(darken(@color-orange,6%),13);
+@nav-linkColor--topNavHover:          @color-orange;
+@nav-linkColor--topNavDisabled:       spin(desaturate(lighten(@color-orange,29%),82%),13);
+@nav-linkColor--topNavDisabledHover:  darken(@nav-linkColor--topNavDisabled,5%);
+@nav-linkBck:                         fade(@color-white,0%);
+@nav-linkBck--hover:                  desaturate(lighten(@color-grayMid,53%),6%);
+@nav-linkBck--topNav:                 @nav-linkBck;
+@nav-linkBck--topNavHover:            spin(lighten(@color-orange,41%),7);
 
 //  ----------------------------------------------------------------------------
 //  $ BASELINE
@@ -111,6 +113,17 @@
     &:hover, &:active {
       color: @nav-linkColor--topNavHover;
       background-color: @nav-linkBck--topNavHover;
+    }
+
+    &.is-disabled {
+      color: @nav-linkColor--topNavDisabled;
+      background-color: transparent;
+
+      cursor: not-allowed;
+
+      &:hover, &:active {
+        color: @nav-linkColor--topNavDisabledHover;
+      }
     }
   }
 }
