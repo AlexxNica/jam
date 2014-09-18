@@ -38,62 +38,71 @@
 //  Reset margins and paddings for the list
 //  ----------------------------------------------------------------------------
 .nav {
-  ul&, li {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
-
-  .-item, a { position: relative; }
-
-  a, a:link {
-    color: @nav-link-color;
-    .fontSize(s);
-    text-decoration: none;
-
-    background-color: @nav-link-bck;
-    transition: all 0.05s ease-in;
-
-    &:hover {
-      color: @nav-link_hover-color;
-      text-decoration: none;
-
-      background-color: @nav-link_hover-bck;
-      transition: all 0.05s ease-out;
+  > .-group {
+    &,
+    > .-item {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+  
+    > .-item {
+      &, > a { position: relative; }
+  
+      > a,
+      > a:link {
+        color: @nav-link-color;
+        .fontSize(s);
+        text-decoration: none;
+    
+        background-color: @nav-link-bck;
+        transition: all 0.05s ease-in;
+  
+        &:hover {
+          color: @nav-link_hover-color;
+          text-decoration: none;
+    
+          background-color: @nav-link_hover-bck;
+          transition: all 0.05s ease-out;
+        }
+      }
     }
   }
+  &._nested {
+   //  Hide nested nav until needed
+   display: none;
 
-  &._nested a { .fontSize(xs); }
+    > .-group > .-item > a { .fontSize(xs); }
 
-  //  Hide nested nav until needed
-  .nav { display: none; }
-
-  // Show the secondary nav when needed
-  .is-open .nav { display: block; }
+   // Show the secondary nav when needed
+   &._open { display: block; }
+  }
 }
 
 //  ----------------------------------------------------------------------------
 //  $ GENERAL LAYOUT PATTERNS
 //  ----------------------------------------------------------------------------
 .nav {
-
   // -- Sidebar / Column Layout Style
   &._column {
-    .-item, a { display: block; }
+    > .-group > .-item {
+      &, > a { display: block; }
 
-    a { padding: 5px 20px; }
+      > a { padding: 5px 20px; }
+    }
 
-    &._nested a {
+    &._nested > .-group > .-item > a {
       padding-right: 14px;
       padding-left: 36px;
     }
   }
+
   //  -- Single Row / Top Nav Layout Style
   &._row {
-    .-item, a { display: inline-block; }
+    > .-group > .-item {
+      &, > a { display: inline-block; }
 
-    a {
-      padding: 10px 20px;
+      > a { padding: 10px 20px; }
     }
   }
 }
@@ -102,12 +111,13 @@
 //  $ SPECIFIC LAYOUT PATTERNS
 //  ----------------------------------------------------------------------------
 .nav._global { 
+  // _global implies _row
   .nav._row;
 
   margin-left: 2em;
   margin-top: 11px;
 
-  a {
+  > .-group > .-item > a {
     color: @nav_global-link-color;
     .fontSize(base);
     .fontWeight(7);
@@ -118,7 +128,7 @@
       background-color: @nav_global-link-bck;
     }
 
-    &.is-disabled {
+    &._disabled {
       color: @nav_global-link_disabled-color;
       background-color: transparent;
 
