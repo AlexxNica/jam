@@ -4,19 +4,19 @@
         <meta charset="utf-8" />
         <title>UI Style Guide | Stack Overflow Careers</title>
 
-        <link rel="stylesheet/less" type="text/css" href="lib/base.less">
-        <link rel="stylesheet/less" type="text/css" href="lib/font-loader.less">
         <link rel="stylesheet/less" type="text/css" href="css/uikit.less">
 
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
         <script>
           less.watch();
 
-          ('[data-spy="scroll"]').each(function () {
+          $('[data-spy="scroll"]').each(function () {
               var $spy = $(this).scrollspy('refresh')
           })
         </script>
+
 
         <!--
           ***Conditional comments for IE.***
