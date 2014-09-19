@@ -162,45 +162,48 @@
 //  $ TYPE STYLES: BASELINE
 //  ============================================================================
 //  -- Paragraph Styles
-p {
+p,.text {
   margin-bottom: @margin-base / 2;
   margin-top: 0;
   .lineHeight(loose);
-}
 
-//  When you want a larger, initial paragraph.
-.text-lead {
-  color: @color-copy--light;
-  .fontSize(xl);
-  .fontWeight(2);
-  .letterSpacing(tight);
-  .lineHeight(base);
-}
+  //  When you want a larger, initial paragraph.
+  &._lead {
+    color: @color-copyLight;
+    .fontSize(xl);
+    .fontWeight(2);
+    .letterSpacing(tight);
+    .lineHeight(base);
+  }
+  
+  &._large { .fontSize(m); }
+  &._xlarge {
+    .fontSize(l);
+    .fontWeight(2);
+  }
+  &._light { .fontWeight(2); }
+  &._small { .fontSize(s); }
 
-.text-large { .fontSize(m); }
-.text-xlarge {
-  .fontSize(l);
-  .fontWeight(2);
+  //  -- Other Misc Text Styles
+  //  Help Copy: For when you want to provide to helpful instructions or direction.
+  //  This is mainly found within forms.
+  &._help {
+    color: @color-copyHelp;
+    .fontSize(s);
+    .lineHeight(loose);
+  }
+
+  &._pageTitle     { .h1; }
+  &._sectionTitle  { .h3; }
 }
-.text-light { .fontWeight(2); }
 
 small             { font-size: floor((100% * @fontSize-small) / @fontSize-base); }
 strong,b          { .fontWeight(7); }
 em, i             { .fontStyle(i); }
 cite              { .fontStyle(n); }
 
-//  -- Text Alignment
-.text-left        { text-align: left; }
-.text-right       { text-align: right; }
-.text-center      { text-align: center; }
-.text-nowrap      { text-align: nowrap; }
-
-//  -- Text Transformation
-.text-lowercase   { .fontTransform(lc); }
-.text-uppercase   { .fontTransform(uc); }
-
 //  -- Quotes
-blockquote {
+blockquote, .quote {
   margin: 0 0 0.5em;
   padding: 0.5em 1em;
 
@@ -208,48 +211,41 @@ blockquote {
   .fontSize(m);
   letter-spacing: 0;
   .lineHeight(loose);
-  color: @color-quote--bq;
-}
-// For when you want to add a background to a blockquote, and ONLY A BLOCKQUOTE.
-.quote-bgBackground {
-  background-color: darken(@color-white,5%);
-  border-left: @color-orange;
-}
-.quote-pullquote {
-  margin: 0.5em 0; 
-  padding: 0.75em 0;
+  color: @color-quote;
 
-  .fontFamily(sans);
-  .fontStyle(i);
-  .fontWeight(2);
-  .letterSpacing(base);
-  .lineHeight(loosest);
-  .text-center();
-  color: @color-quote--bqPull;
+  // For when you want to add a background to a blockquote, and ONLY A BLOCKQUOTE.
+  &._strong {
+    background-color: darken(@color-white,5%);
+    border-left: @color-orange;
+  }
+  &._pull {
+    margin: 0.5em 0; 
+    padding: 0.75em 0;
+  
+    .fontFamily(sans);
+    .fontStyle(i);
+    .fontWeight(2);
+    .letterSpacing(base);
+    .lineHeight(loosest);
+    text-align: center;
+    color: @color-quotePull;
+  }
 }
 
 //  -- Links
-a, a:link {
-  color: @color-copy--link;
+a, a:link, .link {
+  color: @color-link;
   text-decoration: none;
   transition: all 0.1s ease-in;
 
-  &:hover, &:focus {
-    color: @color-copy--linkHover;
+  &:hover, &:focus, &._hover, &._focus {
+    color: @color-linkHover;
     text-decoration: underline;
   }
-  &:focus { outline: none; }
+  &:focus, &._focus { outline: none; }
 }
 
 
-//  -- Other Misc Text Styles
-//  Help Copy: For when you want to provide to helpful instructions or direction.
-//  This is mainly found within forms.
-.text-helpCopy {
-  color: @color-copy--help;
-  .fontSize(s);
-  .lineHeight(loose);
-}
 
 
 //  ============================================================================
@@ -260,7 +256,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-top: 0;
   margin-bottom: 0.5em;
 
-  color: @color-title--section;
+  color: @color-titleSection;
   .fontWeight(7);
   .letterSpacing(tight);
   .lineHeight(tighter);
@@ -269,9 +265,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   small, .small {
     margin-top: -0.25em;
 
-    color: @color-copy--body;
+    color: @color-copy;
     font-size: 75%;
     font-weight: normal;
+  }
+
+  &._huge { 
+    .fontSize(xxxl);
+    .fontWeight(2);
+    .letterSpacing(tightest);
   }
 }
 
@@ -289,16 +291,6 @@ h3, .h3 {
 h4, .h4 { .fontSize(m); }
 h5, .h5 { .fontSize(base); }
 h6, .h6 { .fontSize(xs); }
-
-//  -- HEADINGS STYLES 
-.text-titleHuge {
-  .fontSize(xxxl);
-  .fontWeight(2);
-  .letterSpacing(tightest);
-}
-.text-titlePage     { .h1; }
-.text-titleSection  { .h3; }
-
 
 
 //  ============================================================================

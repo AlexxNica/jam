@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-9">
                     <nav id="nav-mainnav" class="hidden-print">
-                        <ul class="nav _globalNav _row">
+                        <ul class="nav _global _row">
                             <li class="-item"><a href="index.html">Getting Started</a></li>
                             <li class="-item"><a href="docs-base.html" class="is-active">Base CSS</a>
                             <li class="-item"><a href="#" class="is-disabled">Components</a>
@@ -42,91 +42,118 @@
         <div class="container">
             <div class="row">
                 <div class="col-9">
-                    <section id="section-typography">
+                    <section id="section-grid">
                     <header>
-                        <h1>Typography</h1>
+                        <h1>Grid System</h1>
                     </header>
+                    </section>
 
-                    <article id="type-intro">
-                        <h3>Introduction</h3>
-                        <p class="text-large">Typography is an important design element for Stack Overflow Careers. Strong typography applied consistently can not only build brand recognition and trust, but it can also help establish reliable communication patterns.</p>
-                        <p class="callout _info"><strong>PLEASE NOTE:</strong> If you are altering pre-determined font-families, font-sizes, font-weights, line-heights, or letter-spacing, please read the <a href="docs-atoms-type.html">type LESS documentation.</a></p>
-                    </article>
-                    <article id="type-fonts">
-                        <h3>Typefaces</h3>
-                        <section>
-                            <p>To communicate a professional, yet friendly personality, Stack Overflow Careers has selected the typeface <em>Merriweather Sans ST</em>. <strong>This font was designed specifically for on-screen use,</strong> allowing for greater control of line-heights and letter-spacing natively within our CSS without resorting to Javascript.</p>
-                            <p>While we may use other weights when the situation arises, most copy will one of Light, Normal, and Bold styles.</p>
-                        </section>
-                        <dl class="dlRows typeExample">
-                            <dt class="_label">Extra Thin</dt>
-                            <dd class="_example"><span class="text-light">The quick onyx goblin jumps over the lazy dwarf.</span></dd>
-                            <dt class="_label">Light</dt>
-                            <dd class="_styleNormal _example">The quick onyx goblin <em>jumps</em> over the lazy dwarf.</dd>
-                            <dt class="_label">Semi Bold</dt>
-                            <dd class="_styleBold _example"><strong>The quick onyx goblin jumps over <em>the lazy dwarf.</em></strong></dd>
-                        </dl>
-                    </article>
-                    <article id="type-headlines">
-                        <h3>Headline Styles</h3>
-                        <p>Character tracking previously available only through Javascript libraries such as <a href="http://kerningjs.com/">Kerning.js</a> and now available to us within our CSS because of Merriweather's on-screen optimizations.</p>
-                        <h1>Headline 1</h1>
-                        <p class="help-subtitle">48px / 54px</p>
-                        <h2>Headline 2</h2>
-                        <p class="help-subtitle">40px / 46px</p>
-                        <h3>Headline 3</h3>
-                        <p class="help-subtitle">32px / 46px</p>
-                        <h4>Headline 4</h4>
-                        <p class="help-subtitle">24px / 34px</p>
-                        <h5>Headline 5</h5>
-                        <p class="help-subtitle">21px / 30px</p>
-                        <h6>Headline 6</h6>
-                        <p class="help-subtitle">18px / 26px</p>
-                    </article>
-                    <article id="type-copy">
-                        <h3>Copy Styles</h3>
-                        <p><a href="http://the12principles.tumblr.com/" target="_blank" class="link-outbound">The 12 basic principles of animation</a> were developed by the ‘old men’ of Walt Disney Studios, amongst them Frank Thomas and Ollie Johnston, during the 1930s. Of course they weren’t old men at the time, but young men who were at the forefront of exciting discoveries that were contributing to the development of a new art form. <a href="#top">These principles</a> came as a result of reflection about their practice and through Disney’s desire to use animation to express character and personality.</p>
-                        <p class="text-large text-light-gray">The quick brown fox jumps over the lazy dog.</p>
-                        <p class="help-subtitle">
-                            28px &nbsp;&nbsp;
-                            <span class="code-attribute code-class-name">text-large</span>, <span class="code-attribute code-class-name">text-light-gray</span>
-                        </p>
-                        <p class="text-medium">The quick brown fox jumps over the lazy dog.</p>
-                        <p class="help-subtitle">
-                            21px &nbsp;&nbsp; <span class="code-attribute code-class-name">text-medium</span>
-                        </p>
-                        <p>The quick brown fox jumps over the lazy dog.</p>
-                        <p class="help-subtitle">16px</p>
-                        <p class="text-small">The quick brown fox jumps over the lazy dog.</p>
-                        <p class="help-subtitle">
-                            13px &nbsp;&nbsp; <span class="code-attribute code-class-name">text-small</span>
-                        </p>
-                    </article>
-                    <article id="type-quotes">
-                        <h3>Quotes</h3>   
-                        <blockquote class="quote-large">It’s approaching your work differently that’ll make you a better designer. Books and talks can be the spark for that.</blockquote>
-                        <p class="help-subtitle"><span class="code-attribute code-class-name">quote-large</span></p>
-                        <blockquote class="quote-small">It’s approaching your work differently that’ll make you a better designer. Books and talks can be the spark for that.</blockquote>
-                        <p class="help-subtitle"><span class="code-attribute code-class-name">quote-small</span></p>
-                    </article>
-                    <article id="type-lists">
-                        <h3>Lists</h3>
-                        <p>Copy copy copy</p>
-                        <ul>
-                            <li>List item</li>
-                        </ul>
-                        <ol>
-                            <li>List item</li>
-                        </ol>
-                        <dl>
-                            <dt>Term</dt>
-                            <dd>Definition</dd>
-                        </dl>
-                    </article>
+                    <section id="section-type">
+                        <header>
+                            <h1>Typography</h1>
+                        </header>
+
+                        <article id="type-intro">
+                            <h3>Introduction</h3>
+                            <p class="_large">Typography is an important design element for Stack Overflow Careers. Strong typography applied consistently can not only build brand recognition and trust, but it can also help establish reliable communication patterns.</p>
+                            <p class="callout _info"><strong>PLEASE NOTE:</strong> If you are altering pre-determined font-families, font-sizes, font-weights, line-heights, or letter-spacing, please read the <a href="docs-atoms-type.html">type LESS documentation.</a></p>
+                        </article>
+                        <article id="type-fonts">
+                            <h3>Typefaces</h3>
+                            <section>
+                                <p>To communicate a professional, yet friendly personality, Stack Overflow Careers has selected the typeface <em>Merriweather Sans ST</em>. <strong>This font was designed specifically for on-screen use,</strong> allowing for greater control of line-heights and letter-spacing natively within our CSS without resorting to Javascript.</p>
+                                <p>While we may use other weights when the situation arises, most copy will one of Light, Normal, and Bold styles.</p>
+                            </section>
+                            <dl class="dlRows typeExample">
+                                <dt class="_label">Extra Thin</dt>
+                                <dd class="_example"><span class="_light">The quick onyx goblin jumps over the lazy dwarf.</span></dd>
+                                <dt class="_label">Light</dt>
+                                <dd class="_styleNormal _example">The quick onyx goblin <em>jumps</em> over the lazy dwarf.</dd>
+                                <dt class="_label">Semi Bold</dt>
+                                <dd class="_styleBold _example"><strong>The quick onyx goblin jumps over <em>the lazy dwarf.</em></strong></dd>
+                            </dl>
+                        </article>
+                        <article id="type-headlines">
+                            <h3>Headline Styles</h3>
+                            <p>Character tracking previously available only through Javascript libraries such as <a href="http://kerningjs.com/">Kerning.js</a> and now available to us within our CSS because of Merriweather's on-screen optimizations.</p>
+                            <h1>Headline 1</h1>
+                            <p class="help-subtitle">48px / 54px</p>
+                            <h2>Headline 2</h2>
+                            <p class="help-subtitle">40px / 46px</p>
+                            <h3>Headline 3</h3>
+                            <p class="help-subtitle">32px / 46px</p>
+                            <h4>Headline 4</h4>
+                            <p class="help-subtitle">24px / 34px</p>
+                            <h5>Headline 5</h5>
+                            <p class="help-subtitle">21px / 30px</p>
+                            <h6>Headline 6</h6>
+                            <p class="help-subtitle">18px / 26px</p>
+                        </article>
+                        <article id="type-copy">
+                            <h3>Copy Styles</h3>
+                            <p><a href="http://the12principles.tumblr.com/" target="_blank" class="link-outbound">The 12 basic principles of animation</a> were developed by the ‘old men’ of Walt Disney Studios, amongst them Frank Thomas and Ollie Johnston, during the 1930s. Of course they weren’t old men at the time, but young men who were at the forefront of exciting discoveries that were contributing to the development of a new art form. <a href="#top">These principles</a> came as a result of reflection about their practice and through Disney’s desire to use animation to express character and personality.</p>
+                            
+                            <p class="help-subtitle">Base element: <span class="code-tag-name">&lt;p&gt;</span>, or <span class="code-element">&lt;div class="text"&gt;</span></p>
+
+                            <p class="_xlarge _light">The quick brown fox jumps over the lazy dog.</p>
+                            <p class="help-subtitle">
+                                24px &nbsp;&nbsp;
+                                <span class="code-attribute code-class-name">_large</span>, <span class="code-attribute code-class-name">_light</span>
+                            </p>
+
+                            <p class="_large">The quick brown fox jumps over the lazy dog.</p>
+                            <p class="help-subtitle">
+                                19px &nbsp;&nbsp; <span class="code-attribute code-class-name">_medium</span>
+                            </p>
+                            
+                            <p>The quick brown fox jumps over the lazy dog.</p>
+                            <p class="help-subtitle">15px</p>
+
+                            <p class="_small">The quick brown fox jumps over the lazy dog.</p>
+                            <p class="help-subtitle">
+                                13px &nbsp;&nbsp; <span class="code-attribute code-class-name">_small</span>
+                            </p>
+                        </article>
+                        <article id="type-quotes">
+                            <h3>Quotes</h3>   
+                            <p class="help-subtitle">Base element: <span class="code-element">&lt;blockquote&gt;</span>, or <span class="code-element">&lt;div class="quote"&gt;</span></p>
+
+                            <blockquote class="_strong">It’s approaching your work differently that’ll make you a better designer. Books and talks can be the spark for that.</blockquote>
+                            <p class="help-subtitle"><span class="code-attribute code-class-name">_strong</span></p>
+                            <div class="quote _pull">It’s approaching your work differently that’ll make you a better designer. Books and talks can be the spark for that.</div>
+                            <p class="help-subtitle"><span class="code-attribute code-class-name">_pull</span></p>
+                        </article>
+                        <article id="type-lists">
+                            <h3>Lists</h3>
+                            <p>Copy copy copy</p>
+                            <ul>
+                                <li>List item</li>
+                            </ul>
+                            <ol>
+                                <li>List item</li>
+                            </ol>
+                            <dl>
+                                <dt>Term</dt>
+                                <dd>Definition</dd>
+                            </dl>
+                        </article>
+                    </section>
+
+                    <section id="section-colors">
+                    <header>
+                        <h1>Colors</h1>
+                    </header>
+                    </section>
+
+                    <section id="section-grid">
+                    <header>
+                        <h1>Forms</h1>
+                    </header>
+                    </section>
                     
                     <section id="section-buttons">
                         <header>
-                            <h2 class="title-section">Buttons</h2>
+                            <h1>Buttons</h1>
                         </header>
                         <article>
                             <h3>Style Options</h3>
@@ -134,51 +161,51 @@
                                 <dl class="code-block row-lines">
                                     <dt>
                                         <h6 class="help-subtitle">Primary Button</h6>
-                                        <span class="code-attribute">btnPrimary</span>
+                                        <span class="code-attribute">_primary</span>
                                     </dt>
                                     <dd>
-                                        <button class="btn btnPrimary">Search</button>
-                                        <button class="btn btnPrimary" disabled>Search</button>
+                                        <button class="_primary">Search</button>
+                                        <button class="_primary" disabled>Search</button>
                                     </dd>
                                     <dt>
                                         <h6 class="help-subtitle">Secondary Action Button</h6>
-                                        <span class="code-attribute">btnSecondary</span>
+                                        <span class="code-attribute">_secondary</span>
                                     </dt>
                                     <dd>
-                                        <button class="btn btnSecondary">Log In</button>
-                                        <button class="btn btnSecondary" disabled>Log In</button>
+                                        <button class="_secondary">Log In</button>
+                                        <button class="_secondary" disabled>Log In</button>
                                     </dd>
                                     <!--<dt>
                                             <h6 class="help-subtitle">Primary CTA Button</h6>
                                             <span class="code-attribute">btn-cta</span>
                                         </dt>
-                                        <dd><button class="btn btn-cta" disabled>Create A Company Page!</button></dd>-->
+                                        <dd><button class="btn-cta" disabled>Create A Company Page!</button></dd>-->
                                     <dt>
                                         <h6 class="help-subtitle">Confirmation Button</h6>
-                                        <span class="code-attribute">btnConfirm</span>
+                                        <span class="code-attribute">_confirm</span>
                                     </dt>
                                     <dd>
-                                        <button class="btn btnConfirm">Confirm My Order</button>
-                                        <button class="btn btnConfirm" disabled>Confirm My Order</button>
+                                        <button class="_confirm">Confirm My Order</button>
+                                        <button class="_confirm" disabled>Confirm My Order</button>
                                     </dd>
                                     <dt>
                                         <h6 class="help-subtitle">Warning Button</h6>
-                                        <span class="code-attribute">btnWarning</span>
+                                        <span class="code-attribute">_warning</span>
                                     </dt>
                                     <dd>
-                                        <button class="btn btnWarning">Delete This Listing</button>
-                                        <button class="btn btnWarning" disabled>Delete This Listing</button>
+                                        <button class="_warning">Delete This Listing</button>
+                                        <button class="_warning" disabled>Delete This Listing</button>
                                     </dd>
                                     <dt>
                                         <h6 class="help-subtitle">Outlined Button</h6>
-                                        <span class="code-attribute">btnOutlined</span>
+                                        <span class="code-attribute">_outlined</span>
                                     </dt>
-                                    <dd><button class="btn btnOutlined">Take a look at our pricing!</button></dd>
+                                    <dd><button class="_outlined">Take a look at our pricing!</button></dd>
                                     <dt>
                                         <h6 class="help-subtitle">Clear Button</h6>
-                                        <span class="code-attribute">btnLink</span>
+                                        <span class="code-attribute">_clear</span>
                                     </dt>
-                                    <dd><button class="btn btnClear">Read More About Job Listings</button></dd>
+                                    <dd><button class="_clear">Read More About Job Listings</button></dd>
                                 </dl>
                             </div>
                         </article>
@@ -188,50 +215,50 @@
                                 <dl class="code-block row-lines">
                                     <dt>
                                         <h6 class="help-subtitle">Extra Large Button</h6>
-                                        <span class="code-attribute">btnSize--xlarge</span>
+                                        <span class="code-attribute">_xlarge</span>
                                     </dt>
                                     <dd>
-                                        <button class="btn btnPrimary btnSize--xlarge">Extra Large Primary Button</button>
-                                        <button class="btn btnSecondary btnSize--xlarge">Extra Large Secondary Button</button>
+                                        <button class="_primary _xlarge">Extra Large Primary Button</button>
+                                        <button class="_secondary _xlarge">Extra Large Secondary Button</button>
                                     </dd>
                                     <dt>
                                         <h6 class="help-subtitle">Large Button</h6>
-                                        <span class="code-attribute">btnSize--large</span>
+                                        <span class="code-attribute">_large</span>
                                     </dt>
                                     <dd>
-                                        <button class="btn btnPrimary btnSize--large">Large Primary Button</button>
-                                        <button class="btn btnSecondary btnSize--large">Large Secondary Button</button>
+                                        <button class="_primary _large">Large Primary Button</button>
+                                        <button class="_secondary _large">Large Secondary Button</button>
                                     </dd>
                                     <dt>
                                         <h6 class="help-subtitle">Default Button</h6>
                                         <span class="code-attribute">btn</span>
                                     </dt>
                                     <dd>
-                                        <button class="btn btnPrimary">Default Primary Button</button>
-                                        <button class="btn btnSecondary">Default Secondary Button</button>
+                                        <button class="_primary">Default Primary Button</button>
+                                        <button class="_secondary">Default Secondary Button</button>
                                     </dd>
                                     <dt>
                                         <h6 class="help-subtitle">Small Button</h6>
-                                        <span class="code-attribute">btnSize--small</span>
+                                        <span class="code-attribute">_small</span>
                                     </dt>
                                     <dd>
-                                        <button class="btn btnPrimary btnSize--small">Primary Small Button</button>
-                                        <button class="btn btnSecondary btnSize--small">Secondary Small Button</button>
+                                        <button class="_primary _small">Primary Small Button</button>
+                                        <button class="_secondary _small">Secondary Small Button</button>
                                     </dd>
                                     <dt>
                                         <h6 class="help-subtitle">Button Block</h6>
-                                        <span class="code-attribute">btnLayout--block</span>
+                                        <span class="code-attribute">_block</span>
                                     </dt>
                                     <dd>
-                                        <button class="btn btnPrimary btnLayout--block">Full Width Primary Button</button>
-                                        <button class="btn btnSecondary btnLayout--block">Full Width Secondary Button</button>
+                                        <button class="_primary _block">Full Width Primary Button</button>
+                                        <button class="_secondary _block">Full Width Secondary Button</button>
                                     </dd>
                                     <!--<dt>
                                             <h6 class="help-subtitle">Icon Buttons</h6>
                                         </dt>
                                         <dd>
-                                            <button class="btn btn-icon btn-success">✔ Publish Now</button>
-                                            <button class="btn btn-icon">✔ Save As Draft</button>
+                                            <button class="btn-icon btn-success">✔ Publish Now</button>
+                                            <button class="btn-icon">✔ Save As Draft</button>
                                         </dd>-->
                                 </dl>
                             </div>
@@ -244,7 +271,7 @@
                     <ul class="nav _column">
                         <li class="-item"><a href="#overview">Overview</a></li>
                         <li class="-item">
-                            <a href="#grid">Grid System</a>
+                            <a href="#section-grid">Grid System</a>
                             <ul class="nav _column _nested">
                                 <li class="-item"><a href="#grid-intro">Introduction</a></li>
                                 <li class="-item"><a href="#grid-media">Media Queries</a></li>
@@ -258,7 +285,7 @@
                             </ul>
                         </li>
                         <li class="-item">
-                            <a href="#type">Typography</a>
+                            <a href="#section-type">Typography</a>
                             <ul class="nav _column _nested">
                                 <li class="-item"><a href="#type-intro">Introduction</a></li>
                                 <li class="-item"><a href="#type-fonts">Typefaces</a></li>
@@ -275,18 +302,18 @@
                             </ul>
                         </li>
                         <li class="-item">
-                            <a href="#color">Colors</a>
+                            <a href="#section-colors">Colors</a>
                             <ul class="nav _column _nested">
-                                <li class="-item"><a href="#color-intro">Introduction</a></li>
-                                <li class="-item"><a href="#color-hsl">HSL</a></li>
-                                <li class="-item"><a href="#color-variables">Variables</a></li>
-                                <li class="-item"><a href="#color-primary">Primary</a></li>
-                                <li class="-item"><a href="#color-secondary">Secondary</a></li>
-                                <li class="-item"><a href="#color-product">Product</a></li>
+                                <li class="-item"><a href="#colors-intro">Introduction</a></li>
+                                <li class="-item"><a href="#colors-hsl">HSL</a></li>
+                                <li class="-item"><a href="#colors-variables">Variables</a></li>
+                                <li class="-item"><a href="#colors-primary">Primary</a></li>
+                                <li class="-item"><a href="#colors-secondary">Secondary</a></li>
+                                <li class="-item"><a href="#colors-product">Product</a></li>
                             </ul>
                         </li>
                         <li class="-item">
-                            <a href="#forms">Forms</a>
+                            <a href="#section-forms">Forms</a>
                             <ul class="nav _column _nested">
                                 <li class="-item"><a href="#forms-intro">Introduction</a></li>
                                 <li class="-item"><a href="#forms-controls">Controls</a></li>
