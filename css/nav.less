@@ -21,16 +21,23 @@
 //  ============================================================================
 //  $ VARIABLES
 //  ============================================================================
-@nav-linkColor:                       spin(desaturate(lighten(@color-grayMid,9%),7%),8);
-@nav-linkColor--hover:                @color-orange;
-@nav-linkColor--topNav:               spin(darken(@color-orange,6%),13);
-@nav-linkColor--topNavHover:          @color-orange;
-@nav-linkColor--topNavDisabled:       spin(desaturate(lighten(@color-orange,29%),82%),13);
-@nav-linkColor--topNavDisabledHover:  darken(@nav-linkColor--topNavDisabled,5%);
-@nav-linkBck:                         fade(@color-white,0%);
-@nav-linkBck--hover:                  desaturate(lighten(@color-grayMid,53%),6%);
-@nav-linkBck--topNav:                 @nav-linkBck;
-@nav-linkBck--topNavHover:            spin(lighten(@color-orange,41%),7);
+@nav-link-color:                        spin(desaturate(lighten(@color-grayMid,9%),7%),8);
+@nav-link_hover-color:                  spin(darken(@color-grayMid,14%),2);
+@nav-link-background:                   fade(@color-white,0%);
+@nav-link_hover-background:             desaturate(lighten(@color-grayMid,53%),6%);
+@nav-link_active-color:                 spin(darken(@color-grayMid,14%),2);
+@nav-link_active_hover-color:           darken(@nav-link_active-color,5%);
+@nav-link_active-background:            fade(@color-white,0%);
+@nav-link_active_hover-background:      desaturate(lighten(@color-grayMid,56%),10%);
+@nav-link_active-border:                spin(desaturate(lighten(@color-grayMid,9%),7%),8);
+@nav-link_active_hover-border:          spin(darken(@color-grayMid,14%),2);
+
+@nav_global-link-color:                 spin(darken(@color-orange,6%),13);
+@nav_global-link_hover-color:           @color-orange;
+@nav_global-link-background:            @nav-link-background;
+@nav_global-link_hover-background:      lighten(@color-orange,41%);
+@nav_global-link_disabled-color:        spin(desaturate(lighten(@color-orange,29%),82%),13);
+@nav_global-link_disabled_hover-color:  darken(@nav_global-link_disabled-color,5%);
 
 //  ----------------------------------------------------------------------------
 //  $ BASELINE
@@ -46,29 +53,45 @@
   .-item, a { position: relative; }
 
   a, a:link {
-    color: @nav-linkColor;
+    color: @nav-link-color;
     .fontSize(s);
     text-decoration: none;
 
-    background-color: @nav-linkBck;
+    background-color: @nav-link-background;
     transition: all 0.05s ease-in;
 
     &:hover {
-      color: @nav-linkColor--hover;
+      color: @nav-link_hover-color;
       text-decoration: none;
 
-      background-color: @nav-linkBck--hover;
+      background-color: @nav-link_hover-background;
       transition: all 0.05s ease-out;
     }
   }
 
-  &._nested a { .fontSize(xs); }
+  //  -- Nested Navigation Styles
+  &._nested a {
+    .fontSize(xs);
+    .lineHeight(base);
+  }
 
-  //  Hide nested nav until needed
-  .nav { display: none; }
+  .nav { display: none; }             // Hide nested nav until needed
+  .active .nav { display: block; }   // Show the secondary nav when needed
 
-  // Show the secondary nav when needed
-  .is-open .nav { display: block; }
+  // -- States
+  .active > a {
+    color: @nav-link_active-color;
+    background-color: @nav-link_active-background;
+    border-left: 2px solid @nav-link_active-border;
+    transition: all 0.1s ease-in;
+
+    &:hover, &:active {
+      color: @nav-link_active_hover-color;
+      background-color: @nav-link_active_hover-background;
+      border-left-color: @nav-link_active_hover-border;
+      transition: all 0.1s ease-out;
+    }
+  }
 }
 
 //  ----------------------------------------------------------------------------
@@ -80,11 +103,10 @@
   &._column {
     .-item, a { display: block; }
 
-    a { padding: 5px 20px; }
+    a { padding: 8px 20px; }
 
     &._nested a {
-      padding-right: 14px;
-      padding-left: 36px;
+      padding: 6px 14px 5px 36px;
     }
   }
   //  -- Single Row / Top Nav Layout Style
@@ -101,28 +123,28 @@
 //  $ SPECIFIC LAYOUT PATTERNS
 //  ----------------------------------------------------------------------------
 .nav._globalNav { 
-  margin-left: 2em;
-  margin-top: 11px;
+  margin-left: 4em;
+  margin-top: 6px;
 
   a {
-    color: @nav-linkColor--topNav;
+    color: @nav_global-link-color;
     .fontSize(base);
     .fontWeight(7);
-    background-color: @nav-linkBck--topNav;
+    background-color: @nav_global-link-background;
 
     &:hover, &:active {
-      color: @nav-linkColor--topNavHover;
-      background-color: @nav-linkBck--topNavHover;
+      color: @nav_global-link_hover-color;
+      background-color: @nav_global-link_hover-background;
     }
 
     &.is-disabled {
-      color: @nav-linkColor--topNavDisabled;
+      color: @nav_global-link_disabled-color;
       background-color: transparent;
 
       cursor: not-allowed;
 
       &:hover, &:active {
-        color: @nav-linkColor--topNavDisabledHover;
+        color: @nav_global-link_disabled_hover-color;
       }
     }
   }

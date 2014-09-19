@@ -6,15 +6,10 @@
 
         <link rel="stylesheet/less" type="text/css" href="css/uikit.less">
 
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
-        <script>
-          less.watch();
-
-          ('[data-spy="scroll"]').each(function () {
-              var $spy = $(this).scrollspy('refresh')
-          })
-        </script>
+        <script>less.watch();</script>
 
         <!--
           ***Conditional comments for IE.***
@@ -25,7 +20,7 @@
         <!--[if lte IE 7]><script src="js/IE8.js" type="text/javascript"></script><![endif]-->
         <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="all" href="css/ie6.css"/><![endif]-->
     </head>
-    <body data-spy="scroll" data-target="#nav-sidebar">
+    <body data-spy="scroll" data-target=".nav-sidebar">
         <header class="page-header container">
             <div class="row">
                 <div class="col-3">
@@ -35,11 +30,10 @@
                     <nav id="nav-mainnav" class="hidden-print">
                         <ul class="nav _globalNav _row">
                             <li class="-item"><a href="index.html">Getting Started</a></li>
-                            <li class="-item"><a href="docs-atoms.html" class="is-active">Atoms</a>
-                            <li class="-item"><a href="docs-cells.html">Cells</a>
-                            <li class="-item"><a href="docs-molecules.html" class="is-disabled">Molecules</a>
-                            <li class="-item"><a href="docs-organisms.html" class="is-disabled">Organisms</a>
-                            <li class="-item"><a href="docs-organs.html" class="is-disabled">Organs</a>
+                            <li class="-item"><a href="docs-base.html" class="is-active">Base CSS</a>
+                            <li class="-item"><a href="#" class="is-disabled">Components</a>
+                            <li class="-item"><a href="#" class="is-disabled">Modules</a>
+                            <li class="-item"><a href="#" class="is-disabled">Views</a>
                         </ul>
                     </nav>
                 </div>
@@ -246,7 +240,7 @@
 
             </div>
             <div class="col-3">
-                <nav id="nav-sidebar" class="nav-UIdocs hidden-print affix-top" role="complementary">
+                <nav class="nav-sidebar hidden-print affix" role="complementary">
                     <ul class="nav _column">
                         <li class="-item"><a href="#overview">Overview</a></li>
                         <li class="-item">
@@ -263,7 +257,7 @@
                                 <li class="-item"><a href="#grid-less">LESS Mixins & Variables</a></li>
                             </ul>
                         </li>
-                        <li class="-item is-open">
+                        <li class="-item">
                             <a href="#type">Typography</a>
                             <ul class="nav _column _nested">
                                 <li class="-item"><a href="#type-intro">Introduction</a></li>
