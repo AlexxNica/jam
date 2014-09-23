@@ -8,6 +8,14 @@
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
+        
+        <!-- SyntaxHighlighter -->
+        <script src="js/syntaxhighlighter_3.0.83/shCore.js"></script>
+        <script src="js/syntaxhighlighter_3.0.83/shAutoloader.js"></script>
+        <script src="js/syntaxhighlighterLoader.js" defer></script>
+        <link rel="stylesheet/less" type="text/css" href="css/syntaxhighlighter_3.0.83/shCoreDefault.css">
+        
+        <!-- LESS -->
         <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
         <script>less.watch();</script>
 
@@ -72,6 +80,13 @@
                     </section>
                     <section id="lesscss-syntax">
                         <h3>CSS Syntax</h3>
+                        <pre class="brush: sass">
+                            .someThing {
+                                color: @text-color;
+
+                                > .-somePart { background-color: @background-color; }
+                            }
+                        </pre>
                     </section>
                     <section id="lesscss-order">
                         <h3>Declaration Order</h3>
