@@ -13,7 +13,8 @@
         <script src="js/syntaxhighlighter_3.0.83/shCore.js"></script>
         <script src="js/syntaxhighlighter_3.0.83/shAutoloader.js"></script>
         <script src="js/syntaxhighlighterLoader.js" defer></script>
-        <link rel="stylesheet/less" type="text/css" href="css/syntaxhighlighter_3.0.83/shCoreDefault.css">
+        <link rel="stylesheet/less" type="text/css" href="css/syntaxhighlighter_3.0.83/shCore.css">
+        <link rel="stylesheet/less" type="text/css" href="css/syntaxhighlighter_3.0.83/shThemeDefault.css">
         
         <!-- LESS -->
         <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
@@ -82,9 +83,9 @@
                         <h3>CSS Syntax</h3>
                         <pre class="brush: sass">
                             .someThing {
-                                color: @text-color;
+                                color: $text-color;
 
-                                > .-somePart { background-color: @background-color; }
+                                > .-somePart { background-color: $background-color; }
                             }
                         </pre>
                     </section>
