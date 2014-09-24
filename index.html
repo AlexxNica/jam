@@ -81,12 +81,35 @@
                     </section>
                     <section id="lesscss-syntax">
                         <h3>CSS Syntax</h3>
-                        <pre class="brush: sass">
-                            .someThing {
-                                color: @text-color;
+                        <pre class="brush: html">
+                            <pre class="brush: html">
 
-                                > .-somePart { background-color: @background-color; }
+                                <div class="container">
+                                    <div class="-row">
+                                        <div class="-col3">
+                                            <!-- content -->
+                                        </div>
+                                        <div class="-col9">
+                                            <!-- content -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </pre>
+                        </pre>
+                        <pre class="brush: sass">
+                            .container {
+                                > .-row { 
+                                    border-bottom: solid 1px @color-gray;
+
+                                    > [class*="-col"] { border-right: solid 1px @color-gray; }
+                                }
                             }
+                        </pre>
+                        <pre class="brush: js">
+                            (function _init(a) { 
+                                "use strict";
+                                a("howdy");
+                            })(alert);
                         </pre>
                     </section>
                     <section id="lesscss-order">
