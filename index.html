@@ -8,6 +8,14 @@
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
+        
+        <!-- SyntaxHighlighter -->
+        <script src="js/syntaxhighlighter_3.0.83/shCore.js"></script>
+        <script src="js/syntaxhighlighter_3.0.83/shAutoloader.js"></script>
+        <script src="js/syntaxhighlighterLoader.js" defer></script>
+        <link rel="stylesheet/less" type="text/css" href="css/syntaxhighlighter_3.0.83/shCoreDefault.css">
+        
+        <!-- LESS -->
         <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
         <script>less.watch();</script>
 
@@ -22,11 +30,11 @@
     </head>
     <body data-spy="scroll" data-target=".nav-sidebar">
         <header class="page-header container">
-            <div class="row">
-                <div class="col-3">
+            <div class="-row">
+                <div class="-col3">
                     <div class="logo-soc logo-svg"><a href="index.html"><img src="lib/images/logo-so-careers.svg" alt="Stack Overflow Careers" /></a></div>
                 </div>
-                <div class="col-9">
+                <div class="-col9">
                     <nav id="nav-mainnav" class="hidden-print">
                         <ul class="nav _global _row">
                             <li class="-item"><a href="index.html" class="is-active">Getting Started</a></li>
@@ -40,8 +48,8 @@
             </div>
         </header>
         <div class="container">
-            <div class="row">
-                <div class="col-9">
+            <div class="-row">
+                <div class="-col9">
                     <header>
                         <h1>Getting Started</h1>
                         <p class="_large">An overview of the Stack Overflow Careers UI Library, how to use it, formatting and class conventions, examples, and more.</p>
@@ -72,6 +80,13 @@
                     </section>
                     <section id="lesscss-syntax">
                         <h3>CSS Syntax</h3>
+                        <pre class="brush: sass">
+                            .someThing {
+                                color: @text-color;
+
+                                > .-somePart { background-color: @background-color; }
+                            }
+                        </pre>
                     </section>
                     <section id="lesscss-order">
                         <h3>Declaration Order</h3>
@@ -98,7 +113,7 @@
                         <h3>Organization</h3>
                     </section>
                 </div>
-                <div class="col-3">
+                <div class="-col3">
                     <nav class="nav-sidebar hidden-print affix" role="complementary">
                         <ul class="nav _column">
                             <li class="-item"><a href="#lesscss-intro">Overview</a></li>
