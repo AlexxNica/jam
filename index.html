@@ -4,8 +4,6 @@
         <meta charset="utf-8" />
         <title>UI Style Guide | Stack Overflow Careers</title>
 
-        <link rel="stylesheet/less" type="text/css" href="css/uikit.less">
-
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
         
@@ -15,7 +13,9 @@
         <script src="js/syntaxhighlighterLoader.js" defer></script>
         <link rel="stylesheet/less" type="text/css" href="css/syntaxhighlighter_3.0.83/shCore.css">
         <link rel="stylesheet/less" type="text/css" href="css/syntaxhighlighter_3.0.83/shThemeDefault.css">
-        
+
+        <link rel="stylesheet/less" type="text/css" href="css/uikit.less">
+
         <!-- LESS -->
         <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
         <script>less.watch();</script>
@@ -79,15 +79,15 @@
                         <div class="code _example">
                     <pre><code class="less-block"><span class="_me">@import</span> <span class="_pr">"lib/base.less"</span>;</code></pre>
                     </section>
-                    <section id="lesscss-syntax">
-                        <h3>CSS Syntax</h3>
+                    <section>
+                        <h3>Syntax Highlighter demo (temporary)</h3>
+                        A little buggy and not as good as Sublime or VS, but easier than hand highlighting.
                         <pre class="brush: html">
-                            <pre class="brush: html">
-
+                            <pre class="brush: html">   <!-- "sass" and "js" also work -->
                                 <div class="container">
                                     <div class="-row">
                                         <div class="-col3">
-                                            <!-- content -->
+                                            Stuff here.
                                         </div>
                                         <div class="-col9">
                                             <!-- content -->
@@ -97,20 +97,31 @@
                             </pre>
                         </pre>
                         <pre class="brush: sass">
+                            @import "something.sass";
+                            @import "another.sass";
+                            @color-gray: gray;
                             .container {
                                 > .-row { 
-                                    border-bottom: solid 1px @color-gray;
+                                    border-bottom: solid 1px @color-gray; // Note
+                                    color: red !important;
 
                                     > [class*="-col"] { border-right: solid 1px @color-gray; }
                                 }
+                            }
+                            @media print {
+                                * { text-decoration: blink; }
                             }
                         </pre>
                         <pre class="brush: js">
                             (function _init(a) { 
                                 "use strict";
-                                a("howdy");
+                                var foo = 15 + 20; // bar!
+                                if (foo === false) a("howdy");
                             })(alert);
                         </pre>
+                    </section>
+                    <section id="lesscss-syntax">
+                        <h3>CSS Syntax</h3>
                     </section>
                     <section id="lesscss-order">
                         <h3>Declaration Order</h3>
