@@ -28,5 +28,6 @@
         'xml xhtml xslt html    js/syntaxhighlighter_3.0.83/shBrushXml.js'
     );
     sh.defaults['toolbar'] = false;
+    sh.defaults['gutter'] = false;
     sh.all()
 })(SyntaxHighlighter);

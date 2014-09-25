@@ -52,7 +52,9 @@
     &:after { clear: both; }
   }
   
-  > .-row {
+  > .-row,
+  > .-row > [class*="-col"] > .-row
+   {
     > [class*="-col"] {
       position: relative;
       min-height: 1px;
