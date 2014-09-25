@@ -178,7 +178,7 @@
 //  ============================================================================
 //  -- Paragraph Styles
 p,.text {
-  margin-bottom: @margin-base / 2;
+  margin-bottom: @margin-base;
   margin-top: 0;
   .lineHeight(loose);
 
@@ -195,25 +195,29 @@ p,.text {
   }
   
   //  -- Type Sizes
-  &._large { .fontSize(m); }
   &._xlarge {
     .fontSize(l);
     .fontWeight(2);
   }
-  &._light { .fontWeight(2); }
+  &._large { .fontSize(m); }
   &._small { .fontSize(s); }
 
-  //  -- Other Misc Text Styles
-  //  Help Copy: For when you want to provide to helpful instructions or direction.
-  //  This is mainly found within forms.
-  &._help {
-    color: @copy_help-color;
-    .fontSize(xs);
-    .lineHeight(loose);
+  &._pageTitle     {
+    .fontSize(xxl);
+    .fontWeight(2);
+  }
+  &._sectionTitle  {
+    .fontSize(l);
+    .fontWeight(7);
   }
 
-  &._pageTitle     { .h1; }
-  &._sectionTitle  { .h3; }
+  //  -- Type Styles
+  &._help {
+    color: @copy_help-color;
+    .fontSize(s);
+    .lineHeight(loose);
+  }
+  
 }
 
 small             { font-size: floor((100% * @fontSize-small) / @fontSize-base); }
@@ -272,7 +276,7 @@ a, a:link, .link {
 //  ============================================================================
 //  -- HEADINGS
 h1, h2, h3, h4, h5, h6, 
-.h1, .h2, .h3, .h4, .h5, .h6 {
+._h1, ._h2, ._h3, ._h4, ._h5, ._h6 {
   margin-top: 0;
   margin-bottom: 0.5em;
 
@@ -289,30 +293,29 @@ h1, h2, h3, h4, h5, h6,
 
   &._huge { 
     .fontSize(xxxl);
-    .fontWeight(2);
     .letterSpacing(tightest);
   }
 }
 
 h1, h2, h3,
-.h1, .h2, .h3 {
+._h1, ._h2, ._h3 {
   .fontWeight(2);
   .letterSpacing(tight);
   .lineHeight(tighter);
 }
 
 h4, h5, h6,
-.h4, .h5, .h6 { .fontWeight(7); }
+._h4, ._h5, ._h6 { .fontWeight(7); }
 
-h1, .h1 { 
+h1, ._h1 { 
   .fontSize(xxl);
   .letterSpacing(tighter);
 }
-h2, .h2 { .fontSize(xl); }
-h3, .h3 { .fontSize(l); }
-h4, .h4 { .fontSize(m); }
-h5, .h5 { .fontSize(base); }
-h6, .h6 { 
+h2, ._h2 { .fontSize(xl); }
+h3, ._h3 { .fontSize(l); }
+h4, ._h4 { .fontSize(m); }
+h5, ._h5 { .fontSize(base); }
+h6, ._h6 { 
   .fontSize(xs);
   .letterSpacing(0);
   text-transform: uppercase;
