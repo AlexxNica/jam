@@ -42,7 +42,7 @@ html, body {
   min-height: 100%;
   width: 100%;
 
-  color: @color-copy;
+  color: @copy-color;
   .fontFamily(sans);
   font-size: ~"@{fontSize-base}px";
   .fontWeight(4);
@@ -121,20 +121,21 @@ p, ul, li {
   ._example {
     .fontSize(xl);
     .lineHeight(looser);
-    color: @color-titleSection;
+    color: @title-color;
   }
 
   ._label {
     display: inline-block;
     padding: 8px 0;
 
-    color: @color-copyHelp;
+    color: @copy_help-color;
     .fontSize(xxs);
     .fontWeight(4);
     letter-spacing: 0.5px;
     text-transform: uppercase;
   }
 }
+
 
 
 

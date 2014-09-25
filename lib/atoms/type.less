@@ -48,6 +48,7 @@
 
 //  -- Letter-spacing
 @letterSpacing-zero:        0;
+@letterSpacing-loose:       0.5px;
 @letterSpacing-base:        -0.5px;
 @letterSpacing-tight:       @letterSpacing-base * 2;
 @letterSpacing-tighter:     @letterSpacing-base * 5;
@@ -59,6 +60,19 @@
 @fontFamily-code:           Menlo, Monaco, Consolas, "Courier New", monospace;
 
 //  -- Colors
+@copy-color:                @color-grayDark;
+@copy_muted-color:          spin(desaturate(lighten(@color-grayMid,25%),8%),14);
+@copy_help-color:           desaturate(lighten(@color-grayMid,12%),8%);
+
+@link-color:                @color-blue;
+@link_hover-color:          spin(@link-color, 2);
+
+@title-color:               saturate(darken(@color-grayDark,12%),16%);
+@title_section-color:       saturate(darken(@color-grayMid,19%),3%);
+
+@quote-textColor:           @color-grayMid;
+@quote_pull-textColor:      saturate(darken(@color-grayMid,19%),3%);
+
 @callout-infoBck:           spin(lighten(@color-yellow,25%),-6);
 @callout-infoBorder:        spin(desaturate(lighten(@color-yellow,14%),53%),-5);
 @callout-infoText:          spin(desaturate(lighten(@color-grayMid,6%),6%),-2);
@@ -142,6 +156,7 @@
 }
 .letterSpacing (@ls) {
   & when (@ls = 0)        { letter-spacing: @letterSpacing-zero; }
+  & when (@ls = loose)    { letter-spacing: @letterSpacing-loose; }
   & when (@ls = base)     { letter-spacing: @letterSpacing-base; }
   & when (@ls = tight)    { letter-spacing: @letterSpacing-tight; }
   & when (@ls = tighter)  { letter-spacing: @letterSpacing-tighter; }
@@ -167,15 +182,19 @@ p,.text {
   margin-top: 0;
   .lineHeight(loose);
 
+  //  -- Indent paragraphs after the first paragraph to help with readability
+  + p { text-indent: 1em; }
+
   //  When you want a larger, initial paragraph.
   &._lead {
-    color: @color-copyLight;
+    color: @copy_muted-color;
     .fontSize(xl);
     .fontWeight(2);
     .letterSpacing(tight);
     .lineHeight(base);
   }
   
+  //  -- Type Sizes
   &._large { .fontSize(m); }
   &._xlarge {
     .fontSize(l);
@@ -188,8 +207,8 @@ p,.text {
   //  Help Copy: For when you want to provide to helpful instructions or direction.
   //  This is mainly found within forms.
   &._help {
-    color: @color-copyHelp;
-    .fontSize(s);
+    color: @copy_help-color;
+    .fontSize(xs);
     .lineHeight(loose);
   }
 
@@ -211,7 +230,7 @@ blockquote, .quote {
   .fontSize(m);
   letter-spacing: 0;
   .lineHeight(loose);
-  color: @color-quote;
+  color: @quote-textColor;
 
   // For when you want to add a background to a blockquote, and ONLY A BLOCKQUOTE.
   &._strong {
@@ -228,18 +247,18 @@ blockquote, .quote {
     .letterSpacing(base);
     .lineHeight(loosest);
     text-align: center;
-    color: @color-quotePull;
+    color: @quote_pull-textColor;
   }
 }
 
 //  -- Links
 a, a:link, .link {
-  color: @color-link;
+  color: @link-color;
   text-decoration: none;
   transition: all 0.1s ease-in;
 
   &:hover, &:focus, &._hover, &._focus {
-    color: @color-linkHover;
+    color: @link_hover-color;
     text-decoration: underline;
   }
   &:focus, &._focus { outline: none; }
@@ -252,22 +271,20 @@ a, a:link, .link {
 //  $ TYPE STYLES: HEADINGS
 //  ============================================================================
 //  -- HEADINGS
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+h1, h2, h3, h4, h5, h6, 
+.h1, .h2, .h3, .h4, .h5, .h6 {
   margin-top: 0;
   margin-bottom: 0.5em;
 
-  color: @color-titleSection;
-  .fontWeight(7);
-  .letterSpacing(tight);
-  .lineHeight(tighter);
+  color: @title-color;
   // text-rendering: optimizeLegibility; // Fix the character spacing for headings
 
-  small, .small {
+  > small, > ._small {
     margin-top: -0.25em;
 
-    color: @color-copy;
+    color: @copy_muted-color;
     font-size: 75%;
-    font-weight: normal;
+    font-weight: inherit;
   }
 
   &._huge { 
@@ -277,20 +294,38 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   }
 }
 
+h1, h2, h3,
+.h1, .h2, .h3 {
+  .fontWeight(2);
+  .letterSpacing(tight);
+  .lineHeight(tighter);
+}
+
+h4, h5, h6,
+.h4, .h5, .h6 { .fontWeight(7); }
+
 h1, .h1 { 
   .fontSize(xxl);
   .letterSpacing(tighter);
-  .lineHeight(looser);
-  .fontWeight(2);
 }
 h2, .h2 { .fontSize(xl); }
-h3, .h3 {
-  .fontSize(l);
-  .letterSpacing(base);
-}
+h3, .h3 { .fontSize(l); }
 h4, .h4 { .fontSize(m); }
 h5, .h5 { .fontSize(base); }
-h6, .h6 { .fontSize(xs); }
+h6, .h6 { 
+  .fontSize(xs);
+  .letterSpacing(0);
+  text-transform: uppercase;
+
+  > small, > ._small {
+    
+  }
+}
+
+//  -- Specific Title Styles
+.titles {
+  &._subSection { .fontWeight(7); }
+}
 
 
 //  ============================================================================

@@ -56,12 +56,12 @@
                         </header>
 
                         <article id="type-intro">
-                            <h3>Introduction</h3>
+                            <h2>Introduction</h2>
                             <p class="_large">Typography is an important design element for Stack Overflow Careers. Strong typography applied consistently can not only build brand recognition and trust, but it can also help establish reliable communication patterns.</p>
                             <p class="callout _info"><strong>PLEASE NOTE:</strong> If you are altering pre-determined font-families, font-sizes, font-weights, line-heights, or letter-spacing, please read the <a href="docs-atoms-type.html">type LESS documentation.</a></p>
                         </article>
                         <article id="type-fonts">
-                            <h3>Typefaces</h3>
+                            <h2>Typefaces</h2>
                             <section>
                                 <p>To communicate a professional, yet friendly personality, Stack Overflow Careers has selected the typeface <em>Merriweather Sans ST</em>. <strong>This font was designed specifically for on-screen use,</strong> allowing for greater control of line-heights and letter-spacing natively within our CSS without resorting to Javascript.</p>
                                 <p>While we may use other weights when the situation arises, most copy will one of Light, Normal, and Bold styles.</p>
@@ -76,20 +76,28 @@
                             </dl>
                         </article>
                         <article id="type-headlines">
-                            <h3>Headline Styles</h3>
-                            <p>Character tracking previously available only through Javascript libraries such as <a href="http://kerningjs.com/">Kerning.js</a> and now available to us within our CSS because of Merriweather's on-screen optimizations.</p>
-                            <h1>Headline 1</h1>
-                            <p class="help-subtitle">48px / 54px</p>
-                            <h2>Headline 2</h2>
-                            <p class="help-subtitle">40px / 46px</p>
-                            <h3>Headline 3</h3>
-                            <p class="help-subtitle">32px / 46px</p>
-                            <h4>Headline 4</h4>
-                            <p class="help-subtitle">24px / 34px</p>
-                            <h5>Headline 5</h5>
-                            <p class="help-subtitle">21px / 30px</p>
-                            <h6>Headline 6</h6>
-                            <p class="help-subtitle">18px / 26px</p>
+                            <h2>Headline Styles</h2>
+                            <p>Headlines provide signposts for content as well express content priority. Headlines should descend in order. This means that a <code>&lt;h3></code> shouldn't precede a <code>&lt;h1></code> in the DOM order. The question to ask yourself is, "if this page's CSS didn't load, would this copy still make sense?"</p>
+                            <p>Header tags communicate content order such as titles, section titles and sub-section titles. <em>A header tag should not be chosen based on the desired style, but on where it is located within the content.</em> Different headline styles can be applied two different ways:</p>
+                            <ol>
+                                <li>Apply a header class such as <code>.h3</code> to apply another header's base style to a headline.</li>
+                                <li>Use a specific style class such as <code>.text ._large</code> to change a header's appearance.</li>
+                            </ol>
+                            <section>
+                                <h3 class="titles _subSection">Header Styles</h1>
+                                <h1>h1. Heading 1 <small>Small Heading 1</small></h1>
+                                <p class="text _help">Extra Thin, 48px</p>
+                                <h2>h2. Heading 2 <small>Small Heading 2</small></h2>
+                                <p class="text _help">Extra Thin, 36px</p>
+                                <h3>h3. Heading 3 <small>Small Heading 3</small></h3>
+                                <p class="text _help">Extra Thin, 24px</p>
+                                <h4>h4. Heading 4 <small>Small Heading 4</small></h4>
+                                <p class="text _help">Semi Bold, 18px</p>
+                                <h5>h5. Heading 5 <small>Small Heading 5</small></h5>
+                                <p class="text _help">Semi Bold, 14px</p>
+                                <h6>h6. Heading 6 <small>Small Heading 6</small></h6>
+                                <p class="text _help">Semi Bold, 12px</p>
+                            </section>
                         </article>
                         <article id="type-copy">
                             <h3>Copy Styles</h3>
