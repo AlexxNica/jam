@@ -203,6 +203,98 @@ p, ul, li {
   }
 }
 
+//  -- Color Example
+//  Create some little color swatches
+.colorExample {
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+
+  .color {
+    position: relative;
+    float: left;
+    list-style-type: none;
+    margin: 0 0.5em 0.75em 0;
+    
+    box-shadow: 0 0 4px fade(@color-grayMid,20%);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: @borderRadius-base;
+
+    p {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      //width: 90%;
+      margin: 0 auto;
+      padding: 1em 0;
+
+      color: @copy_help-color;
+      .fontSize(xs);
+
+      background-color: @color-white;
+      border-bottom-right-radius: @borderRadius-base - 1;
+      border-bottom-left-radius: @borderRadius-base - 1;
+    }
+
+    //  -- Card Sizes
+    width: 15%; 
+    height: 12em;
+
+    //  -- For larger cards
+    &._big {
+      width: 49%;
+
+      @media screen and (min-width: @mediaQuery-small) { width: 18%; }
+    }
+
+    // -- Colors
+    &._orange {
+      background-color: @color-orange;
+      border-color: darken(@color-orange,10%);
+    }
+    &._blue {
+      background-color: @color-blue;
+      border-color: darken(@color-blue,10%);
+    }
+    &._green {
+      background-color: @color-green;
+      border-color: darken(@color-green,10%);
+    }
+    &._yellow {
+      background-color: @color-yellow;
+      border-color: darken(@color-yellow,10%);
+    }
+    &._red {
+      background-color: @color-red;
+      border-color: darken(@color-red,10%);
+    }
+    &._black {
+      background-color: @color-black;
+      border-color: @color-grayDark;
+    }
+    &._grayLight {
+      background-color: @color-grayLight;
+      border-color: darken(@color-grayLight,10%);
+    }
+    &._grayMid {
+      background-color: @color-grayMid;
+      border-color: darken(@color-grayMid,10%);
+    }
+    &._grayDark {
+      background-color: @color-grayDark;
+      border-color: darken(@color-grayDark,10%);
+    }
+
+  }
+
+  li.color:nth-of-type(even) { 
+    margin-right: 0;
+    @media screen and (min-width: @mediaQuery-small) { margin-right: 0.5em; }
+  }
+}
+
 
 
 
