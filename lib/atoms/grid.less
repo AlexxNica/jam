@@ -43,7 +43,7 @@
   @media (min-width: @mediaQuery-large)   { max-width: @mediaQuery-large - 30; }
 
   &,
-  > .-row {
+  .-row {
     &:before, &:after {
       display: table;
       content: " ";
@@ -52,8 +52,8 @@
     &:after { clear: both; }
   }
   
-  > .-row,
-  > .-row > [class*="-col"] > .-row
+  .-row,
+  .-row > [class*="-col"] > .-row
    {
     > [class*="-col"] {
       position: relative;
