@@ -206,15 +206,6 @@ p,.text {
   &._large { .fontSize(m); }
   &._small { .fontSize(s); }
 
-  &._pageTitle     {
-    .fontSize(xxl);
-    .fontWeight(2);
-  }
-  &._sectionTitle  {
-    .fontSize(l);
-    .fontWeight(7);
-  }
-
   //  -- Type Styles
   &._help {
     color: @copy_help-color;
@@ -314,9 +305,18 @@ h1, h2, h3, h4, h5, h6,
     font-weight: inherit;
   }
 
-  &._huge { 
-    .fontSize(xxxl);
-    .letterSpacing(tightest);
+  //  -- Specific Title Styles
+  &.title {
+    &._hugeTitle  {
+      .fontSize(xxxl);
+      .letterSpacing(tightest);
+    }
+    &._pageTitle  { .fontSize(xxl); }
+    &._section    { .fontWeight(7);}
+    &._subSection {
+      color: @title_section-color_muted;
+      .fontWeight(7);
+    }
   }
 }
 
@@ -345,15 +345,6 @@ h6, ._h6 {
 
   > small, > ._small {
     
-  }
-}
-
-//  -- Specific Title Styles
-.titles {
-  &._section    { .fontWeight(7);}
-  &._subSection {
-    color: @title_section-color_muted;
-    .fontWeight(7);
   }
 }
 
