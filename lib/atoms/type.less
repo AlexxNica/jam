@@ -207,7 +207,7 @@ p,.text {
   &._small { .fontSize(s); }
 
   //  -- Type Styles
-  &._help {
+  &.help {
     color: @copy_help-color;
     .fontSize(s);
     .lineHeight(loose);
@@ -275,7 +275,7 @@ a, a:link, .link {
   text-decoration: none;
   transition: all 0.1s ease-in;
 
-  &:hover, &:focus, &._hover, &._focus {
+  &:hover, &:focus, &.hover, &._focus {
     color: @link_hover-color;
     text-decoration: underline;
   }
@@ -290,7 +290,7 @@ a, a:link, .link {
 //  ============================================================================
 //  -- HEADINGS
 h1, h2, h3, h4, h5, h6, 
-._h1, ._h2, ._h3, ._h4, ._h5, ._h6 {
+.h1, .h2, .h3, .h4, .h5, .h6 {
   margin-top: 0;
   margin-bottom: 0.5em;
 
@@ -307,7 +307,7 @@ h1, h2, h3, h4, h5, h6,
 
   //  -- Specific Title Styles
   &.title {
-    &._hugeTitle  {
+    &.hugeTitle  {
       .fontSize(xxxl);
       .letterSpacing(tightest);
     }
@@ -321,24 +321,24 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, h2, h3,
-._h1, ._h2, ._h3 {
+.h1, .h2, .h3 {
   .fontWeight(2);
   .letterSpacing(tight);
   .lineHeight(tighter);
 }
 
 h4, h5, h6,
-._h4, ._h5, ._h6 { .fontWeight(7); }
+.h4, .h5, .h6 { .fontWeight(7); }
 
-h1, ._h1 { 
+h1, .h1 { 
   .fontSize(xxl);
   .letterSpacing(tighter);
 }
-h2, ._h2 { .fontSize(xl); }
-h3, ._h3 { .fontSize(l); }
-h4, ._h4 { .fontSize(m); }
-h5, ._h5 { .fontSize(base); }
-h6, ._h6 { 
+h2, .h2 { .fontSize(xl); }
+h3, .h3 { .fontSize(l); }
+h4, .h4 { .fontSize(m); }
+h5, .h5 { .fontSize(base); }
+h6, .h6 { 
   .fontSize(xs);
   .letterSpacing(0);
   text-transform: uppercase;

@@ -157,6 +157,7 @@ p, ul, li {
 //  Used to showcase items like type and colors
 .typeExample, .buttonExample {
   padding: 2em;
+  margin-bottom: 1em;
 
   border-radius: @borderRadius-base;
   background-color: lighten(@color-grayLight,6%);
@@ -189,8 +190,8 @@ p, ul, li {
   }
 
   h1, h2, h3, h4, h5, h6,
-  ._h1, ._h2, ._h3, ._h4, ._h5, ._h6,
-  p, ._text { 
+  .h1, .h2, .h3, .h4, .h5, .h6,
+  p, .text { 
     margin-bottom: 0;
     margin-top: @margin-base + 6;
   }
@@ -199,18 +200,33 @@ p, ul, li {
     &._pull { background-color: @color-white; }
   }
 
-  &._rows dl {
-    margin-top: 1em;
-    dt { .fontWeight(7); }
-    dd {
-      display: inline-block;
-      margin-left: 25%;
-      padding: 0;
+  // REVIEW Genius or hack.
+  > *:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  > *:last-child { 
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 
-      border: none;
+  dl { 
+    padding-bottom: 0;
+
+    &._rows {
+      margin-top: 1em;
+      dt { .fontWeight(7); }
+      dd {
+        display: inline-block;
+        margin-left: 25%;
+        padding: 0;
+        width: 75%;
+
+        border: none;
+      }
+
+      p { margin: 0 0 0.5em; }
     }
-
-    p { margin: 0 0 0.5em; }
   }
 }
 
