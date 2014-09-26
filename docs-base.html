@@ -354,6 +354,7 @@
                                 <h3>This is a subheading</h3>
                             </pre>
 
+                            <h3 class="titles _subSection h4">Out-of-Order Headings</h3>
                             <p>Header tags communicate content order such as titles, section titles and sub-section titles. <em>A header tag should not be chosen based on the desired style, but on where it is located within the content.</em> Different headline styles can be applied two different ways:</p>
                             <ol>
                                 <li>Apply a header class such as <code>.h3</code> to apply another header's base style to a headline.</li>
@@ -373,6 +374,7 @@
                                 <h3>This is a subheading</h3>
                             </pre>
 
+                            <h3 class="titles _subSection h4">Heading Caveats</h3>
                             <p>The <code>&lt;small&gt;</code> tag, which has "side comment or caveat" semantics, can be used to add explanatory text.</p>
                             <pre class="brush: html">
                                 <h4>Bank Detail Form <small>(Optional)</small></h4>
@@ -395,6 +397,19 @@
                                 <dt class="_label">Bold, 12px</dt>
                                 <dd class="_example"><h6>h6. Heading 6 <small>Small Heading 6</small></h6></dd>
                             </dl>
+                            <h3 class="titles _subSection h4">Alternate Heading Styles</h3>
+                            <p>We also provide an alternate set of styles that can be used for ???</p>
+                            <dl class="_rows typeExample">
+                                <dt class="_label">72px, <code>._hugeTitle</code></dt>
+                                <dd class="_example"><h1 class="_hugeTitle">Product Pages</h1></dd>
+                                <dt class="_label">48px, <code>._pageTitle</code></dt>
+                                <dd class="_example"><h2 class="_pageTitle">Ad Server Technology Developer</h2></dd>
+                                <dt class="_label">19px, <code>._section</code></dt>
+                                <dd class="_example"><h4 class="_section">Overall Performance Summary</h4></dd>
+                                <dt class="_label">19px, <code>._subSection</code></dt>
+                                <dd class="_example"><h4 class="_subSection">Campaign Statistics</h4></dd>
+                                
+                            </dl>
                         </article>
                         <article id="type-copy">
                             <h2 class="titles _section h3">Paragraph &amp; Copy Styles</h2>
@@ -403,22 +418,22 @@
                             <ol class="text _footnotes">
                                 <li id="fn-1"><em>Swiss typographer, <strong>Emil Ruder</strong>, on <a href="http://ia.net/blog/the-web-is-all-about-typography-period/">typographic organization.</a></em></li>
                             </ol>
+
+                            <h3 class="titles _subSection h4">Basic Usage</h3>
+                            <pre class="brush: html">
+                                <p>I'm a bona fide paragraph.</p>
+                                <div class="text">I'm not a "paragraph" per se, but I look and behave like one!</div>
+                            </pre>
+                            <div class="typeExample">
+                                <p>I'm a bona fide paragraph.</p>
+                                <div class="text">I'm not a "paragraph" per se, but I look and behave like one!</div>
+                            </div>
                             <h3 class="titles _subSection h4">Examples</h3>
                             <dl class="_rows typeExample">
                                 <dt class="_label">48px, <code>._lead</code></dt>
                                 <dd class="_example">
                                     <p class="_lead">The 12 basic principles of animation were developed by the &#145;old men&#146; of Walt Disney Studios, amongst them Frank Thomas and Ollie Johnston, during the 1930s.</p>
                                 </dd>
-                                <dt class="_label"><code>&lt;p></code> / <code>.text</code></dt>
-                                <dd class="_example">
-                                    <p>Of course they weren&#146;t old men at the time, but young men who were at the forefront of exciting discoveries that were contributing to the development of a new art form. <a href="http://the12principles.tumblr.com/" target="_blank" class="link -outbound">These principles came as a result of reflection about their practice</a> and through Disney&#146;s desire to use animation to express character and personality.</p>
-                                </dd>
-                                <dt class="_label">72px, <code>.hugeTitle</code></dt>
-                                <dd class="_example"><h1 class="title hugeTitle">Product Pages</h1></dd>
-                                <dt class="_label">48px, <code>._pageTitle</code></dt>
-                                <dd class="_example"><h1 class="title _pageTitle">Ad Server Technology Developer</h1></dd>
-                                <dt class="_label">18px, <code>._sectionTitle</code></dt>
-                                <dd class="_example"><h4 class="title _sectionTitle">Overall Performance Summary</h4></dd>
                                 <dt class="_label">24px, <code>._xlarge</code></dt>
                                 <dd class="_example"><p class="_xlarge">The quick onyx goblin jumps over the lazy dwarf.</p></dd>
                                 <dt class="_label">18px, <code>._large</code></dt>
