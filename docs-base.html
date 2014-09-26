@@ -56,86 +56,153 @@
                         </header>
 
                         <article id="type-intro">
-                            <h2 class="titles _subSection _h3">Introduction</h2>
+                            <h2 class="titles _section _h3">Introduction</h2>
                             <p class="_large">Typography is an important design element for Stack Overflow Careers. Strong typography applied consistently can not only build brand recognition and trust, but it can also help establish reliable communication patterns.</p>
                             <p class="callout _info"><strong>PLEASE NOTE:</strong> If you are altering pre-determined font-families, font-sizes, font-weights, line-heights, or letter-spacing, please read the <a href="docs-base-type.html">type LESS documentation.</a></p>
                         </article>
                         <article id="type-fonts">
-                            <p>To communicate a professional, yet friendly personality, Stack Overflow Careers has selected the typeface <em>Merriweather Sans ST</em>. <strong>This font was designed specifically for on-screen use,</strong> allowing for greater control of line-heights and letter-spacing natively within our CSS without resorting to Javascript.</p>
-                            <p>While we may use other weights when the situation arises, most copy will one of Light, Normal, and Bold styles.</p>
-                            <dl class="dlRows typeExample">
+                            <p>To communicate a professional, yet friendly personality, Stack Overflow Careers has selected the typeface <em>Merriweather Sans ST</em>. <strong>This font was designed specifically for on-screen use,</strong> allowing for greater control of line-heights and letter-spacing natively within our CSS without resorting to Javascript. While we may use other weights occasionally, most copy will use Light, Normal, and Bold styles.</p>
+                            <h3 class="titles _subSection _h4">Examples</h3>
+                            <dl class="_rows typeExample">
                                 <dt class="_label">Extra Thin</dt>
-                                <dd class="_example"><span class="_light">The quick onyx goblin jumps over the lazy dwarf.</span></dd>
+                                <dd class="_example"><div class="-weights _light">The quick onyx goblin jumps over the lazy dwarf.</div></dd>
                                 <dt class="_label">Light</dt>
-                                <dd class="_styleNormal _example">The quick onyx goblin <em>jumps</em> over the lazy dwarf.</dd>
+                                <dd class="_styleNormal _example"><div class="-weights">The quick onyx goblin jumps over <em>the lazy dwarf.</em></div></dd>
                                 <dt class="_label">Semi Bold</dt>
-                                <dd class="_styleBold _example"><strong>The quick onyx goblin jumps over <em>the lazy dwarf.</em></strong></dd>
+                                <dd class="_styleBold _example"><div class="-weights"><strong>The quick onyx goblin jumps over <em>the lazy dwarf.</em></strong></div></dd>
                             </dl>
                         </article>
                         <article id="type-headlines">
-                            <h2 class="titles _subSection _h3">Headlines</h2>
+                            <h2 class="titles _section _h3">Headlines</h2>
                             <p>Headlines provide signposts for content as well express content priority. Headlines should descend in order. This means that a <code>&lt;h3></code> shouldn't precede a <code>&lt;h1></code> in the DOM order. The question to ask yourself is, "if this page's CSS didn't load, would this copy still make sense?"</p>
-                            <p>Header tags communicate content order such as titles, section titles and sub-section titles. <em>A header tag should not be chosen based on the desired style, but on where it is located within the content.</em> Different headline styles can be applied two different ways:</p>
+                            <p class="_marginHalf">Header tags communicate content order such as titles, section titles and sub-section titles. <em>A header tag should not be chosen based on the desired style, but on where it is located within the content.</em> Different headline styles can be applied two different ways:</p>
                             <ol>
                                 <li>Apply a header class such as <code>.h3</code> to apply another header's base style to a headline.</li>
                                 <li>Use a specific style class such as <code>.text ._large</code> to change a header's appearance.</li>
                             </ol>
-                            <div class="example -type">
-                                <h3 class="titles _subSection">Header Styles</h3>
-                                <h1>h1. Heading 1 <small>Small Heading 1</small></h1>
-                                <p class="text _help">Extra Thin, 48px</p>
-                                <h2>h2. Heading 2 <small>Small Heading 2</small></h2>
-                                <p class="text _help">Extra Thin, 36px</p>
-                                <h3>h3. Heading 3 <small>Small Heading 3</small></h3>
-                                <p class="text _help">Extra Thin, 24px</p>
-                                <h4>h4. Heading 4 <small>Small Heading 4</small></h4>
-                                <p class="text _help">Semi Bold, 18px</p>
-                                <h5>h5. Heading 5 <small>Small Heading 5</small></h5>
-                                <p class="text _help">Semi Bold, 14px</p>
-                                <h6>h6. Heading 6 <small>Small Heading 6</small></h6>
-                                <p class="text _help">Semi Bold, 12px</p>
-                            </div>
+                            <h3 class="titles _subSection _h4">Examples</h3>
+                            <dl class="_rows typeExample">
+                                <dt class="_label">Light, 48px</dt>
+                                <dd class="_example"><h1>h1. Heading 1 <small>Small Heading 1</small></h1></dd>
+                                <dt class="_label">Light, 36px</dt>
+                                <dd class="_example"><h2>h2. Heading 2 <small>Small Heading 2</small></h2></dd>
+                                <dt class="_label">Light, 24px</dt>
+                                <dd class="_example"><h3>h3. Heading 3 <small>Small Heading 3</small></h3></dd>
+                                <dt class="_label">Bold, 18px</dt>
+                                <dd class="_example"><h4>h4. Heading 4 <small>Small Heading 4</small></h4></dd>
+                                <dt class="_label">Bold, 14px</dt>
+                                <dd class="_example"><h5>h5. Heading 5 <small>Small Heading 5</small></h5></dd>
+                                <dt class="_label">Bold, 12px</dt>
+                                <dd class="_example"><h6>h6. Heading 6 <small>Small Heading 6</small></h6></dd>
+                            </dl>
                         </article>
                         <article id="type-copy">
-                            <h2 class="titles _subSection _h3">Paragraph &amp; Copy Styles</h2>
-                            <div class="example -type">
-                                <p class="_lead">The 12 basic principles of animation were developed by the 'old men' of Walt Disney Studios, amongst them Frank Thomas and Ollie Johnston, during the 1930s.</p>
-                                <!--<span class="text _help">48px, <code>._lead</code></span>-->
-                                <p>Of course they weren’t old men at the time, but young men who were at the forefront of exciting discoveries that were contributing to the development of a new art form. <a href="http://the12principles.tumblr.com/" target="_blank" class="link -outbound">These principles came as a result of reflection about their practice</a> and through Disney’s desire to use animation to express character and personality.</p>
-                                <!--<span class="text _help"><code>&lt;p></code> or <code>._text</code></span>-->
-                                <p class="_pageTitle">Onyx Goblin Jumps</p>
-                                <span class="text _help">48px, <code>._pageTitle</code></span>
-                                <p class="_sectionTitle">The Lazy Dwarf</p>
-                                <span class="text _help">18px, <code>._sectionTitle</code></span>
-                                <p class="_xlarge">The quick onyx goblin jumps over the lazy dwarf.</p>
-                                <span class="text _help">24px, <code>._xlarge</code></span>
-                                <p class="_large">The quick onyx goblin jumps over the lazy dwarf.</p>
-                                <span class="text _help">18px, <code>._large</code></span>
-                                <p class="_small">The quick onyx goblin jumps over the lazy dwarf.</p>
-                                <span class="text _help">13px, <code>._small</code></span>
-                            </div>
+                            <h2 class="titles _section _h3">Paragraph &amp; Copy Styles</h2>
+                            <p>The top design element that we use is written language. Our job is to divide, organize, and interpret this written language so that users can achieve their goals quickly<sup class="fn"><a href="#fn-1">1</a></sup>. This is achieved through optmizing typography for "readability, accessibility, usability, and overall ... balance."</p>
+                            <p>Below are multiple sizing and style variants for copy. Please use only these variants as are designed to work in concert with each other. Also use of these styles consistently helps maintain a consistent typographic experience across Stack Overflow Careers.</p>
+                            <ol class="text -footnotes">
+                                <li id="fn-1"><em>Swiss typographer, <strong>Emil Ruder</strong>, on <a href="http://ia.net/blog/the-web-is-all-about-typography-period/">typographic organization.</a></em></li>
+                            </ol>
+                            <h3 class="titles _subSection _h4">Examples</h3>
+                            <dl class="_rows typeExample">
+                                <dt class="_label">48px, <code>._lead</code></dt>
+                                <dd class="_example">
+                                    <p class="_lead">The 12 basic principles of animation were developed by the &#145;old men&#146; of Walt Disney Studios, amongst them Frank Thomas and Ollie Johnston, during the 1930s.</p>
+                                </dd>
+                                <dt class="_label"><code>&lt;p></code> / <code>._text</code></dt>
+                                <dd class="_example">
+                                    <p>Of course they weren&#146;t old men at the time, but young men who were at the forefront of exciting discoveries that were contributing to the development of a new art form. <a href="http://the12principles.tumblr.com/" target="_blank" class="link -outbound">These principles came as a result of reflection about their practice</a> and through Disney&#146;s desire to use animation to express character and personality.</p>
+                                </dd>
+                                <dt class="_label">48px, <code>._pageTitle</code></dt>
+                                <dd class="_example"><h1 class="_pageTitle">Ad Server Technology Developer</h1></dd>
+                                <dt class="_label">18px, <code>._sectionTitle</code></dt>
+                                <dd class="_example"><h4 class="_sectionTitle">Overall Performance Summary</h4></dd>
+                                <dt class="_label">24px, <code>._xlarge</code></dt>
+                                <dd class="_example"><p class="_xlarge">The quick onyx goblin jumps over the lazy dwarf.</p></dd>
+                                <dt class="_label">18px, <code>._large</code></dt>
+                                <dd class="_example"><p class="_large">The quick onyx goblin jumps over the lazy dwarf.</p></dd>
+                                <dt class="_label">13px, <code>._small</code></dt>
+                                <dd class="_example"><p class="_small">The quick onyx goblin jumps over the lazy dwarf.</p></dd>
+                            </dl>
                         </article>
                         <article id="type-quotes">
-                            <h3>Quotes</h3>   
-                            <p class="help-subtitle">Base element: <span class="code-element">&lt;blockquote&gt;</span>, or <span class="code-element">&lt;div class="quote"&gt;</span></p>
-
-                            <blockquote class="_strong">It’s approaching your work differently that’ll make you a better designer. Books and talks can be the spark for that.</blockquote>
-                            <p class="help-subtitle"><span class="code-attribute code-class-name">_strong</span></p>
-                            <div class="quote _pull">It’s approaching your work differently that’ll make you a better designer. Books and talks can be the spark for that.</div>
-                            <p class="help-subtitle"><span class="code-attribute code-class-name">_pull</span></p>
+                            <h2 class="titles _section _h3">Quotes</h2>
+                            <p>Basic <code>blockquote</code> and pull-quote styles. These are used primarily on marketing pages for testimonials or longer copy quote blocks in blog posts.</p>
+                            <h3 class="titles _subSection _h4">Examples</h3>
+                            <dl class="_rows typeExample">
+                                <dt class="_label"><code>blockquote</code>, <code>.quote</code></dt>
+                                <dd class="_example">
+                                    <blockquote>It&#146;s approaching your work differently that&#146;ll make you a better designer. Books and talks can be the spark for that.</blockquote>
+                                </dd>
+                                <dt class="_label"><code>._accent</code></dt>
+                                <dd class="_example">
+                                    <blockquote class="_accent">It&#146;s approaching your work differently that&#146;ll make you a better designer. Books and talks can be the spark for that.</blockquote>
+                                </dd>
+                                <dt class="_label"><code>._pull</code>, <code>.text._large</code>, </dt>
+                                <dd class="_example">
+                                    <blockquote class="_pull text _xlarge">It&#146;s approaching your work differently that&#146;ll make you a better designer. Books and talks can be the spark for that.</blockquote>
+                                </dd>
+                            </dl>
                         </article>
                         <article id="type-lists">
-                            <h3>Lists</h3>
-                            <p>Copy copy copy</p>
-                            <ul>
-                                <li>List item</li>
-                            </ul>
-                            <ol>
-                                <li>List item</li>
-                            </ol>
-                            <dl>
-                                <dt>Term</dt>
-                                <dd>Definition</dd>
+                            <h2 class="titles _section _h3">Lists</h2>
+                            <h3 class="titles _subSection _h4">Examples</h3>
+                            <dl class="_rows typeExample">
+                                <dt class="_label"><code>&lt;ul></code></dt>
+                                <dd class="_example">
+                                    <h5>Grocery List</h5>
+                                    <ul>
+                                        <li>Eggs</li>
+                                        <li>Milk</li>
+                                        <li>Trail Mix
+                                            <ul>
+                                                <li>Dried Cherries</li>
+                                                <li>M&amp;M&#146;s</li>
+                                                <li>Walnuts</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </dd>
+                                <dt class="_label"><code>&lt;ol></code></dt>
+                                <dd class="_example">
+                                    <h5>How to build a website:</h5>
+                                    <ol>
+                                        <li>Generate an idea</li>
+                                        <li>Find an amazing developer</li>
+                                        <li>Build said idea
+                                            <ol>
+                                                <li>Sketch out idea
+                                                    <ol>
+                                                        <li>Acquire paper and pen</li>
+                                                        <li>Sketch out idea</li>
+                                                        <li>Share with co-workers
+                                                            <ol>
+                                                                <li>Solicit feedback</li>
+                                                                <li>Hear out objections</li>
+                                                                <li>Do what you think is best</li>
+                                                            </ol>
+                                                        </li>
+                                                    </ol>
+                                                </li>
+                                                <li>Wireframe it up</li>
+                                                <li>Find an equally amazing designer</li>
+                                            </ol>
+                                        </li>
+                                        <li>Sprinkle in some luck and magic</li>
+                                        <li>Success!</li>
+                                    </ol>
+                                </dd>
+                                <dt class="_label"><code>&lt;dl></code></dt>
+                                <dd class="_example">
+                                    <dl>
+                                        <dt>stack overflow</dt>
+                                        <dd>
+                                            <p>An error condition which results from attempting to push more items onto a stack than space has been allocated for. Often, this will simply overwrite the adjacent memory locations causing hard-to-trace bugs.</p>
+                                            <p>Stack overflow can result, for example, from an insufficient number of stack frames to handle hardware interrupts.</p>
+                                            <p>See also, <a href="http://stackoverflow.com">Stack Overflow</a></p>
+                                        </dd>
+                                    </dl>
+                                </dd>
                             </dl>
                         </article>
                     </section>
@@ -294,7 +361,7 @@
                                 <li class="-item"><a href="#type-copy">Copy</a></li>
                                 <li class="-item"><a href="#type-quotes">Quotes</a></li>
                                 <li class="-item"><a href="#type-lists">Lists</a></li>
-                                <li class="-item"><a href="#type-helper">Helper Classes</a></li>
+                                <!--<li class="-item"><a href="#type-helper">Helper Classes</a></li>-->
                             </ul>
                         </li>
                         <li class="-item">

@@ -71,21 +71,33 @@ body {
   .-logo {
     position: relative;
     display: block;
-    top: -12px;
+    max-width: 300px;
+  }
+
+  //  -- Logo adjustments based on media query sizes
+  @media screen {
+    @media (min-width: @mediaQuery-medium) { 
+      .-logo {
+        top: -7px;
+        max-width: 100%;
+      }
+    }
+    @media (min-width: @mediaQuery-large)  { 
+      .-logo {
+        top: -12px;
+        max-width: 100%;
+      }
+    }
   }
 }
 
-
-section, article { padding-bottom: @padding-double * 2; }
-
-article {
-  .col-5:first-of-type { padding-right: @padding-double; }
-  > section {
-    padding-bottom: @padding-base;
-    padding-right: 25%;
-  }
-
-  .dlRows { margin-top: 0; }
+//  -- Originally was just styling section and article tags. Really though
+//     all I want to do is add bottom padding to sections. Trapping for all
+//     section ids now.
+[id*="section-"] { padding-bottom: @padding-double * 2; }
+section > article {
+  margin-bottom: 2em;
+  > p { margin-right: @padding-double * 3; }
 }
 
 .content section {
@@ -118,10 +130,24 @@ p, ul, li {
 //  $ Type Example
 //  Used to showcase items like type and colors
 .typeExample {
+  padding: 2em;
+
+  border-radius: @borderRadius-base;
+  background-color: lighten(@color-grayLight,6%);
+  border: 1px solid @borderColor-grayLight;
+
   ._example {
-    .fontSize(xl);
-    .lineHeight(looser);
-    color: @title-color;
+    .-weights {
+      .fontRem(32);
+      .lineHeight(looser);
+      color: @title-color;
+    }
+
+    &:first-of-type { border-top-color: transparent;}
+
+    ._light { .fontWeight(2); }
+
+    > ul, > ol { margin-top: 1em; }
   }
 
   ._label {
@@ -129,39 +155,36 @@ p, ul, li {
     padding: 8px 0;
 
     color: @copy_help-color;
-    .fontSize(xxs);
+    .fontFamily(code);
+    .fontSize(xs);
     .fontWeight(4);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    letter-spacing: 0;
+    //text-transform: uppercase;
   }
-}
 
-//  -- Header Examples
-//  Need to remove the bottom margins that are typically there for this example.
-.example.-type {
   h1, h2, h3, h4, h5, h6,
-  ._h1, ._h2, ._h3, ._h4, ._h5, ._h6 { 
+  ._h1, ._h2, ._h3, ._h4, ._h5, ._h6,
+  p, ._text { 
     margin-bottom: 0;
-    margin-top: @margin-base / 2;
-
-    > small, > ._small { margin-left: @margin-base; }
+    margin-top: @margin-base + 6;
+  }
+  blockquote, ._quote {
+    margin-top: @margin-base + 16;
+    &._pull { background-color: @color-white; }
   }
 
-  p, .text {
-    margin-bottom: @margin-base / 2;
+  &._rows dl {
+    margin-top: 1em;
+    dt { .fontWeight(7); }
+    dd {
+      display: inline-block;
+      margin-left: 25%;
+      padding: 0;
 
-    //  -- Remove the text-indent within examples
-    + p { text-indent: 0; }
-  }
+      border: none;
+    }
 
-  ._xlarge { margin-bottom: 0; }
-
-  .text._help {
-    display: block;
-    margin-bottom: (@margin-base / 2) + 4;
-    padding-bottom: (@margin-base / 2) + 2;
-
-    border-bottom: 1px solid @borderColor-grayLight;
+    p { margin: 0 0 0.5em; }
   }
 }
 

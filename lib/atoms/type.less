@@ -69,7 +69,11 @@
 
 @title-color:               saturate(darken(@color-grayDark,12%),16%);
 @title_section-color:       saturate(darken(@color-grayMid,19%),3%);
+@title_section-color_muted: @color-grayMid;
 
+@quote-background:          spin(desaturate(lighten(@color-grayMid,53%),6%),26);
+@quote-border:              @borderColor-grayDark;
+@quote-border_accent:       @color-orange;
 @quote-textColor:           @color-grayMid;
 @quote_pull-textColor:      saturate(darken(@color-grayMid,19%),3%);
 
@@ -178,12 +182,12 @@
 //  ============================================================================
 //  -- Paragraph Styles
 p,.text {
-  margin-bottom: @margin-base;
+  margin-bottom: 1em;
   margin-top: 0;
   .lineHeight(loose);
 
   //  -- Indent paragraphs after the first paragraph to help with readability
-  + p { text-indent: 1em; }
+  // + p { text-indent: 1em; }
 
   //  When you want a larger, initial paragraph.
   &._lead {
@@ -217,41 +221,60 @@ p,.text {
     .fontSize(s);
     .lineHeight(loose);
   }
-  
+  &._marginHalf { margin-bottom: @margin-half; }
+
+  //  -- Footnotes
+  &.-footnotes {
+    margin-left: 0;
+    padding-top: @padding-half;
+    padding-left: @padding-base + 4;
+    border-top: 1px solid @borderColor-grayLight;
+
+    li  {
+      color: @copy_muted-color;
+      .fontSize(xs);
+    }
+    a   { color: desaturate(@link-color,80%);}
+  }  
 }
 
 small             { font-size: floor((100% * @fontSize-small) / @fontSize-base); }
 strong,b          { .fontWeight(7); }
 em, i             { .fontStyle(i); }
 cite              { .fontStyle(n); }
+sup.fn {
+  padding-right: 2px;
+  padding-left: 2px;
+}
 
 //  -- Quotes
 blockquote, .quote {
-  margin: 0 0 0.5em;
-  padding: 0.5em 1em;
+  margin: 0.75em 1.5em;
+  padding: 1em 1.5em;
 
   .fontFamily(serif);
-  .fontSize(m);
+  font-style: italic;
+  .fontRem(16);
   letter-spacing: 0;
-  .lineHeight(loose);
+  .lineHeight(looser);
   color: @quote-textColor;
 
+  border-left: 1px dotted @quote-border;
+
   // For when you want to add a background to a blockquote, and ONLY A BLOCKQUOTE.
-  &._strong {
-    background-color: darken(@color-white,5%);
-    border-left: @color-orange;
+  &._accent {
+    background-color: @quote-background;
+    border-left: 2px solid @quote-border_accent;
   }
-  &._pull {
-    margin: 0.5em 0; 
-    padding: 0.75em 0;
-  
+  &._pull {  
     .fontFamily(sans);
-    .fontStyle(i);
     .fontWeight(2);
     .letterSpacing(base);
-    .lineHeight(loosest);
+    .lineHeight(looser);
     text-align: center;
     color: @quote_pull-textColor;
+
+    border-left: none;
   }
 }
 
@@ -327,7 +350,11 @@ h6, ._h6 {
 
 //  -- Specific Title Styles
 .titles {
-  &._subSection { .fontWeight(7); }
+  &._section    { .fontWeight(7);}
+  &._subSection {
+    color: @title_section-color_muted;
+    .fontWeight(7);
+  }
 }
 
 
@@ -335,10 +362,13 @@ h6, ._h6 {
 //  $ TYPE STYLES: NOTIFICATIONS
 //  ============================================================================
 .callout {
-  padding: 2em;
-  padding-right: 4em;
+  padding: ceil(@padding-base * 1.5);
+  //padding-right: 4em;
 
   color: @callout-infoText;
+  .fontSize(base);
+  .lineHeight(loose);
+  text-indent: 0;
 
   border-style: solid;
   border-width: 1px;
