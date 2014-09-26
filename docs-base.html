@@ -12,6 +12,7 @@
         <link rel="stylesheet/less" type="text/css" href="css/syntaxhighlighter_3.0.83/shThemeDefault.css">
 
         <link rel="stylesheet/less" type="text/css" href="css/pattern-guide.less">
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -326,8 +327,7 @@
                         </article>
                         <article id="type-fonts">
                             <h2 class="titles _section _h3">Typefaces</h2>
-                            <p>To communicate a professional, yet friendly personality, Stack Overflow Careers has selected the typeface <em>Merriweather Sans ST</em>. <strong>This font was designed specifically for on-screen use,</strong> allowing for greater control of line-heights and letter-spacing natively within our CSS without resorting to Javascript. While we may use other weights occasionally, most copy will use Light, Normal, and Bold styles.</p>
-                            <h3 class="titles _subSection _h4">Examples</h3>
+                            <p>To communicate a professional, yet friendly personality, Stack Overflow Careers has selected the typeface <em>Merriweather Sans ST</em>. <strong>This font was designed specifically for on-screen use,</strong> allowing for greater control of line-heights and letter-spacing natively within our CSS without resorting to Javascript. While we may use other weights occasionally, most copy will use Light, Normal, and Bold styles. The following are examples of how they would appear on large type.</p>
                             <dl class="_rows typeExample">
                                 <dt class="_label">Extra Thin</dt>
                                 <dd class="_example"><div class="-weights _light">The quick onyx goblin jumps over the lazy dwarf.</div></dd>
@@ -340,11 +340,38 @@
                         <article id="type-headlines">
                             <h2 class="titles _section _h3">Headlines</h2>
                             <p>Headlines provide signposts for content as well express content priority. Headlines should descend in order. This means that a <code>&lt;h3></code> shouldn't precede a <code>&lt;h1></code> in the DOM order. The question to ask yourself is, "if this page's CSS didn't load, would this copy still make sense?"</p>
-                            <p class="_marginHalf">Header tags communicate content order such as titles, section titles and sub-section titles. <em>A header tag should not be chosen based on the desired style, but on where it is located within the content.</em> Different headline styles can be applied two different ways:</p>
+
+                            <p><i class="fa fa-check-circle-o"></i> This is the right thing to do</p>
+                            <pre class="brush: html">
+                                <h1>This is a page title</h1>
+                                <h2>This is a subheading</h2>
+                            </pre>
+
+                            <p><i class="fa fa-times"></i> This is the wrong thing to do</p>
+                            <pre class="brush: html">
+                                <h1>This is a page title</h1>
+                                <h3>This is a subheading</h3>
+                            </pre>
+
+                            <p>Header tags communicate content order such as titles, section titles and sub-section titles. <em>A header tag should not be chosen based on the desired style, but on where it is located within the content.</em> Different headline styles can be applied two different ways:</p>
                             <ol>
                                 <li>Apply a header class such as <code>.h3</code> to apply another header's base style to a headline.</li>
                                 <li>Use a specific style class such as <code>.text ._large</code> to change a header's appearance.</li>
                             </ol>
+                            <p>In the rare case that you would like the look you would get by combining a heading hierarchy <em>out</em> of order, you could do the following instead.</p>
+
+                            <p><i class="fa fa-warning"></i> This is the right thing to do, in some cases</p>
+                            <pre class="brush: html">
+                                <h1>This is a page title</h1>
+                                <h2 class="_h3">This is a subheading</h2>
+                            </pre>
+
+                            <p><i class="fa fa-times"></i> This is the wrong thing to do</p>
+                            <pre class="brush: html">
+                                <h1>This is a page title</h1>
+                                <h3>This is a subheading</h3>
+                            </pre>
+
                             <h3 class="titles _subSection _h4">Examples</h3>
                             <dl class="_rows typeExample">
                                 <dt class="_label">Light, 48px</dt>
