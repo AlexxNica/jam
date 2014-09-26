@@ -56,16 +56,13 @@
                         </header>
 
                         <article id="type-intro">
-                            <h2>Introduction</h2>
+                            <h2 class="titles _subSection _h3">Introduction</h2>
                             <p class="_large">Typography is an important design element for Stack Overflow Careers. Strong typography applied consistently can not only build brand recognition and trust, but it can also help establish reliable communication patterns.</p>
-                            <p class="callout _info"><strong>PLEASE NOTE:</strong> If you are altering pre-determined font-families, font-sizes, font-weights, line-heights, or letter-spacing, please read the <a href="docs-atoms-type.html">type LESS documentation.</a></p>
+                            <p class="callout _info"><strong>PLEASE NOTE:</strong> If you are altering pre-determined font-families, font-sizes, font-weights, line-heights, or letter-spacing, please read the <a href="docs-base-type.html">type LESS documentation.</a></p>
                         </article>
                         <article id="type-fonts">
-                            <h2>Typefaces</h2>
-                            <section>
-                                <p>To communicate a professional, yet friendly personality, Stack Overflow Careers has selected the typeface <em>Merriweather Sans ST</em>. <strong>This font was designed specifically for on-screen use,</strong> allowing for greater control of line-heights and letter-spacing natively within our CSS without resorting to Javascript.</p>
-                                <p>While we may use other weights when the situation arises, most copy will one of Light, Normal, and Bold styles.</p>
-                            </section>
+                            <p>To communicate a professional, yet friendly personality, Stack Overflow Careers has selected the typeface <em>Merriweather Sans ST</em>. <strong>This font was designed specifically for on-screen use,</strong> allowing for greater control of line-heights and letter-spacing natively within our CSS without resorting to Javascript.</p>
+                            <p>While we may use other weights when the situation arises, most copy will one of Light, Normal, and Bold styles.</p>
                             <dl class="dlRows typeExample">
                                 <dt class="_label">Extra Thin</dt>
                                 <dd class="_example"><span class="_light">The quick onyx goblin jumps over the lazy dwarf.</span></dd>
@@ -76,15 +73,15 @@
                             </dl>
                         </article>
                         <article id="type-headlines">
-                            <h2>Headline Styles</h2>
+                            <h2 class="titles _subSection _h3">Headlines</h2>
                             <p>Headlines provide signposts for content as well express content priority. Headlines should descend in order. This means that a <code>&lt;h3></code> shouldn't precede a <code>&lt;h1></code> in the DOM order. The question to ask yourself is, "if this page's CSS didn't load, would this copy still make sense?"</p>
                             <p>Header tags communicate content order such as titles, section titles and sub-section titles. <em>A header tag should not be chosen based on the desired style, but on where it is located within the content.</em> Different headline styles can be applied two different ways:</p>
                             <ol>
                                 <li>Apply a header class such as <code>.h3</code> to apply another header's base style to a headline.</li>
                                 <li>Use a specific style class such as <code>.text ._large</code> to change a header's appearance.</li>
                             </ol>
-                            <section>
-                                <h3 class="titles _subSection">Header Styles</h1>
+                            <div class="example -type">
+                                <h3 class="titles _subSection">Header Styles</h3>
                                 <h1>h1. Heading 1 <small>Small Heading 1</small></h1>
                                 <p class="text _help">Extra Thin, 48px</p>
                                 <h2>h2. Heading 2 <small>Small Heading 2</small></h2>
@@ -97,32 +94,26 @@
                                 <p class="text _help">Semi Bold, 14px</p>
                                 <h6>h6. Heading 6 <small>Small Heading 6</small></h6>
                                 <p class="text _help">Semi Bold, 12px</p>
-                            </section>
+                            </div>
                         </article>
                         <article id="type-copy">
-                            <h3>Copy Styles</h3>
-                            <p><a href="http://the12principles.tumblr.com/" target="_blank" class="link-outbound">The 12 basic principles of animation</a> were developed by the ‘old men’ of Walt Disney Studios, amongst them Frank Thomas and Ollie Johnston, during the 1930s. Of course they weren’t old men at the time, but young men who were at the forefront of exciting discoveries that were contributing to the development of a new art form. <a href="#top">These principles</a> came as a result of reflection about their practice and through Disney’s desire to use animation to express character and personality.</p>
-                            
-                            <p class="help-subtitle">Base element: <span class="code-tag-name">&lt;p&gt;</span>, or <span class="code-element">&lt;div class="text"&gt;</span></p>
-
-                            <p class="_xlarge _light">The quick brown fox jumps over the lazy dog.</p>
-                            <p class="help-subtitle">
-                                24px &nbsp;&nbsp;
-                                <span class="code-attribute code-class-name">_large</span>, <span class="code-attribute code-class-name">_light</span>
-                            </p>
-
-                            <p class="_large">The quick brown fox jumps over the lazy dog.</p>
-                            <p class="help-subtitle">
-                                19px &nbsp;&nbsp; <span class="code-attribute code-class-name">_medium</span>
-                            </p>
-                            
-                            <p>The quick brown fox jumps over the lazy dog.</p>
-                            <p class="help-subtitle">15px</p>
-
-                            <p class="_small">The quick brown fox jumps over the lazy dog.</p>
-                            <p class="help-subtitle">
-                                13px &nbsp;&nbsp; <span class="code-attribute code-class-name">_small</span>
-                            </p>
+                            <h2 class="titles _subSection _h3">Paragraph &amp; Copy Styles</h2>
+                            <div class="example -type">
+                                <p class="_lead">The 12 basic principles of animation were developed by the 'old men' of Walt Disney Studios, amongst them Frank Thomas and Ollie Johnston, during the 1930s.</p>
+                                <!--<span class="text _help">48px, <code>._lead</code></span>-->
+                                <p>Of course they weren’t old men at the time, but young men who were at the forefront of exciting discoveries that were contributing to the development of a new art form. <a href="http://the12principles.tumblr.com/" target="_blank" class="link -outbound">These principles came as a result of reflection about their practice</a> and through Disney’s desire to use animation to express character and personality.</p>
+                                <!--<span class="text _help"><code>&lt;p></code> or <code>._text</code></span>-->
+                                <p class="_pageTitle">Onyx Goblin Jumps</p>
+                                <span class="text _help">48px, <code>._pageTitle</code></span>
+                                <p class="_sectionTitle">The Lazy Dwarf</p>
+                                <span class="text _help">18px, <code>._sectionTitle</code></span>
+                                <p class="_xlarge">The quick onyx goblin jumps over the lazy dwarf.</p>
+                                <span class="text _help">24px, <code>._xlarge</code></span>
+                                <p class="_large">The quick onyx goblin jumps over the lazy dwarf.</p>
+                                <span class="text _help">18px, <code>._large</code></span>
+                                <p class="_small">The quick onyx goblin jumps over the lazy dwarf.</p>
+                                <span class="text _help">13px, <code>._small</code></span>
+                            </div>
                         </article>
                         <article id="type-quotes">
                             <h3>Quotes</h3>   

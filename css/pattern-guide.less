@@ -136,6 +136,35 @@ p, ul, li {
   }
 }
 
+//  -- Header Examples
+//  Need to remove the bottom margins that are typically there for this example.
+.example.-type {
+  h1, h2, h3, h4, h5, h6,
+  ._h1, ._h2, ._h3, ._h4, ._h5, ._h6 { 
+    margin-bottom: 0;
+    margin-top: @margin-base / 2;
+
+    > small, > ._small { margin-left: @margin-base; }
+  }
+
+  p, .text {
+    margin-bottom: @margin-base / 2;
+
+    //  -- Remove the text-indent within examples
+    + p { text-indent: 0; }
+  }
+
+  ._xlarge { margin-bottom: 0; }
+
+  .text._help {
+    display: block;
+    margin-bottom: (@margin-base / 2) + 4;
+    padding-bottom: (@margin-base / 2) + 2;
+
+    border-bottom: 1px solid @borderColor-grayLight;
+  }
+}
+
 
 
 
