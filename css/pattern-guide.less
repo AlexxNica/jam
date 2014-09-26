@@ -94,10 +94,13 @@ body {
 //  -- Originally was just styling section and article tags. Really though
 //     all I want to do is add bottom padding to sections. Trapping for all
 //     section ids now.
-[id*="section-"] { padding-bottom: @padding-double * 2; }
-section > article {
-  margin-bottom: 2em;
-  > p { margin-right: @padding-double * 3; }
+[id*="section-"] {
+  padding-bottom: @padding-double * 2;
+
+  > article {
+    margin-bottom: 3em;
+    > p { margin-right: @padding-double * 3; }
+  }
 }
 
 .content section {
