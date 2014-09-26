@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -75,11 +75,31 @@
                         </article>
 
                         <article id="grid-media-queries">
+<<<<<<< HEAD
+                            <h2 class="titles _subSection _h3">Media Queries</h2>
+                            <p>We use the following media queries in our Less files to create the key breakpoints in our grid system.</p>
+
+                        </article>
+
+                        <article id="grid-fluid-container">
+                            <h2 class="titles _subSection _h3">Fluid Container</h2>
+
+                            <p>We use one <code>.container</code> to enable the grid system.</p>
+
+                            <pre class="brush: html">
+                            <div class="container">
+                                <div class="-row">
+                                    <!-- Columns here -->
+                                </div>
+                            </div>
+                            </pre>
+=======
                             <h2 class="titles _section _h3">Media Queries</h2>
                         </article>
 
                         <article id="grid-fluid-container">
                             <h2 class="titles _section _h3">Fluid Container</h2>
+>>>>>>> b0dad891226f319a43e6bb8b65032e4d22c5e846
                         </article>
 
                         <article id="grid-dynamic-layouts">
@@ -87,7 +107,8 @@
                         </article>
 
                         <article id="grid-column-wrapping">
-                            <h2 class="titles _section _h3">Column Wrapping</h2>
+<<<<<<< HEAD
+                            <h2 class="titles _subSection _h3">Column Wrapping</h2>
 
                             <p>If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.</p>
 
@@ -121,7 +142,7 @@
                         </article>
 
                         <article id="grid-offsetting-columns">
-                            <h2 class="titles _section _h3">Offsetting Columns</h2>
+                            <h2 class="titles _subSection _h3">Offsetting Columns</h2>
 
                             <p>Move columns to the right using <code>._offset*</code> classes. These classes increase the left margin of a column by <code>*</code> columns.
 
@@ -172,6 +193,13 @@
                                     </div>
                                 </div>
                             </pre>
+=======
+                            <h2 class="titles _section _h3">Column Wrapping</h2>
+                        </article>
+
+                        <article id="grid-offsetting-columns">
+                            <h2 class="titles _section _h3">Offsetting Columns</h2>
+>>>>>>> b0dad891226f319a43e6bb8b65032e4d22c5e846
                         </article>
 
                         <article id="grid-nesting-columns">
