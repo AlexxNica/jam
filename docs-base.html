@@ -563,8 +563,9 @@
                         <header>
                             <h1>Buttons</h1>
                         </header>
-                        <article>
-                            <h2 class="title _section _h3">Primary</h2>
+                        <article id="buttons-base">
+                            <h2 class="title _section _h3">Base Styles</h2>
+                            <h3 class="titles _subSection h4">Primary</h3>
                             <p>Primary buttons are used to provide a clear calls-to-action to a primary task. These buttons help guide the user to suggested next steps.</p>
                             <dl class="_rows buttonExample">
                                 <dt class="_label">Primary, <code>._primary</code></dt>
@@ -577,57 +578,71 @@
                                     <button class="_primary" disabled>Search</button>
                                 </pre>
                             </dl>
-                            <div class="help-example">
-                                <dl class="code-block row-lines">
-                                    <dt>
-                                        <h6 class="help-subtitle">Primary Button</h6>
-                                        <span class="code-attribute">_primary</span>
-                                    </dt>
-                                    <dd>
-                                        <button class="_primary">Search</button>
-                                        <button class="_primary" disabled>Search</button>
-                                    </dd>
-                                    <dt>
-                                        <h6 class="help-subtitle">Secondary Action Button</h6>
-                                        <span class="code-attribute">_secondary</span>
-                                    </dt>
-                                    <dd>
-                                        <button class="_secondary">Log In</button>
-                                        <button class="_secondary" disabled>Log In</button>
-                                    </dd>
-                                    <!--<dt>
-                                            <h6 class="help-subtitle">Primary CTA Button</h6>
-                                            <span class="code-attribute">btn-cta</span>
-                                        </dt>
-                                        <dd><button class="btn-cta" disabled>Create A Company Page!</button></dd>-->
-                                    <dt>
-                                        <h6 class="help-subtitle">Confirmation Button</h6>
-                                        <span class="code-attribute">_confirm</span>
-                                    </dt>
-                                    <dd>
-                                        <button class="_confirm">Confirm My Order</button>
-                                        <button class="_confirm" disabled>Confirm My Order</button>
-                                    </dd>
-                                    <dt>
-                                        <h6 class="help-subtitle">Warning Button</h6>
-                                        <span class="code-attribute">_warning</span>
-                                    </dt>
-                                    <dd>
-                                        <button class="_warning">Delete This Listing</button>
-                                        <button class="_warning" disabled>Delete This Listing</button>
-                                    </dd>
-                                    <dt>
-                                        <h6 class="help-subtitle">Outlined Button</h6>
-                                        <span class="code-attribute">_outlined</span>
-                                    </dt>
-                                    <dd><button class="_outlined">Take a look at our pricing!</button></dd>
-                                    <dt>
-                                        <h6 class="help-subtitle">Clear Button</h6>
-                                        <span class="code-attribute">_clear</span>
-                                    </dt>
-                                    <dd><button class="_clear">Read More About Job Listings</button></dd>
-                                </dl>
-                            </div>
+                            <h3 class="titles _subSection h4">Secondary</h3>
+                            <p>Secondary buttons are used to provide alternate, less-important actions to the users. These buttons are purposefully muted in tone and color in order to not grab the user's attention.</p>
+                            <dl class="_rows buttonExample">
+                                <dt class="_label">Secondary, <code>._secondary</code></dt>
+                                <dd class="_example">
+                                    <button class="_secondary">Log In</button>
+                                    <button class="_secondary" disabled>Log In</button>
+                                </dd>
+                                <pre class="brush: html">
+                                    <button class="_secondary">Log In</button>
+                                    <button class="_secondary" disabled>Log In</button>
+                                </pre>
+                            </dl>
+                            <h3 class="titles _subSection h4">Confirmation</h3>
+                            <p>Confirmation buttons are used for the specific use cases of completing a purchase, publishing a new product, or updating an existing product.</p>
+                            <dl class="_rows buttonExample">
+                                <dt class="_label">Confirmation, <code>._confirm</code></dt>
+                                <dd class="_example">
+                                    <button class="_confirm">Place Order</button>
+                                    <button class="_confirm" disabled>Place Order</button>
+                                </dd>
+                                <pre class="brush: html">
+                                    <button class="_confirm">Place Order</button>
+                                    <button class="_confirm" disabled>Place Order</button>
+                                </pre>
+                            </dl>
+                            <h3 class="titles _subSection h4">Warning</h3>
+                            <p>Warning buttons are used for the specific use cases of warning a user that a potential action they are about to take is irreversible, such as deleting a job listing, removing a team member, or deleting their account.</p>
+                            <dl class="_rows buttonExample">
+                                <dt class="_label">Warning, <code>._warning</code></dt>
+                                <dd class="_example">
+                                    <button class="_warning">Remove Team Member</button>
+                                    <button class="_warning" disabled>Remove Team Member</button>
+                                </dd>
+                                <pre class="brush: html">
+                                    <button class="_warning">Remove Team Member</button>
+                                    <button class="_warning" disabled>Remove Team Member</button>
+                                </pre>
+                            </dl>
+                            <h3 class="titles _subSection h4">Outlined</h3>
+                            <p>Outlined buttons are a stylistic variant of the <code>._secondary</code> button class. In some instances, we may want to use a even simpler button style to draw attention to the primary call-to-action. This style is mainly used within small UI actions that tertiary in importance and on marketing pages.</p>
+                            <dl class="_rows buttonExample">
+                                <dt class="_label">Outlined, <code>._outlined</code></dt>
+                                <dd class="_example">
+                                    <button class="_outlined">Take a look at our pricing!</button>
+                                    <button class="_outlined" disabled>Take a look at our pricing!</button>
+                                </dd>
+                                <pre class="brush: html">
+                                    <button class="_outlined">Take a look at our pricing!</button>
+                                    <button class="_outlined" disabled>Take a look at our pricing!</button>
+                                </pre>
+                            </dl>
+                            <h3 class="titles _subSection h4">Clear</h3>
+                            <p>Clear buttons are used when we don't want to visually style an action or link as a button, yet we want to provide ample click area and visual white-space around the link to separate it from surrounding content. This is mainly used within small UI actions.</p>
+                            <dl class="_rows buttonExample">
+                                <dt class="_label">Clear, <code>._clear</code></dt>
+                                <dd class="_example">
+                                    <button class="_clear">Print Report</button>
+                                    <button class="_clear" disabled>Print Report</button>
+                                </dd>
+                                <pre class="brush: html">
+                                    <button class="_clear">Print Report</button>
+                                    <button class="_clear" disabled>Print Report</button>
+                                </pre>
+                            </dl>
                         </article>
                         <article>
                             <h3>Size &amp; Layout Options</h3>
@@ -740,14 +755,14 @@
                             </ul>
                         </li>
                         <li class="-item">
-                            <a href="#options">Buttons</a>
+                            <a href="#section-buttons">Buttons</a>
                             <ul class="nav _column _nested">
-                                <li class="-item"><a href="#options-intro">Introduction</a></li>
-                                <li class="-item"><a href="#options-base">Base Style</a></li>
-                                <li class="-item"><a href="#options-styles">Styles</a></li>
-                                <li class="-item"><a href="#options-size">Sizes</a></li>
-                                <li class="-item"><a href="#options-layout">Layout</a></li>
-                                <li class="-item"><a href="#options-states">States</a></li>
+                                <li class="-item"><a href="#buttons-intro">Introduction</a></li>
+                                <li class="-item"><a href="#buttons-base">Base Style</a></li>
+                                <li class="-item"><a href="#buttons-styles">Styles</a></li>
+                                <li class="-item"><a href="#buttons-size">Sizes</a></li>
+                                <li class="-item"><a href="#buttons-layout">Layout</a></li>
+                                <li class="-item"><a href="#buttons-states">States</a></li>
                             </ul>
                         </li>
                     </ul>
