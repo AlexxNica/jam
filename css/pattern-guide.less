@@ -99,7 +99,7 @@ body {
 
   > article {
     margin-bottom: 3em;
-    > p { margin-right: @padding-double * 3; }
+    > p, > .text { margin-right: @padding-double * 3; }
   }
 }
 
@@ -136,7 +136,7 @@ i.fa-times {
 }
 
 //  -- Make <p>'s slightly larger for esaier reading.
-p, ul, li {
+p, .text, ul, li {
   .fontRem(15);
   .lineHeight(looser);
 }
