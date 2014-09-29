@@ -304,9 +304,33 @@ p, ul, li {
 }
 
 
+//  ============================================================================
+//  $5  LISTS
+//  ----------------------------------------------------------------------------
+//  -- Definition List Variation for the UI Guide
+dl._rows {
+
+  > dt {
+    position: absolute;
+    .fontWeight(4);
+  }
+  > dd {
+    display: block;
+
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: @padding-base + 10;
+    padding-top: @padding-base + 4;
+
+    border-top-color: @borderColor-grayLight;
+    border-top-style: solid;
+    border-top-width: 1px;
+  }
+}
+
 
 
 //  ============================================================================
-//  $5 LOGO
+//  $6  LOGO
 //  ----------------------------------------------------------------------------
 .logo-soc { max-width: 100%; }
