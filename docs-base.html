@@ -634,26 +634,90 @@
                         </header>
                         <article id="forms-intro">
                             <h2 class="title _section h3">Introduction</h2>
-                            <p class="_lead">These are the basic form input styles currently. The styles below are applied by default and you can modify their appearance with the classes outlined below.</p>
+                            <p class="_large">These are the basic form input styles currently. The styles below are applied by default and you can modify their appearance with the classes outlined below.</p>
                         </article>
-                        <article id="buttons-base">
-                            <h2 class="title _section h3">Base Styles</h2>
-                            <h3 class="titles _subSection h4">Inputs</h3>
+                        <article id="forms-default">
+                            <h2 class="title _section h3">Default / Focused States</h2>
                             <dl class="_rows exampleBlock">
-                                <dt class="_label"><code>&lt;input></code></dt>
+                                <dt class="_label">Default, <code>&lt;input></code> or <code>.input</code></dt>
                                 <dd class="_example">
-                                    <label for="exampleInputField">Input Label Example</label>
+                                    <label for="exampleInputField">Label Example</label>
                                     <p><small class="text _help">Help Text: If you have some instructions beyond the label, place them here. Just remember, users will most likely miss this so have descriptive field labels.</small></p>
                                     <input type="text" id="exampleInputField" placeholder="i.e. Placeholder text, Suggestive items">
                                 </dd>
                                 <pre class="brush: html">
                                     <label for="exampleInputField">Input Label Example</label>
-                                    <p>
-                                        <small class="text _help">Help Text: If you have some instructions
-                                        beyond the label, place them here. Just remember, users will most likely 
-                                        miss this so have descriptive field labels.</small>
-                                    </p>
+                                    <p><small class="text _help">...</small></p>
                                     <input type="text" id="exampleInputField" placeholder="i.e. Placeholder text, Suggestive items">
+                                </pre>
+                            </dl>
+                        </article>
+                        <article id="forms-disabled">
+                            <h2 class="title _section h3">Disabled State</h2>
+                            <dl class="_rows exampleBlock">
+                                <dt class="_label">Disabled, <code>&lt;input disabled></code> or <code>._disabled</code></dt>
+                                <dd class="_example">
+                                    <label for="exampleInputField2">Label Example</label>
+                                    <input type="text" id="exampleInputField2" value="Disabled text here..." disabled>
+                                </dd>
+                                <pre class="brush: html">
+                                    <label for="exampleInputField2">Label Example</label>
+                                    <input type="text" id="exampleInputField2" value="Disabled text here..." disabled>
+                                </pre>
+                            </dl>
+                        </article>
+                        <article id="forms-validation">
+                            <h2 class="title _section h3">Validation States</h2>
+                            <dl class="_rows exampleBlock">
+                                <dt class="_label">Success, <code>._success</code></dt>
+                                <dd class="_example">
+                                    <label for="exampleInputField3">Label Example</label>
+                                    <input type="email" id="exampleInputField3" class="_success" value="design@stackoverflow.com">
+                                </dd>
+                                <pre class="brush: html">
+                                    <label for="exampleInputField3">Label Example</label>
+                                    <input type="email" id="exampleInputField3" class="_success" value="design@stackoverflow.com">
+                                </pre>
+                                <dt class="_label">Warning, <code>._warning</code></dt>
+                                <dd class="_example">
+                                    <label for="exampleInputField4">Label Example</label>
+                                    <input type="email" id="exampleInputField4" class="_warning" value="d@stackoverflow.com">
+                                </dd>
+                                <pre class="brush: html">
+                                    <label for="exampleInputField4">Label Example</label>
+                                    <input type="email" id="exampleInputField4" class="_warning" value="d@stackoverflow.com">
+                                </pre>
+                                <dt class="_label">Error, <code>._error</code></dt>
+                                <dd class="_example">
+                                    <label for="exampleInputField5">Label Example</label>
+                                    <input type="email" id="exampleInputField5" class="_error" value="design@">
+                                </dd>
+                                <pre class="brush: html">
+                                    <label for="exampleInputField5">Label Example</label>
+                                    <input type="email" id="exampleInputField5" class="_error" value="design@">
+                                </pre>
+                            </dl>
+                        </article>
+                        <article id="forms-sizes">
+                            <h2 class="title _section h3">Input Sizes</h2>
+                            <dl class="_rows exampleBlock">
+                                <dt class="_label">Large, <code>._large</code></dt>
+                                <dd class="_example">
+                                    <label for="exampleInputField6">Label Example</label>
+                                    <input type="email" id="exampleInputField6" class="_large" value="design@stackoverflow.com">
+                                </dd>
+                                <pre class="brush: html">
+                                    <label for="exampleInputField6">Label Example</label>
+                                    <input type="email" id="exampleInputField6" class="_success" value="design@stackoverflow.com">
+                                </pre>
+                                <dt class="_label">Small, <code>._small</code></dt>
+                                <dd class="_example">
+                                    <label for="exampleInputField7">Label Example</label>
+                                    <input type="text" id="exampleInputField7" class="_small" placeholder="Enter search terms here...">
+                                </dd>
+                                <pre class="brush: html">
+                                    <label for="exampleInputField7">Label Example</label>
+                                    <input type="text" id="exampleInputField7" class="_warning" placeholder="Enter search terms here...">
                                 </pre>
                             </dl>
                         </article>
@@ -831,14 +895,10 @@
                                 <a href="#section-forms">Forms</a>
                                 <ul class="nav _column _nested">
                                     <li class="-item"><a href="#forms-intro">Introduction</a></li>
-                                    <li class="-item"><a href="#forms-controls">Controls</a></li>
-                                    <li class="-item"><a href="#forms-static">Static Control</a></li>
-                                    <li class="-item"><a href="#forms-focus">Focused State</a></li>
+                                    <li class="-item"><a href="#forms-default">Default State</a></li>
                                     <li class="-item"><a href="#forms-disabled">Disabled State</a></li>
-                                    <li class="-item"><a href="#forms-readonly">Readonly State</a></li>
                                     <li class="-item"><a href="#forms-validation">Validation States</a></li>
                                     <li class="-item"><a href="#forms-sizes">Sizes</a></li>
-                                    <li class="-item"><a href="#forms-help">Helps, Placeholders, & Labels</a></li>
                                 </ul>
                             </li>
                             <li class="-item">

@@ -38,22 +38,22 @@
 @input-shadowDrop_disabled:         fade(@color-white,100%);
 @input-shadowInner:                 fade(spin(desaturate(lighten(@color-grayMid,13%),7%),4),20%);
 @input-shadowInner_focused:         darken(@color-white,5%);
-@input-shadowInner_disabled:        fade(spin(desaturate(lighten(@color-grayMid,13%),7%),4),40%);
+@input-shadowInner_disabled:        fade-out(@input-shadowInner,10%);
 
 //  -- Success Input Color Variables
 @input_success-border:              spin(saturate(darken(@color-green,21%),19%),-8);
+@input_success-border_focused:      saturate(lighten(@input_success-border,6%),3%);
 @input_success-shadowDrop_focused:  fade(saturate(darken(@color-green,4%),5%),40%);
-@input_success-shadowInner_focused: @input_success-shadowDrop_focused;
 
-//  -- Success Input Color Variables
+//  -- Warning Input Color Variables
 @input_warning-border:              spin(darken(@color-yellow,21%),-5);
+@input_warning-border_focused:      spin(desaturate(lighten(@color-yellow,3%),29%),-5);
 @input_warning-shadowDrop_focused:  fade(lighten(@input_warning-border,2%),25%);
-@input_warning-shadowInner_focused: @input_warning-shadowDrop_focused;
 
-//  -- Success Input Color Variables
+//  -- Error Input Color Variables
 @input_error-border:                @color-red;
+@input_error-border_focused:        saturate(lighten(@color-red,19%),25%);
 @input_error-shadowDrop_focused:    fade(@color-red,15%);
-@input_error-shadowInner_focused:   @input_error-shadowDrop_focused;
 
 
 //  ============================================================================
@@ -61,7 +61,11 @@
 //  ============================================================================
 //  -- Labels
 label, .label {
+  display: inline-block;
+  margin-bottom: 0.25em;
+
   .fontSize(m);
+  .lineHeight(looser);
   color: @label-copy;
 }
 
@@ -118,7 +122,7 @@ input[type="tel"],
 
   &:hover {
     border-color: fade(@input-border_focused,50%);
-    box-shadow: inset 0 1px 2px fade(@input-shadowInner_focused,50%), 0 0 3px fade(@input-shadowDrop_focused,50%);
+    box-shadow: inset 0 1px 2px darken(@input-shadowInner_focused,10%), 0 0 2px fade(@input-shadowDrop_focused,20%);
   }
   &:focus { 
     background-color: @input-background_focused;
@@ -133,7 +137,52 @@ input[type="tel"],
     border-color: @input-border_disabled;
     box-shadow: inset 0 1px 3px @input-shadowInner_disabled, 0 0 0 @input-shadowDrop_disabled;
     color: @input-copy_disabled;
+
+    cursor: not-allowed;
   }
+
+  //  -- State: Success
+  &._success {
+    border-color: @input_success-border;
+
+    &:hover {
+      border-color: fade(@input_success-border_focused,75%);
+      box-shadow: inset 0 1px 2px darken(@input-shadowInner_focused,10%), 0 0 2px fade(@input_success-shadowDrop_focused,20%);
+    }
+    &:focus {
+      border-color: @input_success-border_focused;
+      box-shadow: inset 0 2px 2px @input-shadowInner_focused, 0 0 5px @input_success-shadowDrop_focused;
+    }
+  }
+
+  //  -- State: Warning
+  &._warning {
+    border-color: @input_warning-border;
+
+    &:hover {
+      border-color: fade(@input_warning-border_focused,75%);
+      box-shadow: inset 0 1px 2px darken(@input-shadowInner_focused,10%), 0 0 2px fade(@input_warning-shadowDrop_focused,20%);
+    }
+    &:focus {
+      border-color: @input_warning-border_focused;
+      box-shadow: inset 0 2px 2px @input-shadowInner_focused, 0 0 5px @input_warning-shadowDrop_focused;
+    }
+  }
+
+  //  -- State: Error
+  &._error {
+    border-color: @input_error-border;
+
+    &:hover {
+      border-color: fade(@input_error-border_focused,75%);
+      box-shadow: inset 0 1px 2px darken(@input-shadowInner_focused,10%), 0 0 3px fade(@input_error-shadowDrop_focused,20%);
+    }
+    &:focus {
+      border-color: @input_error-border_focused;
+      box-shadow: inset 0 2px 2px @input-shadowInner_focused, 0 0 5px @input_error-shadowDrop_focused;
+    }
+  }
+
 }
 
 input[type="radio"], input[type="checkbox"] {
