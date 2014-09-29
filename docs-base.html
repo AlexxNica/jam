@@ -331,7 +331,7 @@
                         <article id="type-fonts">
                             <h2 class="titles _section h3">Typefaces</h2>
                             <p>To communicate a professional, yet friendly personality, Stack Overflow Careers has selected the typeface <em>Merriweather Sans ST</em>. <strong>This font was designed specifically for on-screen use,</strong> allowing for greater control of line-heights and letter-spacing natively within our CSS without resorting to Javascript. While we may use other weights occasionally, most copy will use Light, Normal, and Bold styles. The following are examples of how they would appear on large type.</p>
-                            <dl class="_rows typeExample">
+                            <dl class="_rows exampleBlock">
                                 <dt class="_label">Extra Thin</dt>
                                 <dd class="_example"><div class="-weights _light">The quick onyx goblin jumps over the lazy dwarf.</div></dd>
                                 <dt class="_label">Light</dt>
@@ -344,33 +344,22 @@
                             <h2 class="titles _section h3">Headlines</h2>
                             <p>Headlines provide signposts for content as well express content priority. Headlines should descend in order. This means that a <code>&lt;h3></code> shouldn't precede a <code>&lt;h1></code> in the DOM order. The question to ask yourself is, "if this page's CSS didn't load, would this copy still make sense?"</p>
 
-                            <p><i class="fa fa-check-circle-o"></i> This is the right thing to do</p>
-                            <pre class="brush: html">
-                                <h1>This is a page title</h1>
-                                <h2>This is a subheading</h2>
-                            </pre>
-
-                            <p><i class="fa fa-times"></i> This is the wrong thing to do</p>
-                            <pre class="brush: html">
-                                <h1>This is a page title</h1>
-                                <h3>This is a subheading</h3>
-                            </pre>
-
                             <h3 class="titles _subSection h4">Out-of-Order Headings</h3>
                             <p>Header tags communicate content order such as titles, section titles and sub-section titles. <em>A header tag should not be chosen based on the desired style, but on where it is located within the content.</em> Different headline styles can be applied two different ways:</p>
                             <ol>
                                 <li>Apply a header class such as <code>.h3</code> to apply another header's base style to a headline.</li>
                                 <li>Use a specific style class such as <code>.text ._large</code> to change a header's appearance.</li>
                             </ol>
-                            <p>In the rare case that you would like the visual aesthetics you would get by combining a heading hierarchy <em>out</em> of order, you could do the following instead.</p>
-
-                            <p><i class="fa fa-warning"></i> This is the right thing to do, in some cases</p>
+                            <p>In the rare case that you would like the visual aesthetics you would get by combining a heading hierarchy <em>out</em> of order, you could do the following instead:</p>
+                            <p><strong>Correct Use</strong></p>
                             <pre class="brush: html">
                                 <h1>This is a page title</h1>
-                                <h2 class="_h3">This is a subheading</h2>
+                                <h2>This is a subheading</h2>
+                                ...
+                                <h2 class="h3">This is a modified subheading</h2>
                             </pre>
 
-                            <p><i class="fa fa-times"></i> This is the wrong thing to do</p>
+                            <p><strong>Incorrect Use</strong></p>
                             <pre class="brush: html">
                                 <h1>This is a page title</h1>
                                 <h3>This is a subheading</h3>
@@ -378,14 +367,18 @@
 
                             <h3 class="titles _subSection h4">Heading Caveats</h3>
                             <p>The <code>&lt;small&gt;</code> tag, which has "side comment or caveat" semantics, can be used to add explanatory text.</p>
-                            <pre class="brush: html">
-                                <h4>Bank Detail Form <small>(Optional)</small></h4>
-                            </pre>
-                            <div class="typeExample">
-                                <h4>Bank Detail Form <small>(Optional)</small></h4>
-                            </div>
+                            <dl class="_rows exampleBlock">
+                                <dt class="_label"><code>&lt;small></code></dt>
+                                <dd class="_example">
+                                    <h3>Bank Detail Form <small><em>(Optional)</em></small></h3>
+                                </dd>
+                                <pre class="brush: html">
+                                    <h3>Bank Detail Form <small><em>(Optional)</em></small></h3>
+                                </pre>
+                            </dl>
+
                             <h3 class="titles _subSection h4">Default Headline Styles</h3>
-                            <dl class="_rows typeExample">
+                            <dl class="_rows exampleBlock">
                                 <dt class="_label">Light, 48px</dt>
                                 <dd class="_example"><h1>h1. Heading 1 <small>Small Heading 1</small></h1></dd>
                                 <dt class="_label">Light, 36px</dt>
@@ -401,15 +394,27 @@
                             </dl>
                             <h3 class="titles _subSection h4">Alternate Heading Styles</h3>
                             <p>We also provide an alternate set of styles that can be used for ???</p>
-                            <dl class="_rows typeExample">
+                            <dl class="_rows exampleBlock">
                                 <dt class="_label">72px, <code>._hugeTitle</code></dt>
                                 <dd class="_example"><h1 class="_hugeTitle">Product Pages</h1></dd>
+                                <pre class="brush: html">
+                                    <h1 class="_hugeTitle">...</h1>
+                                </pre>
                                 <dt class="_label">48px, <code>._pageTitle</code></dt>
                                 <dd class="_example"><h2 class="_pageTitle">Ad Server Technology Developer</h2></dd>
+                                <pre class="brush: html">
+                                    <h1 class="_pageTitle">...</h1>
+                                </pre>
                                 <dt class="_label">19px, <code>._section</code></dt>
                                 <dd class="_example"><h4 class="_section">Overall Performance Summary</h4></dd>
+                                <pre class="brush: html">
+                                    <h1 class="_section">...</h1>
+                                </pre>
                                 <dt class="_label">19px, <code>._subSection</code></dt>
                                 <dd class="_example"><h4 class="_subSection">Campaign Statistics</h4></dd>
+                                <pre class="brush: html">
+                                    <h1 class="_subSection">...</h1>
+                                </pre>
                                 
                             </dl>
                         </article>
@@ -420,53 +425,73 @@
                             <ol class="text _footnotes">
                                 <li id="fn-1"><em>Swiss typographer, <strong>Emil Ruder</strong>, on <a href="http://ia.net/blog/the-web-is-all-about-typography-period/">typographic organization.</a></em></li>
                             </ol>
-
-                            <h3 class="titles _subSection h4">Basic Usage</h3>
-                            <pre class="brush: html">
-                                <p>I'm a bona fide paragraph.</p>
-                                <div class="text">I'm not a "paragraph" per se, but I look and behave like one!</div>
-                            </pre>
-                            <div class="typeExample">
-                                <p>I'm a bona fide paragraph.</p>
-                                <div class="text">I'm not a "paragraph" per se, but I look and behave like one!</div>
-                            </div>
                             <h3 class="titles _subSection h4">Examples</h3>
-                            <dl class="_rows typeExample">
+                            <dl class="_rows exampleBlock">
+                                <dt class="_label"><code>&lt;p></code>, <code>.text</code></dt>
+                                <dd class="_example">
+                                    <p>I'm a bona fide paragraph.</p>
+                                    <div class="text">I'm not a "paragraph" per se, but I look and behave like one!</div>
+                                </dd>
+                                <pre class="brush: html">
+                                    <p>...</p>
+                                    <div class="text">...</div>
+                                </pre>
                                 <dt class="_label">48px, <code>._lead</code></dt>
                                 <dd class="_example">
                                     <p class="_lead">The 12 basic principles of animation were developed by the &#145;old men&#146; of Walt Disney Studios, amongst them Frank Thomas and Ollie Johnston, during the 1930s.</p>
                                 </dd>
+                                <pre class="brush: html">
+                                    <p class="_lead">...</p>
+                                </pre>
                                 <dt class="_label">24px, <code>._xlarge</code></dt>
                                 <dd class="_example"><p class="_xlarge">The quick onyx goblin jumps over the lazy dwarf.</p></dd>
+                                <pre class="brush: html">
+                                    <p class="_xlarge">...</p>
+                                </pre>
                                 <dt class="_label">18px, <code>._large</code></dt>
                                 <dd class="_example"><p class="_large">The quick onyx goblin jumps over the lazy dwarf.</p></dd>
+                                <pre class="brush: html">
+                                    <p class="_large">...</p>
+                                </pre>
                                 <dt class="_label">13px, <code>._small</code></dt>
                                 <dd class="_example"><p class="_small">The quick onyx goblin jumps over the lazy dwarf.</p></dd>
+                                <pre class="brush: html">
+                                    <p class="_small">...</p>
+                                </pre>
                             </dl>
                         </article>
                         <article id="type-quotes">
                             <h2 class="titles _section h3">Quotes</h2>
                             <p>Basic <code>blockquote</code> and pull-quote styles. These are used primarily on marketing pages for testimonials or longer copy quote blocks in blog posts.</p>
                             <h3 class="titles _subSection h4">Examples</h3>
-                            <dl class="_rows typeExample">
+                            <dl class="_rows exampleBlock">
                                 <dt class="_label"><code>blockquote</code>, <code>.quote</code></dt>
                                 <dd class="_example">
                                     <blockquote>It&#146;s approaching your work differently that&#146;ll make you a better designer. Books and talks can be the spark for that.</blockquote>
                                 </dd>
+                                <pre class="brush: html">
+                                    <blockquote>...</blockquote>
+                                </pre>
                                 <dt class="_label"><code>._accent</code></dt>
                                 <dd class="_example">
                                     <blockquote class="_accent">It&#146;s approaching your work differently that&#146;ll make you a better designer. Books and talks can be the spark for that.</blockquote>
                                 </dd>
+                                <pre class="brush: html">
+                                    <blockquote class="_accent">...</blockquote>
+                                </pre>
                                 <dt class="_label"><code>._pull</code>, <code>.text._large</code>, </dt>
                                 <dd class="_example">
                                     <blockquote class="_pull text _xlarge">It&#146;s approaching your work differently that&#146;ll make you a better designer. Books and talks can be the spark for that.</blockquote>
                                 </dd>
+                                <pre class="brush: html">
+                                    <blockquote class="_pull text _xlarge">...</blockquote>
+                                </pre>
                             </dl>
                         </article>
                         <article id="type-lists">
                             <h2 class="titles _section h3">Lists</h2>
                             <h3 class="titles _subSection h4">Examples</h3>
-                            <dl class="_rows typeExample">
+                            <dl class="_rows exampleBlock">
                                 <dt class="_label"><code>&lt;ul></code></dt>
                                 <dd class="_example">
                                     <h5>Grocery List</h5>
@@ -482,6 +507,19 @@
                                         </li>
                                     </ul>
                                 </dd>
+                                <pre class="brush: html">
+                                    <h5>Grocery List</h5>
+                                    <ul>
+                                        <li>Eggs</li>
+                                        ...
+                                        <li>Trail Mix
+                                            <ul>
+                                                <li>Dried Cherries</li>
+                                                ...
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </pre>
                                 <dt class="_label"><code>&lt;ol></code></dt>
                                 <dd class="_example">
                                     <h5>How to build a website:</h5>
@@ -511,6 +549,30 @@
                                         <li>Success!</li>
                                     </ol>
                                 </dd>
+                                <pre class="brush: html">
+                                    <h5>How to build a website:</h5>
+                                    <ol>
+                                        <li>Generate an idea</li>
+                                        ...
+                                        <li>Build said idea
+                                            <ol>
+                                                <li>Sketch out idea
+                                                    <ol>
+                                                        ...
+                                                        <li>Share with co-workers
+                                                            <ol>
+                                                                <li>Solicit feedback</li>
+                                                                ...
+                                                            </ol>
+                                                        </li>
+                                                    </ol>
+                                                </li>
+                                                ...
+                                            </ol>
+                                        </li>
+                                        ...
+                                    </ol>
+                                </pre>
                                 <dt class="_label"><code>&lt;dl></code></dt>
                                 <dd class="_example">
                                     <dl>
@@ -522,6 +584,19 @@
                                         </dd>
                                     </dl>
                                 </dd>
+                                <pre class="brush: html">
+                                    <dl>
+                                        <dt>stack overflow</dt>
+                                        <dd>
+                                            <p>
+                                                An error condition which results from attempting to push more items onto a stack
+                                                than space has been allocated for. Often, this will simply overwrite the adjacent
+                                                memory locations causing hard-to-trace bugs.
+                                            </p>
+                                            <p>...</p>
+                                        </dd>
+                                    </dl>
+                                </pre>
                             </dl>
                         </article>
                     </section>
@@ -533,22 +608,22 @@
                         <article id="colors-primary">
                             <h2 class="titles _section h3">Primary</h2>
                             <p class="_large">These are the primary colors for Stack Overflow Careers.</p>
-                            <ul class="colorExample">
-                                <li class="color _orange _big"><p>Primary Orange<br/><code>@color-orange</code></p></li>
-                                <li class="color _blue _big"><p>Primary Blue<br/><code>@color-blue</code></p></li>
-                                <li class="color _grayLight _big"><p>Slate Gray<br/><code>@color-grayLight</code></p></li>
-                                <li class="color _grayMid _big"><p>Medium Gray<br/><code>@color-grayMid</code></p></li>
-                                <li class="color _grayDark _big"><p>Dark Gray<br/><code>@color-grayDark</code></p></li>
+                            <ul class="exampleCards">
+                                <li class="-item color-orange _big"><p>Primary Orange<br/><code>@color-orange</code></p></li>
+                                <li class="-item color-blue _big"><p>Primary Blue<br/><code>@color-blue</code></p></li>
+                                <li class="-item color-grayLight _big"><p>Slate Gray<br/><code>@color-grayLight</code></p></li>
+                                <li class="-item color-grayMid _big"><p>Medium Gray<br/><code>@color-grayMid</code></p></li>
+                                <li class="-item color-grayDark _big"><p>Dark Gray<br/><code>@color-grayDark</code></p></li>
                             </ul>
                         </article>
                         <article id="colors-secondary">
                             <h2 class="titles _section h3">Secondary</h2>
                             <p class="_large">These colors are used to support and enhance the Stack Overflow brand experience, help organize and isolate information into distinct groups, and alert users to items when it requires their attention.</p>
-                            <ul class="colorExample">
-                                <li class="color _green"><p>Lime Green<br/><code>@color-green</code></p></li>
-                                <li class="color _yellow"><p>Goldenrod<br/><code>@color-yellow</code></p></li>
-                                <li class="color _red"><p>Red<br/><code>@color-red</code></p></li>
-                                <li class="color _black"><p>Black<br/><code>@color-black</code></p></li>
+                            <ul class="exampleCards">
+                                <li class="-item color-green"><p>Lime Green<br/><code>@color-green</code></p></li>
+                                <li class="-item color-yellow"><p>Goldenrod<br/><code>@color-yellow</code></p></li>
+                                <li class="-item color-red"><p>Red<br/><code>@color-red</code></p></li>
+                                <li class="-item color-black"><p>Black<br/><code>@color-black</code></p></li>
                             </ul>
                         </article>
                     </section>
@@ -564,17 +639,17 @@
                         <article id="buttons-base">
                             <h2 class="title _section _h3">Base Styles</h2>
                             <h3 class="titles _subSection h4">Inputs</h3>
-                            <dl class="_rows typeExample">
-                                <dt class="_label">Input Text Fields <code>&lt;input/></code></dt>
+                            <dl class="_rows exampleBlock">
+                                <dt class="_label"><code>&lt;input></code></dt>
                                 <dd class="_example">
                                     <label for="exampleInputField">Input Label Example</label>
-                                    <p><small class="_text _help">Help Text: If you have some instructions beyond the label, place them here. Just remember, users will most likely miss this so have descriptive field labels.</small></p>
+                                    <p><small class="text _help">Help Text: If you have some instructions beyond the label, place them here. Just remember, users will most likely miss this so have descriptive field labels.</small></p>
                                     <input type="text" id="exampleInputField" placeholder="i.e. Placeholder text, Suggestive items">
                                 </dd>
                                 <pre class="brush: html">
                                     <label for="exampleInputField">Input Label Example</label>
                                     <p>
-                                        <small class="_text _help">Help Text: If you have some instructions
+                                        <small class="text _help">Help Text: If you have some instructions
                                         beyond the label, place them here. Just remember, users will most likely 
                                         miss this so have descriptive field labels.</small>
                                     </p>
@@ -592,7 +667,7 @@
                             <h2 class="title _section _h3">Base Styles</h2>
                             <h3 class="titles _subSection h4">Primary</h3>
                             <p>Primary buttons are used to provide a clear calls-to-action to a primary task. These buttons help guide the user to suggested next steps.</p>
-                            <dl class="_rows buttonExample">
+                            <dl class="_rows exampleBlock">
                                 <dt class="_label">Primary, <code>._primary</code></dt>
                                 <dd class="_example">
                                     <button class="_primary">Search</button>
@@ -605,7 +680,7 @@
                             </dl>
                             <h3 class="titles _subSection h4">Secondary</h3>
                             <p>Secondary buttons are used to provide alternate, less-important actions to the users. These buttons are purposefully muted in tone and color in order to not grab the user's attention.</p>
-                            <dl class="_rows buttonExample">
+                            <dl class="_rows exampleBlock">
                                 <dt class="_label">Secondary, <code>._secondary</code></dt>
                                 <dd class="_example">
                                     <button class="_secondary">Log In</button>
@@ -618,7 +693,7 @@
                             </dl>
                             <h3 class="titles _subSection h4">Confirmation</h3>
                             <p>Confirmation buttons are used for the specific use cases of completing a purchase, publishing a new product, or updating an existing product.</p>
-                            <dl class="_rows buttonExample">
+                            <dl class="_rows exampleBlock">
                                 <dt class="_label">Confirmation, <code>._confirm</code></dt>
                                 <dd class="_example">
                                     <button class="_confirm">Place Order</button>
@@ -631,7 +706,7 @@
                             </dl>
                             <h3 class="titles _subSection h4">Warning</h3>
                             <p>Warning buttons are used for the specific use cases of warning a user that a potential action they are about to take is irreversible, such as deleting a job listing, removing a team member, or deleting their account.</p>
-                            <dl class="_rows buttonExample">
+                            <dl class="_rows exampleBlock">
                                 <dt class="_label">Warning, <code>._warning</code></dt>
                                 <dd class="_example">
                                     <button class="_warning">Remove Team Member</button>
@@ -644,7 +719,7 @@
                             </dl>
                             <h3 class="titles _subSection h4">Outlined</h3>
                             <p>Outlined buttons are a stylistic variant of the <code>._secondary</code> button class. In some instances, we may want to use a even simpler button style to draw attention to the primary call-to-action. This style is mainly used within small UI actions that tertiary in importance and on marketing pages.</p>
-                            <dl class="_rows buttonExample">
+                            <dl class="_rows exampleBlock">
                                 <dt class="_label">Outlined, <code>._outlined</code></dt>
                                 <dd class="_example">
                                     <button class="_outlined">Take a look at our pricing!</button>
@@ -657,7 +732,7 @@
                             </dl>
                             <h3 class="titles _subSection h4">Clear</h3>
                             <p>Clear buttons are used when we don't want to visually style an action or link as a button, yet we want to provide ample click area and visual white-space around the link to separate it from surrounding content. This is mainly used within small UI actions.</p>
-                            <dl class="_rows buttonExample">
+                            <dl class="_rows exampleBlock">
                                 <dt class="_label">Clear, <code>._clear</code></dt>
                                 <dd class="_example">
                                     <button class="_clear">Print Report</button>
@@ -673,7 +748,7 @@
                             <h2 class="title _section _h3">Layout Options</h2>
                             <h3 class="titles _subSection h4">Extra Large</h3>
                             <p>Large buttons are used primarily on singular-focused pages.</p>
-                            <dl class="_rows buttonExample">
+                            <dl class="_rows exampleBlock">
                                 <dt class="_label">Large, <code>._large</code></dt>
                                 <dd class="_example">
                                     <button class="_primary _large">Create A Job Listing</button>
@@ -686,7 +761,7 @@
                             </dl>
                             <h3 class="titles _subSection h4">Small</h3>
                             <p>Small buttons are used when you want to reduce the importance and size of a button.</p>
-                            <dl class="_rows buttonExample">
+                            <dl class="_rows exampleBlock">
                                 <dt class="_label">Small, <code>._small</code></dt>
                                 <dd class="_example">
                                     <button class="_primary _small">Contact Sales</button>
@@ -699,7 +774,7 @@
                             </dl>
                             <h3 class="titles _subSection h4">Full Width Button</h3>
                             <p>When you want full-width buttons within a container.</p>
-                            <dl class="_rows buttonExample">
+                            <dl class="_rows exampleBlock">
                                 <dt class="_label">Full Width, <code>._block</code></dt>
                                 <dd class="_example">
                                     <button class="_primary _block">Full Width Button Block</button>

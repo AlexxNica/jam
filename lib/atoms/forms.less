@@ -1,57 +1,160 @@
-//  
-//  Careers 2.0 by Stack Exchange
+//
+//  STACK OVERFLOW CAREERS
+//  Product UI Style Guide
+//  Designed & managed by the Stack Exchange Design Team
+//
+//  Created May 2, 2014
+//  Updated September 29, 2014
+//
+//  http://careers.stackoveflow.com
 //
 //  FORMS
-//
-//  TABLE OF CONTENTS
-//  • INLINE FORMS
-//
-// ===========================================================================
-//  $ BASE
-//  Base button styling. Combine 
 //  
-//  Live Example:   /accounts/[userID]/reporting/
-//  Styleguide:     N/A
-// ---------------------------------------------------------------------------
-select, textarea, input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"] ,.input[inline-edit][contenteditable], .input[inline-edit][contenteditable]:hover, .input[inline-edit][contenteditable]:focus, .uneditable-input {
+//  TABLE OF CONTENTS
+//  • VARIABLES
+//  • INPUT STYLES
+//    • Base
+//    • State Changes
+//    • Size Variations
+//
+//  ============================================================================
+//  $ VARIABLES
+//  ============================================================================
+@input-borderRadius:                @borderRadius-small;
+
+//  -- Default Color Variables
+@label-copy:                        @color-grayDark;
+@input-background:                  @color-white;
+@input-background_disabled:         darken(@input-background,7%);
+@input-background_focused:          @input-background;
+@input-border:                      spin(desaturate(lighten(@color-grayMid,28%),9%),-26);
+@input-border_disabled:             fade(@input-border,50%);
+@input-border_focused:              desaturate(lighten(@color-blue,3%),15%);
+@input-copy:                        @color-grayDark;
+@input-copy_disabled:               darken(@color-white,33%);
+@input-copy_placeholder:            fade(@color-grayDark,25%);
+@input-shadowDrop:                  fade(@color-white,100%);
+@input-shadowDrop_focused:          fade(@color-blue,50%);
+@input-shadowDrop_disabled:         fade(@color-white,100%);
+@input-shadowInner:                 fade(spin(desaturate(lighten(@color-grayMid,13%),7%),4),20%);
+@input-shadowInner_focused:         darken(@color-white,5%);
+@input-shadowInner_disabled:        fade(spin(desaturate(lighten(@color-grayMid,13%),7%),4),40%);
+
+//  -- Success Input Color Variables
+@input_success-border:              spin(saturate(darken(@color-green,21%),19%),-8);
+@input_success-shadowDrop_focused:  fade(saturate(darken(@color-green,4%),5%),40%);
+@input_success-shadowInner_focused: @input_success-shadowDrop_focused;
+
+//  -- Success Input Color Variables
+@input_warning-border:              spin(darken(@color-yellow,21%),-5);
+@input_warning-shadowDrop_focused:  fade(lighten(@input_warning-border,2%),25%);
+@input_warning-shadowInner_focused: @input_warning-shadowDrop_focused;
+
+//  -- Success Input Color Variables
+@input_error-border:                @color-red;
+@input_error-shadowDrop_focused:    fade(@color-red,15%);
+@input_error-shadowInner_focused:   @input_error-shadowDrop_focused;
+
+
+//  ============================================================================
+//  $ TYPE STYLES
+//  ============================================================================
+//  -- Labels
+label, .label {
+  .fontSize(m);
+  color: @label-copy;
+}
+
+
+//  ============================================================================
+//  $ INPUT STYLES
+//  ============================================================================
+select,
+textarea, 
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"] ,
+.input,
+.input._uneditable {
+
   .box-sizing(border-box);
   display: block;
   margin: 0;
-  padding: 0.25em;
+  padding: 0.75em 1em 0.7em;
   vertical-align: middle;
 
-  border: 1px solid @white;
-  border-radius: @corner-radius-input;
-  box-shadow: none;
-  line-height: 1;
+  color: @input-copy;
+  .lineHeight(tight);
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: @input-borderRadius;
 }
 
 select    { padding: 0; }
 textarea  { height: auto; }
 
-textarea, input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"] ,.input[inline-edit][contenteditable], .input[inline-edit][contenteditable]:hover, .input[inline-edit][contenteditable]:focus, .uneditable-input {
+textarea, 
+input[type="text"], 
+input[type="password"], 
+input[type="number"], 
+input[type="email"], 
+input[type="url"], 
+input[type="search"], 
+input[type="tel"],
+.input,
+.input._uneditable {
+  width: 100%;
+
   background-color: @input-background;
   border-color: @input-border;
-  transition: all 0.1s ease;
+  box-shadow: inset 0 1px 2px @input-shadowInner, 0 0 0 @input-shadowDrop;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, backgound-color 0.15s ease-in-out;
 
-  &:hover { 
-    background-color: @input-background-hover;
-    border-color: @input-border-hover;
+  &:hover {
+    border-color: fade(@input-border_focused,50%);
+    box-shadow: inset 0 1px 2px fade(@input-shadowInner_focused,50%), 0 0 3px fade(@input-shadowDrop_focused,50%);
   }
-  &:focus {
-    background-color: @input-background-active;
-    border-color: @input-border-active;
+  &:focus { 
+    background-color: @input-background_focused;
+    border-color: @input-border_focused;
+    box-shadow: inset 0 2px 2px @input-shadowInner_focused, 0 0 5px @input-shadowDrop_focused;
+
     outline: 0;
     outline: thin dotted \9; // IE6-9
+  }
+  &[disabled], &._disabled {
+    background-color: @input-background_disabled;
+    border-color: @input-border_disabled;
+    box-shadow: inset 0 1px 3px @input-shadowInner_disabled, 0 0 0 @input-shadowDrop_disabled;
+    color: @input-copy_disabled;
   }
 }
 
 input[type="radio"], input[type="checkbox"] {
   margin: 0.25em 0 0;
   margin-top: 1px \9; // IE8-9
-  line-height: normal;
+  .lineHeight(base);
 }
 
+
+
+//  ============================================================================
+//  $ INPUT LAYOUT OPTIONS
+//  ============================================================================
+select,
+textarea,
+input,
+.input,
+.input._uneditable {
+  &._large { .fontSize(l); }
+  &._small { .fontSize(xs); }
+}
 
 // ---------------------------------------------------------------------------
 //  $ CHECKBOXES & RADIO SELECTS
@@ -80,14 +183,14 @@ input[type="radio"], input[type="checkbox"] {
 
 //  Sometimes we use ul/ol lists for option select lists. When we do, we
 //  need to hide the list-style-type.
-.select-list {
-  padding: 0;
+// .select-list {
+//   padding: 0;
 
-  li {
-    list-style: none;
-    margin-bottom: 0.5em;
-  }
-}
+//   li {
+//     list-style: none;
+//     margin-bottom: 0.5em;
+//   }
+// }
 
 
 // ---------------------------------------------------------------------------
@@ -97,26 +200,26 @@ input[type="radio"], input[type="checkbox"] {
 // ---------------------------------------------------------------------------
 //  $$ PREPEND & APPEND GROUPS
 //  Attach symbols and text within an input field
-.input-prepend, .input-append {
-  display: inline-block;
-  margin-bottom: 0.5em;
-  vertical-align: middle;
-  white-space: nowrap; // Prevent span & input tags from separating
-  .fSize(0); // 0px -- whitespace collapse hack
+// .input-prepend, .input-append {
+//   display: inline-block;
+//   margin-bottom: 0.5em;
+//   vertical-align: middle;
+//   white-space: nowrap; // Prevent span & input tags from separating
+//   .fSize(0); // 0px -- whitespace collapse hack
 
-  // Reset the whitespace collapse hack
-  input, select, .uneditable-input, .dropdown-menu, .popover { .fSize(@font-size); }
-  [class*="span"] { display: inline-block; }
-}
+//   // Reset the whitespace collapse hack
+//   input, select, .uneditable-input, .dropdown-menu, .popover { .fSize(@font-size); }
+//   [class*="span"] { display: inline-block; }
+// }
 
 
 // ---------------------------------------------------------------------------
 // $ HORIZONTAL & INLINE FORMS
 // ---------------------------------------------------------------------------
-.form-horizontal, .form-inline {
-  input, textarea, select, .help-inline, .uneditable-input, .input-prepend, .input-append {
-    display: inline-block;
-    margin-bottom: 0;
-    vertical-align: middle;
-  }
-}
+// .form-horizontal, .form-inline {
+//   input, textarea, select, .help-inline, .uneditable-input, .input-prepend, .input-append {
+//     display: inline-block;
+//     margin-bottom: 0;
+//     vertical-align: middle;
+//   }
+// }

@@ -62,7 +62,7 @@
 //  -- Colors
 @copy-color:                @color-grayDark;
 @copy_muted-color:          spin(desaturate(lighten(@color-grayMid,25%),8%),14);
-@copy_help-color:           desaturate(lighten(@color-grayMid,12%),8%);
+@copy_help-color:           desaturate(lighten(@color-grayMid,13%),4%);
 
 @link-color:                @color-blue;
 @link_hover-color:          spin(@link-color, 2);
@@ -207,7 +207,7 @@ p,.text {
   &._small { .fontSize(s); }
 
   //  -- Type Styles
-  &.help {
+  &._help {
     color: @copy_help-color;
     .fontSize(s);
     .lineHeight(loose);
