@@ -55,10 +55,13 @@
             <div class="-row">
                 <div class="-col9">
                     <section id="lesscss-conventions">
-                        <h3>Conventions</h3>
-                        <p>These conventions were used in the development of the UI Kit. They support readable, clear style, and also constrain the use of CSS in a way that promotes decoupled, modular front end implementation, namely to prevent changes in one area of the UI from inadvertantly affecting others.</p>
+                        <header><h1>Conventions</h1></header>
+                        <article id="lesscss-intro">
+                            <h2 class="titles _section h3">Introduction</h2>
+                            <p class="_large">These conventions were used in the development of the UI Kit. They support readable, clear style, and also constrain the use of CSS in a way that promotes decoupled, modular front end implementation, namely to prevent changes in one area of the UI from inadvertantly affecting others.</p>
+                        </article>
                         <article id="lesscss-names">
-                            <h4>Class Names and Selectors</h4>
+                            <h2 class="titles _section h3">Class Names and Selectors</h2>
                             <p>Selectors should be scoped to a conceptual component. Components are discrete, well-defined UI chunks with structure defined in a coordinate HTML template and behavior in a coordinate script. Build on template decomposition by leveraging language features that promote encapsulation and isolation of internal changes. In CSS we do this with class name and selector convenctions. DOM scripts may rely heavily on function scoping,  and asynchronous module loaders</p>
                             <p>Components roots have a class name in the global namespace, while internal elements should be scoped to the component namespace. In order to guard against inadvertant cascade&mdash;probably the most common form of CSS regression&mdash;we recommend that internal selectors be constructed using a child-path scheme. This scheme relies strictly on the child combinator to precisely select a particular HTML subject:</p>
                             <pre class="brush: html">
@@ -110,11 +113,11 @@
                             <p>The underscore sets up a separate namespace for "modifier" class names. Since they only ever should appear in a multi-class selector, they are effectively scoped to the component namespace. Temporary variants (e.g. added dynamically by script) may use the format <code>is-[state]</code>. This allows both for component reuse and rich customization.</p>
                         </article>
                         <article id="lesscss-organization">
-                            <h4>Organization</h4>
+                            <h2 class="titles _section h3">Organization</h2>
                             <p>Organize styles by component, not by pages.</p>
                         </article>
                         <article id="lesscss-syntax">
-                            <h4>CSS/Less Code Style</h4>
+                            <h2 class="titles _section h3">CSS/Less Code Style</h2>
                             <ul>
                                 <li>Indent with four spaces.</li>
                                 <li>Use no more than one (two?) blank line(s) to set apart unrelated statements.</li>
@@ -130,7 +133,7 @@
                             </ul>
                         </article>
                         <article id="lesscss-order">
-                            <h4>Declaration Order</h4>
+                            <h2 class="titles _section h3">Declaration Order</h2>
                             <p>Based on <a href="http://codeguide.co/#css-declaration-order">@mdo's Code Guidelines</a> and <a href="https://github.com/twitter/recess/blob/master/lib/lint/strict-property-order.js#L35">RECESS</a>.</P>
                             <ol>
                                 <li>Positioning</li>
@@ -141,7 +144,7 @@
                             </ol>
                         </article>
                         <article id="lesscss-media">
-                            <h4>Media Queries</h4>
+                            <h2 class="titles _section h3">Media Queries</h2>
                             <p><code>@media</code> rule sets should use Less's <code>@media</code>-nesting functionality to locate themselves next to the related CSS selector. This allows them to be treated like modifier overrides.</p>
                             <pre class="brush: sass">
                                 .widget {
@@ -159,32 +162,27 @@
                             </pre>
                         </article>
                         <article id="lesscss-vendors">
-                            <h4>Vendor Prefixes &amp; Polyfills</h4>
+                            <h2 class="titles _section h3">Vendor Prefixes &amp; Polyfills</h2>
                         </article>
                         <article id="lesscss-comments">
-                            <h4>Commenting</h4>
+                            <h2 class="titles _section h3">Commenting</h2>
                         </article>
                     </section>
                 </div>
                 <div class="-col3">
                     <nav class="nav-sidebar hidden-print affix" role="complementary">
                         <ul class="nav _column">
-                            <li class="-item">
-                                <a href="#lesscss-conventions">Conventions</a>
-                                <ul class="nav _column _nested">
-                                    <!--<li class="-item"><a href="#lesscss-declarations">Declarations</a></li>-->
-                                    <!--<li class="-item"><a href="#lesscss-shorthand">Shorthand Notation</a></li>-->
-                                    <!--<li class="-item"><a href="#lesscss-nesting">Nesting</a></li>-->
-                                    <li class="-item"><a href="#lesscss-names">Class Names and Selectors</a></li>
-                                    <li class="-item"><a href="#lesscss-organization">Organization</a></li>
-                                    <li class="-item"><a href="#lesscss-syntax">CSS/Less Code Style</a></li>
-                                    <li class="-item"><a href="#lesscss-order">Declaration Order</a></li>
-                                    <li class="-item"><a href="#lesscss-media">Media Queries</a></li>
-                                    <li class="-item"><a href="#lesscss-vendors">Vendor Prefixes & Polyfills</a></li>
-                                    <li class="-item"><a href="#lesscss-comments">Commenting</a></li>
-                                    <!--<li class="-item"><a href="#lesscss-editor">Editor Preferences</a></li>-->
-                                </ul>
-                            </li>
+                            <!--<li class="-item"><a href="#lesscss-declarations">Declarations</a></li>-->
+                            <!--<li class="-item"><a href="#lesscss-shorthand">Shorthand Notation</a></li>-->
+                            <!--<li class="-item"><a href="#lesscss-nesting">Nesting</a></li>-->
+                            <li class="-item"><a href="#lesscss-names">Class Names and Selectors</a></li>
+                            <li class="-item"><a href="#lesscss-organization">Organization</a></li>
+                            <li class="-item"><a href="#lesscss-syntax">CSS/Less Code Style</a></li>
+                            <li class="-item"><a href="#lesscss-order">Declaration Order</a></li>
+                            <li class="-item"><a href="#lesscss-media">Media Queries</a></li>
+                            <li class="-item"><a href="#lesscss-vendors">Vendor Prefixes & Polyfills</a></li>
+                            <li class="-item"><a href="#lesscss-comments">Commenting</a></li>
+                            <!--<li class="-item"><a href="#lesscss-editor">Editor Preferences</a></li>-->
                         </ul>
                     </nav>
                 </div>
