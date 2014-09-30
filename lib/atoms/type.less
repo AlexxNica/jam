@@ -310,7 +310,10 @@ h1, h2, h3, h4, h5, h6,
     .fontSize(xxxl);
     .letterSpacing(tightest);
   }
-  &._pageTitle  { .fontSize(xxl); }
+  &._pageTitle  {
+    .fontSize(xxl);
+    .letterSpacing(tighter);
+  }
   &._section    { .fontWeight(7);}
   &._subSection {
     color: @title_section-color_muted;
