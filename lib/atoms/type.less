@@ -48,14 +48,12 @@
 
 //  -- Letter-spacing
 @letterSpacing-zero:        0;
-@letterSpacing-loose:       0.5px;
-@letterSpacing-base:        -0.5px;
-@letterSpacing-tight:       @letterSpacing-base * 2;
-@letterSpacing-tighter:     @letterSpacing-base * 5;
-@letterSpacing-tightest:    @letterSpacing-base * 10;
+@letterSpacing-loose:       1px;
+@letterSpacing-base:        0;
+@letterSpacing-tight:       -1px;
 
 //  -- Font Family
-@fontFamily-sans:           "merriweather", "HelveticaNeue-Regular", "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+@fontFamily-sans:           "HelveticaNeue-Regular", "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 @fontFamily-serif:          Georgia, Times New Roman, Times, serif;
 @fontFamily-code:           Menlo, Monaco, Consolas, "Courier New", monospace;
 
@@ -159,12 +157,9 @@
   & when (@lh = loosest)  { line-height: @lineHeight-loosest; }
 }
 .letterSpacing (@ls) {
-  & when (@ls = 0)        { letter-spacing: @letterSpacing-zero; }
   & when (@ls = loose)    { letter-spacing: @letterSpacing-loose; }
   & when (@ls = base)     { letter-spacing: @letterSpacing-base; }
   & when (@ls = tight)    { letter-spacing: @letterSpacing-tight; }
-  & when (@ls = tighter)  { letter-spacing: @letterSpacing-tighter; }
-  & when (@ls = tightest) { letter-spacing: @letterSpacing-tightest; }
 }
 
 .fontBuild(@family: sans, @size: base, @weight: 4, @style: n, @transform: lc, @line: base) {
@@ -291,6 +286,7 @@ a, a:link, .link {
 //  -- HEADINGS
 h1, h2, h3, h4, h5, h6, 
 .h1, .h2, .h3, .h4, .h5, .h6 {
+  .fontWeight(7);
   margin-top: 0;
   margin-bottom: 0.5em;
 
@@ -308,11 +304,11 @@ h1, h2, h3, h4, h5, h6,
   //  -- Specific Title Styles
   &._hugeTitle  {
     .fontSize(xxxl);
-    .letterSpacing(tightest);
+    .letterSpacing(tight);
   }
   &._pageTitle  {
     .fontSize(xxl);
-    .letterSpacing(tighter);
+    .letterSpacing(tight);
   }
   &._section    { .fontWeight(7);}
   &._subSection {
@@ -323,17 +319,13 @@ h1, h2, h3, h4, h5, h6,
 
 h1, h2, h3,
 .h1, .h2, .h3 {
-  .fontWeight(2);
   .letterSpacing(tight);
   .lineHeight(tighter);
 }
 
-h4, h5, h6,
-.h4, .h5, .h6 { .fontWeight(7); }
-
 h1, .h1 { 
   .fontSize(xxl);
-  .letterSpacing(tighter);
+  .letterSpacing(tight);
 }
 h2, .h2 { .fontSize(xl); }
 h3, .h3 { .fontSize(l); }
@@ -341,12 +333,7 @@ h4, .h4 { .fontSize(m); }
 h5, .h5 { .fontSize(base); }
 h6, .h6 { 
   .fontSize(xs);
-  .letterSpacing(0);
   text-transform: uppercase;
-
-  > small, > ._small {
-    
-  }
 }
 
 
