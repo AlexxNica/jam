@@ -71,20 +71,23 @@ body {
   .-logo {
     position: relative;
     display: block;
-    max-width: 300px;
+    min-width: 100%;
+    height: 42px;
+
+    text-indent: -9999px;
+
+    background-image: url("../lib/images/logo-socareers.png");
+    background-image: url("../lib/images/logo-socareers.svg"), none;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-origin: cover;
   }
 
   //  -- Logo adjustments based on media query sizes
   @media screen {
     @media (min-width: @mediaQuery-medium) { 
       .-logo {
-        top: -7px;
-        max-width: 100%;
-      }
-    }
-    @media (min-width: @mediaQuery-large)  { 
-      .-logo {
-        top: -12px;
+        top: -9px;
         max-width: 100%;
       }
     }
