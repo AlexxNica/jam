@@ -42,6 +42,7 @@
                         <ul class="nav _global _row">
                             <li class="-item"><a href="index.html" class="is-active">Getting Started</a></li>
                             <li class="-item"><a href="docs-base.html">Base CSS</a></li>
+                            <li class="-item"><a href="http://github.com/jonhmchan/uikit">GitHub</a></li>
                             <!--<li class="-item"><a href="docs-conventions.html">Conventions</a></li>-->
                             <!--<li class="-item"><a href="docs-componentization.html" class="is-active">Componentization</a></li>-->
                             <li class="-item"><a href="#" class="is-disabled">Modules</a></li>
@@ -74,12 +75,34 @@
                         <div class="code _example">
                     <pre><code class="less-block"><span class="_me">@import</span> <span class="_pr">"lib/base.less"</span>;</code></pre>
                     </section>
+                    <section id="lesscss-contributing">
+                        <h3>Contributing</h3>
+                        <p>It may be unclear where LESS should live based on its scope. There seem to be three tiers that we're considering:</p>
+                        <div class="-row">
+                            <div class="-col6"><strong>Scope</strong></div>
+                            <div class="-col6"><strong>Where it should be</strong></div>
+                        </div>
+                        <div class="-row">
+                            <div class="-col6">The LESS is used only on that page</div>
+                            <div class="-col6">It's own LESS file that isn't used anywhere except that page</div>
+                        </div>
+                        <div class="-row">
+                            <div class="-col6">The LESS is used on multiple pages throughout the project</div>
+                            <div class="-col6">In the project's shared LESS file (shared.less)</div>
+                        </div>
+                        <div class="-row">
+                            <div class="-col6">The LESS could be used across multiple projects on multiple pages</div>
+                            <div class="-col6">Should probably live in the UI Kit, so read below</div>
+                        </div>
+                    </section>
                 </div>
                 <div class="-col3">
                     <nav class="nav-sidebar hidden-print affix" role="complementary">
                         <ul class="nav _column">
                             <li class="-item"><a href="#lesscss-overview">Overview</a></li>
                             <li class="-item"><a href="#lesscss-installation">Installation</a></li>
+                            <li class="-item"><a href="#lesscss-contributing">Contributing
+                            </a></li>
                         </ul>
                     </nav>
                 </div>
