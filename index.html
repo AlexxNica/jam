@@ -77,23 +77,57 @@
                     </section>
                     <section id="lesscss-contributing">
                         <h3>Contributing</h3>
-                        <p>It may be unclear where LESS should live based on its scope. There seem to be three tiers that we're considering:</p>
-                        <div class="-row">
-                            <div class="-col6"><strong>Scope</strong></div>
-                            <div class="-col6"><strong>Where it should be</strong></div>
+                        <h4>Scope</h4>
+                        <p>Before writing code to contribute to the repository, think about what is being affected with the LESS you're writing. Because we've never done this before, it may be unclear where LESS should live based on its scope. As it stands, there are three tiers of scope that determine where the LESS should live.</p>
+                        <div class="contributing -grid">
+                            <div class="-row heading">
+                                <div class="-col4">
+                                    <p><strong>Scope</strong></p>
+                                </div>
+                                <div class="-col4">
+                                    <p><strong>Where it should be</strong></p>
+                                </div>
+                                <div class="-col4">
+                                    <p><strong>Example</strong></p>
+                                </div>
+                            </div>
+                            <div class="-row">
+                                <div class="-col4">
+                                    <p>Single page, single project</p>
+                                </div>
+                                <div class="-col4">
+                                    <p>It's own LESS file that isn't used anywhere except that page</p>
+                                </div>
+                                <div class="-col4">
+                                    <p>Hero image sizing for city pages in <code>citypages.less</code></p>
+                                </div>
+                            </div>
+                            <div class="-row">
+                                <div class="-col4">
+                                    <p>Multiple pages, single project</p>
+                                </div>
+                                <div class="-col4">
+                                    <p>In the project's shared LESS file</p>
+                                </div>
+                                <div class="-col4">
+                                    <p>Company logos across the site in <code>shared.less</code></p>
+                                </div>
+                            </div>
+                            <div class="-row">
+                                <div class="-col4">
+                                    <p>Multiple pages, multiple projects</p>
+                                </div>
+                                <div class="-col4">
+                                    <p>Should probably live in the UI Kit, so read below</p>
+                                </div>
+                                <div class="-col4">
+                                    <p>Tech tags across Careers, Q&amp;A, etc. in the appropriate file within the UI Kit</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="-row">
-                            <div class="-col6">The LESS is used only on that page</div>
-                            <div class="-col6">It's own LESS file that isn't used anywhere except that page</div>
-                        </div>
-                        <div class="-row">
-                            <div class="-col6">The LESS is used on multiple pages throughout the project</div>
-                            <div class="-col6">In the project's shared LESS file (shared.less)</div>
-                        </div>
-                        <div class="-row">
-                            <div class="-col6">The LESS could be used across multiple projects on multiple pages</div>
-                            <div class="-col6">Should probably live in the UI Kit, so read below</div>
-                        </div>
+                        <h4>Graduating LESS</h4>
+                        <p>As a general rule, you should start with implementing your LESS in the smallest scope possible - almost always at the page level - then graduate that LESS as the scope expands. This is closest to how we develop LESS anyways.</p>
+                        <p>For example, I may create icons for industries on city pages, which is very specific to one feature of Careers. The relevant LESS would live in a page-specific <code>less</code> file like <code>citypages.less</code>, even if it <em>may</em> one day go to other parts of Careers. Perhaps after a few weeks, a new feature on Careers requires those industry icons. At this point, it's best to move the relevant code from <code>citypages.less</code> and into <code>shared.less</code> which is used across the Careers project. As a final stage, we may start thinking about using industry icons in Stack Overflow Q&amp;A profiles, and this is when you should put the relevant code into a pull request for the UI Kit.</p>
                     </section>
                 </div>
                 <div class="-col3">
