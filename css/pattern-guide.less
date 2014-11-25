@@ -175,6 +175,7 @@ dl.exampleBlock {
   border: 1px solid @borderColor-grayLight;
 
   ._example {
+    &:extend(.clearfix all);
     .-weights {
       .fontRem(32);
       .lineHeight(looser);
@@ -184,6 +185,8 @@ dl.exampleBlock {
     }
 
     &:first-of-type { border-top-color: transparent;}
+
+    button._right:first-of-type { margin-left: 1em; }
   }
 
   ._label {
