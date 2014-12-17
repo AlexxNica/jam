@@ -45,76 +45,76 @@
 // ---------------------------------------------------------------------------
 .code._example,
 .syntaxhighlighter {
-  margin-bottom: 1.5em;
-  padding: 1em 1.5em;
+    margin-bottom: 1.5em;
+    padding: 1em 1.5em;
 
-  color: @copy-color;
-  .fontFamily(code);
-  .fontSize(base);
-  .lineHeight(loose);
+    color: @copy-color;
+    font-family: @fontFamily-code;
+    .fontSize(base);
+    .lineHeight(loose);
 
-  background-color: @backgroundColor-grayLighter;
-  border: 1px solid @borderColor-grayLight;
-  border-radius: @borderRadius-small;
+    background-color: @backgroundColor-grayLighter;
+    border: 1px solid @borderColor-grayLight;
+    border-radius: @borderRadius-small;
 
-  pre {
-    margin-bottom: 0;
-    margin-top: 0;
-    padding: 0;
+    pre {
+        margin-bottom: 0;
+        margin-top: 0;
+        padding: 0;
 
-    word-break: normal;
-    word-wrap: nowrap;
-    white-space: nowrap;
+        word-break: normal;
+        word-wrap: nowrap;
+        white-space: nowrap;
 
-    border: 0;
-    background-color: transparent;
-  }
+        border: 0;
+        background-color: transparent;
+    }
 }
 
 code {
-  padding-bottom: 2px;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
 
-  .fontFamily(code);
-  font-size: 90%;
-  color: @snip-text;
-  background-color: @snip-bck;
+    font-family: @fontFamily-code;
+    font-size: 90%;
+    color: @snip-text;
+    background-color: @snip-bck;
 }
 
 pre code {
-  padding: 0;
+    padding: 0;
 
-  color: inherit;
-  font-size: inherit;
-  white-space: pre-wrap;
+    color: inherit;
+    font-size: inherit;
+    white-space: pre-wrap;
 
-  background-color: transparent;
-  border-radius: 0;
+    background-color: transparent;
+    border-radius: 0;
 }
 
 //  ----------------------------------------------------------------------------
 //  $ CODE COLOR STYLING
 //  ----------------------------------------------------------------------------
 .html-block {
-  ._ta  { color: @html-tag; }
-  ._at  { color: @html-attr; }
-  ._va  { color: @html-value; }
-  ._cp  { color: @html-copy; }
-  ._co  { color: @html-comment; }
-  ._j1  { color: @html-js1;}
+    ._ta  { color: @html-tag; }
+    ._at  { color: @html-attr; }
+    ._va  { color: @html-value; }
+    ._cp  { color: @html-copy; }
+    ._co  { color: @html-comment; }
+    ._j1  { color: @html-js1;}
 }
 
 .less-block {
-  ._cl  { color: @less-class; }
-  ._co  { color: @less-comment; }
-  ._cl  { color: @less-colon; }
-  ._me  { color: @less-media; }
-  ._pa  { color: @less-parameter; }
-  ._va  { color: @less-variable; }
-  ._pr  { color: @less-property; }
-  ._fu  { color: @less-function; }
-  ._nu  { color: @less-number; }
-  ._ty  { color: @less-type; }
+    ._cl  { color: @less-class; }
+    ._co  { color: @less-comment; }
+    ._cl  { color: @less-colon; }
+    ._me  { color: @less-media; }
+    ._pa  { color: @less-parameter; }
+    ._va  { color: @less-variable; }
+    ._pr  { color: @less-property; }
+    ._fu  { color: @less-function; }
+    ._nu  { color: @less-number; }
+    ._ty  { color: @less-type; }
 }

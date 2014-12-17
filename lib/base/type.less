@@ -19,38 +19,6 @@
 //  ============================================================================
 //  -- Sizes
 @fontSize-base:             14;
-@fontSize-xxsmall:          @fontSize-base * 0.714285714;
-@fontSize-xsmall:           @fontSize-base * 0.857142857;
-@fontSize-small:            @fontSize-base * 0.928571429;
-@fontSize-medium:           @fontSize-base * 1.285714286;
-@fontSize-large:            @fontSize-base * 1.714285714;
-@fontSize-xlarge:           @fontSize-base * 2.571428571;
-@fontSize-xxlarge:          @fontSize-base * 3.428571429;
-@fontSize-xxxlarge:         @fontSize-base * 5.142857143;
-
-//  -- Styles, Weights, and Transforms
-@fontStyle-normal:          normal;
-@fontStyle-italic:          italic;
-@fontTransform-lowercase:   lowercase;
-@fontTransform-uppercase:   uppercase;
-@fontWeight-light:          200;
-@fontWeight-normal:         400;
-@fontWeight-bold:           700;
-
-//  -- Line-Heights
-@lineHeight-tightest:       @fontSize-base / @fontSize-base;
-@lineHeight-tighter:        (@fontSize-base + 2) / @fontSize-base;
-@lineHeight-tight:          (@fontSize-base + 4) / @fontSize-base;
-@lineHeight-base:           (@fontSize-base + 6) / @fontSize-base;
-@lineHeight-loose:          (@fontSize-base + 8) / @fontSize-base;
-@lineHeight-looser:         (@fontSize-base + 10) / @fontSize-base;
-@lineHeight-loosest:        (@fontSize-base / @fontSize-base) * 2;
-
-//  -- Letter-spacing
-@letterSpacing-zero:        0;
-@letterSpacing-loose:       1px;
-@letterSpacing-base:        0;
-@letterSpacing-tight:       -1px;
 
 //  -- Font Family
 @fontFamily-sans:           "HelveticaNeue-Regular", "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -108,67 +76,44 @@
 //            }
 //
 //  ----------------------------------------------------------------------------
-.fontFamily (@ff) {
-  & when (@ff = sans) { font-family: @fontFamily-sans; }
-  & when (@ff = serif){ font-family: @fontFamily-serif; }
-  & when (@ff = code) { font-family: @fontFamily-code; }
-}
 .fontSize (@s) {
   & when (@s = base)  { .fontRem(@fontSize-base); }
-  & when (@s = xxs)   { .fontRem(@fontSize-xxsmall); }
-  & when (@s = xs)    { .fontRem(@fontSize-xsmall); }
-  & when (@s = s)     { .fontRem(@fontSize-small); } 
-  & when (@s = m)     { .fontRem(ceil(@fontSize-medium)); }
-  & when (@s = l)     { .fontRem(ceil(@fontSize-large)); }
-  & when (@s = xl)    { .fontRem(ceil(@fontSize-xlarge)); }
-  & when (@s = xxl)   { .fontRem(ceil(@fontSize-xxlarge)); }
-  & when (@s = xxxl)  { .fontRem(ceil(@fontSize-xxxlarge)); }
+  & when (@s = xxs)   { .fontRem(@fontSize-base * 0.714285714); }
+  & when (@s = xs)    { .fontRem(@fontSize-base * 0.857142857); }
+  & when (@s = s)     { .fontRem(@fontSize-base * 0.928571429); } 
+  & when (@s = m)     { .fontRem(@fontSize-base * 1.285714286); }
+  & when (@s = l)     { .fontRem(ceil(@fontSize-base * 1.714285714)); }
+  & when (@s = xl)    { .fontRem(ceil(@fontSize-base * 2.571428571)); }
+  & when (@s = xxl)   { .fontRem(floor(@fontSize-base * 3.428571429)); }
+  & when (@s = xxxl)  { .fontRem(floor(@fontSize-base * 5.142857143)); }
 }
 .fontRem(@fs) {
   @remValue: @fs / @fontSize-base;
   font-size: ~"@{fs}px";
   font-size: ~"@{remValue}rem";
 }
-.fontStyle (@s) {
-  & when (@s = n) { font-style: @fontStyle-normal; }
-  & when (@s = i) { font-style: @fontStyle-italic; }
-}
-.fontTransform (@t) {
-  & when (@t = lc) { font-style: @fontTransform-lowercase; }
-  & when (@t = uc) { font-style: @fontTransform-uppercase; }
-}
-//  Font Weight Mixin Guard to quickly assign font-weight variables
 .fontWeight (@w) {
-  & when (@w = 2) { font-weight: @fontWeight-light; }
-  & when (@w = 4) { font-weight: @fontWeight-normal; }
-  & when (@w = 7) { font-weight: @fontWeight-bold; }
+  & when (@w = 2) { font-weight: 200; }
+  & when (@w = 4) { font-weight: 400; }
+  & when (@w = 7) { font-weight: 700; }
 }
 //  Line Height Mixin Guard to quickly assign line-height variables
 //  Do not declare values with your line-heights (i.e. px, em). This allows
 //  for the value to be relative to the declared font-size and have
 //  greater flexibility.
 .lineHeight (@lh) {
-  & when (@lh = base)     { line-height: @lineHeight-base; }
-  & when (@lh = tight)    { line-height: @lineHeight-tight; }
-  & when (@lh = tighter)  { line-height: @lineHeight-tighter; }
-  & when (@lh = tightest) { line-height: @lineHeight-tightest; }
-  & when (@lh = loose)    { line-height: @lineHeight-loose; }
-  & when (@lh = looser)   { line-height: @lineHeight-looser; }
-  & when (@lh = loosest)  { line-height: @lineHeight-loosest; }
+  & when (@lh = base)     { line-height: (@fontSize-base + 6) / @fontSize-base; }
+  & when (@lh = tight)    { line-height: (@fontSize-base + 4) / @fontSize-base; }
+  & when (@lh = tighter)  { line-height: (@fontSize-base + 2) / @fontSize-base; }
+  & when (@lh = tightest) { line-height: @fontSize-base / @fontSize-base; }
+  & when (@lh = loose)    { line-height: (@fontSize-base + 8) / @fontSize-base; }
+  & when (@lh = looser)   { line-height: (@fontSize-base + 10) / @fontSize-base; }
+  & when (@lh = loosest)  { line-height: (@fontSize-base / @fontSize-base) * 2; }
 }
 .letterSpacing (@ls) {
-  & when (@ls = loose)    { letter-spacing: @letterSpacing-loose; }
-  & when (@ls = base)     { letter-spacing: @letterSpacing-base; }
-  & when (@ls = tight)    { letter-spacing: @letterSpacing-tight; }
-}
-
-.fontBuild(@family: sans, @size: base, @weight: 4, @style: n, @transform: lc, @line: base) {
-  .fontFamily(@family);
-  .fontSize(@size);
-  .fontStyle(@style);
-  .fontTransform(@transform);
-  .fontWeight(@weight);
-  .lineHeight(@line);
+  & when (@ls = loose)    { letter-spacing: 1px; }
+  & when (@ls = base)     { letter-spacing: 0; }
+  & when (@ls = tight)    { letter-spacing: -1px; }
 }
 
 
@@ -224,10 +169,11 @@ p,.text {
   }  
 }
 
-small             { font-size: floor((100% * @fontSize-small) / @fontSize-base); }
+small             { font-size: floor(100% * 0.857142857); }
 strong,b          { .fontWeight(7); }
-em, i             { .fontStyle(i); }
-cite              { .fontStyle(n); }
+em, i             { font-style: italic; }
+cite              { font-style: normal; }
+
 sup.fn {
   padding-right: 2px;
   padding-left: 2px;
@@ -238,9 +184,9 @@ blockquote, .quote {
   margin: 0.75em 1.5em;
   padding: 1em 1.5em;
 
-  .fontFamily(serif);
+  font-family: @fontFamily-serif;
   font-style: italic;
-  .fontRem(16);
+  .fontSize(m);
   letter-spacing: 0;
   .lineHeight(looser);
   color: @quote-textColor;
@@ -253,7 +199,7 @@ blockquote, .quote {
     border-left: 2px solid @quote-border_accent;
   }
   &._pull {  
-    .fontFamily(sans);
+    font-family: @fontFamily-sans;
     .fontWeight(2);
     .letterSpacing(base);
     .lineHeight(looser);

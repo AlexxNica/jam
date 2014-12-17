@@ -6,25 +6,12 @@
 //	Mixins should be used as s
 //
 //  TABLE OF CONTENTS
-//  • TYPE
 //  • CSS3 PROPERTIES
+//  • TRANSITIONS
+//  • CLEARFIX
 //
 // ===========================================================================
-//  $ TYPE MIXINES
-// ---------------------------------------------------------------------------
-//  Resize the font-size of an object using a mixin to generate the REM and
-//  px fallback value for IE9 & older browsers.
-.fSize(@size: @font-size) {
-  @remValue: @size / @font-size;
-  font-size: ~"@{size}px";
-  font-size: ~"@{remValue}rem";
-}
-
-
-// ---------------------------------------------------------------------------
-//  $ CSS3 PROPERTIES
-// ===========================================================================
-//  $$ BOX SIZING
+//  $ BOX SIZING
 // ---------------------------------------------------------------------------
 .box-sizing(@boxmodel) {
   -webkit-box-sizing: @boxmodel;
@@ -34,7 +21,7 @@
 
 
 // ---------------------------------------------------------------------------
-//  $$ TRANSITIONS, TRANSFORMATIONS
+//  $ TRANSITIONS, TRANSFORMATIONS
 // ---------------------------------------------------------------------------
 .transition-delay(@transition-delay) {
   -webkit-transition-delay: @transition-delay;
@@ -50,6 +37,9 @@
 }
 
 
+// ---------------------------------------------------------------------------
+//  $ CLEARFIX
+// ---------------------------------------------------------------------------
 .clearfix {
     &:before,
     &:after {

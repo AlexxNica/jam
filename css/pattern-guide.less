@@ -37,262 +37,249 @@
 //  ----------------------------------------------------------------------------
 //  -- Universal
 html, body {
-  .box-sizing(border-box);
-  position: relative;
-  min-height: 100%;
-  width: 100%;
+    .box-sizing(border-box);
+    position: relative;
+    min-height: 100%;
+    width: 100%;
 
-  color: @copy-color;
-  .fontFamily(sans);
-  font-size: ~"@{fontSize-base}px";
-  .fontWeight(4);
-  .letterSpacing(base);
-  .lineHeight(base);
-  text-align: left;
+    color: @copy-color;
+    font-family: @fontFamily-sans;
+    font-size: ~"@{fontSize-base}px";
+    .fontWeight(4);
+    .letterSpacing(base);
+    .lineHeight(base);
+    text-align: left;
 }
 body {
-  padding: 3em;
-  background: @body-background;
+    padding: 3em;
+    background: @body-background;
 }
 
 //  -- Wrapper
 .header-site, .container-page {
-  .box-sizing(border-box);
-  margin: 0 auto;
-  width: 100%;
-  overflow: hidden;
+    .box-sizing(border-box);
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
 }
 
 //  -- Global Navigation & Logo Area
 .page-header {
-  margin-top: 1em;
-  padding-bottom: 4em;
+    margin-top: 1em;
+    padding-bottom: 4em;
 
-  .-logo {
-    position: relative;
-    display: block;
-    min-width: 100%;
-    height: 42px;
+    .-logo {
+        position: relative;
+        display: block;
+        min-width: 100%;
+        height: 42px;
 
-    text-indent: -9999px;
+        text-indent: -9999px;
 
-    background-image: url("../lib/images/logo-socareers.png");
-    background-image: url("../lib/images/logo-socareers.svg"), none;
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-origin: cover;
-  }
-
-  //  -- Logo adjustments based on media query sizes
-  @media screen {
-    @media (min-width: @mediaQuery-medium) { 
-      .-logo {
-        top: -9px;
-        max-width: 100%;
-      }
+        background-image: url("../lib/images/logo-socareers.png");
+        background-image: url("../lib/images/logo-socareers.svg"), none;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-origin: cover;
     }
-  }
+
+    //  -- Logo adjustments based on media query sizes
+    @media screen {
+        @media (min-width: @mediaQuery-medium) { 
+            .-logo {
+                top: -9px;
+                max-width: 100%;
+            }
+        }
+    }
 }
 
 //  -- Originally was just styling section and article tags. Really though
 //     all I want to do is add bottom padding to sections. Trapping for all
 //     section ids now.
 [id*="section-"] {
-  padding-bottom: @padding-double * 2;
+    padding-bottom: @padding-double * 2;
 
-  > article {
-    margin-bottom: 3em;
-    > p, > .text { margin-right: @padding-double * 3; }
-  }
+    > article {
+        margin-bottom: 3em;
+        > p, > .text { margin-right: @padding-double * 3; }
+    }
 }
 
 .content section {
-  padding-right: 0.5em;
-  display: block;
+    padding-right: 0.5em;
+    display: block;
 }
 
 .container, .nav, .navbar, .navbar-collapse {
-  &:before, &:after {
-    display: table;
-    content: " ";
-  }
+    &:before, &:after {
+        display: table;
+        content: " ";
+    }
 }
 
 .nav-sidebar > .nav { padding-left: 20px; }
-.affix {
-  position: fixed;
-}
+.affix { position: fixed; }
 
 
 //  ============================================================================
 //  $4 TYPE
 //  ----------------------------------------------------------------------------
 //  -- Icon colors
-i.fa-check-circle-o {
-  color: @color-green;
-}
-i.fa-warning {
-  color: @color-yellow;
-}
-i.fa-times {
-  color: @color-red;
-}
+i.fa-check-circle-o { color: @color-green; }
+i.fa-warning { color: @color-yellow; }
+i.fa-times { color: @color-red; }
 
-//  -- Make <p>'s slightly larger for esaier reading.
+//  -- Make <p>'s slightly larger for easier reading.
 p, .text, ul, li {
-  .fontRem(15);
-  .lineHeight(looser);
+    .fontSize(base);
+    .lineHeight(looser);
 }
 
 //  $ Grid Example
 //  Used to showcase grid layouts and cells
 .example.-grid {
-  [class^="-col"] {
-    border: 1px solid @borderColor-grayLight;
-    p {
-      margin: 15px;
+    [class^="-col"] {
+        border: 1px solid @borderColor-grayLight;
+        p { margin: 1em; }
     }
-  }
 }
 
 //  $ Contributing Grid Example
 //  Used to showcase the scope table on contributing
-.contributing.-grid {
-  [class^="-col"] {
-    padding: 0px 10px 10px 10px;
-  }
-}
+.contributing.-grid [class^="-col"] { padding: 0px 10px 10px 10px; }
 
 
 //  $ Example Block
 //  Used to showcase examples of items
 dl.exampleBlock {
-  padding: 0.5em 2em 2em;
-  margin: 0 0 3em;
+    padding: 0.5em 2em 2em;
+    margin: 0 0 3em;
 
-  border-radius: @borderRadius-base;
-  background-color: lighten(@backgroundColor-grayLight,6%);
-  border: 1px solid @borderColor-grayLight;
+    border-radius: @borderRadius-base;
+    background-color: lighten(@backgroundColor-grayLight,6%);
+    border: 1px solid @borderColor-grayLight;
 
-  ._example {
-    &:extend(.clearfix all);
-    .-weights {
-      .fontRem(32);
-      .lineHeight(looser);
-      color: @title-color;
+    ._example {
+        &:extend(.clearfix all);
+        
+        .-weights {
+            .fontSize(xl);
+            .lineHeight(looser);
+            color: @title-color;
 
-      &._light { .fontWeight(2); }
+            &._light { .fontWeight(2); }
+        }
+
+        &:first-of-type { border-top-color: transparent;}
+
+        button._right:first-of-type { margin-left: 1em; }
     }
 
-    &:first-of-type { border-top-color: transparent;}
+    ._label {
+        color: @copy_help-color;
+        font-family: @fontFamily-code;
+        .fontSize(xs);
+        .fontWeight(4);
+        .letterSpacing(0);
+    }
 
-    button._right:first-of-type { margin-left: 1em; }
-  }
-
-  ._label {
-    color: @copy_help-color;
-    .fontFamily(code);
-    .fontSize(xs);
-    .fontWeight(4);
-    .letterSpacing(0);
-  }
-
-  blockquote._pull, .quote._pull { background-color: @color-white; }
+    blockquote._pull, .quote._pull { background-color: @color-white; }
 }
 
 
 //  $ Example Cards
 //  Used to create some color cards
 ul.exampleCards {
-  margin: 0;
-  overflow: hidden;
-  text-align: center;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
 
-  .-item {
-    position: relative;
-    float: left;
-    list-style-type: none;
-    margin: 0 0.5em 0.75em 0;
-    
-    box-shadow: 0 0 4px fade(@color-grayMid,20%);
-    border-width: 1px;
-    border-style: solid;
-    border-radius: @borderRadius-base;
+    .-item {
+        position: relative;
+        float: left;
+        list-style-type: none;
+        margin: 0 0.5em 0.75em 0;
 
-    p {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      //width: 90%;
-      margin: 0 auto;
-      padding: 1em 0;
+        box-shadow: 0 0 4px fade(@color-grayMid,20%);
+        border-width: 1px;
+        border-style: solid;
+        border-radius: @borderRadius-base;
 
-      color: @copy_help-color;
-      .fontSize(xs);
+        p {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            //width: 90%;
+            margin: 0 auto;
+            padding: 1em 0;
 
-      background-color: @color-white;
-      border-bottom-right-radius: @borderRadius-base - 1;
-      border-bottom-left-radius: @borderRadius-base - 1;
+            color: @copy_help-color;
+            .fontSize(xs);
+
+            background-color: @color-white;
+            border-bottom-right-radius: @borderRadius-base - 1;
+            border-bottom-left-radius: @borderRadius-base - 1;
+        }
+
+        //  -- Card Sizes
+        width: 15%; 
+        height: 12em;
+
+        //  -- Layout
+        &:nth-of-type(even) { 
+            margin-right: 0;
+            @media screen and (min-width: @mediaQuery-small) { margin-right: 0.5em; }
+        }
     }
 
-    //  -- Card Sizes
-    width: 15%; 
-    height: 12em;
+    //  -- For larger cards
+    .-item._big {
+        width: 49%;
 
-    //  -- Layout
-    &:nth-of-type(even) { 
-      margin-right: 0;
-      @media screen and (min-width: @mediaQuery-small) { margin-right: 0.5em; }
+        @media screen and (min-width: @mediaQuery-small) { width: 18%; }
     }
-  }
 
-  //  -- For larger cards
-  .-item._big {
-    width: 49%;
-
-    @media screen and (min-width: @mediaQuery-small) { width: 18%; }
-  }
-
-  //  -- Customize card colors
-  .-item.color- {
-    &orange {
-      background-color: @color-orange;
-      border-color: darken(@color-orange,10%);
+    //  -- Customize card colors
+    .-item.color- {
+        &orange {
+            background-color: @color-orange;
+            border-color: darken(@color-orange,10%);
+        }
+        &blue {
+            background-color: @color-blue;
+            border-color: darken(@color-blue,10%);
+        }
+        &green {
+            background-color: @color-green;
+            border-color: darken(@color-green,10%);
+        }
+        &yellow {
+            background-color: @color-yellow;
+            border-color: darken(@color-yellow,10%);
+        }
+        &red {
+            background-color: @color-red;
+            border-color: darken(@color-red,10%);
+        }
+        &black {
+            background-color: @color-black;
+            border-color: @color-grayDark;
+        }
+        &grayLight {
+            background-color: @color-grayLight;
+            border-color: darken(@color-grayLight,10%);
+        }
+        &grayMid {
+            background-color: @color-grayMid;
+            border-color: darken(@color-grayMid,10%);
+        }
+        &grayDark {
+            background-color: @color-grayDark;
+            border-color: darken(@color-grayDark,10%);
+        }
     }
-    &blue {
-      background-color: @color-blue;
-      border-color: darken(@color-blue,10%);
-    }
-    &green {
-      background-color: @color-green;
-      border-color: darken(@color-green,10%);
-    }
-    &yellow {
-      background-color: @color-yellow;
-      border-color: darken(@color-yellow,10%);
-    }
-    &red {
-      background-color: @color-red;
-      border-color: darken(@color-red,10%);
-    }
-    &black {
-      background-color: @color-black;
-      border-color: @color-grayDark;
-    }
-    &grayLight {
-      background-color: @color-grayLight;
-      border-color: darken(@color-grayLight,10%);
-    }
-    &grayMid {
-      background-color: @color-grayMid;
-      border-color: darken(@color-grayMid,10%);
-    }
-    &grayDark {
-      background-color: @color-grayDark;
-      border-color: darken(@color-grayDark,10%);
-    }
-  }
 }
 
 
@@ -302,20 +289,20 @@ ul.exampleCards {
 //  -- Definition List Variation for the UI Guide
 dl._rows {
 
-  > dt {
-    position: relative;
-    display: block;
-    top: @padding-double;
-  }
-  > dd {
-    display: block;
-    margin: 0;
-    padding-top: @padding-base * 3;
+    > dt {
+        position: relative;
+        display: block;
+        top: @padding-double;
+    }
+    > dd {
+        display: block;
+        margin: 0;
+        padding-top: @padding-base * 3;
 
-    border-top-color: @borderColor-grayLight;
-    border-top-style: solid;
-    border-top-width: 1px;
-  }
+        border-top-color: @borderColor-grayLight;
+        border-top-style: solid;
+        border-top-width: 1px;
+    }
 }
 
 
