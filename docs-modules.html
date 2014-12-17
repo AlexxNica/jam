@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>UI Style Guide | Stack Overflow Careers</title>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        
+        <!-- SyntaxHighlighter -->
+        <script src="js/syntaxhighlighter_3.0.83/shCore.js"></script>
+        <script src="js/syntaxhighlighter_3.0.83/shAutoloader.js"></script>
+        <script src="js/syntaxhighlighterLoader.js" defer></script>
+        <link rel="stylesheet/less" type="text/css" href="css/syntaxhighlighter_3.0.83/shCore.css">
+        <link rel="stylesheet/less" type="text/css" href="css/syntaxhighlighter_3.0.83/shThemeDefault.css">
+
+        <link rel="stylesheet/less" type="text/css" href="css/pattern-guide.less">
+
+        <!-- LESS -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
+        <script>less.watch();</script>
+
+        <!--
+          ***Conditional comments for IE.***
+
+          First one includes html5 shiv code directly from Google Code for all versions of IE. The second one includes IE8.js for better backwards compatibility for IE7 and below as well as an ie.css file which will sove IE7 and below CSS bugs. Third one is just a CSS file to fix IE6 bugs.
+            -->
+        <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+        <!--[if lte IE 7]><script src="js/IE8.js" type="text/javascript"></script><![endif]-->
+        <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="all" href="css/ie6.css"/><![endif]-->
+    </head>
+    <body data-spy="scroll" data-target=".nav-sidebar">
+        <header class="page-header container">
+            <div class="-row">
+                <div class="-col4">
+                    <div class="logo-soc">
+                        <a href="index.html" class="-logo">Stack Overflow Careers</a>
+                    </div>
+                </div>
+                <div class="-col8">
+                    <nav id="nav-mainnav" class="hidden-print">
+                        <ul class="nav _global _row">
+                            <li class="-item"><a href="index.html">Getting Started</a></li>
+                            <li class="-item"><a href="docs-base.html">Base CSS</a></li>
+                            <!--<li class="-item"><a href="docs-conventions.html">Conventions</a></li>-->
+                            <!--<li class="-item"><a href="docs-componentization.html" class="is-active">Componentization</a></li>-->
+                            <li class="-item"><a href="docs-modules.html" class="is-active">Modules</a></li>
+                            <li class="-item"><a href="#" class="is-disabled">Views</a></li>
+                            <li class="-item"><a href="http://github.com/jonhmchan/uikit">GitHub</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <div class="-row">
+                <div class="-col9">
+                    <section id="section-tabs">
+                        <header>
+                            <h1>Tabs</h1>
+                        </header>
+
+                        <article id="tabs-intro">
+                            <h2 class="titles _section h3">Introduction</h2>
+                            <p class="_large">TBD</p>
+                        </article>
+                        <article id="tabs-base">
+                            <h2 class="titles _section h3">Base</h2>
+                            <p>The base style</p>
+                        </article>
+                    </section>
+                </div>
+                <div class="-col3">
+                    <nav class="nav-sidebar hidden-print affix" role="complementary">
+                        <ul class="nav _column">
+                            <li class="-item"><a href="#overview">Overview</a></li>
+                            <li class="-item">
+                                <a href="#section-grid">Tabs</a>
+                                <ul class="nav _column _nested">
+                                    <li class="-item"><a href="#grid-intro">Introduction</a></li>
+                                    <li class="-item"><a href="#grid-basic-usage">Base Style</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+    </body>
+</html>
