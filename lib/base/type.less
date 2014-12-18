@@ -256,10 +256,14 @@ h1, h2, h3, h4, h5, h6,
     .fontSize(xxl);
     .letterSpacing(tight);
   }
-  &._section    { .fontWeight(7);}
+  &._section {
+    .fontWeight(7);
+    letter-spacing: 0;
+  }
   &._subSection {
     color: @title_section-color_muted;
     .fontWeight(7);
+    letter-spacing: 0;
   }
 }
 

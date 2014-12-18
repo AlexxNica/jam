@@ -71,6 +71,7 @@ table, .table {
     }
 
     > thead > tr > th { vertical-align: bottom; }
+    > tfoot > tr > td { vertical-align: top; }
 
     > caption + thead, > .caption + thead,
     > colgroup + thead, > .colgroup + thead,
@@ -159,8 +160,8 @@ table, .table {
     }
 
     //  -- Totals Row: When you want to really summarize things
-    .-totals {
-        > td { font-size: 18px; }
+    tfoot.-totals {
+        > tr > td { font-size: 18px; }
 
         &:hover {
             background-color: transparent;
