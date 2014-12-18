@@ -45,17 +45,18 @@
 // ---------------------------------------------------------------------------
 .code._example,
 .syntaxhighlighter {
+    margin-top: -1px;
     margin-bottom: 1.5em;
     padding: 1em 1.5em;
 
     color: @copy-color;
     font-family: @fontFamily-code;
-    .fontSize(base);
+    .fontSize(s);
     .lineHeight(loose);
 
-    background-color: @backgroundColor-grayLighter;
+    background-color: lighten(@backgroundColor-grayLight,6%);
     border: 1px solid @borderColor-grayLight;
-    border-radius: @borderRadius-small;
+    border-radius: 0 0 @borderRadius-base @borderRadius-base;
 
     pre {
         margin-bottom: 0;

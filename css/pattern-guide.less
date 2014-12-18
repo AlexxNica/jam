@@ -18,12 +18,16 @@
 //  $ 5  Logo
 //
 //  ============================================================================
-//  $1 IMPORT FILES
+//  $ IMPORT FILES
 //  ----------------------------------------------------------------------------
-@import "../lib/base";   //  Base UI Kit Styles
-@import "code";               // Code Syntax highlighting
-@import "syntaxhighlighter";  // Custom syntaxhighlighter theme
-@import "nav";                // UI Library Navigation Styles
+//  -- Product Library Files
+@import "../lib/base";          //  All 'da base
+@import "../lib/modules";       //  All 'dos mods
+
+//  -- Documentation Files
+@import "code";                 // Code Syntax highlighting
+@import "syntaxhighlighter";    // Custom syntaxhighlighter theme
+@import "nav";                  // UI Library Navigation Styles
 
 
 //  ============================================================================
@@ -36,8 +40,9 @@
 //  $3 LAYOUTS
 //  ----------------------------------------------------------------------------
 //  -- Universal
+*, *:before, *:after { .box-sizing(border-box); }
+
 html, body {
-    .box-sizing(border-box);
     position: relative;
     min-height: 100%;
     width: 100%;
@@ -152,12 +157,12 @@ p, .text, ul, li {
 
 //  $ Example Block
 //  Used to showcase examples of items
-dl.exampleBlock {
-    padding: 0.5em 2em 2em;
-    margin: 0 0 3em;
+.exampleBlock {
+    padding: 0.5em 2em;
+    margin: 0;
 
-    border-radius: @borderRadius-base;
-    background-color: lighten(@backgroundColor-grayLight,6%);
+    background-color: @color-white;
+    border-radius: @borderRadius-base @borderRadius-base 0 0;
     border: 1px solid @borderColor-grayLight;
 
     ._example {
