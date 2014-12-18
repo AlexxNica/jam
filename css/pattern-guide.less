@@ -107,7 +107,11 @@ body {
 
     > article {
         margin-bottom: 3em;
-        > p, > .text { margin-right: @padding-double * 3; }
+        > p, > .text {
+            margin-right: @padding-double;
+            &.callout { margin-right: 0; }
+        }
+
     }
 }
 

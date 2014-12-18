@@ -41,7 +41,7 @@
                     <nav id="nav-mainnav" class="hidden-print">
                         <ul class="nav _global _row">
                             <li class="-item"><a href="index.html">Getting Started</a></li>
-                            <li class="-item"><a href="docs-base.html" class="is-active">Base CSS</a></li>
+                            <li class="-item"><a href="docs-base.html" class="is-active">Base</a></li>
                             <!--<li class="-item"><a href="docs-conventions.html">Conventions</a></li>-->
                             <!--<li class="-item"><a href="docs-componentization.html" class="is-active">Componentization</a></li>-->
                             <li class="-item"><a href="docs-modules.html">Modules</a></li>
@@ -55,13 +55,16 @@
         <div class="container">
             <div class="-row">
                 <div class="-col9">
+                    <section id="overview">
+                        <h1 class="_pageTitle">Base CSS Styles</h1>
+                    </section>
                     <section id="section-grid">
                         <header>
-                            <h1>Grid System</h1>
+                            <h1 class="_section">Grid System</h1>
                         </header>
 
                         <article id="grid-intro">
-                            <h2 class="titles _section h3">Introduction</h2>
+                            <h2 class="_subSection">Introduction</h2>
                             <p class="_large">This kit includes a responsive, fluid grid system that scales up to 12 columns as the device or viewport size increases. It includes predefined classes for easy layout options, as well as mixins for generating more semantic layouts.</p>
 
                             <p>The grid system that we chose is based off of <a href="http://getbootstrap.com/">Bootstrap's 12 column grid</a>. If you have used it before, the conventions here are nearly identical, with the exception of some class naming conventions.</p>
@@ -77,9 +80,8 @@
                                 <li>Unlike Bootstrap, we do not allow column restructuring based on device or viewport size. In other words, we do not allow for a row to contain <code>.-col6</code> on two divs for a tablet, but allow for switching to one div being <code>.-col3</code> and the other <code>.-col9</code> on a mobile device.</li>
                             </ul>
                         </article>
-
                         <article id="grid-basic-usage">
-                            <h2 class="titles _section h3">Basic Usage</h2>
+                            <h2 class="_subSection">Basic Usage</h2>
                             <p>The following is a very basic implementation of the grid system. It uses a top level <code>.container</code> class and can contain <code>.-row</code> elements that have <code>.-col*</code> elements directly within <code>.-row</code> elements.</p>
 
                             <div class="exampleBlock -grid">
@@ -135,9 +137,8 @@
                                 </div>
                             </pre>
                         </article>
-
                         <article id="grid-column-wrapping">
-                            <h2 class="titles _section h3">Column Wrapping</h2>
+                            <h2 class="_subSection">Column Wrapping</h2>
 
                             <p>If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.</p>
 
@@ -169,9 +170,8 @@
                                 </div>
                             </pre>
                         </article>
-
                         <article id="grid-offsetting-columns">
-                            <h2 class="titles _section h3">Offsetting Columns</h2>
+                            <h2 class="_subSection">Offsetting Columns</h2>
                             <p>Move columns to the right using <code>._offset*</code> classes. These classes increase the left margin of a column by <code>*</code> columns.
 
                             <div class="exampleBlock -grid">
@@ -212,9 +212,8 @@
                                 </div>
                             </pre>
                         </article>
-
                         <article id="grid-nesting-columns">
-                            <h2 class="titles _section h3">Nesting Columns</h2>
+                            <h2 class="_subSection">Nesting Columns</h2>
 
                             <p>To nest your content with the default grid, just add a new <code>.-row</code> and set of <code>.-col*</code> within an existing <code>.-col*</code> column.</p>
 
@@ -246,9 +245,8 @@
                                 </div>
                             </pre>
                         </article>
-
                         <article id="grid-column-ordering">
-                            <h2 class="titles _section h3">Column Ordering</h2>
+                            <h2 class="_subSection">Column Ordering</h2>
 
                             <p>You can change the order of the built in grid columns with <code>._push*</code> and <code>._pull*</code> modifier classes.</p>
                             <div class="exampleBlock -grid">
@@ -269,9 +267,8 @@
                                 </div>
                             </pre>
                         </article>
-
                         <!--<article id="grid-less-mixins-and-variables">
-                            <h2 class="titles _section h3">Less Mixins &amp; Variables</h2>
+                            <h2 class="_subSection">Less Mixins &amp; Variables</h2>
                             <p>We use the following media queries in our Less files to create the key breakpoints in our grid system.</p>
 
                             <pre class="brush: sass">
@@ -292,17 +289,16 @@
 
                     <section id="section-type">
                         <header>
-                            <h1>Typography</h1>
+                            <h1 class="_section">Typography</h1>
                         </header>
-
                         <article id="type-intro">
-                            <h2 class="titles _section h3">Introduction</h2>
+                            <h2 class="_subSection">Introduction</h2>
                             <p class="_large">Typography is an important design element for Stack Overflow Careers. Strong typography applied consistently can not only build brand recognition and trust, but it can also help establish reliable communication patterns.</p>
                             <p>Our general approach to typography is to apply styles to raw html tags including <code>p</code>, <code>h*</code>, <code>strong</code>, and <code>em</code> tags so it stays consistent across the project. This even extends to multi-tag elements like <code>ul</code>, <code>li</code>, <code>blockquote</code>, and <code>dd</code>. In addition, we provide specific use classes like <code>._hugeTitle</code> and <code>._pageTitle</code> that are meant for particular parts of the page.</p>
                             <p class="callout _info"><strong>NOTE:</strong> If you are altering pre-determined font-families, font-sizes, font-weights, line-heights, or letter-spacing, please read the <a href="docs-base-type.html">type LESS documentation.</a></p>
                         </article>
                         <article id="type-fonts">
-                            <h2 class="titles _section h3">Typefaces</h2>
+                            <h2 class="_subSection">Typefaces</h2>
                             <p>To communicate a professional, yet friendly personality, Stack Overflow Careers has selected the typeface <em>Merriweather Sans ST</em>. <strong>This font was designed specifically for on-screen use,</strong> allowing for greater control of line-heights and letter-spacing natively within our CSS without resorting to Javascript. While we may use other weights occasionally, most copy will use Light, Normal, and Bold styles. The following are examples of how they would appear on large type.</p>
                             <dl class="_rows exampleBlock">
                                 <dt class="_label">Extra Thin</dt>
@@ -314,10 +310,10 @@
                             </dl>
                         </article>
                         <article id="type-headlines">
-                            <h2 class="titles _section h3">Headlines</h2>
+                            <h2 class="_subSection">Headlines</h2>
                             <p>Headlines provide signposts for content as well express content priority. Headlines should descend in order. This means that a <code>&lt;h3></code> shouldn't precede a <code>&lt;h1></code> in the DOM order. The question to ask yourself is, "if this page's CSS didn't load, would this copy still make sense?"</p>
 
-                            <h3 class="titles _subSection h4">Out-of-Order Headings</h3>
+                            <h3 class="_subSection">Out-of-Order Headings</h3>
                             <p>Header tags communicate content order such as titles, section titles and sub-section titles. <em>A header tag should not be chosen based on the desired style, but on where it is located within the content.</em> Different headline styles can be applied two different ways:</p>
                             <ol>
                                 <li>Apply a header class such as <code>.h3</code> to apply another header's base style to a headline.</li>
@@ -338,7 +334,7 @@
                                 <h3>This is a subheading</h3>
                             </pre>
 
-                            <h3 class="titles _subSection h4">Heading Caveats</h3>
+                            <h3 class="_subSection">Heading Caveats</h3>
                             <p>The <code>&lt;small&gt;</code> tag, which has "side comment or caveat" semantics, can be used to add explanatory text.</p>
                             <div class="exampleBlock">
                                 <dl class="_rows">
@@ -354,7 +350,7 @@
                                 </pre>
                             </div>
 
-                            <h3 class="titles _subSection h4">Default Headline Styles</h3>
+                            <h3 class="_subSection">Default Headline Styles</h3>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
                                     <dt class="_label">48px</dt>
@@ -373,7 +369,7 @@
                             </div>
                             <br/>
 
-                            <h3 class="titles _subSection h4">Alternate Heading Styles</h3>
+                            <h3 class="_subSection">Alternate Heading Styles</h3>
                             <p>Standard headers get us most of the way there when it comes to size and style. Yet sometimes we want a slightly different look for specific use-cases across the product.</p>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
@@ -421,13 +417,12 @@
                             </div>
                         </article>
                         <article id="type-copy">
-                            <h2 class="titles _section h3">Paragraph &amp; Copy Styles</h2>
+                            <h2 class="_subSection">Paragraph &amp; Copy Styles</h2>
                             <p>The top design element that we use is written language. Our job is to divide, organize, and interpret this written language so that users can achieve their goals quickly<sup class="fn"><a href="#fn-1">1</a></sup>. This is achieved through optmizing typography for "readability, accessibility, usability, and overall ... balance."</p>
                             <p>Below are multiple sizing and style variants for copy. Please use only these variants as are designed to work in concert with each other. Also use of these styles consistently helps maintain a consistent typographic experience across Stack Overflow Careers.</p>
                             <ol class="text _footnotes">
                                 <li id="fn-1"><em>Swiss typographer, <strong>Emil Ruder</strong>, on <a href="http://ia.net/blog/the-web-is-all-about-typography-period/">typographic organization.</a></em></li>
                             </ol>
-                            <h3 class="titles _subSection h4">Examples</h3>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
                                     <dt class="_label"><code>&lt;p></code>, <code>.text</code></dt>
@@ -491,9 +486,8 @@
                             </div>
                         </article>
                         <article id="type-quotes">
-                            <h2 class="titles _section h3">Quotes</h2>
+                            <h2 class="_subSection">Quotes</h2>
                             <p>Basic <code>blockquote</code> and pull-quote styles. These are used primarily on marketing pages for testimonials or longer copy quote blocks in blog posts.</p>
-                            <h3 class="titles _subSection h4">Examples</h3>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
                                     <dt class="_label"><code>blockquote</code>, <code>.quote</code></dt>
@@ -535,8 +529,7 @@
                             </div>
                         </article>
                         <article id="type-lists">
-                            <h2 class="titles _section h3">Lists</h2>
-                            <h3 class="titles _subSection h4">Examples</h3>
+                            <h2 class="_subSection">Lists</h2>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
                                     <dt class="_label"><code>&lt;ul></code></dt>
@@ -659,10 +652,10 @@
 
                     <section id="section-colors">
                         <header>
-                            <h1>Colors</h1>
+                            <h1 class="_section">Colors</h1>
                         </header>
                         <article id="colors-primary">
-                            <h2 class="titles _section h3">Primary</h2>
+                            <h2 class="_subSection">Primary</h2>
                             <p class="_large">These are the primary, on-screen colors for Stack Overflow Careers.</p>
                             <ul class="exampleCards">
                                 <li class="-item color-orange _big"><p>Primary Orange<br/><code>@color-orange</code></p></li>
@@ -673,7 +666,7 @@
                             </ul>
                         </article>
                         <article id="colors-secondary">
-                            <h2 class="titles _section h3">Secondary</h2>
+                            <h2 class="_subSection">Secondary</h2>
                             <p class="_large">These colors are used to support and enhance the Stack Overflow brand experience, help organize and isolate information into distinct groups, and alert users to items when it requires their attention.</p>
                             <ul class="exampleCards">
                                 <li class="-item color-green"><p>Lime Green<br/><code>@color-green</code></p></li>
@@ -686,14 +679,14 @@
 
                     <section id="section-forms">
                         <header>
-                            <h1>Forms</h1>
+                            <h1 class="_section">Forms</h1>
                         </header>
                         <article id="forms-intro">
-                            <h2 class="title _section h3">Introduction</h2>
+                            <h2 class="_subSection">Introduction</h2>
                             <p class="_large">These are the basic form input styles currently. The styles below are applied by default and you can modify their appearance with the classes outlined below.</p>
                         </article>
                         <article id="forms-default">
-                            <h2 class="title _section h3">Default / Focused States</h2>
+                            <h2 class="_subSection">Default / Focused States</h2>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
                                     <dt class="_label">Default, <code>&lt;input></code> or <code>.input</code></dt>
@@ -713,7 +706,7 @@
                             </div>
                         </article>
                         <article id="forms-disabled">
-                            <h2 class="title _section h3">Disabled State</h2>
+                            <h2 class="_subSection">Disabled State</h2>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
                                     <dt class="_label">Disabled, <code>&lt;input disabled></code> or <code>._disabled</code></dt>
@@ -731,7 +724,7 @@
                             </div>
                         </article>
                         <article id="forms-validation">
-                            <h2 class="title _section h3">Validation States</h2>
+                            <h2 class="_subSection">Validation States</h2>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
                                     <dt class="_label">Success, <code>._success</code></dt>
@@ -779,7 +772,7 @@
                             </div>
                         </article>
                         <article id="forms-sizes">
-                            <h2 class="title _section h3">Input Sizes</h2>
+                            <h2 class="_subSection">Input Sizes</h2>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
                                     <dt class="_label">Large, <code>._large</code></dt>
@@ -815,11 +808,11 @@
                     
                     <section id="section-buttons">
                         <header>
-                            <h1>Buttons</h1>
+                            <h1 class="_section">Buttons</h1>
                         </header>
                         <article id="buttons-base">
-                            <h2 class="title _section h3">Base Styles</h2>
-                            <h3 class="titles _subSection h4">Primary</h3>
+                            <h2 class="_subSection">Base Styles</h2>
+                            <h5>Primary</h5>
                             <p>Primary buttons are used to provide a clear calls-to-action to a primary task. These buttons help guide the user to suggested next steps.</p>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
@@ -836,7 +829,7 @@
                                     <button class="_primary" disabled>Search</button>
                                 </pre>
                             </div>
-                            <h3 class="titles _subSection h4">Secondary</h3>
+                            <h5>Secondary</h5>
                             <p>Secondary buttons are used to provide alternate, less-important actions to the users. These buttons are purposefully muted in tone and color in order to not grab the user's attention.</p>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
@@ -853,7 +846,7 @@
                                     <button class="_secondary" disabled>Log In</button>
                                 </pre>
                             </div>
-                            <h3 class="titles _subSection h4">Confirmation</h3>
+                            <h5>Confirmation</h5>
                             <p>Confirmation buttons are used for the specific use cases of completing a purchase, publishing a new product, or updating an existing product.</p>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
@@ -870,7 +863,7 @@
                                     <button class="_confirm" disabled>Place Order</button>
                                 </pre>
                             </div>
-                            <h3 class="titles _subSection h4">Warning</h3>
+                            <h5>Warning</h5>
                             <p>Warning buttons are used for the specific use cases of warning a user that a potential action they are about to take is irreversible, such as deleting a job listing, removing a team member, or deleting their account.</p>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
@@ -887,7 +880,7 @@
                                     <button class="_warning" disabled>Remove Team Member</button>
                                 </pre>
                             </div>
-                            <h3 class="titles _subSection h4">Outlined</h3>
+                            <h5>Outlined</h5>
                             <p>Outlined buttons are a stylistic variant of the <code>._secondary</code> button class. In some instances, we may want to use a even simpler button style to draw attention to the primary call-to-action. This style is mainly used within small UI actions that tertiary in importance and on marketing pages.</p>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
@@ -904,7 +897,7 @@
                                     <button class="_outlined" disabled>Take a look at our pricing!</button>
                                 </pre>
                             </div>
-                            <h3 class="titles _subSection h4">Clear</h3>
+                            <h5>Clear</h5>
                             <p>Clear buttons are used when we don't want to visually style an action or link as a button, yet we want to provide ample click area and visual white-space around the link to separate it from surrounding content. This is mainly used within small UI actions.</p>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
@@ -923,8 +916,8 @@
                             </div>
                         </article>
                         <article id="buttons-layout">
-                            <h2 class="title _section h3">Layout Options</h2>
-                            <h3 class="titles _subSection h4">Large</h3>
+                            <h2 class="_subSection">Layout Options</h2>
+                            <h5>Large</h5>
                             <p>Large buttons are used primarily on singular-focused pages.</p>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
@@ -941,7 +934,7 @@
                                     <button class="_primary _large" disabled>Create A Job Listing</button>
                                 </pre>
                             </div>
-                            <h3 class="titles _subSection h4">Medium</h3>
+                            <h5>Medium</h5>
                             <p>Medium buttons are when you want some increased attention to a button on a page without it being too large.</p>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
@@ -958,7 +951,7 @@
                                     <button class="_primary _medium" disabled>Create A Job Listing</button>
                                 </pre>
                             </div>
-                            <h3 class="titles _subSection h4">Small</h3>
+                            <h5>Small</h5>
                             <p>Small buttons are used when you want to reduce the importance and size of a button.</p>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
@@ -975,7 +968,7 @@
                                     <button class="_primary _small" disabled>Contact Sales</button>
                                 </pre>
                             </div>
-                            <h3 class="titles _subSection h4">Full Width Button</h3>
+                            <h5>Full Width Button</h5>
                             <p>When you want full-width buttons within a container.</p>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
@@ -992,7 +985,7 @@
                                     <button class="_primary _block" disabled>Full Width Button Block</button>
                                 </pre>
                             </div>
-                            <h3 class="titles _subSection h4">Position: Right</h3>
+                            <h5>Position: Right</h5>
                             <p>Make a button float to the right of a container.</p>
                             <div class="exampleBlock">
                                 <dl class="_rows exampleBlock">
@@ -1014,14 +1007,14 @@
 
                     <section id="section-tables">
                         <header>
-                            <h1>Tables</h1>
+                            <h1 class="_section">Tables</h1>
                         </header>
 
                         <article id="tables-intro">
-                            <h2 class="titles _section h3">Introduction</h2>
+                            <h2 class="_subSection">Introduction</h2>
                         </article>
                         <article id="tables-base">
-                            <h2 class="titles _section h3">Base Style</h2>
+                            <h2 class="_subSection">Base Style</h2>
                             <p class="_large">The base style has minimal styling applied to it. It establishes preferred padding, font-size, and font-weight treatments. To enhance the look of the table, apply any additional classes listed below within the <a href="#tables-variants">Variants section.</a></p>
                             <div class="exampleBlock">
                                 <dl class="_rows">
@@ -1086,8 +1079,8 @@
                             </div>
                         </article>
                         <article id="tables-variants">
-                            <h2 class="titles _section h3">Variant Styles</h2>
-                            <h3 class="titles _subSection h4">Condensed Table</h2>
+                            <h2 class="_subSection">Variant Styles</h2>
+                            <h5>Condensed Table</h5>
                             <p>The condensed table does pretty much what it sounds like it would do: condenses the padding and line-height so that the table has a tighter feeling to it. <em>This is suggested for data tables such as found within reports that have multiple records.</em></p>
                             <div class="exampleBlock">
                                 <dl class="_rows">
@@ -1122,7 +1115,7 @@
                                     <table cellspacing="0" class="_condensed"></table>
                                 </pre>
                             </div>
-                            <h3 class="titles _subSection h4">Bordered Table</h2>
+                            <h5>Bordered Table</h5>
                             <p>When tables have multiple columns, it is suggested to add row borders to help the user more easily track the table data. <em>This is suggested for data tables such as found within reports.</em></p>
                             <div class="exampleBlock">
                                 <dl class="_rows">
@@ -1170,7 +1163,7 @@
                                     <table cellspacing="0" class="_borders _condensed"></table>
                                 </pre>
                             </div>
-                            <h3 class="titles _subSection h4">Row Hover Table</h2>
+                            <h5>Row Hover Table</h5>
                             <p>When tables have multiple columns, add in a row hover can further help isolate the data for users. <em>This is suggested for data tables such as found within reports.</em></p>
                             <div class="exampleBlock">
                                 <dl class="_rows">
@@ -1220,7 +1213,7 @@
                             </div>
                         </article>
                         <article id="tables-sizing">
-                            <h2 class="titles _section h3">Table Sizing</h2>
+                            <h2 class="_subSection">Table Sizing</h2>
                             <p class="_large">While the browser will prescribe column sizes based on content, sometimes we may want table columns to adhere to a specific width. To do this, we leverage the same class names used within <a href="docs-base.html#section-grid">the grid.</a></p>
                             <p>When applying a column size, it is only necessary to apply it within the first table cell within a column as the rest of the column will abide by the width its smallest cell.</p>
                             <p class="callout _info"><strong>NOTE:</strong> Remember the overall column total <em>per row</em> cannot exceed 12 columns. Otherwise this will cause your table row to wrap.</p>
@@ -1268,7 +1261,7 @@
                                     </table>
                                 </pre>
                             </div>
-                            <h3 class="titles _subSection h4">Miscellaneous Sizes</h2>
+                            <h5>Miscellaneous Sizes</h5>
                             <p>Using the column sizes above should cover 99% of your table sizing needs. In some cases though we want table cell sizes smaller than <code>.-col1</code>.</p>
                             <div class="exampleBlock">
                                 <dl class="_rows">
@@ -1320,9 +1313,9 @@
                             </div>
                         </article>
                         <article id="tables-styles">
-                            <h2 class="titles _section h3">Table Cell Styles</h2>
+                            <h2 class="_subSection">Table Cell Styles</h2>
                             <p class="_large">In addition to overall table styles, there are cell styles which can be applied to table cells to achieve different layouts.</p>
-                            <h3 class="titles _subSection h4">Totals Row</h2>
+                            <h5>Totals Row</h5>
                             <p>Used to call out the final row within a table that totals the data above it. Typically this is used to total number values.</p>
                             <div class="exampleBlock">
                                 <dl class="_rows">
@@ -1384,7 +1377,7 @@
                                     </table>
                                 </pre>
                             </div>
-                            <h3 class="titles _subSection h4">Text Alignment</h2>
+                            <h5>Text Alignment</h5>
                             <p>By default all text aligns left within a table. Sometimes though data should be aligned right or centered. In those cases, apply the appropriate text alignment class.</p>
                             <div class="exampleBlock">
                                 <dl class="_rows">

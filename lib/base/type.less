@@ -34,8 +34,8 @@
 @link_hover-color:          spin(@link-color, 2);
 
 @title-color:               saturate(darken(@color-grayDark,12%),16%);
-@title_section-color:       saturate(darken(@color-grayMid,19%),3%);
-@title_section-color_muted: @color-grayMid;
+@title_section-color:       @title-color;
+@title_subSection-color:    @color-grayMid;
 
 @quote-background:          @backgroundColor-grayLighter;
 @quote-border:              @borderColor-grayDark;
@@ -250,20 +250,27 @@ h1, h2, h3, h4, h5, h6,
   //  -- Specific Title Styles
   &._hugeTitle  {
     .fontSize(xxxl);
-    .letterSpacing(tight);
+    letter-spacing: -1px;
   }
   &._pageTitle  {
     .fontSize(xxl);
-    .letterSpacing(tight);
+    .fontWeight(2);
+    letter-spacing: -1px;
   }
   &._section {
+    color: @title_section-color;
+    .fontSize(l);
     .fontWeight(7);
     letter-spacing: 0;
+    .lineHeight(base);
   }
   &._subSection {
-    color: @title_section-color_muted;
-    .fontWeight(7);
+    margin-bottom: 1em;
+    color: @title_subSection-color;
+    .fontSize(m);
+    .fontWeight(4);
     letter-spacing: 0;
+    .lineHeight(tight);
   }
 }
 
