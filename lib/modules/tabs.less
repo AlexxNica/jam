@@ -65,7 +65,7 @@
                 text-decoration: none;
                 background-color: @tab_hover-background;
                 border-color: @tab_hover-border;
-                border-bottom: 1px solid @tab-borderBottom;
+                border-bottom: 1px solid @tab-border;
             }
         }
     }
@@ -74,10 +74,10 @@
         z-index: 2;
 
         > a {
-            padding-bottom: 0.75em;
+            padding-bottom: 0.85em;
             color: @tab_selected-color;
             border-color: @tab_selected-border;
-            border-bottom: none;
+            border-bottom: @tab_selected-borderBottom;
             background-color: @tab_selected-background;
 
             &:hover, &._hover,
