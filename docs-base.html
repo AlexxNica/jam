@@ -82,7 +82,7 @@
                             <h2 class="titles _section h3">Basic Usage</h2>
                             <p>The following is a very basic implementation of the grid system. It uses a top level <code>.container</code> class and can contain <code>.-row</code> elements that have <code>.-col*</code> elements directly within <code>.-row</code> elements.</p>
 
-                            <div class="example -grid">
+                            <div class="exampleBlock -grid">
                                 <div class="-row">
                                     <div class="-col1"><p><code>.-col1</code></p></div>
                                     <div class="-col1"><p><code>.-col1</code></p></div>
@@ -116,16 +116,7 @@
                                 <div class="container">
                                     <div class="-row">
                                         <div class="-col1"><p><code>.-col1</code></p></div>
-                                        <div class="-col1"><p><code>.-col1</code></p></div>
-                                        <div class="-col1"><p><code>.-col1</code></p></div>
-                                        <div class="-col1"><p><code>.-col1</code></p></div>
-                                        <div class="-col1"><p><code>.-col1</code></p></div>
-                                        <div class="-col1"><p><code>.-col1</code></p></div>
-                                        <div class="-col1"><p><code>.-col1</code></p></div>
-                                        <div class="-col1"><p><code>.-col1</code></p></div>
-                                        <div class="-col1"><p><code>.-col1</code></p></div>
-                                        <div class="-col1"><p><code>.-col1</code></p></div>
-                                        <div class="-col1"><p><code>.-col1</code></p></div>
+                                        ...
                                         <div class="-col1"><p><code>.-col1</code></p></div>
                                     </div>
                                     <div class="-row">
@@ -150,16 +141,16 @@
 
                             <p>If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.</p>
 
-                            <div class="example -grid">
+                            <div class="exampleBlock -grid">
                                 <div class="-row">
                                     <div class="-col9">
                                         <p><code>.-col9</code></p>
                                     </div>
                                     <div class="-col4">
-                                        <p><code>.-col4</code> Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.</p>
+                                        <p><code>.-col4</code></p>
                                     </div>
                                     <div class="-col6">
-                                        <p><code>.-col6</code> Subsequent columns continue along the new line.</p>
+                                        <p><code>.-col6</code></p>
                                     </div>
                                 </div>
                             </div>
@@ -170,10 +161,10 @@
                                         <p><code>.-col9</code></p>
                                     </div>
                                     <div class="-col4">
-                                        <p><code>.-col4</code> Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.</p>
+                                        <p><code>.-col4</code> ... </p>
                                     </div>
                                     <div class="-col6">
-                                        <p><code>.-col6</code> Subsequent columns continue along the new line.</p>
+                                        <p><code>.-col6</code> ... </p>
                                     </div>
                                 </div>
                             </pre>
@@ -181,10 +172,9 @@
 
                         <article id="grid-offsetting-columns">
                             <h2 class="titles _section h3">Offsetting Columns</h2>
-
                             <p>Move columns to the right using <code>._offset*</code> classes. These classes increase the left margin of a column by <code>*</code> columns.
 
-                            <div class="example -grid">
+                            <div class="exampleBlock -grid">
                                 <div class="-row">
                                     <div class="-col4">
                                         <p><code>.-col4</code></p>
@@ -210,25 +200,15 @@
 
                             <pre class="brush: html">
                                 <div class="-row">
-                                    <div class="-col4">
-                                        <p><code>.-col4</code></p>
-                                    </div>
-                                    <div class="-col4 _offset4">
-                                        <p><code>.-col4._offset4</code></p>
-                                    </div>
+                                    <div class="-col4"> ... </div>
+                                    <div class="-col4 _offset4"> ... </div>
                                 </div>
                                 <div class="-row">
-                                    <div class="-col3 _offset3">
-                                        <p><code>.-col3._offset3</code></p>
-                                    </div>
-                                    <div class="-col3 _offset3">
-                                        <p><code>.-col3._offset3</code></p>
-                                    </div>
+                                    <div class="-col3 _offset3"> ... </div>
+                                    <div class="-col3 _offset3"> ... </div>
                                 </div>
                                 <div class="-row">
-                                    <div class="-col6 _offset3">
-                                        <p><code>.-col6._offset3</code></p>
-                                    </div>
+                                    <div class="-col6 _offset3"> ... </div>
                                 </div>
                             </pre>
                         </article>
@@ -238,7 +218,7 @@
 
                             <p>To nest your content with the default grid, just add a new <code>.-row</code> and set of <code>.-col*</code> within an existing <code>.-col*</code> column.</p>
 
-                            <div class="example -grid">
+                            <div class="exampleBlock -grid">
                                 <div class="-row">
                                     <div class="-col9">
                                         <p>First level <code>.-col9</code></p>
@@ -257,14 +237,10 @@
                             <pre class="brush: html">
                                 <div class="-row">
                                     <div class="-col9">
-                                        <p>First level <code>.-col9</code></p>
+                                        <p>First level ... </p>
                                         <div class="-row">
-                                            <div class="-col6">
-                                                <p>Second level <code>.-col6</code></p>
-                                            </div>
-                                            <div class="-col6">
-                                                <p>Second level <code>.-col6</code></p>
-                                            </div>
+                                            <div class="-col6"><p>Second level ... </p></div>
+                                            <div class="-col6"><p>Second level ... </p></div>
                                         </div>
                                     </div>
                                 </div>
@@ -275,7 +251,7 @@
                             <h2 class="titles _section h3">Column Ordering</h2>
 
                             <p>You can change the order of the built in grid columns with <code>._push*</code> and <code>._pull*</code> modifier classes.</p>
-                            <div class="example -grid">
+                            <div class="exampleBlock -grid">
                                 <div class="-row">
                                     <div class="-col9 _push3">
                                         <p><code>.-col9._push3</code></p>
@@ -288,17 +264,13 @@
 
                             <pre class="brush: html">
                                 <div class="-row">
-                                    <div class="-col9 _push3">
-                                        <p><code>.-col9._push3</code></p>
-                                    </div>
-                                    <div class="-col3 _pull9">
-                                        <p><code>.-col-md-3._pull9</code></p>
-                                    </div>
+                                    <div class="-col9 _push3"> ... </div>
+                                    <div class="-col3 _pull9"> ... </div>
                                 </div>
                             </pre>
                         </article>
 
-                        <article id="grid-less-mixins-and-variables">
+                        <!--<article id="grid-less-mixins-and-variables">
                             <h2 class="titles _section h3">Less Mixins &amp; Variables</h2>
                             <p>We use the following media queries in our Less files to create the key breakpoints in our grid system.</p>
 
@@ -315,7 +287,7 @@
                             @mediaQuery-medium:     992px;
                             @mediaQuery-large:      1200px;
                             </pre>
-                        </article>
+                        </article>-->
                     </section>
 
                     <section id="section-type">
@@ -327,7 +299,7 @@
                             <h2 class="titles _section h3">Introduction</h2>
                             <p class="_large">Typography is an important design element for Stack Overflow Careers. Strong typography applied consistently can not only build brand recognition and trust, but it can also help establish reliable communication patterns.</p>
                             <p>Our general approach to typography is to apply styles to raw html tags including <code>p</code>, <code>h*</code>, <code>strong</code>, and <code>em</code> tags so it stays consistent across the project. This even extends to multi-tag elements like <code>ul</code>, <code>li</code>, <code>blockquote</code>, and <code>dd</code>. In addition, we provide specific use classes like <code>._hugeTitle</code> and <code>._pageTitle</code> that are meant for particular parts of the page.</p>
-                            <p class="callout _info"><strong>PLEASE NOTE:</strong> If you are altering pre-determined font-families, font-sizes, font-weights, line-heights, or letter-spacing, please read the <a href="docs-base-type.html">type LESS documentation.</a></p>
+                            <p class="callout _info"><strong>NOTE:</strong> If you are altering pre-determined font-families, font-sizes, font-weights, line-heights, or letter-spacing, please read the <a href="docs-base-type.html">type LESS documentation.</a></p>
                         </article>
                         <article id="type-fonts">
                             <h2 class="titles _section h3">Typefaces</h2>
@@ -368,56 +340,85 @@
 
                             <h3 class="titles _subSection h4">Heading Caveats</h3>
                             <p>The <code>&lt;small&gt;</code> tag, which has "side comment or caveat" semantics, can be used to add explanatory text.</p>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label"><code>&lt;small></code></dt>
-                                <dd class="_example">
-                                    <h3>Bank Detail Form <small><em>(Optional)</em></small></h3>
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows">
+                                    <dt class="_label"><code>&lt;small></code></dt>
+                                    <dd class="_example">
+                                        <h3>Bank Detail Form <small><em>(Optional)</em></small></h3>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <h3>Bank Detail Form <small><em>(Optional)</em></small></h3>
                                 </pre>
-                            </dl>
+                            </div>
 
                             <h3 class="titles _subSection h4">Default Headline Styles</h3>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label">Light, 48px</dt>
-                                <dd class="_example"><h1>h1. Heading 1 <small>Small Heading 1</small></h1></dd>
-                                <dt class="_label">Light, 36px</dt>
-                                <dd class="_example"><h2>h2. Heading 2 <small>Small Heading 2</small></h2></dd>
-                                <dt class="_label">Light, 24px</dt>
-                                <dd class="_example"><h3>h3. Heading 3 <small>Small Heading 3</small></h3></dd>
-                                <dt class="_label">Bold, 18px</dt>
-                                <dd class="_example"><h4>h4. Heading 4 <small>Small Heading 4</small></h4></dd>
-                                <dt class="_label">Bold, 14px</dt>
-                                <dd class="_example"><h5>h5. Heading 5 <small>Small Heading 5</small></h5></dd>
-                                <dt class="_label">Bold, 12px</dt>
-                                <dd class="_example"><h6>h6. Heading 6 <small>Small Heading 6</small></h6></dd>
-                            </dl>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">48px</dt>
+                                    <dd class="_example"><h1>h1. Heading 1 <small>Small Heading 1</small></h1></dd>
+                                    <dt class="_label">36px</dt>
+                                    <dd class="_example"><h2>h2. Heading 2 <small>Small Heading 2</small></h2></dd>
+                                    <dt class="_label">24px</dt>
+                                    <dd class="_example"><h3>h3. Heading 3 <small>Small Heading 3</small></h3></dd>
+                                    <dt class="_label">18px</dt>
+                                    <dd class="_example"><h4>h4. Heading 4 <small>Small Heading 4</small></h4></dd>
+                                    <dt class="_label">14px</dt>
+                                    <dd class="_example"><h5>h5. Heading 5 <small>Small Heading 5</small></h5></dd>
+                                    <dt class="_label">12px</dt>
+                                    <dd class="_example"><h6>h6. Heading 6 <small>Small Heading 6</small></h6></dd>
+                                </dl>
+                            </div>
+                            <br/>
+
                             <h3 class="titles _subSection h4">Alternate Heading Styles</h3>
                             <p>Standard headers get us most of the way there when it comes to size and style. Yet sometimes we want a slightly different look for specific use-cases across the product.</p>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label">72px, <code>._hugeTitle</code></dt>
-                                <dd class="_example"><h1 class="_hugeTitle">Product Pages</h1></dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">72px, <code>._hugeTitle</code></dt>
+                                    <dd class="_example"><h1 class="_hugeTitle">Product Pages</h1></dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <h1 class="_hugeTitle">...</h1>
                                 </pre>
-                                <dt class="_label">48px, <code>._pageTitle</code></dt>
-                                <dd class="_example"><h2 class="_pageTitle">Ad Server Technology Developer</h2></dd>
+                            </div>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">48px, <code>._pageTitle</code></dt>
+                                    <dd class="_example"><h2 class="_pageTitle">Ad Server Technology Developer</h2></dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <h1 class="_pageTitle">...</h1>
                                 </pre>
-                                <dt class="_label">19px, <code>._section</code></dt>
-                                <dd class="_example"><h4 class="_section">Overall Performance Summary</h4></dd>
+                            </div>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">19px, <code>._section</code></dt>
+                                    <dd class="_example"><h4 class="_section">Overall Performance Summary</h4></dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <h1 class="_section">...</h1>
                                 </pre>
-                                <dt class="_label">19px, <code>._subSection</code></dt>
-                                <dd class="_example"><h4 class="_subSection">Campaign Statistics</h4></dd>
+                            </div>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">19px, <code>._subSection</code></dt>
+                                    <dd class="_example"><h4 class="_subSection">Campaign Statistics</h4></dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <h1 class="_subSection">...</h1>
                                 </pre>
-                                
-                            </dl>
+                            </div>
                         </article>
                         <article id="type-copy">
                             <h2 class="titles _section h3">Paragraph &amp; Copy Styles</h2>
@@ -427,87 +428,135 @@
                                 <li id="fn-1"><em>Swiss typographer, <strong>Emil Ruder</strong>, on <a href="http://ia.net/blog/the-web-is-all-about-typography-period/">typographic organization.</a></em></li>
                             </ol>
                             <h3 class="titles _subSection h4">Examples</h3>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label"><code>&lt;p></code>, <code>.text</code></dt>
-                                <dd class="_example">
-                                    <p>I'm a bona fide paragraph.</p>
-                                    <div class="text">I'm not a "paragraph" per se, but I look and behave like one!</div>
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label"><code>&lt;p></code>, <code>.text</code></dt>
+                                    <dd class="_example">
+                                        <p>I'm a bona fide paragraph.</p>
+                                        <div class="text">I'm not a "paragraph" per se, but I look and behave like one!</div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <p>...</p>
                                     <div class="text">...</div>
                                 </pre>
-                                <dt class="_label">48px, <code>._lead</code></dt>
-                                <dd class="_example">
-                                    <p class="_lead">The 12 basic principles of animation were developed by the &#145;old men&#146; of Walt Disney Studios, amongst them Frank Thomas and Ollie Johnston, during the 1930s.</p>
-                                </dd>
+                            </div>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">48px, <code>._lead</code></dt>
+                                    <dd class="_example">
+                                        <p class="_lead">The 12 basic principles of animation were developed by the &#145;old men&#146; of Walt Disney Studios, amongst them Frank Thomas and Ollie Johnston, during the 1930s.</p>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <p class="_lead">...</p>
                                 </pre>
-                                <dt class="_label">24px, <code>._xlarge</code></dt>
-                                <dd class="_example"><p class="_xlarge">The quick onyx goblin jumps over the lazy dwarf.</p></dd>
+                            </div>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">24px, <code>._xlarge</code></dt>
+                                    <dd class="_example"><p class="_xlarge">The quick onyx goblin jumps over the lazy dwarf.</p></dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <p class="_xlarge">...</p>
                                 </pre>
-                                <dt class="_label">18px, <code>._large</code></dt>
-                                <dd class="_example"><p class="_large">The quick onyx goblin jumps over the lazy dwarf.</p></dd>
+                            </div>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">18px, <code>._large</code></dt>
+                                    <dd class="_example"><p class="_large">The quick onyx goblin jumps over the lazy dwarf.</p></dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <p class="_large">...</p>
                                 </pre>
-                                <dt class="_label">13px, <code>._small</code></dt>
-                                <dd class="_example"><p class="_small">The quick onyx goblin jumps over the lazy dwarf.</p></dd>
+                            </div>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">13px, <code>._small</code></dt>
+                                    <dd class="_example"><p class="_small">The quick onyx goblin jumps over the lazy dwarf.</p></dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <p class="_small">...</p>
                                 </pre>
-                            </dl>
+                            </div>
                         </article>
                         <article id="type-quotes">
                             <h2 class="titles _section h3">Quotes</h2>
                             <p>Basic <code>blockquote</code> and pull-quote styles. These are used primarily on marketing pages for testimonials or longer copy quote blocks in blog posts.</p>
                             <h3 class="titles _subSection h4">Examples</h3>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label"><code>blockquote</code>, <code>.quote</code></dt>
-                                <dd class="_example">
-                                    <blockquote>It&#146;s approaching your work differently that&#146;ll make you a better designer. Books and talks can be the spark for that.</blockquote>
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label"><code>blockquote</code>, <code>.quote</code></dt>
+                                    <dd class="_example">
+                                        <blockquote>It&#146;s approaching your work differently that&#146;ll make you a better designer. Books and talks can be the spark for that.</blockquote>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <blockquote>...</blockquote>
                                 </pre>
-                                <dt class="_label"><code>._accent</code></dt>
-                                <dd class="_example">
-                                    <blockquote class="_accent">It&#146;s approaching your work differently that&#146;ll make you a better designer. Books and talks can be the spark for that.</blockquote>
-                                </dd>
+                            </div>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label"><code>._accent</code></dt>
+                                    <dd class="_example">
+                                        <blockquote class="_accent">It&#146;s approaching your work differently that&#146;ll make you a better designer. Books and talks can be the spark for that.</blockquote>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <blockquote class="_accent">...</blockquote>
                                 </pre>
-                                <dt class="_label"><code>._pull</code>, <code>.text._large</code>, </dt>
-                                <dd class="_example">
-                                    <blockquote class="_pull text _xlarge">It&#146;s approaching your work differently that&#146;ll make you a better designer. Books and talks can be the spark for that.</blockquote>
-                                </dd>
+                            </div>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label"><code>._pull</code>, <code>.text._large</code>, </dt>
+                                    <dd class="_example">
+                                        <blockquote class="_pull text _xlarge">It&#146;s approaching your work differently that&#146;ll make you a better designer. Books and talks can be the spark for that.</blockquote>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <blockquote class="_pull text _xlarge">...</blockquote>
                                 </pre>
-                            </dl>
+                            </div>
                         </article>
                         <article id="type-lists">
                             <h2 class="titles _section h3">Lists</h2>
                             <h3 class="titles _subSection h4">Examples</h3>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label"><code>&lt;ul></code></dt>
-                                <dd class="_example">
-                                    <h5>Grocery List</h5>
-                                    <ul>
-                                        <li>Eggs</li>
-                                        <li>Milk</li>
-                                        <li>Trail Mix
-                                            <ul>
-                                                <li>Dried Cherries</li>
-                                                <li>M&amp;M&#146;s</li>
-                                                <li>Walnuts</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label"><code>&lt;ul></code></dt>
+                                    <dd class="_example">
+                                        <h5>Grocery List</h5>
+                                        <ul>
+                                            <li>Eggs</li>
+                                            <li>Milk</li>
+                                            <li>Trail Mix
+                                                <ul>
+                                                    <li>Dried Cherries</li>
+                                                    <li>M&amp;M&#146;s</li>
+                                                    <li>Walnuts</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <h5>Grocery List</h5>
                                     <ul>
@@ -521,35 +570,41 @@
                                         </li>
                                     </ul>
                                 </pre>
-                                <dt class="_label"><code>&lt;ol></code></dt>
-                                <dd class="_example">
-                                    <h5>How to build a website:</h5>
-                                    <ol>
-                                        <li>Generate an idea</li>
-                                        <li>Find an amazing developer</li>
-                                        <li>Build said idea
-                                            <ol>
-                                                <li>Sketch out idea
-                                                    <ol>
-                                                        <li>Acquire paper and pen</li>
-                                                        <li>Sketch out idea</li>
-                                                        <li>Share with co-workers
-                                                            <ol>
-                                                                <li>Solicit feedback</li>
-                                                                <li>Hear out objections</li>
-                                                                <li>Do what you think is best</li>
-                                                            </ol>
-                                                        </li>
-                                                    </ol>
-                                                </li>
-                                                <li>Wireframe it up</li>
-                                                <li>Find an equally amazing designer</li>
-                                            </ol>
-                                        </li>
-                                        <li>Sprinkle in some luck and magic</li>
-                                        <li>Success!</li>
-                                    </ol>
-                                </dd>
+                            </div>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label"><code>&lt;ol></code></dt>
+                                    <dd class="_example">
+                                        <h5>How to build a website:</h5>
+                                        <ol>
+                                            <li>Generate an idea</li>
+                                            <li>Find an amazing developer</li>
+                                            <li>Build said idea
+                                                <ol>
+                                                    <li>Sketch out idea
+                                                        <ol>
+                                                            <li>Acquire paper and pen</li>
+                                                            <li>Sketch out idea</li>
+                                                            <li>Share with co-workers
+                                                                <ol>
+                                                                    <li>Solicit feedback</li>
+                                                                    <li>Hear out objections</li>
+                                                                    <li>Do what you think is best</li>
+                                                                </ol>
+                                                            </li>
+                                                        </ol>
+                                                    </li>
+                                                    <li>Wireframe it up</li>
+                                                    <li>Find an equally amazing designer</li>
+                                                </ol>
+                                            </li>
+                                            <li>Sprinkle in some luck and magic</li>
+                                            <li>Success!</li>
+                                        </ol>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <h5>How to build a website:</h5>
                                     <ol>
@@ -572,31 +627,33 @@
                                         </li>
                                     </ol>
                                 </pre>
-                                <dt class="_label"><code>&lt;dl></code></dt>
-                                <dd class="_example">
-                                    <dl>
-                                        <dt>stack overflow</dt>
-                                        <dd>
-                                            <p>An error condition which results from attempting to push more items onto a stack than space has been allocated for. Often, this will simply overwrite the adjacent memory locations causing hard-to-trace bugs.</p>
-                                            <p>Stack overflow can result, for example, from an insufficient number of stack frames to handle hardware interrupts.</p>
-                                            <p>See also, <a href="http://stackoverflow.com">Stack Overflow</a></p>
-                                        </dd>
-                                    </dl>
-                                </dd>
+                            </div>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label"><code>&lt;dl></code></dt>
+                                    <dd class="_example">
+                                        <dl>
+                                            <dt>stack overflow</dt>
+                                            <dd>
+                                                <p>An error condition which results from attempting to push more items onto a stack than space has been allocated for. Often, this will simply overwrite the adjacent memory locations causing hard-to-trace bugs.</p>
+                                                <p>Stack overflow can result, for example, from an insufficient number of stack frames to handle hardware interrupts.</p>
+                                                <p>See also, <a href="http://stackoverflow.com">Stack Overflow</a></p>
+                                            </dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <dl>
                                         <dt>stack overflow</dt>
                                         <dd>
-                                            <p>
-                                                An error condition which results from attempting to push more items onto a stack
-                                                than space has been allocated for. Often, this will simply overwrite the adjacent
-                                                memory locations causing hard-to-trace bugs.
-                                            </p>
-                                            <p>...</p>
+                                            <p> ... </p>
+                                            <p> ... </p>
                                         </dd>
                                     </dl>
                                 </pre>
-                            </dl>
+                            </div>
                         </article>
                     </section>
 
@@ -637,88 +694,122 @@
                         </article>
                         <article id="forms-default">
                             <h2 class="title _section h3">Default / Focused States</h2>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label">Default, <code>&lt;input></code> or <code>.input</code></dt>
-                                <dd class="_example">
-                                    <label for="exampleInputField">Label Example</label>
-                                    <p><small class="text _help">Help Text: If you have some instructions beyond the label, place them here. Just remember, users will most likely miss this so have descriptive field labels.</small></p>
-                                    <input type="text" id="exampleInputField" placeholder="i.e. Placeholder text, Suggestive items">
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">Default, <code>&lt;input></code> or <code>.input</code></dt>
+                                    <dd class="_example">
+                                        <label for="exampleInputField">Label Example</label>
+                                        <p><small class="text _help">Help Text: If you have some instructions beyond the label, place them here. Just remember, users will most likely miss this so have descriptive field labels.</small></p>
+                                        <input type="text" id="exampleInputField" placeholder="i.e. Placeholder text, Suggestive items">
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <label for="exampleInputField">Input Label Example</label>
                                     <p><small class="text _help">...</small></p>
-                                    <input type="text" id="exampleInputField" placeholder="i.e. Placeholder text, Suggestive items">
+                                    <input type="text" id="exampleInputField" placeholder="i.e. Placeholder text">
                                 </pre>
-                            </dl>
+                            </div>
                         </article>
                         <article id="forms-disabled">
                             <h2 class="title _section h3">Disabled State</h2>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label">Disabled, <code>&lt;input disabled></code> or <code>._disabled</code></dt>
-                                <dd class="_example">
-                                    <label for="exampleInputField2">Label Example</label>
-                                    <input type="text" id="exampleInputField2" value="Disabled text here..." disabled>
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">Disabled, <code>&lt;input disabled></code> or <code>._disabled</code></dt>
+                                    <dd class="_example">
+                                        <label for="exampleInputField2">Label Example</label>
+                                        <input type="text" id="exampleInputField2" value="Disabled text here..." disabled>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <label for="exampleInputField2">Label Example</label>
                                     <input type="text" id="exampleInputField2" value="Disabled text here..." disabled>
                                 </pre>
-                            </dl>
+                            </div>
                         </article>
                         <article id="forms-validation">
                             <h2 class="title _section h3">Validation States</h2>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label">Success, <code>._success</code></dt>
-                                <dd class="_example">
-                                    <label for="exampleInputField3">Label Example</label>
-                                    <input type="email" id="exampleInputField3" class="_success" value="design@stackoverflow.com">
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">Success, <code>._success</code></dt>
+                                    <dd class="_example">
+                                        <label for="exampleInputField3">Label Example</label>
+                                        <input type="email" id="exampleInputField3" class="_success" value="design@stackoverflow.com">
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <label for="exampleInputField3">Label Example</label>
                                     <input type="email" id="exampleInputField3" class="_success" value="design@stackoverflow.com">
                                 </pre>
-                                <dt class="_label">Warning, <code>._warning</code></dt>
-                                <dd class="_example">
-                                    <label for="exampleInputField4">Label Example</label>
-                                    <input type="email" id="exampleInputField4" class="_warning" value="d@stackoverflow.com">
-                                </dd>
+                            </div>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">Warning, <code>._warning</code></dt>
+                                    <dd class="_example">
+                                        <label for="exampleInputField4">Label Example</label>
+                                        <input type="email" id="exampleInputField4" class="_warning" value="d@so.com">
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <label for="exampleInputField4">Label Example</label>
-                                    <input type="email" id="exampleInputField4" class="_warning" value="d@stackoverflow.com">
+                                    <input type="email" id="exampleInputField4" class="_warning" value="d@so.com">
                                 </pre>
-                                <dt class="_label">Error, <code>._error</code></dt>
-                                <dd class="_example">
-                                    <label for="exampleInputField5">Label Example</label>
-                                    <input type="email" id="exampleInputField5" class="_error" value="design@">
-                                </dd>
+                            </div>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">Error, <code>._error</code></dt>
+                                    <dd class="_example">
+                                        <label for="exampleInputField5">Label Example</label>
+                                        <input type="email" id="exampleInputField5" class="_error" value="design@">
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <label for="exampleInputField5">Label Example</label>
                                     <input type="email" id="exampleInputField5" class="_error" value="design@">
                                 </pre>
-                            </dl>
+                            </div>
                         </article>
                         <article id="forms-sizes">
                             <h2 class="title _section h3">Input Sizes</h2>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label">Large, <code>._large</code></dt>
-                                <dd class="_example">
-                                    <label for="exampleInputField6">Label Example</label>
-                                    <input type="email" id="exampleInputField6" class="_large" value="design@stackoverflow.com">
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">Large, <code>._large</code></dt>
+                                    <dd class="_example">
+                                        <label for="exampleInputField6">Label Example</label>
+                                        <input type="email" id="exampleInputField6" class="_large" value="design@stackoverflow.com">
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <label for="exampleInputField6">Label Example</label>
-                                    <input type="email" id="exampleInputField6" class="_success" value="design@stackoverflow.com">
+                                    <input type="email" id="exampleInputField6" class="_success" value="...">
                                 </pre>
-                                <dt class="_label">Small, <code>._small</code></dt>
-                                <dd class="_example">
-                                    <label for="exampleInputField7">Label Example</label>
-                                    <input type="text" id="exampleInputField7" class="_small" placeholder="Enter search terms here...">
-                                </dd>
+                            </div>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">Small, <code>._small</code></dt>
+                                    <dd class="_example">
+                                        <label for="exampleInputField7">Label Example</label>
+                                        <input type="text" id="exampleInputField7" class="_small" placeholder="Enter search terms here...">
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <label for="exampleInputField7">Label Example</label>
-                                    <input type="text" id="exampleInputField7" class="_warning" placeholder="Enter search terms here...">
+                                    <input type="text" id="exampleInputField7" class="_warning" placeholder="...">
                                 </pre>
-                            </dl>
+                            </div>
                         </article>
                     </section>
                     
@@ -730,150 +821,194 @@
                             <h2 class="title _section h3">Base Styles</h2>
                             <h3 class="titles _subSection h4">Primary</h3>
                             <p>Primary buttons are used to provide a clear calls-to-action to a primary task. These buttons help guide the user to suggested next steps.</p>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label">Primary, <code>._primary</code></dt>
-                                <dd class="_example">
-                                    <button class="_primary">Search</button>
-                                    <button class="_primary" disabled>Search</button>
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">Primary, <code>._primary</code></dt>
+                                    <dd class="_example">
+                                        <button class="_primary">Search</button>
+                                        <button class="_primary" disabled>Search</button>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <button class="_primary">Search</button>
                                     <button class="_primary" disabled>Search</button>
                                 </pre>
-                            </dl>
+                            </div>
                             <h3 class="titles _subSection h4">Secondary</h3>
                             <p>Secondary buttons are used to provide alternate, less-important actions to the users. These buttons are purposefully muted in tone and color in order to not grab the user's attention.</p>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label">Secondary, <code>._secondary</code></dt>
-                                <dd class="_example">
-                                    <button class="_secondary">Log In</button>
-                                    <button class="_secondary" disabled>Log In</button>
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">Secondary, <code>._secondary</code></dt>
+                                    <dd class="_example">
+                                        <button class="_secondary">Log In</button>
+                                        <button class="_secondary" disabled>Log In</button>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <button class="_secondary">Log In</button>
                                     <button class="_secondary" disabled>Log In</button>
                                 </pre>
-                            </dl>
+                            </div>
                             <h3 class="titles _subSection h4">Confirmation</h3>
                             <p>Confirmation buttons are used for the specific use cases of completing a purchase, publishing a new product, or updating an existing product.</p>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label">Confirmation, <code>._confirm</code></dt>
-                                <dd class="_example">
-                                    <button class="_confirm">Place Order</button>
-                                    <button class="_confirm" disabled>Place Order</button>
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">Confirmation, <code>._confirm</code></dt>
+                                    <dd class="_example">
+                                        <button class="_confirm">Place Order</button>
+                                        <button class="_confirm" disabled>Place Order</button>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <button class="_confirm">Place Order</button>
                                     <button class="_confirm" disabled>Place Order</button>
                                 </pre>
-                            </dl>
+                            </div>
                             <h3 class="titles _subSection h4">Warning</h3>
                             <p>Warning buttons are used for the specific use cases of warning a user that a potential action they are about to take is irreversible, such as deleting a job listing, removing a team member, or deleting their account.</p>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label">Warning, <code>._warning</code></dt>
-                                <dd class="_example">
-                                    <button class="_warning">Remove Team Member</button>
-                                    <button class="_warning" disabled>Remove Team Member</button>
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">Warning, <code>._warning</code></dt>
+                                    <dd class="_example">
+                                        <button class="_warning">Remove Team Member</button>
+                                        <button class="_warning" disabled>Remove Team Member</button>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <button class="_warning">Remove Team Member</button>
                                     <button class="_warning" disabled>Remove Team Member</button>
                                 </pre>
-                            </dl>
+                            </div>
                             <h3 class="titles _subSection h4">Outlined</h3>
                             <p>Outlined buttons are a stylistic variant of the <code>._secondary</code> button class. In some instances, we may want to use a even simpler button style to draw attention to the primary call-to-action. This style is mainly used within small UI actions that tertiary in importance and on marketing pages.</p>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label">Outlined, <code>._outlined</code></dt>
-                                <dd class="_example">
-                                    <button class="_outlined">Take a look at our pricing!</button>
-                                    <button class="_outlined" disabled>Take a look at our pricing!</button>
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">Outlined, <code>._outlined</code></dt>
+                                    <dd class="_example">
+                                        <button class="_outlined">Take a look at our pricing!</button>
+                                        <button class="_outlined" disabled>Take a look at our pricing!</button>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <button class="_outlined">Take a look at our pricing!</button>
                                     <button class="_outlined" disabled>Take a look at our pricing!</button>
                                 </pre>
-                            </dl>
+                            </div>
                             <h3 class="titles _subSection h4">Clear</h3>
                             <p>Clear buttons are used when we don't want to visually style an action or link as a button, yet we want to provide ample click area and visual white-space around the link to separate it from surrounding content. This is mainly used within small UI actions.</p>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label">Clear, <code>._clear</code></dt>
-                                <dd class="_example">
-                                    <button class="_clear">Print Report</button>
-                                    <button class="_clear" disabled>Print Report</button>
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">Clear, <code>._clear</code></dt>
+                                    <dd class="_example">
+                                        <button class="_clear">Print Report</button>
+                                        <button class="_clear" disabled>Print Report</button>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <button class="_clear">Print Report</button>
                                     <button class="_clear" disabled>Print Report</button>
                                 </pre>
-                            </dl>
+                            </div>
                         </article>
                         <article id="buttons-layout">
                             <h2 class="title _section h3">Layout Options</h2>
                             <h3 class="titles _subSection h4">Large</h3>
                             <p>Large buttons are used primarily on singular-focused pages.</p>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label">Large, <code>._large</code></dt>
-                                <dd class="_example">
-                                    <button class="_primary _large">Create A Job Listing</button>
-                                    <button class="_primary _large" disabled>Create A Job Listing</button>
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">Large, <code>._large</code></dt>
+                                    <dd class="_example">
+                                        <button class="_primary _large">Create A Job Listing</button>
+                                        <button class="_primary _large" disabled>Create A Job Listing</button>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <button class="_primary _large">Create A Job Listing</button>
                                     <button class="_primary _large" disabled>Create A Job Listing</button>
                                 </pre>
-                            </dl>
+                            </div>
                             <h3 class="titles _subSection h4">Medium</h3>
                             <p>Medium buttons are when you want some increased attention to a button on a page without it being too large.</p>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label">Medium, <code>._medium</code></dt>
-                                <dd class="_example">
-                                    <button class="_primary _medium">Create A Job Listing</button>
-                                    <button class="_primary _medium" disabled>Create A Job Listing</button>
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">Medium, <code>._medium</code></dt>
+                                    <dd class="_example">
+                                        <button class="_primary _medium">Create A Job Listing</button>
+                                        <button class="_primary _medium" disabled>Create A Job Listing</button>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <button class="_primary _medium">Create A Job Listing</button>
                                     <button class="_primary _medium" disabled>Create A Job Listing</button>
                                 </pre>
-                            </dl>
+                            </div>
                             <h3 class="titles _subSection h4">Small</h3>
                             <p>Small buttons are used when you want to reduce the importance and size of a button.</p>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label">Small, <code>._small</code></dt>
-                                <dd class="_example">
-                                    <button class="_primary _small">Contact Sales</button>
-                                    <button class="_primary _small" disabled>Contact Sales</button>
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">Small, <code>._small</code></dt>
+                                    <dd class="_example">
+                                        <button class="_primary _small">Contact Sales</button>
+                                        <button class="_primary _small" disabled>Contact Sales</button>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <button class="_primary _small">Contact Sales</button>
                                     <button class="_primary _small" disabled>Contact Sales</button>
                                 </pre>
-                            </dl>
+                            </div>
                             <h3 class="titles _subSection h4">Full Width Button</h3>
                             <p>When you want full-width buttons within a container.</p>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label">Full Width, <code>._block</code></dt>
-                                <dd class="_example">
-                                    <button class="_primary _block">Full Width Button Block</button>
-                                    <button class="_primary _block" disabled>Full Width Button Block</button>
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">Full Width, <code>._block</code></dt>
+                                    <dd class="_example">
+                                        <button class="_primary _block">Full Width Button Block</button>
+                                        <button class="_primary _block" disabled>Full Width Button Block</button>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <button class="_primary _block">Full Width Button Block</button>
                                     <button class="_primary _block" disabled>Full Width Button Block</button>
                                 </pre>
-                            </dl>
+                            </div>
                             <h3 class="titles _subSection h4">Position: Right</h3>
                             <p>Make a button float to the right of a container.</p>
-                            <dl class="_rows exampleBlock">
-                                <dt class="_label">Right, <code>._right</code></dt>
-                                <dd class="_example">
-                                    <button class="_primary _right">Float Me Over!</button>
-                                    <button class="_primary _right" disabled>Float Me Over!</button>
-                                </dd>
+                            <div class="exampleBlock">
+                                <dl class="_rows exampleBlock">
+                                    <dt class="_label">Right, <code>._right</code></dt>
+                                    <dd class="_example">
+                                        <button class="_primary _right">Float Me Over!</button>
+                                        <button class="_primary _right" disabled>Float Me Over!</button>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
                                 <pre class="brush: html">
                                     <button class="_primary _right">Float Me Over!</button>
                                     <button class="_primary _right" disabled>Float Me Over!</button>
                                 </pre>
-                            </dl>
+                            </div>
                         </article>
                     </section>
                 </div>
