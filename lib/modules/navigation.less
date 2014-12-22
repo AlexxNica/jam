@@ -65,7 +65,9 @@
 
     //  -- Nested Navigation Styles
     &._nested {
-        display: none; // Hide all nested nav until needed
+        display: block; // Show first one
+
+        ._nested { display: none; } // Hide all nested nav until needed
 
         a {
             .fontSize(xs);
