@@ -29,34 +29,47 @@
         <!--[if lte IE 7]><script src="js/IE8.js" type="text/javascript"></script><![endif]-->
         <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="all" href="css/ie6.css"/><![endif]-->
     </head>
-    <body data-spy="scroll" data-target=".nav-sidebar">
-        <header class="page-header container">
-            <div class="-row">
-                <div class="-col4">
-                    <div class="logo-soc">
-                        <a href="index.html" class="-logo">Stack Overflow Careers</a>
-                    </div>
-                </div>
-                <div class="-col8">
-                    <nav id="nav-mainnav" class="hidden-print">
-                        <ul class="nav _global _row">
-                            <li class="-item"><a href="index.html" class="is-active">Getting Started</a></li>
-                            <li class="-item"><a href="docs-base.html">Base</a></li>
-                            <li class="-item"><a href="docs-modules.html">Modules</a></li>
-                            <li class="-item"><a href="#" class="is-disabled">Views</a></li>
-                            <li class="-item"><a href="http://github.com/jonhmchan/uikit">GitHub</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
+    <body data-spy="scroll" data-target=".navSidebar">
         <div class="container">
             <div class="-row">
-                <div class="-col9">
-                    <header>
+                <div class="-col2 navSidebar">
+                    <nav class="hidden-print affix" role="complementary">
+                        <a href="/" class="logo-glyph">
+                            <img src="lib/images/logo-glyph.svg" width="27" alt="Stack Overflow Careers"/>
+                        </a>
+                        <ul class="nav _column">
+                            <li class="-item">
+                                <a href="index.html">Getting Started</a>
+                                <ul class="nav _column _nested">
+                                    <li class="-item"><a href="#lesscss-overview">Overview</a></li>
+                                    <li class="-item"><a href="#lesscss-installation">Installation</a></li>
+                                    <li class="-item"><a href="#lesscss-contributing">Contributing
+                                    </a></li>
+                                </ul>
+                            </li>
+                            <li class="-item"><a href="docs-base.html">Base Styles</a></li>
+                            <li class="-item"><a href="docs-modules.html">Modules</a></li>
+                            <li class="-item"><a href="docs-views.html" class="is-disabled">Views</a></li>
+                        </ul>
+                    </nav>
+                    <div class="affix _bottom copyright">
+                        <p class="_xsmall">Designed and built by <a href="https://github.com/hellohynes">@hellohynes</a>, <a href="https://github.com/mcgwiz">@mcgwiz</a>, and <a href="https://github.com/JonHMChan">@JonHMChan</a>. Maintained by the <strong><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></strong> product team. Currently v0.1. To learn more, <a href="https://github.com/JonHMChan/uikit">visit our Github project.</a></p>
+                    </div>
+                </div>
+                <div class="-col10 content">
+                    <header class="page-header">
+                        <div class="-row">
+                            <div class="-col12">
+                                <div class="logo-soc">
+                                    <a href="index.html" class="-logo">Stack Overflow Careers</a>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <section id="getting-started">
                         <h1>Getting Started</h1>
                         <p class="_large">Welcome to the <em>Stack Overflow Careers Product UI Library</em>. Within this document you'll find base styles, components, and views relating to the Stack Overflow Careers project.</p>
-                    </header>
+                    </section>
                     <section id="lesscss-overview">
                         <h3>Purpose</h3>
                         <p>This library's purpose is to educate the Stack Overflow Careers team of the various methods available to them to achieve their various visual UI goals that help achieve a consistent, on-brand experience. In addition to an unified experience, this library will also help the team achieve the following subgoals:</p>
@@ -128,16 +141,7 @@
                         <p>For example, I may create icons for industries on city pages, which is very specific to one feature of Careers. The relevant LESS would live in a page-specific <code>less</code> file like <code>citypages.less</code>, even if it <em>may</em> one day go to other parts of Careers. Perhaps after a few weeks, a new feature on Careers requires those industry icons. At this point, it's best to move the relevant code from <code>citypages.less</code> and into <code>shared.less</code> which is used across the Careers project. As a final stage, we may start thinking about using industry icons in Stack Overflow Q&amp;A profiles, and this is when you should put the relevant code into a pull request for the UI Kit.</p>
                     </section>
                 </div>
-                <div class="-col3">
-                    <nav class="nav-sidebar hidden-print affix" role="complementary">
-                        <ul class="nav _column">
-                            <li class="-item"><a href="#lesscss-overview">Overview</a></li>
-                            <li class="-item"><a href="#lesscss-installation">Installation</a></li>
-                            <li class="-item"><a href="#lesscss-contributing">Contributing
-                            </a></li>
-                        </ul>
-                    </nav>
-                </div>
+                
             </div>
         </div>
     </body>

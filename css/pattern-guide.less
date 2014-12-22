@@ -27,21 +27,18 @@
 //  -- Documentation Files
 @import "code";                 // Code Syntax highlighting
 @import "syntaxhighlighter";    // Custom syntaxhighlighter theme
-@import "nav";                  // UI Library Navigation Styles
 
 
 //  ============================================================================
 //  $2 VARIABLES
 //  ----------------------------------------------------------------------------
-@body-background:             @color-white;
+@body-background:               @color-black;
+@content-background:            @color-white;
 
 
 //  ============================================================================
 //  $3 LAYOUTS
 //  ----------------------------------------------------------------------------
-//  -- Universal
-*, *:before, *:after { .box-sizing(border-box); }
-
 html, body {
     position: relative;
     min-height: 100%;
@@ -55,17 +52,25 @@ html, body {
     .lineHeight(base);
     text-align: left;
 }
-body {
-    padding: 3em;
-    background: @body-background;
-}
+
+//  -- Background Colors
+body        { background-color: @body-background; }
+.content    { background-color: @content-background; }
 
 //  -- Wrapper
 .header-site, .container-page {
-    .box-sizing(border-box);
     margin: 0 auto;
     width: 100%;
     overflow: hidden;
+}
+.content {
+    padding: 4.29em;
+
+    section {
+        padding-right: 0.5em;
+        display: block;
+        max-width: 915px;
+    }
 }
 
 //  -- Global Navigation & Logo Area
@@ -115,20 +120,16 @@ body {
     }
 }
 
-.content section {
-    padding-right: 0.5em;
-    display: block;
-}
-
 .container, .nav, .navbar, .navbar-collapse {
-    &:before, &:after {
-        display: table;
-        content: " ";
-    }
+    &:extend(.clearfix all);
 }
 
-.nav-sidebar > .nav { padding-left: 20px; }
-.affix { position: fixed; }
+.affix {
+    position: fixed;
+    width: @grid-column-width * 2;
+
+    &._bottom { bottom: 2em; }
+}
 
 
 //  ============================================================================
@@ -144,6 +145,28 @@ p, .text, ul, li {
     .fontSize(base);
     .lineHeight(looser);
 }
+.copyright {
+    p {
+        padding-left: 2em;
+        padding-right: 2em;
+
+        color: @navSidebar_dark-color;
+        .lineHeight(loose);
+
+        opacity: 0.7;
+        .transition(opacity 0.1s ease-in);
+
+        a, a:link {
+            color: @navSidebar_dark-link_selected-color;
+            &:hover, &._hover,
+            &:active, &._active { color: @navSidebar_dark-link_selected_hover-color; }
+        }
+    }
+    &:hover, &:active, &:focus {
+        p { opacity: 1; }
+    }
+}
+
 
 //  $ Contributing Grid Example
 //  Used to showcase the scope table on contributing
