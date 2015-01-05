@@ -1,4 +1,4 @@
-[Product UI Library](http://jonhmchan.github.io/uikit/)
+[Product Pattern Library](http://stackexchange.github.io/uikit/)
 =====
 
 Welcome to the internal Product UI Library for Stack Overflow Careers. This is a living pattern library that provides visual direction and syntax recommendations for our LESS, CSS, and JS.
