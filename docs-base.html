@@ -105,6 +105,21 @@
                                             <li class="-item"><a href="#tables-styles">Table Styles</a></li>
                                         </ul>
                                     </li>
+                                    <li class="-item">
+                                        <a href="#section-badges">Badges</a>
+                                        <ul class="nav _column _nested">
+                                            <li class="-item"><a href="#badges-base">Base Style</a></li>
+                                            <li class="-item"><a href="#badges-styles">Style Variations</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="-item">
+                                        <a href="#section-tags">Tags</a>
+                                        <ul class="nav _column _nested">
+                                            <li class="-item"><a href="#tags-base">Base Style</a></li>
+                                            <li class="-item"><a href="#tags-styles">Style Variations</a></li>
+                                            <li class="-item"><a href="#tags-sizes">Sizes</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="-item"><a href="docs-modules.html">Modules</a></li>
@@ -1491,6 +1506,124 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                </pre>
+                            </div>
+                        </article>
+                    </section>
+
+                    <section id="section-badges">
+                        <header>
+                            <h1 class="_section">Badges</h1>
+                        </header>
+                        <article id="badges-base">
+                            <h2 class="_subSection">Base Style</h2>
+                            <p class="_large">The base badge style seeks to establish the general sizing and layout. Box padding, font-size, and font-weight treatments are all set here. Badge color combinations are listd within <a href="#badges-styles">the badge styles section.</a></p>
+                            <p class="callout _info">The default badge style should not be used independently of a badge color combination. Badges are used for specific purposes and should not be re-purposed for different areas.</p>
+                            <div class="exampleBlock">
+                                <dl class="_rows">
+                                    <dt class="_label"><code>.badge</code></dt>
+                                    <dd class="_example">
+                                        <span class="badge _small">Base</span>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
+                                <pre class="brush: html">
+                                    <span class="badge _small">Base</span>
+                                </pre>
+                            </div>
+                        </article>
+                        <article id="badges-styles">
+                            <h2 class="_subSection">Badge Styles</h2>
+                            <p class="_large">Badge styles are created for specific instances. In the interest of not confusing users, color combinations should <em>only</em> be used for the specific instances listed below. Using a style for multiple items can create confusion for users. While the labels might be different, we cannot assume people read closely. Color block are added as a foraging aid to help users quickly identify items while scanning instead of reading every word on a page. If you need a unique styles, please consult the Careers product design team.</p>
+                            <div class="exampleBlock">
+                                <dl class="_rows">
+                                    <dt class="_label"><code>.-featured</code></dt>
+                                    <dd class="_example">
+                                        <p> <span class="badge -featured _inline">Featured</span> <span class="badge -featured _abbrev _inline">Featured</span></p>
+                                    </dd>
+                                    <dt class="_label"><code>.-topSpot</code></dt>
+                                    <dd class="_example">
+                                        <p> <span class="badge -topSpot _inline">Top Spot</span> <span class="badge -topSpot _abbrev _inline">Top Spot</span></p>
+                                    </dd>
+                                    <dt class="_label"><code>.-joelTest</code></dt>
+                                    <dd class="_example">
+                                        <span class="badge -joelTest">12</span>
+                                    </dd>
+                                    <dt class="_label"><code>.-relocation</code></dt>
+                                    <dd class="_example">
+                                        <span class="badge -relocation">Offers Relocation</span>
+                                    </dd>
+                                    <dt class="_label"><code>.-remote</code></dt>
+                                    <dd class="_example">
+                                        <span class="badge -remote">Work Remotely</span>
+                                    </dd>
+                                    <dt class="_label"><code>.-messages</code></dt>
+                                    <dd class="_example">
+                                        <span class="badge -messages">99+</span>
+                                    </dd>
+                                    <dt class="_label"><code>.-cv</code></dt>
+                                    <dd class="_example">
+                                        <span class="badge -cv">212</span>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
+                                <pre class="brush: html">
+                                    <span class="badge -featured _inline">Featured</span>
+                                    <span class="badge -featured _abbrev _inline">Featured</span>
+
+                                    <span class="badge -topSpot _inline">Top Spot</span>
+                                    <span class="badge -topSpot _abbrev _inline">Top Spot</span>
+
+                                    <span class="badge -joelTest">12</span>
+
+                                    <span class="badge -relocation">Offers Relocation</span>
+
+                                    <span class="badge -remote">Work Remotely</span>
+
+                                    <span class="badge -messages">99+</span>
+
+                                    <span class="badge -cv">212</span>
+                                </pre>
+                            </div>
+                        </article>
+                    </section>
+                    <section id="section-tags">
+                        <header>
+                            <h1 class="_section">Tags</h1>
+                        </header>
+                        <article id="tags-base">
+                            <h2 class="_subSection">Base Style</h2>
+                            <p class="_large">Tags are a core feature on <strong>Stack Overflow</strong>. These tags help users quickly identify question subject matter. The use of tags on <strong>Stack Overflow Careers</strong> however is somewhat similar. Tags on Careers are used to help users quickly identify the <em>type</em> of job. They are also used (currently) to help companies list their tech stack.</p>
+                            <div class="exampleBlock">
+                                <dl class="_rows">
+                                    <dt class="_label"><code>.postTag</code>, <code>.post-tag</code></dt>
+                                    <dd class="_example">
+                                        <span class="postTag">javascript</span>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
+                                <pre class="brush: html">
+                                    <span class="postTag">javascript</span>
+                                </pre>
+                            </div>
+                        </article>
+                        <article id="tags-styles">
+                            <h2 class="_subSection">Tag Styles</h2>
+                            <p class="_large">While the variations are minimal, there are a few style changes from the base tag style. These tags are used to describe items like Industries and targetable tags.</p>
+                            <div class="exampleBlock">
+                                <dl class="_rows">
+                                    <dt class="_label"><code>._highlighted</code></dt>
+                                    <dd class="_example">
+                                        <span class="postTag _highlighted">ecommerce</span>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="codeBlock">
+                                <pre class="brush: html">
+                                    <span class="postTag _dark">ecommerce</span>
                                 </pre>
                             </div>
                         </article>

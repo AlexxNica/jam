@@ -1,0 +1,65 @@
+//
+//  STACK OVERFLOW CAREERS
+//  Product UI Style Guide
+//  Designed & managed by the Stack Exchange Design Team
+//
+//  Created January 12, 2013
+//  Updated January 5, 2015
+//
+//  http://careers.stackoveflow.com
+//
+//  TAGS
+//  
+//  TABLE OF CONTENTS
+//  • VARIABLES
+//  • BASE
+//  • ALTERNATES
+//
+//  ============================================================================
+//  $ VARIABLES
+//  ============================================================================
+//  -- Colors
+@tagSO-background:                  desaturate(lighten(@color-blue,41%),62%);
+@tagSO_hover-background:            desature(darken(@color-blue,10%),61%);
+@tagSO-border:                      @tagSO-background;
+@tagSO_hover-border:                @tagSO_hover-background;
+@tagSO-color:                       desature(darken(@color-blue,10%),61%);
+@tagSO_hover-color:                 @tagSO-background;
+
+@tagSO_highlighted-border:          @color-orange;
+@tagSO_highlighted-background:      spin(desaturate(lighten(@color-orange,34%),24%),7);
+@tagSO_highlighted-color:           @color-grayDark;
+
+//  ----------------------------------------------------------------------------
+//  $ TAGS: POST TAG
+//  Base style for "tags" from SO. Used on job ad listings and company pages.
+//  ----------------------------------------------------------------------------
+.post-tag, .postTag {
+    display: inline-block;
+    margin: 0.167em;
+    margin-left: 0;
+    padding: 0.25em 0.42em 0.3em;
+
+    .fontSize(s);
+    .lineHeight(tight);
+    text-decoration: none;
+    text-transform: lowercase;
+    color: @tagSO-color;
+    
+    background-color: @tagSO-background;
+    border: 0 solid @tagSO-border;
+    white-space: nowrap;
+
+    &:hover, &._hover {
+        background-color: @tagSO_hover-background;
+        border-color: @tagSO_hover-border;
+        color: @tagSO_hover-color;
+        text-decoration: none;
+    }
+
+    &.highlighted, &._highlighted {
+        border-color: @tagSO_highlighted-border;
+        background-color: @tagSO_highlighted-background;
+        color: @tagSO_highlighted-color;
+    }
+}
