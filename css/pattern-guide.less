@@ -223,6 +223,14 @@ p, .text, ul, li {
         }
     }
 
+    && {
+        &._rows ._example {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
+    } 
+
     //  $ Grid Example
     //  Used to showcase grid layouts and cells
     &.-grid {
@@ -256,7 +264,7 @@ p, .text, ul, li {
 
     ._label {
         margin-bottom: 1em;
-        color: @copy_help-color;
+        color: @copy_muted-color;
         font-family: @fontFamily-code;
         .fontSize(xs);
         .fontWeight(4);
@@ -294,7 +302,7 @@ ul.exampleCards {
             margin: 0 auto;
             padding: 1em 0;
 
-            color: @copy_help-color;
+            color: @copy_muted-color;
             .fontSize(xs);
 
             background-color: @color-white;

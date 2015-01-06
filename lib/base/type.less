@@ -27,8 +27,8 @@
 
 //  -- Colors
 @copy-color:                @color-grayDark;
-@copy_muted-color:          spin(desaturate(lighten(@color-grayMid,25%),8%),14);
-@copy_help-color:           desaturate(lighten(@color-grayMid,13%),4%);
+@copy_lead-color:           spin(desaturate(lighten(@color-grayMid,25%),8%),14);
+@copy_muted-color:          desaturate(lighten(@color-grayMid,13%),4%);
 
 @link-color:                @color-blue;
 @link_hover-color:          spin(@link-color, 2);
@@ -137,7 +137,7 @@ p,.text {
 
     //  When you want a larger, initial paragraph.
     &._lead {
-        color: @copy_muted-color;
+        color: @copy_lead-color;
         .fontSize(xl);
         .fontWeight(2);
         letter-spacing: -1px;
@@ -155,12 +155,11 @@ p,.text {
 
     //  -- Type Styles
     &._help {
-        color: @copy_help-color;
+        color: @copy_muted-color;
         .fontSize(s);
         .lineHeight(loose);
     }
-    &._marginHalf   { margin-bottom: @margin-half; }
-    &._muted        { color: @copy_muted-color; }
+    &._muted { color: @copy_muted-color; }
 
     //  -- Footnotes
     &._footnotes {
