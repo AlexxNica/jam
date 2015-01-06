@@ -34,17 +34,10 @@
     border-color: @contentRollup-border;
     border-radius: @borderRadius-small;
 
-    .-favicon {
-        display: inline-block;
-        vertical-align: text-bottom;
-        max-height: 16px;
-        max-width: 16px;
-        margin-right: 4px;
-    }
+    dl._rows > dt { .fontSize(s); }
 
     .-header {
         padding: 1em;
-        padding-right: 0.75em;
 
         //  In order for the copy to line up with the buttons perfectly, we have
         //  to assign a line-height. The target height is 32px. This solution
@@ -64,10 +57,32 @@
                 box-shadow: none;
             }
         }
+
+        // Align images
+        img {
+            display: inline-block;
+            margin-right: 4px;
+        }
     }
 
     .-content {
-        background-color: @contentRollup-content-background
-        //border-radius: 0 0 @borderRadius-small @borderRadius-small;
+        padding: 1.43em;
+
+        background-color: @contentRollup-content-background;
+        border-radius: 0 0 @borderRadius-small @borderRadius-small;
+
+        dl { margin-bottom: 0; }
+    }
+
+
+    // Image Layouts
+    .-favicon {
+        vertical-align: text-bottom;
+        max-height: 16px;
+        max-width: 16px;
+    }
+    .-cc_visa {
+        position: relative;
+        top: 0.5em;
     }
 }

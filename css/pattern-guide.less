@@ -48,7 +48,7 @@ html, body {
     font-family: @fontFamily-sans;
     font-size: ~"@{fontSize-base}px";
     .fontWeight(4);
-    .letterSpacing(base);
+    letter-spacing: 0;
     .lineHeight(base);
     text-align: left;
 }
@@ -260,7 +260,7 @@ p, .text, ul, li {
         font-family: @fontFamily-code;
         .fontSize(xs);
         .fontWeight(4);
-        .letterSpacing(0);
+        letter-spacing: 0;
     }
 
     blockquote._pull, .quote._pull { background-color: @color-white; }

@@ -53,132 +53,130 @@
 //  ============================================================================
 //  
 //  Unlike colors which are set and rarely changed, type values are altered
-//  regularly based on the need of the component and context. To maintain the
-//  unique variable name syntax, yet make it easy to remmeber variablized sizes,
-//  styles, line-heights, font-families, and letter-spacing; we have created a
-//  number of shorthand calls that can be used within their appropriate mixin.
-//  These type mixin guards deliver the correct value based on the shorthand
-//  value passed to it. For example, if you want declare a large, extra-light
-//  font value for a title, you could use:
+//  regularly based on the need of the component and context. To maintain consistent
+//  sizes, line-heights, and letter-spacing; we have created a number of mixins.
+//  These mixins deliver the correct value based on the shorthand
+//  value passed to it. For example, if you want declare a large font-size using
+//  a light font-weight value, you will use the following:;
 //
 //  Example:  .title-page {
-//              .fontSize(l);
-//              .fontWeight(2);
+//                .fontSize(l);
+//                .fontWeight(2);
 //            }
 //
-//  In this example, we are passing the shorthand values of "l" and "2" within
-//  their respective mixins, which output:
+//  In this example we are declaring the shorthand values of "l" and "2" within
+//  their mixins. When compiled, this will output:
 //
 //  Output:   .title-page {
-//              font-size: 24px;
-//              font-size: 1.714285714rem;
-//              font-weight: 200;
+//                font-size: 24px;
+//                font-size: 1.714285714rem;
+//                font-weight: 200;
 //            }
 //
 //  ----------------------------------------------------------------------------
-.fontSize (@s) {
-  & when (@s = base)  { .fontRem(@fontSize-base); }
-  & when (@s = xxs)   { .fontRem(@fontSize-base * 0.714285714); }
-  & when (@s = xs)    { .fontRem(@fontSize-base * 0.857142857); }
-  & when (@s = s)     { .fontRem(@fontSize-base * 0.928571429); } 
-  & when (@s = m)     { .fontRem(@fontSize-base * 1.285714286); }
-  & when (@s = l)     { .fontRem(ceil(@fontSize-base * 1.714285714)); }
-  & when (@s = xl)    { .fontRem(ceil(@fontSize-base * 2.571428571)); }
-  & when (@s = xxl)   { .fontRem(floor(@fontSize-base * 3.428571429)); }
-  & when (@s = xxxl)  { .fontRem(floor(@fontSize-base * 5.142857143)); }
-}
+//  -- REM Font Mixin
+//  This is primarily used within the .fontSize mixin, though sometimes it can
+//  be used on it's own. In the interest of maintaining consistent font-sizes,
+//  it is highly discouraged to declare a font-size not already pre-defined.
 .fontRem(@fs) {
-  @remValue: @fs / @fontSize-base;
-  font-size: ~"@{fs}px";
-  font-size: ~"@{remValue}rem";
+    @remValue: @fs / @fontSize-base;
+    font-size: ~"@{fs}px";
+    font-size: ~"@{remValue}rem";
 }
+
+.fontSize (@s) {
+    & when (@s = base)  { .fontRem(@fontSize-base); }
+    & when (@s = xxs)   { .fontRem(@fontSize-base * 0.714285714); }
+    & when (@s = xs)    { .fontRem(@fontSize-base * 0.857142857); }
+    & when (@s = s)     { .fontRem(@fontSize-base * 0.928571429); } 
+    & when (@s = m)     { .fontRem(@fontSize-base * 1.285714286); }
+    & when (@s = l)     { .fontRem(ceil(@fontSize-base * 1.714285714)); }
+    & when (@s = xl)    { .fontRem(ceil(@fontSize-base * 2.571428571)); }
+    & when (@s = xxl)   { .fontRem(floor(@fontSize-base * 3.428571429)); }
+    & when (@s = xxxl)  { .fontRem(floor(@fontSize-base * 5.142857143)); }
+}
+
 .fontWeight (@w) {
-  & when (@w = 2) { font-weight: 200; }
-  & when (@w = 4) { font-weight: 400; }
-  & when (@w = 7) { font-weight: 700; }
+    & when (@w = 2) { font-weight: 200; }
+    & when (@w = 4) { font-weight: 400; }
+    & when (@w = 7) { font-weight: 700; }
 }
-//  Line Height Mixin Guard to quickly assign line-height variables
+
+//  Line Height Mixin
 //  Do not declare values with your line-heights (i.e. px, em). This allows
 //  for the value to be relative to the declared font-size and have
 //  greater flexibility.
 .lineHeight (@lh) {
-  & when (@lh = base)     { line-height: (@fontSize-base + 6) / @fontSize-base; }
-  & when (@lh = tight)    { line-height: (@fontSize-base + 4) / @fontSize-base; }
-  & when (@lh = tighter)  { line-height: (@fontSize-base + 2) / @fontSize-base; }
-  & when (@lh = tightest) { line-height: @fontSize-base / @fontSize-base; }
-  & when (@lh = loose)    { line-height: (@fontSize-base + 8) / @fontSize-base; }
-  & when (@lh = looser)   { line-height: (@fontSize-base + 10) / @fontSize-base; }
-  & when (@lh = loosest)  { line-height: (@fontSize-base / @fontSize-base) * 2; }
-}
-.letterSpacing (@ls) {
-  & when (@ls = loose)    { letter-spacing: 1px; }
-  & when (@ls = base)     { letter-spacing: 0; }
-  & when (@ls = tight)    { letter-spacing: -1px; }
+    & when (@lh = base)     { line-height: (@fontSize-base + 6) / @fontSize-base; }
+    & when (@lh = tight)    { line-height: (@fontSize-base + 4) / @fontSize-base; }
+    & when (@lh = tighter)  { line-height: (@fontSize-base + 2) / @fontSize-base; }
+    & when (@lh = tightest) { line-height: @fontSize-base / @fontSize-base; }
+    & when (@lh = loose)    { line-height: (@fontSize-base + 8) / @fontSize-base; }
+    & when (@lh = looser)   { line-height: (@fontSize-base + 10) / @fontSize-base; }
+    & when (@lh = loosest)  { line-height: (@fontSize-base / @fontSize-base) * 2; }
 }
 
 
 //  ============================================================================
 //  $ TYPE STYLES: BASELINE
 //  ============================================================================
-//  -- Paragraph Styles
-p,.text {
-  margin-bottom: 1em;
-  margin-top: 0;
-  .lineHeight(loose);
-
-  //  -- Indent paragraphs after the first paragraph to help with readability
-  // + p { text-indent: 1em; }
-
-  //  When you want a larger, initial paragraph.
-  &._lead {
-    color: @copy_muted-color;
-    .fontSize(xl);
-    .fontWeight(2);
-    .letterSpacing(tight);
-    .lineHeight(base);
-  }
-  
-  //  -- Type Sizes
-  &._xlarge {
-    .fontSize(l);
-    .fontWeight(2);
-  }
-  &._large  { .fontSize(m); }
-  &._small  { .fontSize(s); }
-  &._xsmall { .fontSize(xs); }
-
-  //  -- Type Styles
-  &._help {
-    color: @copy_help-color;
-    .fontSize(s);
-    .lineHeight(loose);
-  }
-  &._marginHalf { margin-bottom: @margin-half; }
-
-  //  -- Footnotes
-  &._footnotes {
-    margin-left: 0;
-    padding-top: @padding-half;
-    padding-left: @padding-base + 4;
-    border-top: 1px solid @borderColor-grayLight;
-
-    li  {
-      color: @copy_muted-color;
-      .fontSize(xs);
-    }
-    a   { color: desaturate(@link-color,80%);}
-  }  
-}
-
 small             { font-size: floor(100% * 0.857142857); }
 strong,b          { .fontWeight(7); }
 em, i             { font-style: italic; }
-cite              { font-style: normal; }
+address,cite      { font-style: normal; }
 
-sup.fn {
-  padding-right: 2px;
-  padding-left: 2px;
+
+//  -- Paragraph Styles
+p,.text {
+    margin-bottom: 1em;
+    margin-top: 0;
+    .lineHeight(loose);
+
+    //  -- Indent paragraphs after the first paragraph to help with readability
+    // + p { text-indent: 1em; }
+
+    //  When you want a larger, initial paragraph.
+    &._lead {
+        color: @copy_muted-color;
+        .fontSize(xl);
+        .fontWeight(2);
+        letter-spacing: -1px;
+        .lineHeight(base);
+    }
+
+    //  -- Type Sizes
+    &._xlarge {
+        .fontSize(l);
+        .fontWeight(2);
+    }
+    &._large  { .fontSize(m); }
+    &._small  { .fontSize(s); }
+    &._xsmall { .fontSize(xs); }
+
+    //  -- Type Styles
+    &._help {
+        color: @copy_help-color;
+        .fontSize(s);
+        .lineHeight(loose);
+    }
+    &._marginHalf   { margin-bottom: @margin-half; }
+    &._muted        { color: @copy_muted-color; }
+
+    //  -- Footnotes
+    &._footnotes {
+        margin-left: 0;
+        padding-top: @padding-half;
+        padding-left: @padding-base + 4;
+        border-top: 1px solid @borderColor-grayLight;
+
+        li  {
+            color: @copy_muted-color;
+            .fontSize(xs);
+        }
+        a   { color: desaturate(@link-color,80%);}
+    }  
 }
+
 
 //  -- Text Alignment
 ._textLeft    { text-align: left; }
@@ -186,48 +184,53 @@ sup.fn {
 ._textRight   { text-align: right; }
 
 
+//  -- Footnote Numbers
+sup.fn {
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+
 //  -- Quotes
 blockquote, .quote {
-  margin: 0.75em 1.5em;
-  padding: 1em 1.5em;
+    margin: 0.75em 1.5em;
+    padding: 1em 1.5em;
 
-  font-family: @fontFamily-serif;
-  font-style: italic;
-  .fontSize(m);
-  letter-spacing: 0;
-  .lineHeight(looser);
-  color: @quote-textColor;
-
-  border-left: 1px dotted @quote-border;
-
-  // For when you want to add a background to a blockquote, and ONLY A BLOCKQUOTE.
-  &._accent {
-    background-color: @quote-background;
-    border-left: 2px solid @quote-border_accent;
-  }
-  &._pull {  
-    font-family: @fontFamily-sans;
-    .fontWeight(2);
-    .letterSpacing(base);
+    font-family: @fontFamily-serif;
+    font-style: italic;
+    .fontSize(m);
+    letter-spacing: 0;
     .lineHeight(looser);
-    text-align: center;
-    color: @quote_pull-textColor;
+    color: @quote-textColor;
 
-    border-left: none;
-  }
+    border-left: 1px dotted @quote-border;
+
+    // For when you want to add a background to a blockquote, and ONLY A BLOCKQUOTE.
+    &._accent {
+        background-color: @quote-background;
+        border-left: 2px solid @quote-border_accent;
+    }
+    &._pull {  
+        font-family: @fontFamily-sans;
+        .fontWeight(2);
+        .lineHeight(looser);
+        text-align: center;
+        color: @quote_pull-textColor;
+        border-left: none;
+    }
 }
 
 //  -- Links
 a, a:link, .link {
-  color: @link-color;
-  text-decoration: none;
-  transition: all 0.1s ease-in;
+    color: @link-color;
+    text-decoration: none;
+    transition: all 0.1s ease-in;
 
-  &:hover, &:focus, &.hover, &._focus {
-    color: @link_hover-color;
-    text-decoration: underline;
-  }
-  &:focus, &._focus { outline: none; }
+    &:hover, &:focus, &.hover, &._focus {
+        color: @link_hover-color;
+        text-decoration: underline;
+    }
+    &:focus, &._focus { outline: none; }
 }
 
 
@@ -239,66 +242,63 @@ a, a:link, .link {
 //  -- HEADINGS
 h1, h2, h3, h4, h5, h6, 
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  .fontWeight(7);
-  margin-top: 0;
-  margin-bottom: 0.5em;
-
-  color: @title-color;
-  // text-rendering: optimizeLegibility; // Fix the character spacing for headings
-
-  > small, > ._small {
-    margin-top: -0.25em;
-
-    color: @copy_muted-color;
-    font-size: 75%;
-    font-weight: inherit;
-  }
-
-  //  -- Specific Title Styles
-  &._hugeTitle  {
-    .fontSize(xxxl);
-    .fontWeight(2);
-    letter-spacing: -1px;
-  }
-  &._pageTitle  {
-    .fontSize(xxl);
-    .fontWeight(2);
-    letter-spacing: -1px;
-  }
-  &._section {
-    color: @title_section-color;
-    .fontSize(l);
     .fontWeight(7);
-    letter-spacing: 0;
-    .lineHeight(base);
-  }
-  &._subSection {
-    margin-bottom: 1em;
-    color: @title_subSection-color;
-    .fontSize(m);
-    .fontWeight(4);
-    letter-spacing: 0;
-    .lineHeight(tight);
-  }
+    margin-top: 0;
+    margin-bottom: 0.5em;
+
+    color: @title-color;
+    // text-rendering: optimizeLegibility; // Fix the character spacing for headings
+
+    > small, > ._small {
+        margin-top: -0.25em;
+
+        color: @copy_muted-color;
+        font-size: 75%;
+        font-weight: inherit;
+    }
+
+    //  -- Specific Title Styles
+    &._hugeTitle  {
+        .fontSize(xxxl);
+        .fontWeight(2);
+        letter-spacing: -1px;
+    }
+    &._pageTitle  {
+        .fontSize(xxl);
+        .fontWeight(2);
+        letter-spacing: -1px;
+    }
+    &._section {
+        color: @title_section-color;
+        .fontSize(l);
+        .fontWeight(7);
+        letter-spacing: 0;
+        .lineHeight(base);
+    }
+    &._subSection {
+        margin-bottom: 1em;
+        color: @title_subSection-color;
+        .fontSize(m);
+        .fontWeight(4);
+        letter-spacing: 0;
+        .lineHeight(tight);
+    }
 }
 
 h1, h2, h3,
 .h1, .h2, .h3 {
-  .letterSpacing(tight);
-  .lineHeight(tighter);
+    letter-spacing: -1px;
+    .lineHeight(tighter);
 }
 
-h1, .h1 { 
-  .fontSize(xxl);
-  .letterSpacing(tight);
-}
+h1, .h1 { .fontSize(xxl); }
 h2, .h2 { .fontSize(xl); }
 h3, .h3 { .fontSize(l); }
 h4, .h4 { .fontSize(m); }
 h5, .h5 { .fontSize(base); }
 h6, .h6 { 
-  .fontSize(xs);
-  text-transform: uppercase;
+    .fontSize(xs);
+    text-transform: uppercase;
 }
 
 
@@ -306,20 +306,19 @@ h6, .h6 {
 //  $ TYPE STYLES: NOTIFICATIONS
 //  ============================================================================
 .callout {
-  padding: ceil(@padding-base * 1.5);
-  //padding-right: 4em;
+    padding: ceil(@padding-base * 1.5);
 
-  color: @callout-infoText;
-  .fontSize(base);
-  .lineHeight(loose);
-  text-indent: 0;
+    color: @callout-infoText;
+    .fontSize(base);
+    .lineHeight(loose);
+    text-indent: 0;
 
-  border-style: solid;
-  border-width: 1px;
+    border-style: solid;
+    border-width: 1px;
 
-  &._info {
-    background-color: @callout-infoBck; 
-    border-color: @callout-infoBorder;
-  }
+    &._info {
+        background-color: @callout-infoBck; 
+        border-color: @callout-infoBorder;
+    }
 }
 

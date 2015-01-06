@@ -56,7 +56,8 @@
                                         <a href="#section-rollup">Content Rollup</a>
                                         <ul class="nav _column _nested">
                                             <li class="-item"><a href="#tabs-intro">Introduction</a></li>
-                                            <li class="-item"><a href="#tabs-base">Base Style</a></li>
+                                            <li class="-item"><a href="#tabs-base">Base Rollup</a></li>
+                                            <li class="-item"><a href="#tabs-base">Expanded Rollup</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -244,13 +245,13 @@
                             <h2 class="_subSection">Expanded Rollup</h2>
                             <div class="exampleBlock">
                                 <dl class="_rows">
-                                    <dt class="_label"><code>.contentRollup</code></dt>
+                                    <dt class="_label"><code>.contentRollup</code> &gt; <code>.-content</code></dt>
                                     <dd class="_example">
                                         <div class="contentRollup">
                                             <div class="-header -row">
                                                 <div class="-col8">
                                                     <p>
-                                                        <img src="lib/images/cc-visa.png" alt="Visa Logo"/> Visa ending in 1111 <span class="_text _small _muted">Expires 11/2020</span>
+                                                        <img src="lib/images/cc-visa.png" alt="Visa Logo"/ class="-cc_visa"> Visa ending in 1111 <span class="text _small _muted">Expires 11/2020</span>
                                                     </p>
                                                 </div>
                                                 <div class="-col4 _textRight">
@@ -258,21 +259,20 @@
                                                 </div>
                                             </div>
                                             <div class="-content -row">
-                                                <div class="-col3">
+                                                <div class="-col2">
                                                     <dl class="_rows">
                                                         <dt>Name on card</dt>
                                                         <dd>Jack Sinclair</dd>
                                                     </dl>
                                                 </div>
-                                                <div class="-col9">
+                                                <div class="-col10">
                                                     <dl class="_rows">
                                                         <dt>Billing Address</dt>
                                                         <dd>
-                                                            <p>
-                                                                Jack Sinclair<br/>
+                                                            <address>
                                                                 100 William St., 28th Floor<br/>
                                                                 New York, NY 10038
-                                                            </p>
+                                                            </address>
                                                         </dd>
                                                     </dl>
                                                 </div>
@@ -284,7 +284,8 @@
                             <div class="codeBlock">
                                 <pre class="brush: html">
                                     <div class="contentRollup">
-                                        <div class="-header -row">
+                                        ...
+                                        <div class="-content">
                                             ...
                                         </div>
                                     </div>
