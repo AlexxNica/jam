@@ -212,6 +212,15 @@ p, .text, ul, li {
     &._rows {
         padding: 2em;
         border-radius: @borderRadius-base;
+
+        ._example {
+            margin-bottom: 1em;
+            padding-bottom: 1em;
+
+            border-bottom-color: @borderColor-grayLight;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+        }
     }
 
     //  $ Grid Example
@@ -351,30 +360,6 @@ ul.exampleCards {
         }
     }
 }
-
-
-//  ============================================================================
-//  $5  LISTS
-//  ----------------------------------------------------------------------------
-//  -- Definition List Variation for the UI Guide
-dl._rows {
-
-    > dt {
-        position: relative;
-        display: block;
-    }
-    > dd {
-        display: block;
-        margin: 0;
-        margin-bottom: 1em;
-        padding-bottom: 1em;
-
-        border-bottom-color: @borderColor-grayLight;
-        border-bottom-style: solid;
-        border-bottom-width: 1px;
-    }
-}
-
 
 
 //  ============================================================================

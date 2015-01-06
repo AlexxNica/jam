@@ -14,12 +14,13 @@
 //  $ VARIABLES
 //  ----------------------------------------------------------------------------
 @tab-background:                transparent;
+@tab_hover-background:          fade(@backgroundColor-grayLighter,40%);
 @tab-border:                    transparent;
+@tab_hover-border:              @tab_hover-background;
 @tab-borderBottom:              @tab_selected-border;
 @tab-color:                     desaturate(lighten(@color-grayMid,13%),4%);
-@tab_hover-background:          fade(@backgroundColor-grayLighter,40%);
-@tab_hover-border:              @tab_hover-background;
 @tab_hover-color:               @color-grayMid;
+
 @tab_selected-background:       @color-white;
 @tab_selected_hover-background: @tab_selected-background;
 @tab_selected-borderTop:        @color-orange;
@@ -28,6 +29,13 @@
 @tab_selected_hover-border:     @tab_selected-border;
 @tab_selected-color:            @color-black;
 @tab_selected_hover-color:      darken(@tab_selected-color,5%);
+
+@tabBoard-background:               transparent;
+@tabBoard-border:                   transparent;
+@tabBoard-color:                    desaturate(lighten(@color-grayMid,13%),4%);
+@tabBoard-success-color:            spin(saturate(darken(@color-green,19%),37%),-9);
+@tabBoard-warning-color:            @color-red;
+@tabBoard_selected-borderBottom:    @color-orange;
 
 
 //  ============================================================================
@@ -123,13 +131,6 @@
 //  ============================================================================
 //  $ TAB DASHBOARD
 //  ----------------------------------------------------------------------------
-@tabBoard-background:               transparent;
-@tabBoard-border:                   transparent;
-@tabBoard-color:                    desaturate(lighten(@color-grayMid,13%),4%);
-@tabBoard-success-color:            spin(saturate(darken(@color-green,19%),37%),-9);
-@tabBoard-warning-color:            @color-red;
-@tabBoard_selected-borderBottom:    @color-orange;
-
 .tabBoard {
     &:extend(.clearfix all);
     margin: 0;
@@ -262,51 +263,3 @@
         &:before { content: "-"; }
     }
 }
-
-    //  -- Dashboard Tabs Content
-    .-primary > .-number, 
-    .-secondary { float: left; }
-
-    .-secondary {
-        margin-left: 0.5em;
-        margin-top: 0.25em;
-    }
-
-    .-primary {
-        
-        margin-bottom: 0.25em;
-
-        + .-title {
-            position: absolute;
-            left: 0.2em;
-        }
-    }
-
-
-    //  -- Type Styles: Primary
-    .-number,
-    .-title {
-        margin: 0 0 0.5em;
-        .letterSpacing(base);
-        .lineHeight(tightest);
-    }
-    .-number {
-        margin-bottom: 0.1em;
-        
-    }
-    .-title  {
-        color: @tabBoard-color;
-        .fontSize(m);
-        .fontWeight(4);
-    }
-
-    
-
-    //  -- Type Styles: Secondary
-    .-secondary {
-        .-number {
-            color: @tabBoard-color;
-            .fontSize(m);
-        }
-        .-title { .fontSize(xs); }
-    }
