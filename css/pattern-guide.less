@@ -73,6 +73,12 @@ body        { background-color: @body-background; }
     }
 }
 
+.navSidebar {
+    display: none;
+
+    @media (min-width: @mediaQuery-small) { display: block; }
+}
+
 //  -- Global Navigation & Logo Area
 .page-header {
     margin-top: 1em;
@@ -104,9 +110,7 @@ body        { background-color: @body-background; }
     }
 }
 
-//  -- Originally was just styling section and article tags. Really though
-//     all I want to do is add bottom padding to sections. Trapping for all
-//     section ids now.
+//  -- Trapping for all section ids.
 [id*="section-"] {
     padding-bottom: @padding-double * 2;
 
@@ -273,6 +277,8 @@ p, .text, ul, li {
 
     blockquote._pull, .quote._pull { background-color: @color-white; }
 }
+
+.codeBlock > div { overflow-x: scroll;}
 
 
 //  $ Example Cards
