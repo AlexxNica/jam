@@ -233,7 +233,7 @@ p, .text, ul, li {
             padding-bottom: 0;
             border-bottom: 0;
         }
-    } 
+    }
 
     //  $ Grid Example
     //  Used to showcase grid layouts and cells
@@ -276,6 +276,20 @@ p, .text, ul, li {
     }
 
     blockquote._pull, .quote._pull { background-color: @color-white; }
+}
+
+dl._rows.-groups {
+    > ._label { margin-bottom: 0.5em; }
+    > ._example {
+        margin-bottom: 1em;
+        padding-bottom: 1em;
+
+        border-bottom-color: @borderColor-grayLight;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+
+        &:last-of-type { border: none; }
+    }
 }
 
 .codeBlock > div { overflow-x: scroll;}
