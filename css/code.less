@@ -43,8 +43,7 @@
 // ---------------------------------------------------------------------------
 //  $ SYNTAX HIGHLIGHTING
 // ---------------------------------------------------------------------------
-.code._example,
-.syntaxhighlighter {
+.highlight {
     margin-top: -1px;
     margin-bottom: 1.5em;
     padding: 1em 1.5em;
@@ -99,21 +98,21 @@ pre code {
 //  ----------------------------------------------------------------------------
 //  $ CODE COLOR STYLING
 //  ----------------------------------------------------------------------------
-.html-block {
-    ._ta  { color: @html-tag; }
-    ._at  { color: @html-attr; }
-    ._va  { color: @html-value; }
+.language-html {
+    .nt  { color: @html-tag; }
+    .na  { color: @html-attr; }
+    .s  { color: @html-value; }
     ._cp  { color: @html-copy; }
     ._co  { color: @html-comment; }
     ._j1  { color: @html-js1;}
 }
 
-.less-block {
-    ._cl  { color: @less-class; }
+.language-scss {
+    .nc, .s2  { color: @less-class; }
     ._co  { color: @less-comment; }
-    ._cl  { color: @less-colon; }
+    .k  { color: @less-colon; }
     ._me  { color: @less-media; }
-    ._pa  { color: @less-parameter; }
+    .k  { color: @less-parameter; }
     ._va  { color: @less-variable; }
     ._pr  { color: @less-property; }
     ._fu  { color: @less-function; }

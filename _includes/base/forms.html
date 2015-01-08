@@ -1,0 +1,146 @@
+<section id="section-forms">
+    <header>
+        <h1 class="_section">Forms</h1>
+    </header>
+    <article id="forms-intro">
+        <h2 class="_subSection">Introduction</h2>
+        <p class="_large">These are the basic form input styles currently. The styles below are applied by default and you can modify their appearance with the classes outlined below.</p>
+    </article>
+    <article id="forms-default">
+        <h2 class="_subSection">Default / Focused States</h2>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label">Default, <code>&lt;input></code> or <code>.input</code></dt>
+                <dd class="_example">
+                    <label for="exampleInputField">Label Example</label>
+                    <p><small class="text _help">Help Text: If you have some instructions beyond the label, place them here. Just remember, users will most likely miss this so have descriptive field labels.</small></p>
+                    <input type="text" id="exampleInputField" placeholder="i.e. Placeholder text, Suggestive items">
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html %}
+<label for="exampleInputField">Input Label Example</label>
+<p><small class="text _help">...</small></p>
+<input type="text" id="exampleInputField" placeholder="i.e. Placeholder text">
+{% endhighlight %}
+        </div>
+    </article>
+    <article id="forms-disabled">
+        <h2 class="_subSection">Disabled State</h2>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label">Disabled, <code>&lt;input disabled></code> or <code>._disabled</code></dt>
+                <dd class="_example">
+                    <label for="exampleInputField2">Label Example</label>
+                    <input type="text" id="exampleInputField2" value="Disabled text here..." disabled>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html %}
+<label for="exampleInputField2">Label Example</label>
+<input type="text" id="exampleInputField2" value="Disabled text here..." disabled>
+{% endhighlight %}
+        </div>
+    </article>
+    <article id="forms-textarea">
+        <h2 class="_subSection">Textareas</h2>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label"><code>&lt;textarea></code></dt>
+                <dd class="_example">
+                    <label for="exampleInputField2">Label Example</label>
+                    <textarea></textarea>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html %}
+<label for="exampleInputField2">Label Example</label>
+<input type="text" id="exampleInputField2" value="Disabled text here..." disabled>
+{% endhighlight %}
+        </div>
+    </article>
+    <article id="forms-validation">
+        <h2 class="_subSection">Validation States</h2>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label">Success, <code>._success</code></dt>
+                <dd class="_example">
+                    <label for="exampleInputField3">Label Example</label>
+                    <input type="email" id="exampleInputField3" class="_success" value="design@stackoverflow.com">
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html %}
+<label for="exampleInputField3">Label Example</label>
+<input type="email" id="exampleInputField3" class="_success" value="design@stackoverflow.com">
+{% endhighlight %}
+        </div>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label">Warning, <code>._warning</code></dt>
+                <dd class="_example">
+                    <label for="exampleInputField4">Label Example</label>
+                    <input type="email" id="exampleInputField4" class="_warning" value="d@so.com">
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html %}
+<label for="exampleInputField4">Label Example</label>
+<input type="email" id="exampleInputField4" class="_warning" value="d@so.com">
+{% endhighlight %}
+        </div>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label">Error, <code>._error</code></dt>
+                <dd class="_example">
+                    <label for="exampleInputField5">Label Example</label>
+                    <input type="email" id="exampleInputField5" class="_error" value="design@">
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html %}
+<label for="exampleInputField5">Label Example</label>
+<input type="email" id="exampleInputField5" class="_error" value="design@">
+{% endhighlight %}
+        </div>
+    </article>
+    <article id="forms-sizes">
+        <h2 class="_subSection">Input Sizes</h2>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label">Large, <code>._large</code></dt>
+                <dd class="_example">
+                    <label for="exampleInputField6">Label Example</label>
+                    <input type="email" id="exampleInputField6" class="_large" value="design@stackoverflow.com">
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html %}
+<label for="exampleInputField6">Label Example</label>
+<input type="email" id="exampleInputField6" class="_large" value="...">
+{% endhighlight %}
+        </div>
+        <div class="exampleBlock">
+            <dl class="_rows exampleBlock">
+                <dt class="_label">Small, <code>._small</code></dt>
+                <dd class="_example">
+                    <label for="exampleInputField7">Label Example</label>
+                    <input type="text" id="exampleInputField7" class="_small" placeholder="Enter search terms here...">
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html %}
+<label for="exampleInputField7">Label Example</label>
+<input type="text" id="exampleInputField7" class="_small" placeholder="...">
+{% endhighlight %}
+        </div>
+    </article>
+</section>

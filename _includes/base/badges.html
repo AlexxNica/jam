@@ -1,0 +1,78 @@
+<section id="section-badges">
+    <header>
+        <h1 class="_section">Badges</h1>
+    </header>
+    <article id="badges-base">
+        <h2 class="_subSection">Base Style</h2>
+        <p class="_large">The base badge style seeks to establish the general sizing and layout. Box padding, font-size, and font-weight treatments are all set here. Badge color combinations are listd within <a href="#badges-styles">the badge styles section.</a></p>
+        <p class="callout _info">The default badge style should not be used independently of a badge color combination. Badges are used for specific purposes and should not be re-purposed for different areas.</p>
+        <div class="exampleBlock">
+            <dl class="_rows">
+                <dt class="_label"><code>.badge</code></dt>
+                <dd class="_example">
+                    <span class="badge _small">Base</span>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html %}
+<span class="badge _small">Base</span>
+{% endhighlight %}
+        </div>
+    </article>
+    <article id="badges-styles">
+        <h2 class="_subSection">Badge Styles</h2>
+        <p class="_large">Badge styles are created for specific instances. In the interest of not confusing users, color combinations should <em>only</em> be used for the specific instances listed below. Using a style for multiple items can create confusion for users. While the labels might be different, we cannot assume people read closely. Color block are added as a foraging aid to help users quickly identify items while scanning instead of reading every word on a page. If you need a unique styles, please consult the Careers product design team.</p>
+        <div class="exampleBlock">
+            <dl class="_rows">
+                <dt class="_label"><code>.-featured</code></dt>
+                <dd class="_example">
+                    <p> <span class="badge -featured _inline">Featured</span> <span class="badge -featured _abbrev _inline">Featured</span></p>
+                </dd>
+                <dt class="_label"><code>.-topSpot</code></dt>
+                <dd class="_example">
+                    <p> <span class="badge -topSpot _inline">Top Spot</span> <span class="badge -topSpot _abbrev _inline">Top Spot</span></p>
+                </dd>
+                <dt class="_label"><code>.-joelTest</code></dt>
+                <dd class="_example">
+                    <span class="badge -joelTest">12</span>
+                </dd>
+                <dt class="_label"><code>.-relocation</code></dt>
+                <dd class="_example">
+                    <span class="badge -relocation">Offers Relocation</span>
+                </dd>
+                <dt class="_label"><code>.-remote</code></dt>
+                <dd class="_example">
+                    <span class="badge -remote">Work Remotely</span>
+                </dd>
+                <dt class="_label"><code>.-messages</code></dt>
+                <dd class="_example">
+                    <span class="badge -messages">99+</span>
+                </dd>
+                <dt class="_label"><code>.-cv</code></dt>
+                <dd class="_example">
+                    <span class="badge -cv">212</span>
+                </dd>
+            </dl>
+        </div>
+        <div class="codeBlock">
+{% highlight html %}
+<span class="badge -featured _inline">Featured</span>
+<span class="badge -featured _abbrev _inline">Featured</span>
+
+<span class="badge -topSpot _inline">Top Spot</span>
+<span class="badge -topSpot _abbrev _inline">Top Spot</span>
+
+<span class="badge -joelTest">12</span>
+
+<span class="badge -relocation">Offers Relocation</span>
+
+<span class="badge -remote">Work Remotely</span>
+
+<span class="badge -messages">99+</span>
+
+<span class="badge -cv">212</span>
+{% endhighlight %}
+        </div>
+    </article>
+</section>
