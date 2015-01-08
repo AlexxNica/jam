@@ -15,11 +15,6 @@ markdown_ext: 	markdown,mkdown,mkdn,mkd,md
 textile_ext:  	textile
 highlighter:	rouge
 
-# Website Serving
-detach:  		false
-port:    		4000
-host:    		localhost
-
 # Output & Backward Compatibility
 relative_permalinks:	false
 permalink: 				pretty
