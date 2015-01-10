@@ -71,13 +71,13 @@
 @badgeMessages-color:               @color-white;
 @badgeMessages_hover-color:         @badgeMessages-color;
 
-//  -- CV Count (Employers)
-@badgeCV-background:                spin(desaturate(lighten(@color-brown,24%),11%),-3);
-@badgeCV_hover-background:          darken(@badgeCV-background,5%);
-@badgeCV-border:                    @badgeCV-background;
-@badgeCV_hover-border:              @badgeCV_hover-background;
-@badgeCV-color:                     @color-white;
-@badgeCV_hover-color:               @badgeCV-color;
+//  -- Invites Count
+@badgeInvites-background:           spin(desaturate(lighten(@color-brown,24%),11%),-3);
+@badgeInvites_hover-background:     darken(@badgeInvites-background,5%);
+@badgeInvites-border:               @badgeInvites-background;
+@badgeInvites_hover-border:         @badgeInvites_hover-background;
+@badgeInvites-color:                @color-white;
+@badgeInvites_hover-color:          @badgeInvites-color;
 
 
 //  ============================================================================
@@ -136,15 +136,6 @@
     }
 
     &._medium { .fontRem(11); }
-
-    // Should be moved into specific view file
-    // TO-DO TO-DO TO-DO TO-DO TO-DO TO-DO TO-DO 
-    .data-table-referrers &._abbrev {
-        display: block;
-        float: none;
-        padding: 0;
-        left: 2px;
-    }
 }
 
 
@@ -251,16 +242,16 @@
         }
     }
 
-    //  -- CV (Employers?)
-    &.-cv {
-        background-color: @badgeCV-background;
-        border-color: @badgeCV-border;
-        color: @badgeCV-color;
+    //  -- Invites
+    &.-invites {
+        background-color: @badgeInvites-background;
+        border-color: @badgeInvites-border;
+        color: @badgeInvites-color;
 
         &:hover, &._hover {
-            background-color: @badgeCV_hover-background;
-            border-color: @badgeCV_hover-border;
-            color: @badgeCV_hover-color;
+            background-color: @badgeInvites_hover-background;
+            border-color: @badgeInvites_hover-border;
+            color: @badgeInvites_hover-color;
         }
     }
 }
