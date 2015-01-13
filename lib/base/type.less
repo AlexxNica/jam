@@ -1,12 +1,10 @@
 //
 //  STACK OVERFLOW CAREERS
-//  Product UI Style Guide
-//  Designed & managed by the Stack Exchange Design Team
 //
 //  Created May 2, 2014
 //  Updated September 10, 2014
 //
-//  http://careers.stackoveflow.com
+//  http://careers.stackoverflow.com
 //
 //  TYPE
 //  
@@ -16,7 +14,7 @@
 //
 //  ============================================================================
 //  $ VARIABLES
-//  ============================================================================
+//  ----------------------------------------------------------------------------
 //  -- Sizes
 @fontSize-base:             14;
 
@@ -36,6 +34,7 @@
 @title-color:               saturate(darken(@color-grayDark,12%),16%);
 @title_section-color:       @title-color;
 @title_subSection-color:    @color-grayMid;
+@title_muted-color:         @copy_muted-color;
 
 @quote-background:          @backgroundColor-grayLighter;
 @quote-border:              @borderColor-grayDark;
@@ -50,7 +49,7 @@
 
 //  ============================================================================
 //  $ TYPE MIXINS
-//  ============================================================================
+//  ----------------------------------------------------------------------------
 //  
 //  Unlike colors which are set and rarely changed, type values are altered
 //  regularly based on the need of the component and context. To maintain consistent
@@ -248,10 +247,10 @@ h1, h2, h3, h4, h5, h6,
     color: @title-color;
     // text-rendering: optimizeLegibility; // Fix the character spacing for headings
 
-    > small, > ._small {
+    > small, > .small {
         margin-top: -0.25em;
 
-        color: @copy_muted-color;
+        color: @title_muted-color;
         font-size: 75%;
         font-weight: inherit;
     }
