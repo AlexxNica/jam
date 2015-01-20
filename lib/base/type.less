@@ -191,7 +191,7 @@ sup.fn {
 
 //  -- Quotes
 blockquote, .quote {
-    margin: 0.75em 1.5em;
+    margin: 0.75em 0;
     padding: 1em 1.5em;
 
     font-family: @fontFamily-serif;
@@ -240,7 +240,7 @@ a, a:link, .link {
 //  -- HEADINGS
 h1, h2, h3, h4, h5, h6, 
 .h1, .h2, .h3, .h4, .h5, .h6 {
-    .fontWeight(7);
+    .fontWeight(4);
     margin-top: 0;
     margin-bottom: 0.5em;
 
@@ -283,8 +283,10 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, h2, h3,
-.h1, .h2, .h3 { .lineHeight(tighter); }
-
+.h1, .h2, .h3 {
+    .lineHeight(tighter);
+    .fontWeight(2);
+}
 h1, .h1 { .fontSize(xxl); }
 h2, .h2 { .fontSize(xl); }
 h3, .h3 { .fontSize(l); }
@@ -292,6 +294,7 @@ h4, .h4 { .fontSize(m); }
 h5, .h5 { .fontSize(base); }
 h6, .h6 { 
     .fontSize(xs);
+    .fontWeight(7);
     text-transform: uppercase;
 }
 
