@@ -19,7 +19,7 @@
 //
 //  ============================================================================
 //  $ VARIABLES
-//  ============================================================================
+//  ----------------------------------------------------------------------------
 @input-borderRadius:                @borderRadius-small;
 
 //  -- Default Color Variables
@@ -29,36 +29,51 @@
 @input-background_focused:          @input-background;
 @input-border:                      spin(desaturate(lighten(@color-grayMid,28%),9%),-26);
 @input-border_disabled:             fade(@input-border,50%);
+@input-border_hover:                fade(@input-border_focused,50%);
 @input-border_focused:              desaturate(lighten(@color-blue,3%),15%);
 @input-copy:                        @color-grayDark;
 @input-copy_disabled:               darken(@color-white,33%);
 @input-copy_placeholder:            fade(@color-grayDark,25%);
 @input-shadowDrop:                  fade(@color-white,100%);
-@input-shadowDrop_focused:          fade(@color-blue,50%);
 @input-shadowDrop_disabled:         fade(@color-white,100%);
+@input-shadowDrop_hover:            fade(@input-shadowDrop_focused,20%);
+@input-shadowDrop_focused:          fade(@color-blue,50%);
 @input-shadowInner:                 fade(spin(desaturate(lighten(@color-grayMid,13%),7%),4),20%);
-@input-shadowInner_focused:         darken(@color-white,5%);
 @input-shadowInner_disabled:        fade-out(@input-shadowInner,10%);
+@input-shadowInner_hover:           darken(@input-shadowInner_focused,10%);
+@input-shadowInner_focused:         darken(@color-white,5%);
 
 //  -- Success Input Color Variables
 @input_success-border:              spin(saturate(darken(@color-green,21%),19%),-8);
+@input_success-border_hover:        fade(@input_success-border_focused,75%);
 @input_success-border_focused:      saturate(lighten(@input_success-border,6%),3%);
+@input_success-shadowDrop_hover:    fade(@input_success-shadowDrop_focused,20%);
 @input_success-shadowDrop_focused:  fade(saturate(darken(@color-green,4%),5%),40%);
+@input_success-shadowInner_hover:   darken(@input-shadowInner_focused,10%);
+@input_success-shadowInner_focused: @input-shadowInner_focused;
 
 //  -- Warning Input Color Variables
 @input_warning-border:              spin(darken(@color-yellow,21%),-5);
+@input_warning-border_hover:        fade(@input_warning-border_focused,75%);
 @input_warning-border_focused:      spin(desaturate(lighten(@color-yellow,3%),29%),-5);
+@input_warning-shadowDrop_hover:    fade(@input_warning-shadowDrop_focused,20%);
 @input_warning-shadowDrop_focused:  fade(lighten(@input_warning-border,2%),25%);
+@input_warning-shadowInner_hover:   darken(@input-shadowInner_focused,10%);
+@input_warning-shadowInner_focused: @input-shadowInner_focused;
 
 //  -- Error Input Color Variables
 @input_error-border:                @color-red;
+@input_error-border_hover:          fade(@input_error-border_focused,75%);
 @input_error-border_focused:        saturate(lighten(@color-red,19%),25%);
+@input_error-shadowDrop_hover:      fade(@input_error-shadowDrop_focused,20%);
 @input_error-shadowDrop_focused:    fade(@color-red,15%);
+@input_error-shadowInner_hover:     darken(@input-shadowInner_focused,10%);
+@input_error-shadowInner_focused:   @input-shadowInner_focused;
 
 
 //  ============================================================================
 //  $ TYPE STYLES
-//  ============================================================================
+//  ----------------------------------------------------------------------------
 //  -- Labels
 label, .label {
   display: inline-block;
@@ -72,7 +87,7 @@ label, .label {
 
 //  ============================================================================
 //  $ INPUT STYLES
-//  ============================================================================
+//  ----------------------------------------------------------------------------
 select,
 textarea, 
 input[type="text"],
@@ -121,8 +136,8 @@ input[type="tel"],
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
 
   &:hover {
-    border-color: fade(@input-border_focused,50%);
-    box-shadow: inset 0 1px 2px darken(@input-shadowInner_focused,10%), 0 0 2px fade(@input-shadowDrop_focused,20%);
+    border-color: @input-border_hover;
+    box-shadow: inset 0 1px 2px @input-shadowInner_hover, 0 0 2px @input-shadowDrop_hover;
   }
   &:focus { 
     background-color: @input-background_focused;
@@ -146,12 +161,12 @@ input[type="tel"],
     border-color: @input_success-border;
 
     &:hover {
-      border-color: fade(@input_success-border_focused,75%);
-      box-shadow: inset 0 1px 2px darken(@input-shadowInner_focused,10%), 0 0 2px fade(@input_success-shadowDrop_focused,20%);
+      border-color: @input_success-border_hover;
+      box-shadow: inset 0 1px 2px @input_success-shadowInner_hover, 0 0 2px @input_success-shadowDrop_hover;
     }
     &:focus {
       border-color: @input_success-border_focused;
-      box-shadow: inset 0 2px 2px @input-shadowInner_focused, 0 0 5px @input_success-shadowDrop_focused;
+      box-shadow: inset 0 2px 2px @input_success-shadowInner_focused, 0 0 5px @input_success-shadowDrop_focused;
     }
   }
 
@@ -160,12 +175,12 @@ input[type="tel"],
     border-color: @input_warning-border;
 
     &:hover {
-      border-color: fade(@input_warning-border_focused,75%);
-      box-shadow: inset 0 1px 2px darken(@input-shadowInner_focused,10%), 0 0 2px fade(@input_warning-shadowDrop_focused,20%);
+      border-color: @input_warning-border_hover;
+      box-shadow: inset 0 1px 2px @input_warning-shadowInner_hover, 0 0 2px @input_warning-shadowDrop_hover;
     }
     &:focus {
       border-color: @input_warning-border_focused;
-      box-shadow: inset 0 2px 2px @input-shadowInner_focused, 0 0 5px @input_warning-shadowDrop_focused;
+      box-shadow: inset 0 2px 2px @input_warning-shadowInner_focused, 0 0 5px @input_warning-shadowDrop_focused;
     }
   }
 
@@ -174,12 +189,12 @@ input[type="tel"],
     border-color: @input_error-border;
 
     &:hover {
-      border-color: fade(@input_error-border_focused,75%);
-      box-shadow: inset 0 1px 2px darken(@input-shadowInner_focused,10%), 0 0 3px fade(@input_error-shadowDrop_focused,20%);
+      border-color: @input_error-border_hover;
+      box-shadow: inset 0 1px 2px @input_error-shadowInner_hover, 0 0 3px @input_error-shadowDrop_hover;
     }
     &:focus {
       border-color: @input_error-border_focused;
-      box-shadow: inset 0 2px 2px @input-shadowInner_focused, 0 0 5px @input_error-shadowDrop_focused;
+      box-shadow: inset 0 2px 2px @input_error-shadowInner_focused, 0 0 5px @input_error-shadowDrop_focused;
     }
   }
 
@@ -195,7 +210,7 @@ input[type="radio"], input[type="checkbox"] {
 
 //  ============================================================================
 //  $ INPUT LAYOUT OPTIONS
-//  ============================================================================
+//  ----------------------------------------------------------------------------
 select,
 textarea,
 input,
@@ -205,9 +220,9 @@ input,
   &._small { .fontSize(xs); }
 }
 
-// ---------------------------------------------------------------------------
+//  ============================================================================
 //  $ CHECKBOXES & RADIO SELECTS
-// ---------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 .checkbox, .radio {
   min-height: 1em;
   padding-left: 1.25em;
@@ -228,18 +243,10 @@ input,
   margin: 0.25em 0 0 -1.25em;
 }
 
-.controls > .radio:first-child, .controls > .checkbox:first-child { padding-top: 0.25em; }
-
-//  Sometimes we use ul/ol lists for option select lists. When we do, we
-//  need to hide the list-style-type.
-// .select-list {
-//   padding: 0;
-
-//   li {
-//     list-style: none;
-//     margin-bottom: 0.5em;
-//   }
-// }
+.controls {
+  > .radio:first-child, 
+  > .checkbox:first-child { padding-top: 0.25em; }
+}
 
 
 // ---------------------------------------------------------------------------

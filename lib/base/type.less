@@ -224,7 +224,8 @@ a, a:link, .link {
     text-decoration: none;
     transition: all 0.1s ease-in;
 
-    &:hover, &:focus, &.hover, &._focus {
+    &:hover, &._hover,
+    &:focus, &._focus {
         color: @link_hover-color;
         text-decoration: underline;
     }
@@ -245,8 +246,7 @@ h1, h2, h3, h4, h5, h6,
     margin-bottom: 0.5em;
 
     color: @title-color;
-    // text-rendering: optimizeLegibility; // Fix the character spacing for headings
-
+    
     > small, > .small {
         margin-top: -0.25em;
 
@@ -255,15 +255,20 @@ h1, h2, h3, h4, h5, h6,
         font-weight: inherit;
     }
 
+    //  Have heading links inherit previous color.
+    > a, > a:link { color: inherit; }
+
     //  -- Specific Title Styles
     &._hugeTitle {
         .fontSize(xxxl);
         .fontWeight(2);
         letter-spacing: -1px;
+        text-rendering: optimizeLegibility;
     }
     &._pageTitle {
         .fontSize(xl);
         .fontWeight(2);
+        text-rendering: optimizeLegibility;
     }
     &._section {
         color: @title_section-color;
@@ -276,7 +281,6 @@ h1, h2, h3, h4, h5, h6,
         margin-bottom: 1em;
         color: @title_subSection-color;
         .fontSize(m);
-        .fontWeight(4);
         letter-spacing: 0;
         .lineHeight(tight);
     }
