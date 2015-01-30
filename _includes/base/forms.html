@@ -12,17 +12,70 @@
             <dl class="_rows exampleBlock">
                 <dt class="_label">Default, <code>&lt;input></code> or <code>.input</code></dt>
                 <dd class="_example">
-                    <label for="exampleInputField">Label Example</label>
+                    <label for="exampleInputField" class="_medium">Label Example</label>
                     <p><small class="text _help">Help Text: If you have some instructions beyond the label, place them here. Just remember, users will most likely miss this so have descriptive field labels.</small></p>
                     <input type="text" id="exampleInputField" placeholder="i.e. Placeholder text, Suggestive items">
+                    <br/>
+                    <div class="inputGroup">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked="checked">
+                                Sign me up!
+                            </label>
+                        </div>
+                        </div>
+                    <div class="inputGroup">
+                        <label class="_medium">I say...</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="Group1" checked="checked"> Haters gonna hate, hate, hate
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="Group1" > Players gonna play, play, play
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="Group1" > Fakers gonna fake, fake, fake
+                            </label>
+                        </div>
+                    </div>
                 </dd>
             </dl>
         </div>
         <div class="codeBlock">
 {% highlight html %}
-<label for="exampleInputField">Input Label Example</label>
+<label for="exampleInputField" class="_medium">Input Label Example</label>
 <p><small class="text _help">...</small></p>
 <input type="text" id="exampleInputField" placeholder="i.e. Placeholder text">
+<div class="inputGroup">
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" checked="checked">
+            Sign me up!
+        </label>
+    </div>
+</div>
+<div class="inputGroup">
+    <label class="_medium"> ... </label>
+    <div class="radio">
+        <label>
+            <input type="radio" name="Group1" checked="checked"> ...
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="Group1" > ...
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="Group1" > ...
+        </label>
+    </div>
+</div>
 {% endhighlight %}
         </div>
     </article>
