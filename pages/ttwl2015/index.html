@@ -22,7 +22,7 @@ js:	<script type="text/javascript" src="../../js/jquery.parallax.js"></script>
 			<div class="-level4 parallax-layer"><img src="{{ page.img}}/skylines-level4.png"/></div>
 			<div class="-level3 parallax-layer"><img src="{{ page.img}}/skylines-level3.png"/></div>
 			<div class="-level2 parallax-layer"><img src="{{ page.img}}/skylines-level2.png"/></div>
-			<div class="-level1 parallax-layer"><img src="{{ page.img}}/skylines-level1.png"/></div>
+			<div class="-level1"><img src="{{ page.img}}/skylines-level1.png"/></div>
 		</div>
 		<div class="-level0"></div>
 	</section>
@@ -166,7 +166,10 @@ jQuery(document).ready(function()
 {
 	$('#parallax .parallax-layer')
 	.parallax({
-		mouseport: $('#parallax')
+		mouseport: $('#parallax'),
+		xparallax: '5px',
+		yparallax: '0'
 	});
+
 });
 </script>
