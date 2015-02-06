@@ -4,8 +4,13 @@
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/jquery-3.0.0min.js"></script>
 
-    <link rel="stylesheet/less" type="text/css" href="css/pattern-guide.less">
+    <!-- Page Specific JS -->
+    {{ page.js }}
+
+    <link rel="stylesheet/less" type="text/css" href="{{ site.lib }}/base.less">
+    <link rel="stylesheet/less" type="text/css" href="{{ site.css }}/{{ page.css }}.less">
 
     <!-- LESS -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>

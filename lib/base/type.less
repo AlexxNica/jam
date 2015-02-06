@@ -9,116 +9,28 @@
 //  TYPE
 //  
 //  TABLE OF CONTENTS
-//  • VARIABLES
-//  • MIXINS
+//  • Variables & Mixins
+//  • Baseline
+//  • Headings
+//  • Notifications
 //
 //  ============================================================================
-//  $ VARIABLES
+//  $ VARIABLES & MIXINS
 //  ----------------------------------------------------------------------------
-//  -- Sizes
-@fontSize-base:             14;
-
-//  -- Font Family
-@fontFamily-sans:           "HelveticaNeue-Regular", "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-@fontFamily-serif:          Georgia, Times New Roman, Times, serif;
-@fontFamily-code:           Menlo, Monaco, Consolas, "Courier New", monospace;
-
-//  -- Colors
-@copy-color:                @color-grayDark;
-@copy_lead-color:           spin(desaturate(lighten(@color-grayMid,25%),8%),14);
-@copy_muted-color:          desaturate(lighten(@color-grayMid,13%),4%);
-
-@link-color:                @color-blue;
-@link_hover-color:          spin(@link-color, 2);
-
-@title-color:               saturate(darken(@color-grayDark,12%),16%);
-@title_section-color:       @title-color;
-@title_subSection-color:    @color-grayMid;
-@title_muted-color:         @copy_muted-color;
-
-@quote-background:          @backgroundColor-grayLighter;
-@quote-border:              @borderColor-grayDark;
-@quote-border_accent:       @color-orange;
-@quote-textColor:           @color-grayMid;
-@quote_pull-textColor:      saturate(darken(@color-grayMid,19%),3%);
-
-@callout-infoBck:           spin(lighten(@color-yellow,25%),-6);
-@callout-infoBorder:        spin(desaturate(lighten(@color-yellow,14%),53%),-5);
-@callout-infoText:          spin(desaturate(lighten(@color-grayMid,6%),6%),-2);
-
-
-//  ============================================================================
-//  $ TYPE MIXINS
-//  ----------------------------------------------------------------------------
+//  While most variables and mixins are kept within files like this, type is an
+//  outlier. Type is a fundamental design element and requires regular modification.
+//  To maintain consistency, we need to be able to re-use these variables and mixins
+//  throughout the project, yet without restating the type CSS below. To accomplish
+//  this goal we have kept the variables and mixins for type within the universal
+//  base and mixin less files.
+//
+//  If you would like to modify type variables, go to "/base/_variables.less".
+//
+//  If you would like to modify type mixins, go to "/base/_mixins.less".
 //  
-//  Unlike colors which are set and rarely changed, type values are altered
-//  regularly based on the need of the component and context. To maintain consistent
-//  sizes, line-heights, and letter-spacing; we have created a number of mixins.
-//  These mixins deliver the correct value based on the shorthand
-//  value passed to it. For example, if you want declare a large font-size using
-//  a light font-weight value, you will use the following:;
-//
-//  Example:  .title-page {
-//                .fontSize(l);
-//                .fontWeight(2);
-//            }
-//
-//  In this example we are declaring the shorthand values of "l" and "2" within
-//  their mixins. When compiled, this will output:
-//
-//  Output:   .title-page {
-//                font-size: 24px;
-//                font-size: 1.714285714rem;
-//                font-weight: 200;
-//            }
-//
+//  ============================================================================
+//  $ BASELINE
 //  ----------------------------------------------------------------------------
-//  -- REM Font Mixin
-//  This is primarily used within the .fontSize mixin, though sometimes it can
-//  be used on it's own. In the interest of maintaining consistent font-sizes,
-//  it is highly discouraged to declare a font-size not already pre-defined.
-.fontRem(@fs) {
-    @remValue: @fs / @fontSize-base;
-    font-size: ~"@{fs}px";
-    font-size: ~"@{remValue}rem";
-}
-
-.fontSize (@s) {
-    & when (@s = base)  { .fontRem(@fontSize-base); }
-    & when (@s = xxs)   { .fontRem(@fontSize-base * 0.714285714); }
-    & when (@s = xs)    { .fontRem(@fontSize-base * 0.857142857); }
-    & when (@s = s)     { .fontRem(@fontSize-base * 0.928571429); } 
-    & when (@s = m)     { .fontRem(@fontSize-base * 1.285714286); }
-    & when (@s = l)     { .fontRem(ceil(@fontSize-base * 1.714285714)); }
-    & when (@s = xl)    { .fontRem(ceil(@fontSize-base * 2.571428571)); }
-    & when (@s = xxl)   { .fontRem(floor(@fontSize-base * 3.428571429)); }
-    & when (@s = xxxl)  { .fontRem(floor(@fontSize-base * 5.142857143)); }
-}
-
-.fontWeight (@w) {
-    & when (@w = 2) { font-weight: 200; }
-    & when (@w = 4) { font-weight: 400; }
-    & when (@w = 7) { font-weight: 700; }
-}
-
-//  Line Height Mixin
-//  Do not declare values with your line-heights (i.e. px, em). This allows
-//  for the value to be relative to the declared font-size and have
-//  greater flexibility.
-.lineHeight (@lh) {
-    & when (@lh = base)     { line-height: (@fontSize-base + 6) / @fontSize-base; }
-    & when (@lh = tight)    { line-height: (@fontSize-base + 4) / @fontSize-base; }
-    & when (@lh = tighter)  { line-height: (@fontSize-base + 2) / @fontSize-base; }
-    & when (@lh = tightest) { line-height: @fontSize-base / @fontSize-base; }
-    & when (@lh = loose)    { line-height: (@fontSize-base + 8) / @fontSize-base; }
-    & when (@lh = looser)   { line-height: (@fontSize-base + 10) / @fontSize-base; }
-    & when (@lh = loosest)  { line-height: (@fontSize-base / @fontSize-base) * 2; }
-}
-
-
-//  ============================================================================
-//  $ TYPE STYLES: BASELINE
-//  ============================================================================
 small             { font-size: floor(100% * 0.857142857); }
 strong,b          { .fontWeight(7); }
 em, i             { font-style: italic; }

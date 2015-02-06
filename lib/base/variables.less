@@ -1,21 +1,20 @@
+//
 //  STACK OVERFLOW CAREERS
-//  Product UI Style Guide
-//  Designed & managed by the Stack Exchange Design Team
 //
 //  Created May 2, 2014
-//  Updated September 9, 2014
+//  Updated February 6, 2015
 //
-//  http://careers.stackoveflow.com
+//  http://careers.stackoverflow.com
 //
 //  VARIABLES
 //  
 //  TABLE OF CONTENTS
-//  • COLORS
-//  • GRID
-//  • COLORS
-//  • BUTTONS
-//  • FORMS
-//  • COMPONENT VARIABLES
+//  • Corner Radius
+//  • Media Queries
+//  • Padding, Margin, Whitespace
+//  • Z-Index
+//  • Colors
+//  • Type
 //
 // ===========================================================================
 //  $ CORNER RADIUS
@@ -58,8 +57,8 @@
 
 
 //  ============================================================================
-//  $ COLOR VARIABLES
-//  ============================================================================
+//  $ COLOR
+//  ----------------------------------------------------------------------------
 //  Color management is a big undertaking in a product like Stack Overflow
 //  Careers. Various situations call for varying colors. In the past we would
 //  declare all of those values within components, littering our LESS files with
@@ -124,3 +123,38 @@
 @borderColor-gray:      spin(desaturate(lighten(@color-grayMid,41%),8%),4);
 @borderColor-grayDark:  desaturate(lighten(@color-grayMid,13%),4%);
 
+
+//  ============================================================================
+//  $ TYPE
+//	Please see "/base/_type" for the reasons this is kept here vs. there.
+//  ----------------------------------------------------------------------------
+//  -- Sizes
+@fontSize-base:             14;
+
+//  -- Font Family
+@fontFamily-sans:           "HelveticaNeue-Regular", "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+@fontFamily-serif:          Georgia, Times New Roman, Times, serif;
+@fontFamily-code:           Menlo, Monaco, Consolas, "Courier New", monospace;
+
+//  -- Colors
+@copy-color:                @color-grayDark;
+@copy_lead-color:           spin(desaturate(lighten(@color-grayMid,25%),8%),14);
+@copy_muted-color:          desaturate(lighten(@color-grayMid,13%),4%);
+
+@link-color:                @color-blue;
+@link_hover-color:          spin(@link-color, 2);
+
+@title-color:               saturate(darken(@color-grayDark,12%),16%);
+@title_section-color:       @title-color;
+@title_subSection-color:    @color-grayMid;
+@title_muted-color:         @copy_muted-color;
+
+@quote-background:          @backgroundColor-grayLighter;
+@quote-border:              @borderColor-grayDark;
+@quote-border_accent:       @color-orange;
+@quote-textColor:           @color-grayMid;
+@quote_pull-textColor:      saturate(darken(@color-grayMid,19%),3%);
+
+@callout-infoBck:           spin(lighten(@color-yellow,25%),-6);
+@callout-infoBorder:        spin(desaturate(lighten(@color-yellow,14%),53%),-5);
+@callout-infoText:          spin(desaturate(lighten(@color-grayMid,6%),6%),-2);

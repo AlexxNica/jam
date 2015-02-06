@@ -20,9 +20,10 @@
 //  ============================================================================
 //  $ IMPORT FILES
 //  ----------------------------------------------------------------------------
-//  -- Product Library Files
-@import "../lib/base";          //  All 'da base
-@import "../lib/modules";       //  All 'dos mods
+//  -- Base Variables & Mixins
+@import "../lib/base/variables";
+@import "../lib/base/mixins";
+@import "../lib/modules";
 
 //  -- Documentation Files
 @import "code";                 // Code Syntax highlighting
@@ -130,7 +131,7 @@ body        { background-color: @body-background; }
 
 .affix {
     position: fixed;
-    width: @grid-column-width * 2;
+    width: 16.666666666%;
 
     &._bottom { bottom: 2em; }
 }
