@@ -164,12 +164,25 @@ js:	<script type="text/javascript" src="../../js/jquery.parallax.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function()
 {
-	$('#parallax .parallax-layer')
+	$('#parallax .-level1')
 	.parallax({
 		mouseport: $('#parallax'),
-		xparallax: '5px',
-		yparallax: '0'
+		xparallax: '0px'
 	});
-
+	$('#parallax .-level2')
+	.parallax({
+		mouseport: $('#parallax'),
+		xparallax: '4px'
+	});
+	$('#parallax .-level3')
+	.parallax({
+		mouseport: $('#parallax'),
+		xparallax: '12px'
+	});
+	$('#parallax .-level4')
+	.parallax({
+		mouseport: $('#parallax'),
+		xparallax: '32px'
+	});
 });
 </script>
