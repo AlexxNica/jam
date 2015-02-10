@@ -17,7 +17,7 @@ textile_ext:  	textile
 # Website Serving
 detach:  		false
 port:    		4000
-host:    		localhost
+host:    		127.0.0.1
 
 # Output & Backward Compatibility
 relative_permalinks:	false
