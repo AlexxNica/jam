@@ -65,19 +65,14 @@ body        { background-color: @body-background; }
     overflow: hidden;
 }
 .content {
-    padding: 4.29em;
+    padding: 2.5em;
+    @media all and (min-width: (@mediaQuery-small + 1)) { padding: 4.29em; }
 
     section {
         padding-right: 0.5em;
         display: block;
         max-width: 915px;
     }
-}
-
-.navSidebar {
-    display: none;
-
-    @media (min-width: @mediaQuery-small) { display: block; }
 }
 
 //  -- Global Navigation & Logo Area
@@ -130,10 +125,17 @@ body        { background-color: @body-background; }
 }
 
 .affix {
-    position: fixed;
-    width: 16.666666666%;
+    position: relative; 
+    @media all and (min-width: (@mediaQuery-small + 1)) {
+        position: fixed;
+        width: 16.666666666%;
+    }
 
-    &._bottom { bottom: 2em; }
+    &._bottom {
+        bottom: 2em;
+
+        @media all and (max-width: @mediaQuery-small) { display: none; }
+    }
 }
 
 
@@ -204,6 +206,8 @@ p, .text, ul, li {
 
             &._light { .fontWeight(2); }
         }
+
+        + ._label { margin-top: 3em; }
 
         &:last-of-type {
             padding-bottom: 0;
