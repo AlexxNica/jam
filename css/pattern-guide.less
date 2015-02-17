@@ -394,7 +394,8 @@ ul.exampleCards {
     }
 
     //  --  Customize icon cards
-    .-item.-iconGroup {
+    .-item.-iconGroup,
+    .-item.-badgeGroup, {
         &:extend(.clearfix all);
 
         padding: 0;
@@ -431,7 +432,10 @@ ul.exampleCards {
             }
         }
 
-        .codeBlock { width: 75%; }
+        .codeBlock {
+            width: 75%;
+            text-align: left;
+        }
 
         .highlight {
             margin-bottom: 0;
@@ -441,6 +445,16 @@ ul.exampleCards {
 
             pre { margin-top: 12px; }
         }
+
+        .-twoRows .highlight pre { margin: 0; }
+
+    }
+
+    .-item.-badgeGroup p {
+        position: relative;
+        padding: 0;
+        line-height: 70px;
+        background-color: transparent;
     }
 }
 
