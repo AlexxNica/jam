@@ -47,14 +47,14 @@
 
 .fontSize (@s) {
     & when (@s = base)  { .fontRem(@fontSize-base); }
-    & when (@s = xxs)   { .fontRem(@fontSize-base * 0.714285714); }
-    & when (@s = xs)    { .fontRem(@fontSize-base * 0.857142857); }
-    & when (@s = s)     { .fontRem(@fontSize-base * 0.928571429); } 
-    & when (@s = m)     { .fontRem(@fontSize-base * 1.285714286); }
-    & when (@s = l)     { .fontRem(ceil(@fontSize-base * 1.714285714)); }
-    & when (@s = xl)    { .fontRem(ceil(@fontSize-base * 2.571428571)); }
-    & when (@s = xxl)   { .fontRem(floor(@fontSize-base * 3.428571429)); }
-    & when (@s = xxxl)  { .fontRem(floor(@fontSize-base * 5.142857143)); }
+    & when (@s = xxs)   { .fontRem(@fontSize-base * (10 / @fontSize-base)); }
+    & when (@s = xs)    { .fontRem(@fontSize-base * (11 / @fontSize-base)); }
+    & when (@s = s)     { .fontRem(@fontSize-base * (12 / @fontSize-base)); } 
+    & when (@s = m)     { .fontRem(@fontSize-base * (18 / @fontSize-base)); }
+    & when (@s = l)     { .fontRem(@fontSize-base * (24 / @fontSize-base)); }
+    & when (@s = xl)    { .fontRem(@fontSize-base * (36 / @fontSize-base)); }
+    & when (@s = xxl)   { .fontRem(@fontSize-base * (48 / @fontSize-base)); }
+    & when (@s = xxxl)  { .fontRem(@fontSize-base * (60 / @fontSize-base)); }
 }
 
 .fontWeight (@w) {
