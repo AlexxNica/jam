@@ -23,6 +23,7 @@
 @grid-columnCount:         12;
 @grid-width:               100%;
 @grid-column-width:        @grid-width / @grid-columnCount;
+@grid-column-gutter:       2em;
 @grid-column-padding:      1em;
 @grid-column-margin:       1em;
 
@@ -126,5 +127,21 @@
                 &._offset11  { margin-left: @grid-column-width * 11; }
             }
         }
+
+        //  ===========================================================================
+        //  $ GUTTERS
+        //  ---------------------------------------------------------------------------
+        &._gutter {
+            > [class*="-col"] {
+                padding-left: (@grid-column-gutter / 2);
+                padding-right: (@grid-column-gutter / 2);
+                
+                &:first-of-type { padding-left: 0; }
+                &:last-of-type  { padding-right: 0; }
+            }
+        }
+
+        //  -- Helper classes
+        &._marginBottom { margin-bottom: @grid-column-gutter; }
     }
 }

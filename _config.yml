@@ -17,7 +17,7 @@ textile_ext:  	textile
 # Website Serving
 detach:  		false
 port:    		4000
-host:    		127.0.0.1
+host:    		localhost
 
 # Output & Backward Compatibility
 relative_permalinks:	false
@@ -29,5 +29,5 @@ exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffe
 
 favicons: 	lib/images/favicons
 css:		css
-lib:		lib
-include: 	[base.html, modules.html]
+lib:		lib/less
+include: 	[base.html, modules.html, grid.html]
