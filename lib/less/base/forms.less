@@ -111,10 +111,9 @@ input[type="search"],
 input[type="tel"] ,
 .input,
 .input._uneditable {
-    .box-sizing(border-box);
-    display: block;
+    display: inline-block;
     margin: 0;
-    padding: 0.75em 1em 0.7em;
+    padding: 0.5em 1em 0.55em;
     vertical-align: middle;
 
     color: @input-copy;
@@ -124,9 +123,29 @@ input[type="tel"] ,
     border-style: solid;
     border-color: transparent;
     border-radius: @input-borderRadius;
+
+    //  --  Placeholder
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder,            // Firefox 19+
+    &:-moz-placeholder,             // Firefox 16-18
+    &:-ms-input-placeholder { color: @input-copy_placeholder; }
+
+    //  --  Layout
+    &._inline   {
+        display: inline-block;
+        margin-left: 4px;
+    }
+    &._block   {
+        display: block;
+        margin-left: 0;
+    }
 }
 
-textarea { height: auto; }
+textarea {
+    height: auto;
+    padding: 1em;
+}
+
 select {
     padding: 0;
     border-color: @input-border;
@@ -142,83 +161,83 @@ input[type="search"],
 input[type="tel"],
 .input,
 .input._uneditable {
-  width: 100%;
+    width: 100%;
 
-  background-color: @input-background;
-  border-color: @input-border;
-  box-shadow: inset 0 1px 2px @input-shadowInner, 0 0 0 @input-shadowDrop;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
-
-  &:hover, &._hover {
-    border-color: @input-border_hover;
-    box-shadow: inset 0 1px 2px @input-shadowInner_hover, 0 0 2px @input-shadowDrop_hover;
-  }
-  &:focus, &._focus { 
-    background-color: @input-background_focused;
-    border-color: @input-border_focused;
-    box-shadow: inset 0 2px 2px @input-shadowInner_focused, 0 0 5px @input-shadowDrop_focused;
-
-    outline: 0;
-    outline: thin dotted \9; // IE6-9
-  }
-  &[disabled], &._disabled {
-    background-color: @input-background_disabled;
-    border-color: @input-border_disabled;
-    box-shadow: inset 0 1px 3px @input-shadowInner_disabled, 0 0 0 @input-shadowDrop_disabled;
-    color: @input-copy_disabled;
-
-    cursor: not-allowed;
-  }
-
-  //  -- State: Success
-  &._success {
-    border-color: @input_success-border;
+    background-color: @input-background;
+    border-color: @input-border;
+    box-shadow: inset 0 1px 2px @input-shadowInner, 0 0 0 @input-shadowDrop;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
 
     &:hover, &._hover {
-      border-color: @input_success-border_hover;
-      box-shadow: inset 0 1px 2px @input_success-shadowInner_hover, 0 0 2px @input_success-shadowDrop_hover;
+        border-color: @input-border_hover;
+        box-shadow: inset 0 1px 2px @input-shadowInner_hover, 0 0 2px @input-shadowDrop_hover;
     }
-    &:focus, &._focus {
-      border-color: @input_success-border_focused;
-      box-shadow: inset 0 2px 2px @input_success-shadowInner_focused, 0 0 5px @input_success-shadowDrop_focused;
-    }
-  }
+    &:focus, &._focus { 
+        background-color: @input-background_focused;
+        border-color: @input-border_focused;
+        box-shadow: inset 0 2px 2px @input-shadowInner_focused, 0 0 5px @input-shadowDrop_focused;
 
-  //  -- State: Warning
-  &._warning {
-    border-color: @input_warning-border;
+        outline: 0;
+        outline: thin dotted \9; // IE6-9
+    }
+    &[disabled], &._disabled {
+        background-color: @input-background_disabled;
+        border-color: @input-border_disabled;
+        box-shadow: inset 0 1px 3px @input-shadowInner_disabled, 0 0 0 @input-shadowDrop_disabled;
+        color: @input-copy_disabled;
 
-    &:hover, &._hover {
-      border-color: @input_warning-border_hover;
-      box-shadow: inset 0 1px 2px @input_warning-shadowInner_hover, 0 0 2px @input_warning-shadowDrop_hover;
+        cursor: not-allowed;
     }
-    &:focus, &._focus {
-      border-color: @input_warning-border_focused;
-      box-shadow: inset 0 2px 2px @input_warning-shadowInner_focused, 0 0 5px @input_warning-shadowDrop_focused;
-    }
-  }
 
-  //  -- State: Error
-  &._error {
-    border-color: @input_error-border;
+    //  -- State: Success
+    &._success {
+        border-color: @input_success-border;
 
-    &:hover, &._hover {
-      border-color: @input_error-border_hover;
-      box-shadow: inset 0 1px 2px @input_error-shadowInner_hover, 0 0 3px @input_error-shadowDrop_hover;
+        &:hover, &._hover {
+            border-color: @input_success-border_hover;
+            box-shadow: inset 0 1px 2px @input_success-shadowInner_hover, 0 0 2px @input_success-shadowDrop_hover;
+        }
+        &:focus, &._focus {
+            border-color: @input_success-border_focused;
+            box-shadow: inset 0 2px 2px @input_success-shadowInner_focused, 0 0 5px @input_success-shadowDrop_focused;
+        }
     }
-    &:focus, &._focus {
-      border-color: @input_error-border_focused;
-      box-shadow: inset 0 2px 2px @input_error-shadowInner_focused, 0 0 5px @input_error-shadowDrop_focused;
+
+    //  -- State: Warning
+    &._warning {
+        border-color: @input_warning-border;
+
+        &:hover, &._hover {
+            border-color: @input_warning-border_hover;
+            box-shadow: inset 0 1px 2px @input_warning-shadowInner_hover, 0 0 2px @input_warning-shadowDrop_hover;
+        }
+        &:focus, &._focus {
+            border-color: @input_warning-border_focused;
+            box-shadow: inset 0 2px 2px @input_warning-shadowInner_focused, 0 0 5px @input_warning-shadowDrop_focused;
+        }
     }
-  }
+
+    //  -- State: Error
+    &._error {
+        border-color: @input_error-border;
+
+        &:hover, &._hover {
+            border-color: @input_error-border_hover;
+            box-shadow: inset 0 1px 2px @input_error-shadowInner_hover, 0 0 3px @input_error-shadowDrop_hover;
+        }
+        &:focus, &._focus {
+            border-color: @input_error-border_focused;
+            box-shadow: inset 0 2px 2px @input_error-shadowInner_focused, 0 0 5px @input_error-shadowDrop_focused;
+        }
+    }
 
 }
 
 input[type="radio"], 
 input[type="checkbox"] {
-  margin: 0.25em 0 0;
-  margin-top: 1px \9; // IE8-9
-  .lineHeight(base);
+    margin: 0.25em 0 0;
+    margin-top: 1px \9; // IE8-9
+    .lineHeight(base);
 }
 
 
@@ -233,8 +252,12 @@ textarea,
 input,
 .input,
 .input._uneditable {
-  &._large { .fontSize(l); }
-  &._small { .fontSize(xs); }
+    &._large {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        .fontSize(l);
+    }
+    &._small { .fontSize(xs); }
 }
 
 //  ============================================================================
@@ -264,8 +287,8 @@ input,
 
 .checkbox input[type="checkbox"], 
 .radio input[type="radio"] {
-  float: left;
-  margin: 0.3em 0 0 -@inputGroup-paddingLeft;
+    float: left;
+    margin: 2px 0 0 -@inputGroup-paddingLeft;
 }
 
 .controls > .radio,

@@ -285,7 +285,8 @@ button,
         background-color: @btn_secondary-backgroundColor;
         border-color: @btn_secondary-borderColor;
         box-shadow: inset 0 1px 0 @btn_secondary-shadowInnerColor, 0 0 0 @btn_secondary-shadowDropColor;
-        
+        .fontWeight(4);
+
         &:hover, &._hover,
         &:active, &._active {
             color: @btn_secondary_hover-textColor;
@@ -398,7 +399,8 @@ button,
         background-color: @btn_outlined-backgroundColor;
         border-color: @btn_outlined-borderColor;
         box-shadow: inset 0 1px 0 @btn_outlined-shadowInnerColor, 0 0 0 @btn_outlined-shadowDropColor;
-        
+        .fontWeight(4);
+
         &:hover, &._hover,
         &:active, &._active {
             color: @btn_outlined_hover-textColor;
@@ -502,8 +504,7 @@ button,
 
     //  - Sizes
     &._small {
-        padding-top: 0.4em;
-        padding-bottom: 0.35em;
+        padding: 6px 8px 5px;
         .fontSize(s);
     }
     &._medium { .fontSize(m); }

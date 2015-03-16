@@ -221,7 +221,6 @@ h6, .h6 {
 .callout {
     padding: ceil(@padding-base * 1.5);
 
-    color: @callout-infoText;
     .fontSize(base);
     .lineHeight(loose);
     text-indent: 0;
@@ -232,6 +231,7 @@ h6, .h6 {
     &._info {
         background-color: @callout-infoBck; 
         border-color: @callout-infoBorder;
+        color: @callout-infoText;
     }
 }
 

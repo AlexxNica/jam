@@ -45,30 +45,30 @@
 // ---------------------------------------------------------------------------
 .highlight {
     margin-top: -1px;
-    margin-bottom: 1.5em;
-    padding: 1em 1.5em;
+    margin-bottom: 2em;
+    // padding: 1em 1.5em;
 
     color: @copy-color;
     font-family: @fontFamily-code;
     .fontSize(s);
     .lineHeight(loose);
 
-    background-color: lighten(@backgroundColor-grayLight,6%);
-    border: 1px solid @borderColor-grayLight;
-    border-radius: 0 0 @borderRadius-base @borderRadius-base;
-
     pre {
         margin-bottom: 0;
         margin-top: 0;
-        padding: 0;
+        padding: 7px 7px 5px 7px;
 
         word-break: normal;
         word-wrap: break-word;
-        //word-wrap: nowrap;
-        //white-space: nowrap;
 
-        border: 0;
-        background-color: transparent;
+        background-color: lighten(@backgroundColor-grayLight,6%);
+        border: 1px solid @borderColor-grayLight;
+        box-shadow: inset 30px 0 0 @backgroundColor-grayLight, inset 31px 0 0 @borderColor-grayLight;
+    }
+
+    .lineno {
+        margin-right: 1.5em;
+        color: @color-grayMid;
     }
 }
 
