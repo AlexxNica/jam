@@ -261,24 +261,42 @@ p, .text, ul, li {
                 margin-top: -1px;
                 padding: 1.5em;
             }
+
+            &.leaderboard {
+                border: none;
+                border-radius: 0;
+                
+                .-item {
+                    border: none;
+                    height: auto;
+                    p { &:extend(.exampleBlock.-grid>p all); }
+                    &:last-of-type > p {
+                        border-right: 1px solid lighten(@color-orange,30%);
+                    }
+                }
+            }
+
+            > [class*="-col"]:last-of-type > p {
+                border-right: 1px solid lighten(@color-orange,30%);
+            }
         }
 
-        [class^="-col"] {
-            p {
-                margin-bottom: 0;
-                padding: 1em;
-                background-color: lighten(@color-orange,40%);
-                border: 1px solid lighten(@color-orange,30%);
-            }
-            code {
-                padding: 0;
-                color: @color-grayDark;
-                background-color: transparent;
+        p {
+            margin-bottom: 0;
+            padding: 1em;
+            background-color: lighten(@color-orange,40%);
+            border: 1px solid lighten(@color-orange,30%);
+            border-right: none;
+
+            .col1 & {
+                padding: 0.5em 0.5em 0.75em;
+                code { font-size: 80%; }
             }
         }
-        .-col1 p {
-            padding: 0.5em 0.5em 0.75em;
-            code { font-size: 80%; }
+        code {
+            padding: 0;
+            color: @color-grayDark;
+            background-color: transparent;
         }
     }
 
