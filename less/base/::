@@ -1,0 +1,81 @@
+//
+//  STACK OVERFLOW CAREERS
+//
+//  VARIABLES
+//  
+//  TABLE OF CONTENTS
+//  • VARIABLES
+//  • BASE STYLE
+//
+//  ===========================================================================
+//  $ VARIABLES
+//  ---------------------------------------------------------------------------
+@leaderboard-border:			@borderColor-grayLight;
+
+
+//  ===========================================================================
+//  $ BASE STYLE
+//  ---------------------------------------------------------------------------
+.leaderboard {
+    display: table;
+    margin-bottom: 1.5em;
+    width: 100%;
+
+    border: 1px solid @summary-border;
+    border-radius: @borderRadius-base;
+
+    .-item {
+    	display: table-cell;
+    	text-align: center;
+    	border-left: 1px solid @leaderboard-border;
+
+    	&:first-of-type { border-left: none; }
+    }
+
+    //  --  Cell Widths
+    &.-col2 > .-item { width: 50%; }
+    &.-col3 > .-item { width: 33.333333333%; }
+    &.-col4 > .-item { width: 25%; }
+    &.-col5 > .-item { width: 20%; }
+    &.-col6 > .-item { width: 16.666666667%; }
+    &.-col7 > .-item { width: 14.285714286%; }
+    &.-col8 > .-item { width: 12.5%; }
+}
+
+
+.leaderboard {
+    .-stat {
+    	display: block;
+        margin-bottom: 1em;
+        margin-top: 1em;
+        .fontSize(xl);
+        .fontWeight(7);
+    }
+
+    .-label {
+
+    }
+}
+
+// Statistic labels underneath each <h3> stat-overview
+.stat-label {
+    display: block;
+    margin-top: 0;
+
+    color: @gray-light-01;
+    .fontSize(xs);
+    font-weight: normal;
+    line-height: @line-height;
+}
+
+// Style the individual overview items.
+.stat-item {
+    display: table-cell;
+    .box-sizing(border-box);
+    width: 25%; // Currently 4 options
+
+    border-left: 1px solid @border-gray-light;
+    text-align: center;
+
+    &:first-child { border-left-color: transparent; }
+}
