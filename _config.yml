@@ -1,11 +1,11 @@
 # Name of your blog (this will show up at the top of your page and in the RSS feed)
-name: Stack Overflow Careers Pattern Library
+name: Jam
 
 # Short description (goes below the title; it will also be used in the RSS feed)
-description: This pattern library is a resource primarily for the Stack Overflow Careers product team, though it can inform and assist other teams at Stack Exchange. The library's purpose is to document the product's various UI patterns, establishing consistency across the product visually and within the front-end code.
+description: This is Jam, the Stack Overflow Pattern Library. This is primarily used by the Stack Overflow Careers product team, though it can inform and assist other teams at Stack Exchange. The library's purpose is to document the product's various UI patterns, establishing consistency across the product visually and within the front-end code.
 
 # The URL of your actual domain. This will be used to make absolute links in the RSS feed.
-url: http://stackexchange.github.io/uikit/
+url: http://stackexchange.github.io/jam/
 
 #### Under the Hood Stuff #####
 
@@ -29,5 +29,4 @@ exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffe
 
 favicons: 	uikit/images/favicons
 css:		css
-lib:		uikit/less
-include: 	[base.html, modules.html, grid.html]
+lib:		less
