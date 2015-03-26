@@ -1,4 +1,4 @@
-[Product Pattern Library](http://stackexchange.github.io/jam/)
+[Product Pattern Library](http://stackexchange.github.io/jamdoxx/)
 =====
 
 Welcome to Jam, the Stack Overflow Pattern Library. This is an active library that provides visual direction and syntax recommendations for Stack Overflow's LESS, CSS, and JS.
