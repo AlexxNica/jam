@@ -3,7 +3,7 @@
 
 Welcome to Jam, the pattern library for **Stack Overflow**. This design framework allows our team provides visual unity, direction and syntax direction for faster . It was created by [Joshua Hynes](https://twitter.com/hellohynes), [Jon Chan](https://twitter.com/JonHMChan), and [Mike McGranahan](https://twitter.com/lunalot). It is maintained by the Stack Overflow Design with the support of Stack Overflow Careers development team.
 
-To get started, [review the documentation](http://stackexchange.github.io/jamdoxx/). If you are trying to make changes to the documentation, go to [the repository here](https://github.com/StackExchange/jam).
+To get started, [review the documentation](http://stackexchange.github.io/jamdoxx/). If you are trying to make changes to the documentation, go to [the repository here](https://github.com/StackExchange/jamdoxx).
 
 ---
 
