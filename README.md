@@ -1,3 +1,9 @@
+THIS REPO IS DEPRECATED
+=====
+>This repository and it's corresponding framework served the Stack Overflow Careers product team well during it's two years of service (2014-2016). We have since begun to merge it's styling with Stack Overflow proper into a unified UI kit. If you have any questions or concerns please contact [Hynes](https://github.com/hellohynes) or [Courtny](https://github.com/Courtny).
+
+---
+
 [Jam](http://stackexchange.github.io/jamdoxx/)
 =====
 
